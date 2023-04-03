@@ -10,6 +10,11 @@ import { FC } from "react";
 
 interface MainHeaderProps {}
 
+interface StyledButtonProps extends StyledComponentProps<"root"> {
+  // Define any additional props for the component here
+  children?: React.ReactNode;
+}
+
 const MainHeader: FC<MainHeaderProps> = ({}) => {
   return (
     <StyledMainHeader>
@@ -22,6 +27,6 @@ const MainHeader: FC<MainHeaderProps> = ({}) => {
 
 export default MainHeader;
 
-const StyledMainHeader: React.FC<
-  StyledComponentProps<"root", {}, {}, never> & { theme?: Theme }
-> = styled(AppBar)(() => ({}));
+const StyledMainHeader: React.FC<StyledButtonProps> = styled(AppBar)(
+  () => ({})
+);
