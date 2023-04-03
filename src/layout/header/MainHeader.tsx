@@ -1,10 +1,4 @@
-import {
-   AppBar,
-   Button,
-   Container,
-   styled,
-   StyledComponentProps,
-} from '@mui/material'
+import { AppBar, Container, styled, StyledComponentProps } from '@mui/material'
 import { FC } from 'react'
 
 interface MainHeaderProps {}
@@ -19,7 +13,6 @@ const MainHeader: FC<MainHeaderProps> = ({}) => {
       <StyledMainHeader>
          <Container>
             <h1>Header4</h1>
-            <Button>Button</Button>
          </Container>
       </StyledMainHeader>
    )
@@ -27,8 +20,4 @@ const MainHeader: FC<MainHeaderProps> = ({}) => {
 
 export default MainHeader
 
-const StyledMainHeader: React.FC<StyledButtonProps> = styled(AppBar)(
-   ({ theme }) => ({
-      background: theme.palette.error.main,
-   })
-)
+const StyledMainHeader: React.FC<StyledButtonProps> = styled(AppBar)(() => ({}))
