@@ -38,6 +38,27 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                },
             },
          },
+         MuiTextField: {
+            styleOverrides: {
+               root: {
+                  '& .MuiInputBase-input': {
+                     color: 'black',
+                  },
+                  '&:hover': {
+                     cursor: 'pointer',
+                     outline: '0.5px solid #cacaca',
+                     borderRadius: '4px',
+                  },
+               },
+            },
+         },
+         MuiInputLabel: {
+            styleOverrides: {
+               root: {
+                  color: '#cacaca',
+               },
+            },
+         },
       },
       palette: {
          primary: {
