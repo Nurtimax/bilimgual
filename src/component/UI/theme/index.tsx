@@ -38,7 +38,7 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                },
             },
          },
-      },
+         },
       palette: {
          primary: {
             main: '#3A10E5',
