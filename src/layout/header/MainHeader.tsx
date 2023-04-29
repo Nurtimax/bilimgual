@@ -1,23 +1,55 @@
-import { AppBar, Container, styled, StyledComponentProps } from '@mui/material'
-import { FC } from 'react'
+import { AppBar, Container, styled, AppBarProps } from '@mui/material';
+import { FC, memo, useEffect, useState } from 'react';
+import HeaderWrapper from '../../component/header/HeaderWrapper';
 
 interface MainHeaderProps {}
 
-interface StyledButtonProps extends StyledComponentProps<'root'> {
-   // Define any additional props for the component here
-   children?: React.ReactNode
+interface StyledAppBarProps extends AppBarProps {
+  /*
+   * Define any additional props for the component here
+  */
+  children?: React.ReactNode;
 }
 
-const MainHeader: FC<MainHeaderProps> = ({}) => {
-   return (
-      <StyledMainHeader>
-         <Container>
-            <h1>Header4</h1>
-         </Container>
-      </StyledMainHeader>
-   )
-}
+const MainHeader: FC<MainHeaderProps> = memo(({}) => {
+  const [isFixed, setIsFixed] = useState(false);
 
-export default MainHeader
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
 
-const StyledMainHeader: React.FC<StyledButtonProps> = styled(AppBar)(() => ({}))
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <StyledMainHeader
+      position={!isFixed ? 'relative' : 'fixed'}
+      className={!isFixed ? 'background__none' : ''}
+    >
+      <Container>
+        <HeaderWrapper />
+      </Container>
+    </StyledMainHeader>
+  );
+});
+
+export default MainHeader;
+
+const StyledMainHeader: React.FC<StyledAppBarProps> = styled(AppBar)(() => ({
+  transition: 'background .5s',
+  background: '#FFFFFF',
+  boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.03)',
+  '&.background__none': {
+    boxShadow: 'none',
+    background: 'none',
+  },
+}));
