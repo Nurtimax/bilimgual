@@ -1,8 +1,6 @@
 import { FC } from 'react'
 
-interface BilingualIconProps {}
-
-const BilingualIcon: FC<BilingualIconProps> = (props) => {
+const BilingualIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
       <svg
          {...props}
