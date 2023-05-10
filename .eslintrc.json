@@ -1,19 +1,59 @@
 {
-  "extends": ["airbnb-typescript", "prettier"],
-  "plugins": ["import", "jsx-a11y", "react", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "useJSXTextNode": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-    "import/extensions": [
+    "linebreak-style": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
       "error",
-      "ignorePackages",
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "endOfLine": "auto"
       }
     ],
-    "no-console": "warn"
-  }
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-console": "warn",
+    "import/order": ["error", { "newlines-between": "always" }],
+    "import/named": "off",
+    "import/no-unresolved": "off",
+    "@typescript-eslint/no-shadow": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
 }

@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const authenticationSlice = createSlice({
    name: 'auth',
    initialState: {},
-   reducers: {},
-})
+   reducers: {}
+});
 
-const actionAuthentication = authenticationSlice.actions
+const actionAuthentication = authenticationSlice.actions;
 
-export { authenticationSlice, actionAuthentication }
+export { authenticationSlice, actionAuthentication };

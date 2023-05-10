@@ -1,55 +1,55 @@
 import { AppBar, Container, styled, AppBarProps } from '@mui/material';
-import { FC, memo, useEffect, useState } from 'react';
+import { FC, memo, ReactNode, useEffect, useState } from 'react';
+
 import HeaderWrapper from '../../component/header/HeaderWrapper';
 
-interface MainHeaderProps {}
-
-interface StyledAppBarProps extends AppBarProps {
-  /*
-   * Define any additional props for the component here
-  */
-  children?: React.ReactNode;
+interface MainHeaderProps {
+   [key: string]: unknown;
 }
 
-const MainHeader: FC<MainHeaderProps> = memo(({}) => {
-  const [isFixed, setIsFixed] = useState(false);
+interface StyledAppBarProps extends AppBarProps {
+   /*
+    * Define any additional props for the component here
+    */
+   children?: ReactNode;
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 0) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
+const StyledMainHeader: FC<StyledAppBarProps> = styled(AppBar)(() => ({
+   transition: 'background .5s',
+   background: '#FFFFFF',
+   boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.03)',
+   '&.background__none': {
+      boxShadow: 'none',
+      background: 'none'
+   }
+}));
 
-    window.addEventListener('scroll', handleScroll);
+const MainHeader: FC<MainHeaderProps> = memo(() => {
+   const [isFixed, setIsFixed] = useState(false);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+   useEffect(() => {
+      const handleScroll = () => {
+         if (window.pageYOffset > 0) {
+            setIsFixed(true);
+         } else {
+            setIsFixed(false);
+         }
+      };
 
-  return (
-    <StyledMainHeader
-      position={!isFixed ? 'relative' : 'fixed'}
-      className={!isFixed ? 'background__none' : ''}
-    >
-      <Container>
-        <HeaderWrapper />
-      </Container>
-    </StyledMainHeader>
-  );
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
+
+   return (
+      <StyledMainHeader position={!isFixed ? 'relative' : 'fixed'} className={!isFixed ? 'background__none' : ''}>
+         <Container>
+            <HeaderWrapper />
+         </Container>
+      </StyledMainHeader>
+   );
 });
 
 export default MainHeader;
-
-const StyledMainHeader: React.FC<StyledAppBarProps> = styled(AppBar)(() => ({
-  transition: 'background .5s',
-  background: '#FFFFFF',
-  boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.03)',
-  '&.background__none': {
-    boxShadow: 'none',
-    background: 'none',
-  },
-}));
