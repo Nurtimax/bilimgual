@@ -1,17 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-export const VisibilityOnIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-   props
-) => {
+export const VisibilityOnIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg
-         {...props}
-         width="20"
-         height="20"
-         viewBox="0 0 20 20"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg {...props} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <g clip-path="url(#clip0_870_5618)">
             <path
                d="M0.833374 10C0.833374 10 4.16671 3.33337 10 3.33337C15.8334 3.33337 19.1667 10 19.1667 10C19.1667 10 15.8334 16.6667 10 16.6667C4.16671 16.6667 0.833374 10 0.833374 10Z"
@@ -34,5 +25,5 @@ export const VisibilityOnIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
             </clipPath>
          </defs>
       </svg>
-   )
-}
+   );
+};

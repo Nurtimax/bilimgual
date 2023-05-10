@@ -1,10 +1,5 @@
-import { FC } from 'react'
-import {
-   TextField,
-   TextFieldProps,
-   ThemeProvider,
-   createTheme,
-} from '@mui/material'
+import { FC } from 'react';
+import { TextField, TextFieldProps, ThemeProvider, createTheme } from '@mui/material';
 
 const Input: FC<TextFieldProps> = (props) => {
    const InputTheme = createTheme({
@@ -14,58 +9,58 @@ const Input: FC<TextFieldProps> = (props) => {
                root: {
                   '& .MuiOutlinedInput-root': {
                      '&:hover fieldset': {
-                        borderColor: '#3a10e5',
-                     },
+                        borderColor: '#3a10e5'
+                     }
                   },
                   '& fieldset': {
-                     borderColor: '#BDBDBD',
+                     borderColor: '#BDBDBD'
                   },
                   '& label': {
-                     color: '#cacaca',
+                     color: '#cacaca'
                   },
                   '& label.Mui-focused': {
-                     color: '#cacaca',
+                     color: '#cacaca'
                   },
 
                   '& .Mui-error': {
                      '&.MuiOutlinedInput-root': {
                         '&:hover fieldset': {
-                           borderColor: '#d32f2f',
+                           borderColor: '#d32f2f'
                         },
                         '&.Mui-focused fieldset': {
-                           borderColor: '#d32f2f !important',
-                        },
-                     },
+                           borderColor: '#d32f2f !important'
+                        }
+                     }
                   },
 
                   '& .Mui-disabled': {
                      background: '#f7f7f7',
                      '&.MuiFormLabel-root': {
-                        background: 'none',
+                        background: 'none'
                      },
                      '&.MuiOutlinedInput-root': {
                         '&:hover fieldset': {
-                           borderColor: '#BDBDBD',
-                        },
-                     },
+                           borderColor: '#BDBDBD'
+                        }
+                     }
                   },
 
                   '& .MuiOutlinedInput-root.Mui-focused': {
                      '&.Mui-focused fieldset': {
-                        borderColor: '#3a10e5',
-                     },
-                  },
-               },
-            },
-         },
-      },
-   })
+                        borderColor: '#3a10e5'
+                     }
+                  }
+               }
+            }
+         }
+      }
+   });
 
    return (
       <ThemeProvider theme={InputTheme}>
          <TextField {...props} />
       </ThemeProvider>
-   )
-}
+   );
+};
 
-export default Input
+export default Input;

@@ -1,15 +1,8 @@
-import { FC } from 'react'
+import { FC, SVGProps } from 'react';
 
-const BilingualIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => {
+const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg
-         {...props}
-         width="114"
-         height="101"
-         viewBox="0 0 114 101"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg {...props} width="114" height="101" viewBox="0 0 114 101" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path
             d="M56.8245 21.5544L89.2437 2.50684V19.0734L56.8245 21.5544Z"
             fill="white"
@@ -1433,7 +1426,7 @@ const BilingualIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => {
             </linearGradient>
          </defs>
       </svg>
-   )
-}
+   );
+};
 
-export default BilingualIcon
+export default BilingualIcon;

@@ -1,15 +1,8 @@
-import { FC, SVGProps } from 'react'
+import { FC, SVGProps } from 'react';
 
 const CrossIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg
-         {...props}
-         width="66"
-         height="66"
-         viewBox="0 0 66 66"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg {...props} width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
          <circle opacity="0.12" cx="33" cy="33" r="33" fill="#DB524E" />
          <path
             fill-rule="evenodd"
@@ -18,7 +11,7 @@ const CrossIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             fill="#F61414"
          />
       </svg>
-   )
-}
+   );
+};
 
-export default CrossIcon
+export default CrossIcon;

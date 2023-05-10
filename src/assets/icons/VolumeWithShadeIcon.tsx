@@ -1,15 +1,8 @@
-import { FC, SVGProps } from 'react'
+import { FC, SVGProps } from 'react';
 
 const VolumeWithShadeIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg
-         {...props}
-         width="88"
-         height="88"
-         viewBox="0 0 88 88"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg {...props} width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path
             d="M88 44C88 68.3005 68.3005 88 44 88C19.6995 88 0 68.3005 0 44C0 19.6995 19.6995 0 44 0C68.3005 0 88 19.6995 88 44Z"
             fill="url(#paint0_linear_210_9195)"
@@ -19,14 +12,7 @@ const VolumeWithShadeIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             fill="white"
          />
          <defs>
-            <linearGradient
-               id="paint0_linear_210_9195"
-               x1="44"
-               y1="0"
-               x2="44"
-               y2="88"
-               gradientUnits="userSpaceOnUse"
-            >
+            <linearGradient id="paint0_linear_210_9195" x1="44" y1="0" x2="44" y2="88" gradientUnits="userSpaceOnUse">
                <stop stop-color="#3A10E5" />
                <stop offset="0.398958" stop-color="#3A10E5" />
                <stop offset="0.544792" stop-color="#360FD5" />
@@ -34,7 +20,7 @@ const VolumeWithShadeIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             </linearGradient>
          </defs>
       </svg>
-   )
-}
+   );
+};
 
-export default VolumeWithShadeIcon
+export default VolumeWithShadeIcon;

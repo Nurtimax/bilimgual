@@ -1,20 +1,20 @@
-import { FC } from 'react'
-import BilingualIcon from '../assets/icons/BilingualIcon'
-import PlayButtonIcon from '../assets/icons/PlayButtonIcon'
-import CheckIcon from '../assets/icons/CheckIcon'
-import GrayCrossIcon from '../assets/icons/GrayCrossIcon'
-import GrayPlayIcon from '../assets/icons/GrayPlayIcon'
-import OpenAccordionIcon from '../assets/icons/ArrowDown'
-import SquarePauseButtonIcon from '../assets/icons/SquarePauseButtonIcon'
-import SquarePlayButtonIcon from '../assets/icons/SquarePlayButtonIcon'
-import VarningIcon from '../assets/icons/VarningIcon'
-import VolumeShadelessIcon from '../assets/icons/VolumeShadelessIcon'
-import VolumeWithShadeIcon from '../assets/icons/VolumeWithShadeIcon'
-import { IconButton } from '@mui/material'
-import { BilingualFullIcon } from '../assets/icons/BilingualFullIcon'
-import CrossIcon from '../assets/icons/CrossIcon'
-import { VisibilityOnIcon } from '../assets/icons/VisibilityOnIcon'
+import { FC } from 'react';
+import { IconButton } from '@mui/material';
 
+import BilingualIcon from '../assets/icons/BilingualIcon';
+import PlayButtonIcon from '../assets/icons/PlayButtonIcon';
+import CheckIcon from '../assets/icons/CheckIcon';
+import GrayCrossIcon from '../assets/icons/GrayCrossIcon';
+import GrayPlayIcon from '../assets/icons/GrayPlayIcon';
+import OpenAccordionIcon from '../assets/icons/ArrowDown';
+import SquarePauseButtonIcon from '../assets/icons/SquarePauseButtonIcon';
+import SquarePlayButtonIcon from '../assets/icons/SquarePlayButtonIcon';
+import VarningIcon from '../assets/icons/VarningIcon';
+import VolumeShadelessIcon from '../assets/icons/VolumeShadelessIcon';
+import VolumeWithShadeIcon from '../assets/icons/VolumeWithShadeIcon';
+import { BilingualFullIcon } from '../assets/icons/BilingualFullIcon';
+import CrossIcon from '../assets/icons/CrossIcon';
+import { VisibilityOnIcon } from '../assets/icons/VisibilityOnIcon';
 
 const icons: FC = () => {
    return (
@@ -70,7 +70,7 @@ const icons: FC = () => {
             <VolumeWithShadeIcon /> VolumeWithShadeIcon
          </li>
       </ul>
-   )
-}
+   );
+};
 
-export default icons
+export default icons;
