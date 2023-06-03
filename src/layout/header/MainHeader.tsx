@@ -1,5 +1,5 @@
-import { AppBar, Container, styled, AppBarProps } from '@mui/material';
-import { FC, memo, ReactNode, useEffect, useState } from 'react';
+import { AppBar, Container, styled, AppBarProps, useScrollTrigger } from '@mui/material';
+import { cloneElement, FC, memo, ReactElement, ReactNode } from 'react';
 
 import HeaderWrapper from '../../component/header/HeaderWrapper';
 
@@ -14,6 +14,15 @@ interface StyledAppBarProps extends AppBarProps {
    children?: ReactNode;
 }
 
+interface Props {
+   /**
+    * Injected by the documentation to work in an iframe.
+    * You won't need it on your project.
+    */
+   window?: () => Window;
+   children: ReactElement;
+}
+
 const StyledMainHeader: FC<StyledAppBarProps> = styled(AppBar)(() => ({
    transition: 'background .5s',
    background: '#FFFFFF',
@@ -24,31 +33,33 @@ const StyledMainHeader: FC<StyledAppBarProps> = styled(AppBar)(() => ({
    }
 }));
 
+function ElevationScroll(props: Props) {
+   const { children, window } = props;
+   // Note that you normally won't need to set the window ref as useScrollTrigger
+   // will default to window.
+   // This is only being set here because the demo is in an iframe.
+   const trigger = useScrollTrigger({
+      disableHysteresis: true,
+      threshold: 0,
+      target: window ? window() : undefined
+   });
+
+   return cloneElement(children, {
+      sx: {
+         background: trigger ? '#fff' : 'none'
+      }
+   });
+}
+
 const MainHeader: FC<MainHeaderProps> = memo(() => {
-   const [isFixed, setIsFixed] = useState(false);
-
-   useEffect(() => {
-      const handleScroll = () => {
-         if (window.pageYOffset > 0) {
-            setIsFixed(true);
-         } else {
-            setIsFixed(false);
-         }
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-         window.removeEventListener('scroll', handleScroll);
-      };
-   }, []);
-
    return (
-      <StyledMainHeader position={!isFixed ? 'relative' : 'fixed'} className={!isFixed ? 'background__none' : ''}>
-         <Container>
-            <HeaderWrapper />
-         </Container>
-      </StyledMainHeader>
+      <ElevationScroll>
+         <StyledMainHeader>
+            <Container>
+               <HeaderWrapper />
+            </Container>
+         </StyledMainHeader>
+      </ElevationScroll>
    );
 });
 
