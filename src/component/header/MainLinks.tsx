@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { Box, Button, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
+
+import { Button } from '../UI';
 
 interface MainLinksProps {
    [key: string]: unknown;
@@ -18,8 +20,8 @@ const StyledMainLinks = styled(Box)(() => ({
 const MainLinks: FC<MainLinksProps> = () => {
    return (
       <StyledMainLinks>
-         <Button variant="contained">TO COME IN</Button>
-         <Button variant="outlined">REGISTER</Button>
+         <Button variant="come">TO COME IN</Button>
+         <Button variant="register">REGISTER</Button>
       </StyledMainLinks>
    );
 };
