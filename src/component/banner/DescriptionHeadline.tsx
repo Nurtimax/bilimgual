@@ -6,7 +6,7 @@ interface DescriptionHeadlineProps {
 }
 
 const StyledDescriptionHeadline = styled(Box)(() => ({
-   width: '70%',
+   width: '100%',
    fontFamily: 'Poppins',
    fontStyle: 'normal',
    fontWeight: 400,
