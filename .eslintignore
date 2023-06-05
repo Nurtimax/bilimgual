@@ -8,3 +8,5 @@ scripts/*
 src/react-app-env.d.ts
 src/reportWebVitals.ts
 .firebase
+/src/styles/globals.css
+webpack.config.js

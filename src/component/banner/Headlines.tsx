@@ -3,6 +3,7 @@ import { Box, styled } from '@mui/material';
 
 import AnnouncementHeadline from './AnnouncementHeadline';
 import DescriptionHeadline from './DescriptionHeadline';
+import EventLines from './EventLines';
 
 interface HeadlinesProps {
    [key: string]: unknown;
@@ -23,6 +24,7 @@ const Headlines: FC<HeadlinesProps> = () => {
       <StyledHeadlines>
          <AnnouncementHeadline />
          <DescriptionHeadline />
+         <EventLines />
       </StyledHeadlines>
    );
 };
