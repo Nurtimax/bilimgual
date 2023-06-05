@@ -1,6 +1,8 @@
 import { createTheme, PaletteOptions, ThemeProvider } from '@mui/material';
 import { FC, ReactNode } from 'react';
 
+import themeTypography from '../typography';
+
 interface ThemeProps {
    children: ReactNode;
 }
@@ -84,9 +86,10 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                   }
                }
             }
-         }
+         },
+         ...themeTypography.components
       },
-      palette
+      breakpoints: { ...themeTypography.breakpoints }
    });
    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

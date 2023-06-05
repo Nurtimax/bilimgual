@@ -1,7 +1,5 @@
 import { FC } from 'react';
-import { Box, styled } from '@mui/material';
-
-import { Typography } from '../UI';
+import { Box, styled, Typography } from '@mui/material';
 
 interface AnnouncementHeadlineProps {
    [key: string]: unknown;
