@@ -8,7 +8,8 @@
       "lint": "next lint",
       "sb": "storybook dev -p 6006",
       "build-storybook": "storybook build",
-      "lint-fix": "eslint . --ext .ts,.tsx"
+      "lint-fix": "eslint . --ext .ts,.tsx",
+      "build-webpack": "webpack"
    },
    "dependencies": {
       "@emotion/react": "^11.10.6",
@@ -54,6 +55,9 @@
       "eslint-plugin-react-hooks": "^4.6.0",
       "jest": "^29.5.0",
       "prettier": "^2.8.8",
-      "storybook": "^7.0.2"
+      "storybook": "^7.0.2",
+      "ts-loader": "^9.4.3",
+      "webpack": "^5.85.0",
+      "webpack-cli": "^5.1.3"
    }
 }
