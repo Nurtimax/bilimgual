@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 
 declare module '@mui/material/Typography' {
-   interface TypographyPropsVariantOverrides {
+   export interface TypographyPropsVariantOverrides {
       body3: true;
       body4: true;
       bodySmall: true;
@@ -12,7 +12,7 @@ declare module '@mui/material/Typography' {
 }
 
 declare module '@mui/material/styles' {
-   interface BreakpointOverrides {
+   export interface BreakpointOverrides {
       lgMobile: true;
       mdMobile: true;
       smMobile: true;
