@@ -18,7 +18,6 @@ const StyledBanner = styled(Box)<StyledBannerProps>(({ src }) => ({
    background: `url(${src.src})`,
    backgroundRepeat: 'no-repeat',
    backgroundPosition: 'center',
-   height: '80vh',
    width: '100%',
    backgroundSize: '100% 100%'
 }));
