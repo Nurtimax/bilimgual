@@ -9,7 +9,7 @@ interface LinkItemProps extends GridProps {
 }
 
 const StyledLink = styled(Link)(({ theme }) => ({
-   fontFamily: 'DINNextRoundedLTPro-Bold',
+   fontFamily: 'Gudea',
    fontSize: '15px',
    fontWeight: '900',
 
