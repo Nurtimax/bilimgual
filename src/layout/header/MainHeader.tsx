@@ -1,5 +1,5 @@
 import { AppBar, Container, styled, AppBarProps, useScrollTrigger } from '@mui/material';
-import { cloneElement, FC, memo, ReactElement, ReactNode } from 'react';
+import React, { cloneElement, FC, memo, ReactElement, ReactNode } from 'react';
 
 import HeaderWrapper from '../../component/header/HeaderWrapper';
 

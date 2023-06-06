@@ -10,3 +10,4 @@ src/reportWebVitals.ts
 .firebase
 /src/styles/globals.css
 webpack.config.js
+next.config.js

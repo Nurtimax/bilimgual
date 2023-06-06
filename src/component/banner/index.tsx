@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Box, BoxProps, Container, styled } from '@mui/material';
 import { StaticImageData } from 'next/image';
 

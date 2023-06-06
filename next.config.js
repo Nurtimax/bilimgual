@@ -2,19 +2,21 @@
 const nextConfig = {
    reactStrictMode: false,
    swcMinify: true,
-   webpack: (config, { isServer }) => {
-      // Modify the webpack config here
-      // Add loaders, plugins, or any other webpack configuration options
-
-      // For example, adding a new loader to handle SVG files
+   webpack: (config, options) => {
       config.module.rules.push({
-         test: /\.svg$/,
-         use: ['@svgr/webpack']
+         test: /\.(ts|js)x?$/,
+         exclude: /node_modules/,
+         use: {
+            loader: 'babel-loader',
+            options: {
+               presets: ['@babel/preset-typescript', '@babel/preset-env']
+            }
+         }
       });
 
-      // Return the modified webpack config
       return config;
-   }
+   },
+   env: process.env.NEXTAUTH_URL
 };
 
 module.exports = nextConfig;

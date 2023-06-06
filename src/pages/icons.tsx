@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { IconButton } from '@mui/material';
 
 import BilingualIcon from '../assets/icons/BilingualIcon';
