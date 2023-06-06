@@ -36,7 +36,7 @@ const themeTypography = createTheme({
       MuiTypography: {
          styleOverrides: {
             root: {
-               fontFamily: 'Gilroy',
+               fontFamily: 'Geologica',
                fontStyle: 'normal'
             }
          },
