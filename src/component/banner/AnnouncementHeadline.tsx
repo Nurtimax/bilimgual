@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Box, styled, Typography } from '@mui/material';
 
 interface AnnouncementHeadlineProps {

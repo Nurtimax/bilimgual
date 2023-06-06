@@ -1,5 +1,5 @@
 import { Box, styled } from '@mui/material';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import Links from './Links';
 import MainLinks from './MainLinks';

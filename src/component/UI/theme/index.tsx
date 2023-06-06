@@ -1,5 +1,5 @@
 import { createTheme, PaletteOptions, ThemeProvider } from '@mui/material';
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import themeTypography from '../typography';
 

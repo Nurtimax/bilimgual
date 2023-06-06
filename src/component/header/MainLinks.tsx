@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Box, styled } from '@mui/material';
 
 import { Button } from '../UI';

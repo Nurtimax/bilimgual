@@ -1,5 +1,5 @@
 import { Button as MuiButton, ButtonProps, createTheme, ThemeProvider } from '@mui/material';
-import { FC, useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
 
 import { palette } from '../theme';
 

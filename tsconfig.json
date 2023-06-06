@@ -1,29 +1,22 @@
 {
    "compilerOptions": {
-      "target": "es5",
+      "target": "esnext",
       "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
       "skipLibCheck": true,
       "strict": true,
       "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
       "esModuleInterop": true,
       "module": "esnext",
       "moduleResolution": "node",
       "resolveJsonModule": true,
       "isolatedModules": true,
       "jsx": "preserve",
-      "incremental": true
+      "incremental": true,
+      "noEmit": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true
    },
-   "include": [
-      "next-env.d.ts",
-      "**/*.ts",
-      "**/*.d.ts",
-      "**/*.tsx",
-      "src/**/*.svg",
-      "webpack.config.js",
-      "src/assets/index.ts",
-      "src/component/banner/index.tsx"
-   ],
+   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
    "exclude": ["node_modules"]
 }

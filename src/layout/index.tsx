@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import BilingualBox from './boxes/BilingualBox';
 

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Box, Button, styled } from '@mui/material';
 
 import AdminLinksList from './AdminLinksList';

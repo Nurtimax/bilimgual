@@ -1,7 +1,7 @@
 import { Grid, GridProps, styled } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC, ReactNode, useMemo } from 'react';
+import React, { FC, ReactNode, useMemo } from 'react';
 
 interface LinkItemProps extends GridProps {
    children: ReactNode;
@@ -9,7 +9,7 @@ interface LinkItemProps extends GridProps {
 }
 
 const StyledLink = styled(Link)(({ theme }) => ({
-   fontFamily: 'DINNextRoundedLTPro-Bold',
+   fontFamily: 'Gudea',
    fontSize: '15px',
    fontWeight: '900',
 

@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 
 declare module '@mui/material/Typography' {
-   interface TypographyPropsVariantOverrides {
+   export interface TypographyPropsVariantOverrides {
       body3: true;
       body4: true;
       bodySmall: true;
@@ -12,7 +12,7 @@ declare module '@mui/material/Typography' {
 }
 
 declare module '@mui/material/styles' {
-   interface BreakpointOverrides {
+   export interface BreakpointOverrides {
       lgMobile: true;
       mdMobile: true;
       smMobile: true;
@@ -36,7 +36,7 @@ const themeTypography = createTheme({
       MuiTypography: {
          styleOverrides: {
             root: {
-               fontFamily: 'Gilroy',
+               fontFamily: 'Geologica',
                fontStyle: 'normal'
             }
          },
@@ -360,7 +360,7 @@ const themeTypography = createTheme({
             {
                props: { variant: 'bold' },
                style: ({ theme }) => ({
-                  fontFamily: 'DINNextRoundedLTPro-Bold',
+                  fontFamily: 'Gudea',
                   fontWeight: 'bold',
                   lineHeight: '24px',
                   /* identical to box height */
@@ -392,7 +392,7 @@ const themeTypography = createTheme({
             {
                props: { variant: 'medium' },
                style: ({ theme }) => ({
-                  fontFamily: 'DINNextRoundedLTPro-Bold',
+                  fontFamily: 'Gudea',
                   lineHeight: '24px',
                   fontWeight: 500,
                   /* identical to box height */
@@ -421,7 +421,7 @@ const themeTypography = createTheme({
             {
                props: { variant: 'regular' },
                style: ({ theme }) => ({
-                  fontFamily: 'DINNextRoundedLTW01-Regular',
+                  fontFamily: 'Gudea',
                   lineHeight: '24px',
                   fontWeight: 400,
                   /* identical to box height */

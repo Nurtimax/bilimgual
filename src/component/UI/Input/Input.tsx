@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { TextField, TextFieldProps, ThemeProvider, createTheme } from '@mui/material';
 
 const Input: FC<TextFieldProps> = (props) => {

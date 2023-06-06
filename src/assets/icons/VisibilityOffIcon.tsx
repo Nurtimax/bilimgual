@@ -1,4 +1,4 @@
-import { FC, SVGProps } from 'react';
+import React, { FC, SVGProps } from 'react';
 
 const VisibilityOffIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (

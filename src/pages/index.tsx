@@ -1,10 +1,13 @@
+import { Typography } from '@mui/material';
+import React from 'react';
+
 import MainLayout from '../layout';
 
 export default function Home() {
    return (
       <>
          <MainLayout>
-            <h1>Hello Bilingual</h1>
+            <Typography variant="body4">Hello Bilingual</Typography>
          </MainLayout>
       </>
    );
