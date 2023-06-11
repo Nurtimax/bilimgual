@@ -1,6 +1,6 @@
-import { Grid, GridProps, styled } from '@mui/material';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+'use client';
+import { Box, Grid, GridProps, styled } from '@mui/material';
+import { useRouter } from 'next-router-mock';
 import React, { FC, ReactNode, useMemo } from 'react';
 
 interface LinkItemProps extends GridProps {
@@ -8,7 +8,7 @@ interface LinkItemProps extends GridProps {
    to: string;
 }
 
-const StyledLink = styled(Link)(({ theme }) => ({
+const StyledLink = styled(Box)(({ theme }) => ({
    fontFamily: 'Gudea',
    fontSize: '15px',
    fontWeight: '900',
@@ -23,15 +23,19 @@ const StyledLink = styled(Link)(({ theme }) => ({
 }));
 
 const LinkItem: FC<LinkItemProps> = ({ children, to, ...props }) => {
-   const { pathname } = useRouter();
+   const { pathname, replace } = useRouter();
 
    const isActive = useMemo(() => {
       return pathname.split('').includes(to);
    }, [to, pathname]);
 
+   const replaceHandler = () => {
+      replace(to);
+   };
+
    return (
       <Grid item {...props}>
-         <StyledLink href={to} className={isActive ? 'active' : ''}>
+         <StyledLink onClick={replaceHandler} className={isActive ? 'active' : ''}>
             {children}
          </StyledLink>
       </Grid>

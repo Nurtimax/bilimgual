@@ -7,16 +7,16 @@ const GrayPlayIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M11 20.1667C16.0627 20.1667 20.1667 16.0627 20.1667 11C20.1667 5.93743 16.0627 1.83337 11 1.83337C5.93743 1.83337 1.83337 5.93743 1.83337 11C1.83337 16.0627 5.93743 20.1667 11 20.1667Z"
                stroke="#91969E"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-linecap="round"
-               stroke-linejoin="round"
+               strokeLinejoin="round"
             />
             <path
                d="M9.16663 7.33337L14.6666 11L9.16663 14.6667V7.33337Z"
                stroke="#91969E"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-linecap="round"
-               stroke-linejoin="round"
+               strokeLinejoin="round"
             />
          </g>
          <defs>

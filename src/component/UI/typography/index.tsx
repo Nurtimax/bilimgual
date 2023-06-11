@@ -1,4 +1,9 @@
-import { createTheme } from '@mui/material';
+import { createTheme, ThemeProvider, Typography as MuiTypography, TypographyProps } from '@mui/material';
+import React, { FC } from 'react';
+
+interface ITypographyProps extends TypographyProps {
+   [key: string]: unknown;
+}
 
 declare module '@mui/material/Typography' {
    export interface TypographyPropsVariantOverrides {
@@ -458,4 +463,12 @@ const themeTypography = createTheme({
    }
 });
 
-export default themeTypography;
+const Typography: FC<ITypographyProps> = (props) => {
+   return (
+      <ThemeProvider theme={themeTypography}>
+         <MuiTypography {...props} />
+      </ThemeProvider>
+   );
+};
+
+export default Typography;
