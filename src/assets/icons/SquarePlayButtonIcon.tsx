@@ -7,9 +7,9 @@ const SquarePlayButtonIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M19 14.5L27 21L19 27.5V14.5Z"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
          />
       </svg>
    );

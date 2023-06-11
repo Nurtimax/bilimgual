@@ -13,10 +13,10 @@ const VolumeWithShadeIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          />
          <defs>
             <linearGradient id="paint0_linear_210_9195" x1="44" y1="0" x2="44" y2="88" gradientUnits="userSpaceOnUse">
-               <stop stop-color="#3A10E5" />
-               <stop offset="0.398958" stop-color="#3A10E5" />
-               <stop offset="0.544792" stop-color="#360FD5" />
-               <stop offset="0.878125" stop-color="#1D0A6B" />
+               <stop stopColor="#3A10E5" />
+               <stop offset="0.398958" stopColor="#3A10E5" />
+               <stop offset="0.544792" stopColor="#360FD5" />
+               <stop offset="0.878125" stopColor="#1D0A6B" />
             </linearGradient>
          </defs>
       </svg>

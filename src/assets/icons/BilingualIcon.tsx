@@ -7,31 +7,31 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M56.8245 21.5544L89.2437 2.50684V19.0734L56.8245 21.5544Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
-            stroke-miterlimit="10"
-            stroke-linejoin="round"
+            strokeWidth="0.106904"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
          />
          <path
             d="M56.8245 21.5534L96.1558 6.97168V18.785L56.8245 21.5534Z"
             fill="white"
             stroke="#565656"
-            stroke-width="0.106904"
-            stroke-miterlimit="10"
-            stroke-linejoin="round"
+            strokeWidth="0.106904"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
          />
          <path
             d="M56.8221 21.5536L14.6876 1V17.1051L56.8221 21.5536Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
-            stroke-miterlimit="10"
+            strokeWidth="0.106904"
+            strokeMiterlimit="10"
          />
          <path
             d="M56.8212 21.5527L5.80713 4.71631V16.077L56.8212 21.5527Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
-            stroke-miterlimit="10"
+            strokeWidth="0.106904"
+            strokeMiterlimit="10"
          />
          <path
             d="M56.6988 100.973L0.0609384 90.0128L0 10.4969L56.6379 21.4571L56.6988 100.973Z"
@@ -628,9 +628,9 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="55.7393"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.12" stop-color="#5E3BED" />
-               <stop offset="0.961458" stop-color="#3A10E5" />
-               <stop offset="1" stop-color="#6069B6" />
+               <stop offset="0.12" stopColor="#5E3BED" />
+               <stop offset="0.961458" stopColor="#3A10E5" />
+               <stop offset="1" stopColor="#6069B6" />
             </linearGradient>
             <linearGradient
                id="paint1_linear_856_12965"
@@ -640,9 +640,9 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="30.2649"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#3A10E5" />
-               <stop offset="0.294792" stop-color="#6E52E0" />
-               <stop offset="1" stop-color="#3A10E5" />
+               <stop stopColor="#3A10E5" />
+               <stop offset="0.294792" stopColor="#6E52E0" />
+               <stop offset="1" stopColor="#3A10E5" />
             </linearGradient>
             <linearGradient
                id="paint2_linear_856_12965"
@@ -652,11 +652,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="34.3653"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint3_linear_856_12965"
@@ -666,13 +666,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="35.0523"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#078241" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#4DA576" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#8CC5A7" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#BDDECD" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E1F0E8" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#F7FBF9" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#078241" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#4DA576" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#8CC5A7" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#BDDECD" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E1F0E8" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#F7FBF9" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint4_linear_856_12965"
@@ -682,12 +682,12 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="33.7728"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.1" stop-color="#86368C" stop-opacity="0.06" />
-               <stop offset="0.28" stop-color="#9B58A0" stop-opacity="0.22" />
-               <stop offset="0.54" stop-color="#BC90C0" stop-opacity="0.48" />
-               <stop offset="0.86" stop-color="#EADBEB" stop-opacity="0.83" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.1" stopColor="#86368C" stopOpacity="0.06" />
+               <stop offset="0.28" stopColor="#9B58A0" stopOpacity="0.22" />
+               <stop offset="0.54" stopColor="#BC90C0" stopOpacity="0.48" />
+               <stop offset="0.86" stopColor="#EADBEB" stopOpacity="0.83" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint5_linear_856_12965"
@@ -697,12 +697,12 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="65.1817"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint6_linear_856_12965"
@@ -712,13 +712,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="61.9026"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint7_linear_856_12965"
@@ -728,11 +728,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="65.3473"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint8_linear_856_12965"
@@ -742,11 +742,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1462.63"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint9_linear_856_12965"
@@ -756,13 +756,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="89.6659"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint10_linear_856_12965"
@@ -772,13 +772,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="627.28"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint11_linear_856_12965"
@@ -788,13 +788,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="474.595"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint12_linear_856_12965"
@@ -804,12 +804,12 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1058.6"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint13_linear_856_12965"
@@ -819,13 +819,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="558.628"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint14_linear_856_12965"
@@ -835,13 +835,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="558.452"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint15_linear_856_12965"
@@ -851,13 +851,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="468.892"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint16_linear_856_12965"
@@ -867,11 +867,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="51.6812"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint17_linear_856_12965"
@@ -881,13 +881,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1044.21"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint18_linear_856_12965"
@@ -897,13 +897,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1116.61"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint19_linear_856_12965"
@@ -913,12 +913,12 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="3125.86"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint20_linear_856_12965"
@@ -928,13 +928,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1570.31"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint21_linear_856_12965"
@@ -944,13 +944,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="260.707"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint22_linear_856_12965"
@@ -960,11 +960,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="-429.318"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint23_linear_856_12965"
@@ -974,13 +974,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="23.7276"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint24_linear_856_12965"
@@ -990,13 +990,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="-26.0403"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint25_linear_856_12965"
@@ -1006,11 +1006,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="222.799"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint26_linear_856_12965"
@@ -1020,13 +1020,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="183.582"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint27_linear_856_12965"
@@ -1036,13 +1036,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="269.373"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint28_linear_856_12965"
@@ -1052,11 +1052,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1529.05"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint29_linear_856_12965"
@@ -1066,13 +1066,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="57.768"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint30_linear_856_12965"
@@ -1082,13 +1082,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="783.496"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint31_linear_856_12965"
@@ -1098,13 +1098,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="809.211"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint32_linear_856_12965"
@@ -1114,11 +1114,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1612.07"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint33_linear_856_12965"
@@ -1128,13 +1128,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="865.353"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint34_linear_856_12965"
@@ -1144,11 +1144,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="526.017"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint35_linear_856_12965"
@@ -1158,11 +1158,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="56.125"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint36_linear_856_12965"
@@ -1172,13 +1172,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="147.673"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint37_linear_856_12965"
@@ -1188,11 +1188,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="277.479"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint38_linear_856_12965"
@@ -1202,11 +1202,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="243.496"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint39_linear_856_12965"
@@ -1216,11 +1216,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="45.4863"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint40_linear_856_12965"
@@ -1230,13 +1230,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1568.84"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint41_linear_856_12965"
@@ -1246,13 +1246,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1419.94"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint42_linear_856_12965"
@@ -1262,13 +1262,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="925.37"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint43_linear_856_12965"
@@ -1278,13 +1278,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1103.66"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint44_linear_856_12965"
@@ -1294,11 +1294,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1475.77"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint45_linear_856_12965"
@@ -1308,13 +1308,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="850.596"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint46_linear_856_12965"
@@ -1324,13 +1324,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="519.281"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint47_linear_856_12965"
@@ -1340,11 +1340,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1468.83"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint48_linear_856_12965"
@@ -1354,13 +1354,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="676.851"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint49_linear_856_12965"
@@ -1370,13 +1370,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="569.331"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint50_linear_856_12965"
@@ -1386,11 +1386,11 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="2518.37"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint51_linear_856_12965"
@@ -1400,13 +1400,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1363.58"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint52_linear_856_12965"
@@ -1416,13 +1416,13 @@ const BilingualIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="807.827"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
          </defs>
       </svg>

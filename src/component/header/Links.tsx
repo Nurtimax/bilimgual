@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
-import { Box, Button, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
+
+import { ERole } from '../../types/role';
+import { Button } from '../UI';
 
 import AdminLinksList from './AdminLinksList';
 import LinksList from './LinksList';
 
 interface LinksProps {
-   role: string;
+   role: ERole;
 }
 
 const StyledLinks = styled(Box)(() => ({
@@ -23,7 +26,7 @@ const Links: FC<LinksProps> = ({ role }) => {
    return (
       <StyledLinks>
          {role === 'ADMIN' ? <AdminLinksList /> : <LinksList />}
-         <StyledButton variant="outlined">log out</StyledButton>
+         <StyledButton variant="login">log out</StyledButton>
       </StyledLinks>
    );
 };

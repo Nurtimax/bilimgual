@@ -7,16 +7,16 @@ const SquarePauseButtonIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M20.625 14.5H17.375V27.5H20.625V14.5Z"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
          />
          <path
             d="M28.625 14.5H25.375V27.5H28.625V14.5Z"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
          />
       </svg>
    );

@@ -1,11 +1,13 @@
 import { Box, styled } from '@mui/material';
 import React, { FC } from 'react';
 
+import { ERole } from '../../types/role';
+
 import Links from './Links';
 import MainLinks from './MainLinks';
 
 interface NavlinksProps {
-   role: string;
+   role: ERole;
 }
 
 const StyledNavlinks = styled(Box)(() => ({
