@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Container, styled } from '@mui/material';
 
-import CardChart from '../card-chart';
-
 interface IMainDevelopmentsProps {
    [key: string]: unknown;
 }
@@ -16,9 +14,7 @@ const StyledDevelopment = styled(Box)(() => ({
 const MainDevelopment: FC<IMainDevelopmentsProps> = () => {
    return (
       <StyledDevelopment>
-         <Container>
-            <CardChart />
-         </Container>
+         <Container></Container>
       </StyledDevelopment>
    );
 };

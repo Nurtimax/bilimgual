@@ -8,7 +8,6 @@ interface ICardBoxProps {
 }
 
 const StyledCardBox = styled(Grid)(() => ({
-   width: '13vw',
    padding: '1.5rem 1rem .8rem',
    background: 'rgba(255, 255, 255, 0.94)',
    border: '1.5px solid #3785D7',
