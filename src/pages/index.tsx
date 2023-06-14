@@ -1,8 +1,8 @@
-import { Typography } from '@mui/material';
 import { Metadata } from 'next';
 import React from 'react';
 
 import MainLayout from '../layout';
+import CardChart from '../layout/card-chart';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -13,7 +13,7 @@ export default function Home() {
    return (
       <>
          <MainLayout>
-            <Typography variant="body4">Hello Bilingual</Typography>
+            <CardChart />
          </MainLayout>
       </>
    );

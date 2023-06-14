@@ -22,8 +22,8 @@ const PigWithCoinItem: FC<IPigWithCoinItemProps> = () => {
    return (
       <StyledPigWithCoinItem>
          <motion.div
-            initial={{ y: 0 }}
-            animate={{ y: 30 }}
+            initial={{ y: -10 }}
+            animate={{ y: 20 }}
             transition={{
                duration: 2.5,
                ease: 'easeInOut',

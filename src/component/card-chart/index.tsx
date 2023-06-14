@@ -11,7 +11,7 @@ interface ICardChartProps {
 
 const StyledCardChart = styled(Grid)(() => ({}));
 
-const CardChart: FC<ICardChartProps> = () => {
+const MainCardChart: FC<ICardChartProps> = () => {
    return (
       <StyledCardChart container gap={4.8}>
          <Grid item xs={3.4}>
@@ -27,4 +27,4 @@ const CardChart: FC<ICardChartProps> = () => {
    );
 };
 
-export default CardChart;
+export default MainCardChart;
