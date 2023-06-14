@@ -13,14 +13,14 @@ const StyledCardChart = styled(Grid)(() => ({}));
 
 const CardChart: FC<ICardChartProps> = () => {
    return (
-      <StyledCardChart container>
+      <StyledCardChart container gap={4.8}>
          <Grid item xs={3.4}>
             <CardWithAirplane />
          </Grid>
-         <Grid item xs={4.3}>
+         <Grid item xs={4}>
             <CardWithEarth />
          </Grid>
-         <Grid item xs={4.3}>
+         <Grid item xs={4}>
             <CardWithPrice />
          </Grid>
       </StyledCardChart>

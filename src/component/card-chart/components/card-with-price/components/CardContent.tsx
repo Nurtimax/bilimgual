@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { Box, styled } from '@mui/material';
 
+import CardContentHeadlines from './CardContentHeadlines';
+
 interface ICardContentProps {
    [key: string]: unknown;
 }
@@ -8,7 +10,11 @@ interface ICardContentProps {
 const StyledCardContent = styled(Box)(() => ({}));
 
 const CardContent: FC<ICardContentProps> = () => {
-   return <StyledCardContent>CardContent</StyledCardContent>;
+   return (
+      <StyledCardContent>
+         <CardContentHeadlines />
+      </StyledCardContent>
+   );
 };
 
 export default CardContent;
