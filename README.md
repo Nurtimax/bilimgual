@@ -25,7 +25,7 @@ Bilingual is a web service designed for creating and taking tests in two languag
 ## Installation
 Bilingual is a web-based service, so there is no installation required. Simply access the <br/> Bilingual website using your preferred web browser.
 
-##Support and Feedback
+## Support and Feedback
 For any questions, issues, or feedback, please contact our support team at <br/> support@bilingual.com. We value your input and are committed to continuously improving <br/> the Bilingual platform.
 
 ## Contributing
