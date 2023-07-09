@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Bilingual
+Bilingual is a web service designed for creating and taking tests in two languages. It provides users with the ability to create their own tests consisting of questions and answer options in each language. Additionally, users can customize various test parameters such as time limits. Bilingual also includes the feature of taking voice tests, where users can record their answers to questions using a microphone.
 
-## Getting Started
+Features
+Create and take tests in two languages.
+Customize test parameters such as time limits.
+Voice tests: Record and submit answers using a microphone.
+Cross-platform compatibility: Accessible on both computers and mobile devices.
+User roles: Administrators and regular users.
+Admin privileges: Manage tests, add and remove users, monitor user activity.
+Interactive language learning platform: Allows users to assess their language skills, track their progress, and improve their communication abilities in different languages.
+Getting Started
+To use Bilingual, follow these steps:
 
-First, run the development server:
+Sign up for an account on the Bilingual website.
+Choose your preferred language settings.
+Explore the available tests or create your own.
+Start taking tests and providing answers.
+Check your results and track your progress over time.
+Use the voice test feature to practice speaking in different languages.
+Engage with other users and participate in language learning communities.
+Installation
+Bilingual is a web-based service, so there is no installation required. Simply access the Bilingual website using your preferred web browser.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Support and Feedback
+For any questions, issues, or feedback, please contact our support team at support@bilingual.com. We value your input and are committed to continuously improving the Bilingual platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Contributing
+We welcome contributions from the open-source community to enhance Bilingual's features and functionality. If you would like to contribute, please fork the Bilingual GitHub repository, make your changes, and submit a pull request.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+License
+Bilingual is released under the MIT License. You are free to use, modify, and distribute this software in accordance with the terms of the license.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Note: This is a sample README for the Bilingual web service. Feel free to modify it based on your specific requirements and add more sections as needed.
