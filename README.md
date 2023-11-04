@@ -1,5 +1,5 @@
 # Bilingual
-![Alt text](/src/assets/icons/BilingualFullIcon.tsx "Optional title")
+![Alt text](/src/assets/icons/BilingualLogo.svg "Optional title")
 
 Bilingual is a web service designed for creating and taking tests in two languages. It provides <br/> users with the ability to create their own tests consisting of questions and answer options <br/> in each language. Additionally, users can customize various test parameters such as time <br /> limits. Bilingual also includes the feature of taking voice tests, where users can record their <br/> answers to questions using a microphone.
 
