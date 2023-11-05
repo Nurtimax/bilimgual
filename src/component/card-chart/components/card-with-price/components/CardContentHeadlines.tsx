@@ -3,20 +3,15 @@ import { Box, styled } from '@mui/material';
 
 import { Typography } from '../../../../UI';
 
-interface ICardContentHeadlinesProps {
-   [key: string]: unknown;
-}
-
 const StyledCardContentHeadlines = styled(Box)(() => ({
    padding: '.5rem 0 0',
    '& .card__description': {
       textAlign: 'center',
-      display: 'block',
-      width: '25vw'
+      display: 'block'
    }
 }));
 
-const CardContentHeadlines: FC<ICardContentHeadlinesProps> = () => {
+const CardContentHeadlines: FC = () => {
    return (
       <StyledCardContentHeadlines>
          <Typography variant="body4" className="card__description">
