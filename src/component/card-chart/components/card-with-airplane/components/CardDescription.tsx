@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { Grid, styled } from '@mui/material';
+import { Grid, Typography, styled } from '@mui/material';
 
-import { Typography } from '../../../../UI';
 import { TYPOGRAPHY_CLASSNAMES } from '../../../../UI/typography';
 
 const StyledCardDescription = styled(Grid)(() => ({

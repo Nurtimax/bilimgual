@@ -1,24 +1,17 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Typography, styled } from '@mui/material';
 
 interface DescriptionHeadlineProps {
    [key: string]: unknown;
 }
 
-const StyledDescriptionHeadline = styled(Box)(() => ({
-   width: '100%',
-   fontFamily: 'Poppins',
-   fontStyle: 'normal',
-   fontWeight: 400,
-   fontSize: '20px',
-   lineHeight: '30px',
-
+const StyledDescriptionHeadline = styled(Typography)(() => ({
    color: '#23212A'
 }));
 
 const DescriptionHeadline: FC<DescriptionHeadlineProps> = () => {
    return (
-      <StyledDescriptionHeadline>
+      <StyledDescriptionHeadline variant="body2">
          For nearly 30 years, learners have turned to Rosetta Stone to build the fluency and confidence they need to
          speak new languages.
       </StyledDescriptionHeadline>

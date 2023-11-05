@@ -9,14 +9,20 @@ interface HeadlinesProps {
    [key: string]: unknown;
 }
 
-const StyledHeadlines = styled(Box)(() => ({
+const StyledHeadlines = styled(Box)(({ theme }) => ({
    height: '778px',
    width: '65%',
    display: 'flex',
    flexDirection: 'column',
    alignItems: 'flex-start',
    justifyContent: 'center',
-   gap: '26px'
+   gap: '26px',
+   [theme.breakpoints.down('sm')]: {
+      height: '500px'
+   },
+   [theme.breakpoints.between('sm', 'md')]: {
+      height: '580px'
+   }
 }));
 
 const Headlines: FC<HeadlinesProps> = () => {

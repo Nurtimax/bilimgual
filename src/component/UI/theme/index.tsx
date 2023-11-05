@@ -1,6 +1,8 @@
 import { createTheme, PaletteOptions, ThemeProvider } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 
+import themeTypography from '../typography';
+
 interface ThemeProps {
    children: ReactNode;
 }
@@ -70,6 +72,18 @@ const Theme: FC<ThemeProps> = ({ children }) => {
     */
 
    const theme = createTheme({
+      breakpoints: {
+         values: {
+            xl: 0,
+            lg: 1200,
+            md: 900,
+            sm: 600,
+            xs: 1536,
+            lgMobile: 500,
+            mdMobile: 400,
+            smMobile: 350
+         }
+      },
       components: {
          MuiContainer: {
             styleOverrides: {
@@ -84,7 +98,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                   }
                }
             }
-         }
+         },
+         MuiTypography: themeTypography
       },
       palette
    });

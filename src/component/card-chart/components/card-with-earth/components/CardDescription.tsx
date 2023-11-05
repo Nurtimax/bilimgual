@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 
-import { Typography } from '../../../../UI';
 import { TYPOGRAPHY_CLASSNAMES } from '../../../../UI/typography';
 
 interface ICardDescriptionProps {

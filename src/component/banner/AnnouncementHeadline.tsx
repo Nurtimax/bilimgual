@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
-
-import { Typography } from '../UI';
+import { Box, Typography, styled } from '@mui/material';
 
 interface AnnouncementHeadlineProps {
    [key: string]: unknown;
@@ -10,7 +8,6 @@ interface AnnouncementHeadlineProps {
 const StyledAnnouncementHeadline = styled(Box)(() => ({
    width: '80%',
    '& .bilingaul_announcement': {
-      fontSize: '75px',
       color: '#C93D7D'
    }
 }));
