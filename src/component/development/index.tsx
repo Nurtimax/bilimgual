@@ -14,7 +14,9 @@ const StyledDevelopment = styled(Box)(() => ({
 const MainDevelopment: FC<IMainDevelopmentsProps> = () => {
    return (
       <StyledDevelopment>
-         <Container></Container>
+         <Container>
+            <h1>Bilingual Development tools</h1>
+         </Container>
       </StyledDevelopment>
    );
 };

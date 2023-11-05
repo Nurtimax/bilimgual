@@ -2,11 +2,7 @@ import React, { FC } from 'react';
 
 import MainDevelopment from '../../component/development';
 
-interface IDevelopmentProps {
-   [key: string]: unknown;
-}
-
-const Development: FC<IDevelopmentProps> = () => {
+const Development: FC = () => {
    return (
       <>
          <MainDevelopment />
