@@ -3,10 +3,6 @@ import { Grid, styled } from '@mui/material';
 
 import TenThousand from '../../../../../assets/icons/TenThousand';
 
-interface ICardBoxProps {
-   [key: string]: unknown;
-}
-
 const StyledCardBox = styled(Grid)(() => ({
    padding: '1.5rem 1rem .8rem',
    background: 'rgba(255, 255, 255, 0.94)',
@@ -19,7 +15,7 @@ const StyledCardBox = styled(Grid)(() => ({
    }
 }));
 
-const CardBox: FC<ICardBoxProps> = () => {
+const CardBox: FC = () => {
    return (
       <StyledCardBox item>
          <TenThousand />

@@ -3,20 +3,17 @@ import { Grid, styled } from '@mui/material';
 
 import { Typography } from '../../../../UI';
 
-interface ICardDescriptionProps {
-   [key: string]: unknown;
-}
-
 const StyledCardDescription = styled(Grid)(() => ({
    padding: '2rem 0',
+   justifyContent: 'center',
+   display: 'grid',
    '& .card__description': {
       textAlign: 'center',
-      display: 'block',
-      width: '25vw'
+      display: 'block'
    }
 }));
 
-const CardDescription: FC<ICardDescriptionProps> = () => {
+const CardDescription: FC = () => {
    return (
       <StyledCardDescription item xs={12}>
          <Typography variant="body4" className="card__description">

@@ -1,29 +1,25 @@
 import React, { FC } from 'react';
-import { Grid, styled } from '@mui/material';
+import { Grid } from '@mui/material';
 
 import CardWithAirplane from './components/card-with-airplane';
 import CardWithEarth from './components/card-with-earth';
 import CardWithPrice from './components/card-with-price';
 
-interface ICardChartProps {
-   [key: string]: unknown;
-}
-
-const StyledCardChart = styled(Grid)(() => ({}));
-
-const MainCardChart: FC<ICardChartProps> = () => {
+const MainCardChart: FC = () => {
    return (
-      <StyledCardChart container gap={4.8}>
-         <Grid item xs={3.4}>
-            <CardWithAirplane />
+      <Grid container>
+         <Grid item container xs={12} width="100%" spacing={2}>
+            <Grid item md={4} sm={6} xs={12}>
+               <CardWithAirplane />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+               <CardWithEarth />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+               <CardWithPrice />
+            </Grid>
          </Grid>
-         <Grid item xs={4}>
-            <CardWithEarth />
-         </Grid>
-         <Grid item xs={4}>
-            <CardWithPrice />
-         </Grid>
-      </StyledCardChart>
+      </Grid>
    );
 };
 

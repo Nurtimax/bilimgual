@@ -4,15 +4,11 @@ import { Grid, styled } from '@mui/material';
 import CardDescription from './CardDescription';
 import CardBox from './CardBox';
 
-interface ICardContentProps {
-   [key: string]: unknown;
-}
-
 const StyledCardContent = styled(Grid)(() => ({
    justifyContent: 'center'
 }));
 
-const CardContent: FC<ICardContentProps> = () => {
+const CardContent: FC = () => {
    return (
       <StyledCardContent container>
          <CardBox />

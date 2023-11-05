@@ -5,16 +5,12 @@ import { flightVariantsArray } from '../utils';
 
 import AirplaneItem from './AirplaneItem';
 
-interface IAirplaneListProps {
-   [key: string]: unknown;
-}
-
 const StyledAirplaneList = styled(Box)(() => ({
    height: '179px',
    position: 'relative'
 }));
 
-const AirplaneList: FC<IAirplaneListProps> = () => {
+const AirplaneList: FC = () => {
    return (
       <StyledAirplaneList>
          {flightVariantsArray.map((flight) => (

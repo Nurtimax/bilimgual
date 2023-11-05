@@ -6,7 +6,6 @@ import { IFlightVariantsArray } from '../types';
 import Paper from '../../../../../assets/icons/Paper';
 
 interface IAirplaneItemProps {
-   [key: string]: unknown;
    flight: IFlightVariantsArray;
 }
 
