@@ -24,6 +24,10 @@ declare module '@mui/material/styles' {
    }
 }
 
+export const TYPOGRAPHY_CLASSNAMES = {
+   cardDescription: 'card__description'
+};
+
 const themeTypography = createTheme({
    breakpoints: {
       values: {
@@ -46,6 +50,13 @@ const themeTypography = createTheme({
             }
          },
          variants: [
+            {
+               props: { variant: 'body4', className: TYPOGRAPHY_CLASSNAMES.cardDescription },
+               style: {
+                  textAlign: 'center',
+                  display: 'block'
+               }
+            },
             {
                props: { variant: 'h1' },
                style: ({ theme }) => ({
