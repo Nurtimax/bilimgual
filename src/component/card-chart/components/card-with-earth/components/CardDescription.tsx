@@ -11,8 +11,7 @@ const StyledCardDescription = styled(Box)(() => ({
    padding: '.5rem 0 0',
    '& .card__description': {
       textAlign: 'center',
-      display: 'block',
-      width: '25vw'
+      display: 'block'
    }
 }));
 

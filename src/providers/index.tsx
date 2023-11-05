@@ -1,4 +1,4 @@
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, GlobalStyles } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -14,6 +14,7 @@ const Providers: FC<IProvidersProps> = ({ children }) => {
    return (
       <>
          <CssBaseline />
+         <GlobalStyles styles={{}} />
          <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                <Theme>{children}</Theme>
