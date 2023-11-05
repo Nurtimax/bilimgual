@@ -5,22 +5,28 @@ import { BilingualFullIcon } from '../../assets/icons/BilingualFullIcon';
 
 import Navlinks from './Navlinks';
 
-interface HeaderWrapperProps {
-   [key: string]: unknown;
-}
-
-const StyledHeaderWrapper = styled(Box)(() => ({
+const StyledHeaderWrapper = styled(Box)(({ theme }) => ({
    display: 'flex',
    justifyContent: 'space-between',
    alignItems: 'center',
    padding: '1rem 0',
    '& .logo': {
-      width: '174px',
-      height: '42px'
+      [theme.breakpoints.up('md')]: {
+         width: '174px',
+         height: '42px'
+      },
+      [theme.breakpoints.between('sm', 'md')]: {
+         width: '140px',
+         height: '35px'
+      },
+      [theme.breakpoints.down('sm')]: {
+         width: '140px',
+         height: '35px'
+      }
    }
 }));
 
-const HeaderWrapper: FC<HeaderWrapperProps> = () => {
+const HeaderWrapper: FC = () => {
    return (
       <StyledHeaderWrapper>
          <BilingualFullIcon className="logo" />

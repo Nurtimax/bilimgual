@@ -8,7 +8,8 @@ interface IMainLayoutProps {
 }
 
 const StyledMainContent = styled('main')(() => ({
-   padding: '127px 0'
+   padding: '127px 0',
+   background: '#FEF5E8'
 }));
 
 const MainLayout: FC<IMainLayoutProps> = ({ children }) => {

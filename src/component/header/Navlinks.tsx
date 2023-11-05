@@ -13,8 +13,7 @@ interface NavlinksProps {
 const StyledNavlinks = styled(Box)(() => ({
    display: 'flex',
    alignItems: 'center',
-   gap: '60px',
-   width: '30%'
+   gap: '60px'
 }));
 
 const Navlinks: FC<NavlinksProps> = ({ role }) => {
