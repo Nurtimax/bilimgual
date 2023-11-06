@@ -4,6 +4,7 @@ import React from 'react';
 import MainLayout from '../layout';
 import CardChart from '../layout/card-chart';
 import UserExperience from '../layout/user-experience';
+import OurTeam from '../layout/out-team';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -15,6 +16,7 @@ export default function Home() {
       <MainLayout>
          <CardChart />
          <UserExperience />
+         <OurTeam />
       </MainLayout>
    );
 }
