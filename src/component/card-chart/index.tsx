@@ -9,13 +9,13 @@ const MainCardChart: FC = () => {
    return (
       <Grid container>
          <Grid item container xs={12} width="100%" spacing={2}>
-            <Grid item md={4} sm={6} xs={12}>
+            <Grid item md={4} sm={6}>
                <CardWithAirplane />
             </Grid>
-            <Grid item md={4} sm={6} xs={12}>
+            <Grid item md={4} sm={6}>
                <CardWithEarth />
             </Grid>
-            <Grid item md={4} sm={6} xs={12}>
+            <Grid item md={4} sm={6}>
                <CardWithPrice />
             </Grid>
          </Grid>

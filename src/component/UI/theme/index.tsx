@@ -74,11 +74,11 @@ const Theme: FC<ThemeProps> = ({ children }) => {
    const theme = createTheme({
       breakpoints: {
          values: {
-            xl: 0,
+            xs: 0,
             lg: 1200,
             md: 900,
             sm: 600,
-            xs: 1536,
+            xl: 1536,
             lgMobile: 500,
             mdMobile: 400,
             smMobile: 350
