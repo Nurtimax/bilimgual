@@ -1,21 +1,13 @@
 import React, { FC } from 'react';
-import { Box, Container, styled } from '@mui/material';
+import { Container } from '@mui/material';
 
 import MainCardChart from '../../component/card-chart';
 
-interface ICardChartProps {
-   [key: string]: unknown;
-}
-
-const StyledCardChart = styled(Box)(() => ({}));
-
-const CardChart: FC<ICardChartProps> = () => {
+const CardChart: FC = () => {
    return (
-      <StyledCardChart>
-         <Container>
-            <MainCardChart />
-         </Container>
-      </StyledCardChart>
+      <Container>
+         <MainCardChart />
+      </Container>
    );
 };
 

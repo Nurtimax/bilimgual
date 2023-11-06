@@ -7,7 +7,7 @@ import CardWithPrice from './components/card-with-price';
 
 const MainCardChart: FC = () => {
    return (
-      <Grid container>
+      <Grid container py={5}>
          <Grid item md={4} sm={6} xs={12} smMobile={12} mdMobile={12} lgMobile={12}>
             <CardWithAirplane />
          </Grid>

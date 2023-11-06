@@ -279,6 +279,7 @@ const themeTypography: ComponentTypography = {
                lineHeight: 1.3
             },
             [theme.breakpoints.between('mdMobile', 'lgMobile')]: {
+               lineHeight: 1.2,
                fontSize: '14px'
             },
             [theme.breakpoints.down('smMobile')]: {
@@ -335,12 +336,15 @@ const themeTypography: ComponentTypography = {
                fontSize: '16px'
             },
             [theme.breakpoints.between('sm', 'md')]: {
+               lineHeight: 1.2,
                fontSize: '14px'
             },
             [theme.breakpoints.between('smMobile', 'mdMobile')]: {
+               lineHeight: 1.2,
                fontSize: '10px'
             },
             [theme.breakpoints.down('lgMobile')]: {
+               lineHeight: 1.2,
                fontSize: '10px'
             }
          })
@@ -364,13 +368,16 @@ const themeTypography: ComponentTypography = {
                fontSize: '14px'
             },
             [theme.breakpoints.between('sm', 'md')]: {
-               fontSize: '10px'
+               fontSize: '10px',
+               lineHeight: 1.2
             },
             [theme.breakpoints.between('smMobile', 'mdMobile')]: {
-               fontSize: '8px'
+               fontSize: '8px',
+               lineHeight: 1.2
             },
             [theme.breakpoints.down('lgMobile')]: {
-               fontSize: '8px'
+               fontSize: '8px',
+               lineHeight: 1.2
             }
          })
       },

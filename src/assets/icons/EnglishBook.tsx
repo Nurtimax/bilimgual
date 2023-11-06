@@ -1,8 +1,8 @@
 import React, { FC, SVGProps } from 'react';
 
-const EnglishBook: FC<SVGProps<SVGSVGElement>> = () => {
+const EnglishBook: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg width="461" height="420" viewBox="0 0 461 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="461" height="420" viewBox="0 0 461 420" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <path
             d="M290.62 10.3602C160.071 -32.9322 28.1896 66.2853 4.17146 181.238C-8.80239 243.335 8.43567 316.243 56.5999 362.936C154.677 457.964 368.602 432.282 425.55 300.987C468.97 200.885 415.774 51.8723 290.62 10.3602Z"
             fill="#3785D7"
