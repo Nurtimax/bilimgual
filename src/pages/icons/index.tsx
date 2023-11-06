@@ -15,6 +15,7 @@ import VolumeWithShadeIcon from '../../assets/icons/VolumeWithShadeIcon';
 import { BilingualFullIcon } from '../../assets/icons/BilingualFullIcon';
 import CrossIcon from '../../assets/icons/CrossIcon';
 import { VisibilityOnIcon } from '../../assets/icons/VisibilityOnIcon';
+import EnglishBook from '../../assets/icons/EnglishBook';
 
 interface IconsProps {
    children: ReactNode;
@@ -73,6 +74,9 @@ const Icons: FC<IconsProps> = ({ children }) => {
             </li>
             <li>
                <VolumeWithShadeIcon /> VolumeWithShadeIcon
+            </li>
+            <li>
+               <EnglishBook /> EnglishBook
             </li>
          </ul>
          {children}

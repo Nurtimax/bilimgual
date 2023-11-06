@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
 
-interface ITemProps {
-   [key: string]: unknown;
-}
-
-const Item: FC<ITemProps> = () => {
+const Item: FC = () => {
    return <div>Item</div>;
 };
 

@@ -11,10 +11,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
    return (
-      <>
-         <MainLayout>
-            <CardChart />
-         </MainLayout>
-      </>
+      <MainLayout>
+         <CardChart />
+      </MainLayout>
    );
 }
