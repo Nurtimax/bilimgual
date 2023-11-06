@@ -22,7 +22,7 @@ const experienceCards: IExperienceCards[] = [
 
 const ExperienceCardList = memo(() => {
    return (
-      <Grid container py={2.5}>
+      <Grid container py={4} rowSpacing={5}>
          {experienceCards.map(({ id, ...card }) => (
             <Grid key={id} item xs={6}>
                <ExperienceCard {...card} />

@@ -8,12 +8,22 @@ import ExperienceCardList from './ExperienceCardList';
 const MainUserExperience = () => {
    return (
       <Grid container py={10}>
-         <Grid item xs={6} md={6} sm={12} lgMobile={12} mdMobile={12} smMobile={12}>
+         <Grid
+            item
+            xs={6}
+            md={6}
+            sm={12}
+            lgMobile={12}
+            mdMobile={12}
+            smMobile={12}
+            alignContent="space-around"
+            display="grid"
+         >
             <Typography variant="h2" color="#3752B4" pt={1}>
                Unparalleled user <br /> experience
             </Typography>
 
-            <Typography variant="body2" pt={1}>
+            <Typography variant="body2" py={1}>
                The most effective way to perfect a language is by immersing yourself in it. Rosetta Stone for Enterprise
                delivers an effective end-to-end experience, founded on a wealth of carefully structured content. Each
                learner has the opportunity to balance independent study with optional online tutoring in a way that fits
