@@ -1,25 +1,17 @@
 import React, { FC } from 'react';
-import { Grid, styled } from '@mui/material';
 
-import CardContent from './components/CardContent';
+import { CardContent } from '../../../UI';
+import ZeroDollars from '../../../../assets/icons/ZeroDollars';
+
 import CoinContent from './components/coin-contant/CoinContent';
 
-interface ICardWithPriceProps {
-   [key: string]: unknown;
-}
-
-const StyledCardWithPrice = styled(Grid)(() => ({
-   padding: '2rem 0',
-   display: 'grid',
-   placeItems: 'center'
-}));
-
-const CardWithPrice: FC<ICardWithPriceProps> = () => {
+const CardWithPrice: FC = () => {
    return (
-      <StyledCardWithPrice>
-         <CoinContent />
-         <CardContent />
-      </StyledCardWithPrice>
+      <CardContent
+         animateBackground={<CoinContent />}
+         cardBoxItem={<ZeroDollars />}
+         description="Eligible students can take <br /> the test with absolutely zero cost to them."
+      />
    );
 };
 

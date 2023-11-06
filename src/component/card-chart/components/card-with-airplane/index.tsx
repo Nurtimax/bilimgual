@@ -1,19 +1,17 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+
+import { CardContent } from '../../../UI';
+import TenThousand from '../../../../assets/icons/TenThousand';
 
 import AirplaneList from './components/AirplaneList';
-import CardContent from './components/CardContent';
-
-const StyledCardWithAirplane = styled(Box)(() => ({
-   position: 'relative'
-}));
 
 const CardWithAirplane: FC = () => {
    return (
-      <StyledCardWithAirplane>
-         <AirplaneList />
-         <CardContent />
-      </StyledCardWithAirplane>
+      <CardContent
+         animateBackground={<AirplaneList />}
+         description="Over 10,000 fee waivers for <br /> the Bilingual English Test are offered annually."
+         cardBoxItem={<TenThousand />}
+      />
    );
 };
 

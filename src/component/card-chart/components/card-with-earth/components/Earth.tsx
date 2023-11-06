@@ -24,8 +24,7 @@ function Circle() {
 
 export default function Earth() {
    return (
-      <Canvas style={{ width: '210px', height: '180px' }} color="#fff">
-         <color attach="background" args={['#fff']} />
+      <Canvas style={{ width: '210px', height: '180px', background: 'inherit' }}>
          <ambientLight intensity={0.5} />
          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
          <pointLight position={[-10, -10, -10]} />

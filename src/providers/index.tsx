@@ -14,7 +14,13 @@ const Providers: FC<IProvidersProps> = ({ children }) => {
    return (
       <>
          <CssBaseline />
-         <GlobalStyles styles={{}} />
+         <GlobalStyles
+            styles={{
+               body: {
+                  background: '#FEF5E8'
+               }
+            }}
+         />
          <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                <Theme>{children}</Theme>

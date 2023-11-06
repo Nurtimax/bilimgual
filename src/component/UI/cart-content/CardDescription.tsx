@@ -12,7 +12,8 @@ const StyledCardDescription = styled(Typography)(() => ({
    display: 'grid',
    width: '100%',
    minWidth: '100%',
-   placeContent: 'center'
+   placeContent: 'center',
+   textAlign: 'center'
 }));
 
 const CardDescription: FC<ICardDescription> = memo(({ html }) => {

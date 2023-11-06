@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Grid, styled } from '@mui/material';
 
-import CardItem from './components/CardItem';
 import PigWithCoinItem from './components/PigWithCoinItem';
 import PigCoinItem from './components/PigCoinItem';
 import CoinItem from './components/CoinItem';
@@ -18,18 +17,18 @@ interface ICoinContentProps {
 }
 
 const StyledCoinContent = styled(Grid)(() => ({
-   width: '300px',
-   height: '176px',
+   width: '80%',
+   height: '100%',
    position: 'relative',
    display: 'flex',
    alignItems: 'center',
-   justifyContent: 'center'
+   justifyContent: 'center',
+   right: '-10%'
 }));
 
 const CoinContent: FC<ICoinContentProps> = () => {
    return (
       <StyledCoinContent>
-         <CardItem />
          <PigWithCoinItem />
          <PigCoinItem />
          <CoinItem />
