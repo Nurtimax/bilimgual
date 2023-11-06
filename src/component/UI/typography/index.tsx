@@ -66,15 +66,17 @@ const themeTypography: ComponentTypography = {
                lineHeight: 1,
                fontSize: '32px'
             },
-            [theme.breakpoints.between('mdMobile', 'sm')]: {
+            [theme.breakpoints.between('lgMobile', 'sm')]: {
                fontSize: '25px',
                lineHeight: 1
             },
-            [theme.breakpoints.between('smMobile', 'mdMobile')]: {
-               fontSize: '23px'
+            [theme.breakpoints.between('smMobile', 'lgMobile')]: {
+               fontSize: '23px',
+               lineHeight: 1
             },
-            [theme.breakpoints.down('lgMobile')]: {
-               fontSize: '23px'
+            [theme.breakpoints.down('smMobile')]: {
+               fontSize: '21px',
+               lineHeight: 1
             }
          })
       },
@@ -256,6 +258,7 @@ const themeTypography: ComponentTypography = {
             fontFamily: 'Poppins',
             fontWeight: 400,
             lineHeight: '30px',
+            fontSize: '20px',
             /* identical to box height */
 
             color: '#000000',
@@ -271,15 +274,16 @@ const themeTypography: ComponentTypography = {
             [theme.breakpoints.between('sm', 'md')]: {
                fontSize: '18px'
             },
-            [theme.breakpoints.between('mdMobile', 'sm')]: {
+            [theme.breakpoints.between('lgMobile', 'sm')]: {
                fontSize: '16px',
                lineHeight: 1.3
             },
-            [theme.breakpoints.between('smMobile', 'mdMobile')]: {
+            [theme.breakpoints.between('mdMobile', 'lgMobile')]: {
                fontSize: '14px'
             },
-            [theme.breakpoints.down('lgMobile')]: {
-               fontSize: '14px'
+            [theme.breakpoints.down('smMobile')]: {
+               fontSize: '14px',
+               lineHeight: 1.2
             }
          })
       },

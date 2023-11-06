@@ -6,7 +6,7 @@ import { flightVariantsArray } from '../utils';
 import AirplaneItem from './AirplaneItem';
 
 const StyledAirplaneList = styled(Box)(() => ({
-   height: '179px',
+   height: '100%',
    position: 'relative'
 }));
 
