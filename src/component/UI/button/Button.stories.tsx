@@ -1,6 +1,5 @@
+import { Button } from '@mui/material';
 import { Meta, StoryFn } from '@storybook/react';
-
-import Button from '.';
 
 export default {
    title: 'UI/Button',
