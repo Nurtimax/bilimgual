@@ -18,7 +18,7 @@ const MainSignIn = () => {
 
    return (
       <Box sx={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
-         <Card elevation={2} component={Paper} sx={{ background: 'white', width: '40%', p: 4 }}>
+         <Card elevation={2} component={Paper} sx={{ background: 'white', width: '40%' }}>
             <CardHeader
                action={
                   <IconButton onClick={handleBackNavigate}>
@@ -34,17 +34,17 @@ const MainSignIn = () => {
                titleTypographyProps={{ textAlign: 'center', variant: 'body1' }}
             />
 
-            <CardContent>
+            <CardContent sx={{ px: 4 }}>
                <Forms />
             </CardContent>
 
-            <Divider sx={{ color: 'black', p: 2 }}>or</Divider>
+            <Divider sx={{ color: 'black', px: 4, py: 2 }}>or</Divider>
 
-            <CardContent>
+            <CardContent sx={{ px: 4 }}>
                <SocialFroms />
             </CardContent>
 
-            <CardContent sx={{ color: 'black', display: 'flex', justifyContent: 'center', gap: 0.5 }}>
+            <CardContent sx={{ color: 'black', display: 'flex', justifyContent: 'center', gap: 0.5, px: 4 }}>
                Don't have an account?
                <Link href="register" style={{ color: '#3A10E5' }}>
                   Register

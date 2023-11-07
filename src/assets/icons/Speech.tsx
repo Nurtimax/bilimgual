@@ -15,13 +15,13 @@ const Speech: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M21 8C21 4.13401 17.866 1 14 1C10.134 1 7 4.13401 7 8V21C7 24.866 10.134 28 14 28C17.866 28 21 24.866 21 21V8Z"
                stroke="#1B2935"
-               stroke-width="2"
+               strokeWidth="2"
             />
-            <path d="M13 34C6.3726 34 1 28.6274 1 22" stroke="#1B2935" stroke-width="2" />
+            <path d="M13 34C6.3726 34 1 28.6274 1 22" stroke="#1B2935" strokeWidth="2" />
             <path
                d="M12 34V42H7C5.8954 42 5 42.8954 5 44C5 45.1046 5.8954 46 7 46H12"
                stroke="#1B2935"
-               stroke-width="2"
+               strokeWidth="2"
             />
          </g>
          <defs>

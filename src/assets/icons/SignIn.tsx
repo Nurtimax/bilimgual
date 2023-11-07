@@ -7,31 +7,31 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M22.7295 9.22174L35.6972 1.60271V8.22932L22.7295 9.22174Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.2"
-            stroke-miterlimit="10"
-            stroke-linejoin="round"
+            strokeWidth="0.2"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
          />
          <path
             d="M22.7295 9.22133L38.462 3.38866V8.11399L22.7295 9.22133Z"
             fill="white"
             stroke="#565656"
-            stroke-width="0.2"
-            stroke-miterlimit="10"
-            stroke-linejoin="round"
+            strokeWidth="0.2"
+            strokeMiterlimit="10"
+            strokeLinejoin="round"
          />
          <path
             d="M22.7287 9.22145L5.87488 1V7.44205L22.7287 9.22145Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.2"
-            stroke-miterlimit="10"
+            strokeWidth="0.2"
+            strokeMiterlimit="10"
          />
          <path
             d="M22.7285 9.2211L2.32288 2.48654V7.0308L22.7285 9.2211Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.2"
-            stroke-miterlimit="10"
+            strokeWidth="0.2"
+            strokeMiterlimit="10"
          />
          <path
             d="M22.6795 40.9892L0.0243753 36.6051L0 4.79877L22.6551 9.18285L22.6795 40.9892Z"
@@ -664,9 +664,9 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="22.8957"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.12" stop-color="#5E3BED" />
-               <stop offset="0.961458" stop-color="#3A10E5" />
-               <stop offset="1" stop-color="#6069B6" />
+               <stop offset="0.12" stopColor="#5E3BED" />
+               <stop offset="0.961458" stopColor="#3A10E5" />
+               <stop offset="1" stopColor="#6069B6" />
             </linearGradient>
             <linearGradient
                id="paint1_linear_948_9817"
@@ -676,9 +676,9 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="12.706"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#3A10E5" />
-               <stop offset="0.294792" stop-color="#6E52E0" />
-               <stop offset="1" stop-color="#3A10E5" />
+               <stop stopColor="#3A10E5" />
+               <stop offset="0.294792" stopColor="#6E52E0" />
+               <stop offset="1" stopColor="#3A10E5" />
             </linearGradient>
             <linearGradient
                id="paint2_linear_948_9817"
@@ -688,11 +688,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="14.3461"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint3_linear_948_9817"
@@ -702,13 +702,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="14.6209"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#078241" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#4DA576" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#8CC5A7" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#BDDECD" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E1F0E8" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#F7FBF9" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#078241" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#4DA576" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#8CC5A7" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#BDDECD" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E1F0E8" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#F7FBF9" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint4_linear_948_9817"
@@ -718,12 +718,12 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="14.1091"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.1" stop-color="#86368C" stop-opacity="0.06" />
-               <stop offset="0.28" stop-color="#9B58A0" stop-opacity="0.22" />
-               <stop offset="0.54" stop-color="#BC90C0" stop-opacity="0.48" />
-               <stop offset="0.86" stop-color="#EADBEB" stop-opacity="0.83" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.1" stopColor="#86368C" stopOpacity="0.06" />
+               <stop offset="0.28" stopColor="#9B58A0" stopOpacity="0.22" />
+               <stop offset="0.54" stopColor="#BC90C0" stopOpacity="0.48" />
+               <stop offset="0.86" stopColor="#EADBEB" stopOpacity="0.83" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint5_linear_948_9817"
@@ -733,12 +733,12 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="26.6727"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint6_linear_948_9817"
@@ -748,13 +748,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="25.361"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint7_linear_948_9817"
@@ -764,11 +764,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="26.7389"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint8_linear_948_9817"
@@ -778,11 +778,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="585.652"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint9_linear_948_9817"
@@ -792,13 +792,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="36.4664"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint10_linear_948_9817"
@@ -808,13 +808,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="251.512"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint11_linear_948_9817"
@@ -824,13 +824,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="190.438"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint12_linear_948_9817"
@@ -840,12 +840,12 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="424.039"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint13_linear_948_9817"
@@ -855,13 +855,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="224.051"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint14_linear_948_9817"
@@ -871,13 +871,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="223.981"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint15_linear_948_9817"
@@ -887,13 +887,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="188.157"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.21" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.61" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.91" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.21" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.61" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.91" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint16_linear_948_9817"
@@ -903,11 +903,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="21.2725"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint17_linear_948_9817"
@@ -917,13 +917,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="418.285"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint18_linear_948_9817"
@@ -933,13 +933,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="447.244"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint19_linear_948_9817"
@@ -949,12 +949,12 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1250.94"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#FEBF10" />
-               <stop offset="0.12" stop-color="#FDB711" />
-               <stop offset="0.3" stop-color="#FBA014" />
-               <stop offset="0.53" stop-color="#F77C18" />
-               <stop offset="0.79" stop-color="#F2491E" />
-               <stop offset="0.99" stop-color="#ED1C24" />
+               <stop stopColor="#FEBF10" />
+               <stop offset="0.12" stopColor="#FDB711" />
+               <stop offset="0.3" stopColor="#FBA014" />
+               <stop offset="0.53" stopColor="#F77C18" />
+               <stop offset="0.79" stopColor="#F2491E" />
+               <stop offset="0.99" stopColor="#ED1C24" />
             </linearGradient>
             <linearGradient
                id="paint20_linear_948_9817"
@@ -964,13 +964,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="628.726"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint21_linear_948_9817"
@@ -980,13 +980,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="104.883"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint22_linear_948_9817"
@@ -996,11 +996,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="-171.127"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint23_linear_948_9817"
@@ -1010,13 +1010,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="10.0911"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint24_linear_948_9817"
@@ -1026,13 +1026,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="-9.81611"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint25_linear_948_9817"
@@ -1042,11 +1042,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="89.7195"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint26_linear_948_9817"
@@ -1056,13 +1056,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="74.0327"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint27_linear_948_9817"
@@ -1072,13 +1072,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="108.349"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint28_linear_948_9817"
@@ -1088,11 +1088,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="612.222"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint29_linear_948_9817"
@@ -1102,13 +1102,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="23.7072"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint30_linear_948_9817"
@@ -1118,13 +1118,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="313.998"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint31_linear_948_9817"
@@ -1134,13 +1134,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="324.285"
                gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0.01" stop-color="#4059A8" stop-opacity="0" />
-               <stop offset="0.22" stop-color="#7688C0" stop-opacity="0.28" />
-               <stop offset="0.42" stop-color="#A6B2D7" stop-opacity="0.53" />
-               <stop offset="0.62" stop-color="#CCD3E8" stop-opacity="0.74" />
-               <stop offset="0.78" stop-color="#E8EBF5" stop-opacity="0.88" />
-               <stop offset="0.92" stop-color="#F9FAFC" stop-opacity="0.97" />
-               <stop offset="1" stop-color="white" />
+               <stop offset="0.01" stopColor="#4059A8" stopOpacity="0" />
+               <stop offset="0.22" stopColor="#7688C0" stopOpacity="0.28" />
+               <stop offset="0.42" stopColor="#A6B2D7" stopOpacity="0.53" />
+               <stop offset="0.62" stopColor="#CCD3E8" stopOpacity="0.74" />
+               <stop offset="0.78" stopColor="#E8EBF5" stopOpacity="0.88" />
+               <stop offset="0.92" stopColor="#F9FAFC" stopOpacity="0.97" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint32_linear_948_9817"
@@ -1150,11 +1150,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="645.43"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#F7EC13" />
-               <stop offset="0.17" stop-color="#F7E414" />
-               <stop offset="0.45" stop-color="#F7CD17" />
-               <stop offset="0.79" stop-color="#F7A91B" />
-               <stop offset="0.99" stop-color="#F78F1E" />
+               <stop stopColor="#F7EC13" />
+               <stop offset="0.17" stopColor="#F7E414" />
+               <stop offset="0.45" stopColor="#F7CD17" />
+               <stop offset="0.79" stopColor="#F7A91B" />
+               <stop offset="0.99" stopColor="#F78F1E" />
             </linearGradient>
             <linearGradient
                id="paint33_linear_948_9817"
@@ -1164,13 +1164,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="346.741"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint34_linear_948_9817"
@@ -1180,11 +1180,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="211.007"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint35_linear_948_9817"
@@ -1194,11 +1194,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="23.05"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint36_linear_948_9817"
@@ -1208,13 +1208,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="59.6692"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint37_linear_948_9817"
@@ -1224,11 +1224,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="111.592"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint38_linear_948_9817"
@@ -1238,11 +1238,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="97.9984"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#7E2985" stop-opacity="0" />
-               <stop offset="0.32" stop-color="#AC76B1" stop-opacity="0.36" />
-               <stop offset="0.65" stop-color="#D8BFDB" stop-opacity="0.7" />
-               <stop offset="0.89" stop-color="#F4EDF5" stop-opacity="0.92" />
-               <stop offset="1" stop-color="white" />
+               <stop stopColor="#7E2985" stopOpacity="0" />
+               <stop offset="0.32" stopColor="#AC76B1" stopOpacity="0.36" />
+               <stop offset="0.65" stopColor="#D8BFDB" stopOpacity="0.7" />
+               <stop offset="0.89" stopColor="#F4EDF5" stopOpacity="0.92" />
+               <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
                id="paint39_linear_948_9817"
@@ -1252,11 +1252,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="18.7945"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint40_linear_948_9817"
@@ -1266,13 +1266,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="628.136"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint41_linear_948_9817"
@@ -1282,13 +1282,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="568.576"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint42_linear_948_9817"
@@ -1298,13 +1298,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="370.748"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint43_linear_948_9817"
@@ -1314,13 +1314,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="442.065"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint44_linear_948_9817"
@@ -1330,11 +1330,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="590.91"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint45_linear_948_9817"
@@ -1344,13 +1344,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="340.839"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint46_linear_948_9817"
@@ -1360,13 +1360,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="208.312"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint47_linear_948_9817"
@@ -1376,11 +1376,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="588.132"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#68CCE2" />
-               <stop offset="0.15" stop-color="#65C4DE" />
-               <stop offset="0.39" stop-color="#5DADD3" />
-               <stop offset="0.68" stop-color="#5189C0" />
-               <stop offset="0.99" stop-color="#4059A8" />
+               <stop stopColor="#68CCE2" />
+               <stop offset="0.15" stopColor="#65C4DE" />
+               <stop offset="0.39" stopColor="#5DADD3" />
+               <stop offset="0.68" stopColor="#5189C0" />
+               <stop offset="0.99" stopColor="#4059A8" />
             </linearGradient>
             <linearGradient
                id="paint48_linear_948_9817"
@@ -1390,13 +1390,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="271.34"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint49_linear_948_9817"
@@ -1406,13 +1406,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="228.332"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint50_linear_948_9817"
@@ -1422,11 +1422,11 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="1007.95"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="#6ABD45" />
-               <stop offset="0.18" stop-color="#62B543" />
-               <stop offset="0.47" stop-color="#4D9E3F" />
-               <stop offset="0.82" stop-color="#2B7A37" />
-               <stop offset="0.99" stop-color="#176533" />
+               <stop stopColor="#6ABD45" />
+               <stop offset="0.18" stopColor="#62B543" />
+               <stop offset="0.47" stopColor="#4D9E3F" />
+               <stop offset="0.82" stopColor="#2B7A37" />
+               <stop offset="0.99" stopColor="#176533" />
             </linearGradient>
             <linearGradient
                id="paint51_linear_948_9817"
@@ -1436,13 +1436,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="546.034"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
             <linearGradient
                id="paint52_linear_948_9817"
@@ -1452,13 +1452,13 @@ const SignInBilingualLogo: FC<SVGProps<SVGSVGElement>> = (props) => {
                y2="323.731"
                gradientUnits="userSpaceOnUse"
             >
-               <stop stop-color="white" />
-               <stop offset="0.09" stop-color="#FBF8FB" stop-opacity="0.97" />
-               <stop offset="0.22" stop-color="#EFE5F0" stop-opacity="0.88" />
-               <stop offset="0.39" stop-color="#DDC6DF" stop-opacity="0.74" />
-               <stop offset="0.58" stop-color="#C39BC6" stop-opacity="0.53" />
-               <stop offset="0.79" stop-color="#A265A7" stop-opacity="0.28" />
-               <stop offset="1" stop-color="#7E2985" stop-opacity="0" />
+               <stop stopColor="white" />
+               <stop offset="0.09" stopColor="#FBF8FB" stopOpacity="0.97" />
+               <stop offset="0.22" stopColor="#EFE5F0" stopOpacity="0.88" />
+               <stop offset="0.39" stopColor="#DDC6DF" stopOpacity="0.74" />
+               <stop offset="0.58" stopColor="#C39BC6" stopOpacity="0.53" />
+               <stop offset="0.79" stopColor="#A265A7" stopOpacity="0.28" />
+               <stop offset="1" stopColor="#7E2985" stopOpacity="0" />
             </linearGradient>
          </defs>
       </svg>
