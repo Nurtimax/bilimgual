@@ -3,6 +3,7 @@ import React from 'react';
 
 import TeamImageCard from '../UI/team-image-card/TeamImageCard';
 import { ITeamImageCard } from '../../types/team';
+import { SOCIAL_ICONS } from '../../utils/constants/icons';
 
 const teamList: ITeamImageCard[] = [
    {
@@ -13,7 +14,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: <></>,
+            icon: SOCIAL_ICONS.github,
             id: 1,
             link: 'https://github.com/AzamatovaAlbina'
          }
@@ -27,7 +28,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: <></>,
+            icon: SOCIAL_ICONS.github,
             id: 1,
             link: 'https://github.com/Asatbek1'
          }
@@ -41,7 +42,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: <></>,
+            icon: SOCIAL_ICONS.github,
             id: 1,
             link: 'https://github.com/kaamilov'
          }
@@ -55,7 +56,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: <></>,
+            icon: SOCIAL_ICONS.github,
             id: 1,
             link: 'https://github.com/Nurtimax'
          }
@@ -69,7 +70,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: <></>,
+            icon: SOCIAL_ICONS.github,
             id: 1,
             link: 'https://github.com/saltanatzakypova'
          }
