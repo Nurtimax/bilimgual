@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box, Button, styled } from '@mui/material';
 
 import { ERole } from '../../types/role';
-import { Button } from '../UI';
 
 import AdminLinksList from './AdminLinksList';
 import LinksList from './LinksList';
