@@ -2,6 +2,7 @@ import { createTheme, PaletteOptions, ThemeProvider } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 
 import themeTypography from '../typography';
+import Button from '../button';
 
 interface ThemeProps {
    children: ReactNode;
@@ -99,7 +100,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                }
             }
          },
-         MuiTypography: themeTypography
+         MuiTypography: themeTypography,
+         MuiButton: Button
       },
       palette
    });

@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import { Box, IconButton, Menu, MenuItem, styled, useMediaQuery } from '@mui/material';
+import { Box, Button, IconButton, Menu, MenuItem, styled, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
-import { Button } from '../UI';
+import { useRouter } from 'next/router';
 
 const StyledMainLinks = styled(Box)(() => ({
    color: 'black',
@@ -17,6 +16,7 @@ const StyledMainLinks = styled(Box)(() => ({
 const MainLinks: FC = () => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
    const isMobile = useMediaQuery('(min-width:600px)');
+   const pathname = useRouter();
 
    const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget);
@@ -62,7 +62,9 @@ const MainLinks: FC = () => {
          ) : (
             <>
                <Button variant="come">TO COME IN</Button>
-               <Button variant="register">REGISTER</Button>
+               <Button variant="register" onClick={() => pathname.push('sign-in')}>
+                  REGISTER
+               </Button>
             </>
          )}
       </StyledMainLinks>
