@@ -4,8 +4,6 @@ import React, { FC } from 'react';
 import MainSignIn from '../component/sign-in';
 
 const StyledSignIn = styled(Box)`
-   width: 100%;
-   height: 100vh;
    background: #6b0fa9;
 `;
 
