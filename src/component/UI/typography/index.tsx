@@ -356,6 +356,7 @@ const themeTypography: ComponentTypography = {
             fontFamily: 'Poppins',
             fontWeight: 400,
             lineHeight: '21px',
+            fontSize: '14px',
             /* identical to box height */
 
             color: '#000000',
