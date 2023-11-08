@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box, Button, styled } from '@mui/material';
 
 import { ERole } from '../../types/role';
-import { Button } from '../UI';
+import { logOutHandler } from '../../store/slices/authentication-slice';
 
 import AdminLinksList from './AdminLinksList';
 import LinksList from './LinksList';
@@ -18,15 +18,13 @@ const StyledLinks = styled(Box)(() => ({
    alignItems: 'center'
 }));
 
-const StyledButton = styled(Button)(() => ({
-   width: '45%'
-}));
-
 const Links: FC<LinksProps> = ({ role }) => {
    return (
       <StyledLinks>
          {role === 'ADMIN' ? <AdminLinksList /> : <LinksList />}
-         <StyledButton variant="login">log out</StyledButton>
+         <Button sx={{ width: '140px' }} variant="login" onClick={logOutHandler}>
+            log out
+         </Button>
       </StyledLinks>
    );
 };

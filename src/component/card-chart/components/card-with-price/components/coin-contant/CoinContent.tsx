@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Grid, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 import PigWithCoinItem from './components/PigWithCoinItem';
 import PigCoinItem from './components/PigCoinItem';
@@ -16,7 +16,7 @@ interface ICoinContentProps {
    [key: string]: unknown;
 }
 
-const StyledCoinContent = styled(Grid)(() => ({
+const StyledCoinContent = styled(Box)(() => ({
    width: '80%',
    height: '100%',
    position: 'relative',

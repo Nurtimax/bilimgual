@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
-
-import { Button } from '../UI';
+import { Box, Button, styled } from '@mui/material';
 
 interface IEventLinesProps {
    [key: string]: unknown;

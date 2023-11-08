@@ -6,232 +6,253 @@ const ease: Easing | Easing[] = 'backOut';
 
 export const flightVariantsArray: IFlightVariantsArray[] = [
    {
-      initial: {
-         x: 290, // initial position on the x-axis
-         y: 20 // initial position on the y-axis
-      },
-      animate: {
-         x: 400, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 0.3 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1 * 0.3
+      variants: {
+         initial: {
+            x: 290,
+            y: 20
+         },
+         animate: {
+            x: 400,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 0.06,
+               repeatType: 'mirror',
+               repeatDelay: 0.3
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 1
    },
-
    {
-      initial: {
-         x: 260, // initial position on the x-axis
-         y: 30 // initial position on the y-axis
-      },
-      animate: {
-         x: 370, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 1 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.2 * 0.3
+      variants: {
+         initial: {
+            x: 260,
+            y: 30
+         },
+         animate: {
+            x: 370,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 0.2,
+               repeatType: 'mirror',
+               repeatDelay: 0.36
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 2
    },
-
    {
-      initial: {
-         x: 230, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 340, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3.5, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 0.4 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.3 * 0.3
+      variants: {
+         initial: {
+            x: 230,
+            y: 40
+         },
+         animate: {
+            x: 340,
+            y: -100,
+            transition: {
+               duration: 3.5,
+               repeat: Infinity,
+               ease,
+               delay: 0.08000000000000002,
+               repeatType: 'mirror',
+               repeatDelay: 0.39
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 3
    },
-
    {
-      initial: {
-         x: 200, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 310, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3.5, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 2 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.4 * 0.3
+      variants: {
+         initial: {
+            x: 200,
+            y: 40
+         },
+         animate: {
+            x: 310,
+            y: -100,
+            transition: {
+               duration: 3.5,
+               repeat: Infinity,
+               ease,
+               delay: 0.4,
+               repeatType: 'mirror',
+               repeatDelay: 0.42
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 4
    },
-
    {
-      initial: {
-         x: 170, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 290, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 0.5 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.5 * 0.3
+      variants: {
+         initial: {
+            x: 170,
+            y: 40
+         },
+         animate: {
+            x: 290,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 0.1,
+               repeatType: 'mirror',
+               repeatDelay: 0.44999999999999996
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 5
    },
-
    {
-      initial: {
-         x: 140, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 260, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 3 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.6 * 0.3
+      variants: {
+         initial: {
+            x: 140,
+            y: 40
+         },
+         animate: {
+            x: 260,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 0.6000000000000001,
+               repeatType: 'mirror',
+               repeatDelay: 0.48
+            }
+         },
+         style: {
+            width: '25px',
+            height: '25px'
          }
       },
-      style: {
-         width: '25px',
-         height: '25px'
-      }
+      id: 6
    },
-
    {
-      initial: {
-         x: 110, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 230, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3.5, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 0.6 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.8 * 0.3
+      variants: {
+         initial: {
+            x: 110,
+            y: 40
+         },
+         animate: {
+            x: 230,
+            y: -100,
+            transition: {
+               duration: 3.5,
+               repeat: Infinity,
+               ease,
+               delay: 0.12,
+               repeatType: 'mirror',
+               repeatDelay: 0.54
+            }
+         },
+         style: {
+            width: '25px',
+            height: '25px'
          }
       },
-      style: {
-         width: '25px',
-         height: '25px'
-      }
+      id: 7
    },
-
    {
-      initial: {
-         x: 90, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 200, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 4 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 1.9 * 0.3
+      variants: {
+         initial: {
+            x: 90,
+            y: 40
+         },
+         animate: {
+            x: 200,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 0.8,
+               repeatType: 'mirror',
+               repeatDelay: 0.57
+            }
+         },
+         style: {
+            width: '27px',
+            height: '27px'
          }
       },
-      style: {
-         width: '27px',
-         height: '27px'
-      }
+      id: 8
    },
-
    {
-      initial: {
-         x: 60, // initial position on the x-axis
-         y: 40 // initial position on the y-axis,
-      },
-      animate: {
-         x: 170, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3.5, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 0.7 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 2 * 0.3
+      variants: {
+         initial: {
+            x: 60,
+            y: 40
+         },
+         animate: {
+            x: 170,
+            y: -100,
+            transition: {
+               duration: 3.5,
+               repeat: Infinity,
+               ease,
+               delay: 0.13999999999999999,
+               repeatType: 'mirror',
+               repeatDelay: 0.6
+            }
+         },
+         style: {
+            width: '25px',
+            height: '25px'
          }
       },
-      style: {
-         width: '25px',
-         height: '25px'
-      }
+      id: 9
    },
-
    {
-      initial: {
-         x: 30, // initial position on the x-axis
-         y: 40 // initial position on the y-axis
-      },
-      animate: {
-         x: 140, // final position on the x-axis
-         y: -100, // final position on the y-axis
-         transition: {
-            duration: 3, // duration of the animation in seconds,
-            repeat: Infinity,
-            ease,
-            delay: 5 * 0.2,
-            repeatType: 'mirror',
-            repeatDelay: 2.1 * 0.3
+      variants: {
+         initial: {
+            x: 30,
+            y: 40
+         },
+         animate: {
+            x: 140,
+            y: -100,
+            transition: {
+               duration: 3,
+               repeat: Infinity,
+               ease,
+               delay: 1,
+               repeatType: 'mirror',
+               repeatDelay: 0.63
+            }
+         },
+         style: {
+            width: '20px',
+            height: '20px'
          }
       },
-      style: {
-         width: '20px',
-         height: '20px'
-      }
+      id: 10
    }
 ];
