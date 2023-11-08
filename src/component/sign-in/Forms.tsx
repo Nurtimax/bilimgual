@@ -1,16 +1,92 @@
-import { Button, Checkbox, FormControlLabel, FormGroup, TextField, styled } from '@mui/material';
+import {
+   Alert,
+   AlertTitle,
+   Button,
+   Checkbox,
+   Collapse,
+   FormControlLabel,
+   FormGroup,
+   IconButton,
+   TextField,
+   styled
+} from '@mui/material';
+import { FormikErrors, FormikHelpers, useFormik } from 'formik';
 import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import * as yup from 'yup';
+
+const validationSchema = yup.object().shape({
+   email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
+   password: yup
+      .string()
+      .min(8, 'Password must be at least 8 characters long')
+      .required('Password is required')
+      .max(100)
+});
 
 const StyledForms = styled('form')`
    display: grid;
    gap: 20px;
 `;
 
+interface ISignUpValues {
+   email: string;
+   password: string;
+   afterSubmit: Error;
+}
+
+const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
+   try {
+      console.log(values);
+      formikHelpers.resetForm();
+   } catch (error) {
+      const newErrors: FormikErrors<ISignUpValues> = {
+         afterSubmit: { message: '', name: '' },
+         email: '',
+         password: ''
+      };
+
+      formikHelpers.setErrors(newErrors);
+   }
+};
+
 const Forms = () => {
+   const [open, setOpen] = React.useState(true);
+
+   const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
+      initialValues: {
+         email: '',
+         password: '',
+         afterSubmit: {
+            name: '',
+            message: ''
+         }
+      },
+      onSubmit,
+      validationSchema
+   });
+
    return (
-      <StyledForms>
-         <TextField fullWidth label="Email" />
-         <TextField fullWidth label="Password" />
+      <StyledForms onSubmit={handleSubmit}>
+         <TextField
+            fullWidth
+            onChange={handleChange}
+            name="email"
+            value={values.email}
+            helperText={errors.email}
+            error={!!errors.email}
+            label="Email"
+         />
+         <TextField
+            fullWidth
+            onChange={handleChange}
+            name="password"
+            type="password"
+            value={values.password}
+            helperText={errors.password}
+            error={!!errors.password}
+            label="Password"
+         />
          <FormGroup>
             <FormControlLabel
                required
@@ -23,7 +99,31 @@ const Forms = () => {
                }}
             />
          </FormGroup>
-         <Button variant="login" fullWidth>
+
+         {errors.afterSubmit?.message && (
+            <Collapse in={open}>
+               <Alert
+                  severity="error"
+                  action={
+                     <IconButton
+                        aria-label="close"
+                        color="inherit"
+                        size="small"
+                        onClick={() => {
+                           setOpen(false);
+                        }}
+                     >
+                        <CloseIcon fontSize="inherit" />
+                     </IconButton>
+                  }
+               >
+                  <AlertTitle>{errors.afterSubmit.name}</AlertTitle>
+                  {errors.afterSubmit.message}
+               </Alert>
+            </Collapse>
+         )}
+
+         <Button variant="login" type="submit" fullWidth disabled={isSubmitting}>
             SIGN IN
          </Button>
       </StyledForms>
