@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
-import LoginCard from '../UI/sign-in/LoginCard';
+import LoginCard from '../UI/login/LoginCard';
 
 import Forms from './Forms';
 
