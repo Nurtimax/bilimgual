@@ -3,6 +3,7 @@ import React, { FC, ReactNode } from 'react';
 
 import themeTypography from '../typography';
 import Button from '../button';
+import TextField from '../textfield';
 
 interface ThemeProps {
    children: ReactNode;
@@ -101,7 +102,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
             }
          },
          MuiTypography: themeTypography,
-         MuiButton: Button
+         MuiButton: Button,
+         MuiTextField: TextField
       },
       palette
    });

@@ -1,6 +1,20 @@
-import { Button, TextField, styled } from '@mui/material';
-import { FormikHelpers, useFormik } from 'formik';
+import { Alert, AlertTitle, Button, Collapse, IconButton, TextField, styled } from '@mui/material';
+import { FormikErrors, FormikHelpers, useFormik } from 'formik';
+import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
+import * as yup from 'yup';
+
+const validationSchema = yup.object().shape({
+   email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
+   firstName: yup.string().required('First name is required').max(100).min(3),
+   lastName: yup.string().required('Last name is required').max(100).min(3),
+   password: yup
+      .string()
+      .min(8, 'Password must be at least 8 characters long')
+      .required('Password is required')
+      .max(100)
+      .min(3)
+});
 
 const StyledForms = styled('form')`
    display: grid;
@@ -12,22 +26,42 @@ interface ISignUpValues {
    lastName: string;
    email: string;
    password: string;
+   afterSubmit: Error;
 }
 
-const onSubmit = (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
-   console.log(values);
-   formikHelpers.resetForm();
+const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
+   try {
+      console.log(values);
+      formikHelpers.resetForm();
+   } catch (error) {
+      const newErrors: FormikErrors<ISignUpValues> = {
+         afterSubmit: { message: '', name: '' },
+         firstName: '',
+         lastName: '',
+         email: '',
+         password: ''
+      };
+
+      formikHelpers.setErrors(newErrors);
+   }
 };
 
 const Forms = () => {
-   const { values, errors, handleChange, handleSubmit } = useFormik({
+   const [open, setOpen] = React.useState(true);
+
+   const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
       initialValues: {
          email: '',
          firstName: '',
          lastName: '',
-         password: ''
+         password: '',
+         afterSubmit: {
+            name: '',
+            message: ''
+         }
       },
-      onSubmit
+      onSubmit,
+      validationSchema
    });
 
    return (
@@ -39,6 +73,7 @@ const Forms = () => {
             name="firstName"
             label="First name"
             helperText={errors.firstName}
+            error={!!errors.firstName}
          />
          <TextField
             fullWidth
@@ -47,6 +82,7 @@ const Forms = () => {
             name="lastName"
             label="Last name"
             helperText={errors.lastName}
+            error={!!errors.lastName}
          />
          <TextField
             fullWidth
@@ -55,6 +91,7 @@ const Forms = () => {
             name="email"
             label="Email"
             helperText={errors.email}
+            error={!!errors.email}
          />
          <TextField
             fullWidth
@@ -62,10 +99,35 @@ const Forms = () => {
             value={values.password}
             name="password"
             label="Password"
+            type="password"
             helperText={errors.password}
+            error={!!errors.password}
          />
 
-         <Button variant="login" type="submit" fullWidth>
+         {errors.afterSubmit?.message && (
+            <Collapse in={open}>
+               <Alert
+                  severity="error"
+                  action={
+                     <IconButton
+                        aria-label="close"
+                        color="inherit"
+                        size="small"
+                        onClick={() => {
+                           setOpen(false);
+                        }}
+                     >
+                        <CloseIcon fontSize="inherit" />
+                     </IconButton>
+                  }
+               >
+                  <AlertTitle>{errors.afterSubmit.name}</AlertTitle>
+                  {errors.afterSubmit.message}
+               </Alert>
+            </Collapse>
+         )}
+
+         <Button variant="login" type="submit" fullWidth disabled={isSubmitting}>
             SIGN UP
          </Button>
       </StyledForms>
