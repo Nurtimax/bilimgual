@@ -5,6 +5,8 @@ import MainLayout from '../layout';
 import CardChart from '../layout/card-chart';
 import UserExperience from '../layout/user-experience';
 import OurTeam from '../layout/out-team';
+import { useAppSelector } from '../store/hooks';
+import { authSelector } from '../store/helpers/auth';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -12,6 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+   const { fields } = useAppSelector((state) => authSelector(state));
+   console.log(fields);
+
    return (
       <MainLayout>
          <CardChart />

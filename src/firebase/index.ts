@@ -9,7 +9,7 @@ import { getFirestore } from 'firebase/firestore';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
    apiKey: 'AIzaSyAvEC8iNqLRhP24Flj0yZyOiPJ1HsFq3G8',
-   authDomain: 'bilingual-b4413.firebaseapp.com',
+   authDomain: window.location.href,
    projectId: 'bilingual-b4413',
    storageBucket: 'bilingual-b4413.appspot.com',
    messagingSenderId: '784606818444',
