@@ -82,7 +82,7 @@ const ImageList = () => {
    return (
       <Grid container py={6}>
          {teamList.map((team) => (
-            <Grid key={team.id} xs={2.4} sx={{ placeItems: 'center', display: 'grid' }}>
+            <Grid item key={team.id} xs={2.4} sx={{ placeItems: 'center', display: 'grid' }}>
                <TeamImageCard {...team} />
             </Grid>
          ))}
