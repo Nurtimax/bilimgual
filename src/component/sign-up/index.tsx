@@ -1,12 +1,12 @@
-import { Box, Typography } from '@mui/material';
 import React, { useCallback } from 'react';
+import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import LoginCard from '../UI/login/LoginCard';
 
 import Forms from './Forms';
 
-const MainSignIn = () => {
+const MainSignUp = () => {
    const pathname = useRouter();
 
    const handleBackNavigate = useCallback(() => {
@@ -15,23 +15,23 @@ const MainSignIn = () => {
 
    return (
       <LoginCard
-         cardHeaderTitle="Sign in"
+         cardHeaderTitle="Create an Account"
          forms={<Forms />}
          handleBackNavigate={handleBackNavigate}
          haveAccountNode={
-            <Box>
-               Don't have an account?{' '}
+            <>
+               ALREADY HAVE AN ACCOUNT?{' '}
                <Typography
                   variant="bodySmall"
                   sx={{ cursor: 'pointer', color: '#3A10E5' }}
-                  onClick={() => pathname.replace('sign-up')}
+                  onClick={() => pathname.replace('sign-in')}
                >
-                  Register
+                  LOG IN
                </Typography>
-            </Box>
+            </>
          }
       />
    );
 };
 
-export default MainSignIn;
+export default MainSignUp;
