@@ -39,7 +39,7 @@ const LoginCard: FC<ILoginCard> = memo(({ handleBackNavigate, cardHeaderTitle, f
                <SocialFroms />
             </CardContent>
 
-            <CardContent sx={{ color: 'black', display: 'flex', justifyContent: 'center', gap: 0.5, px: 4 }}>
+            <CardContent sx={{ display: 'flex', justifyContent: 'center', gap: 0.5, px: 4, color: '#757575' }}>
                {haveAccountNode}
             </CardContent>
          </Card>
