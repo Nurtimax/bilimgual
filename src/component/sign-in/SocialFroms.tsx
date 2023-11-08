@@ -6,7 +6,10 @@ import { signInWithGoogle } from '../../store/slices/authentication-slice';
 
 const SocialFroms = () => {
    const handleSignInWithGoogle = async () => {
-      await signInWithGoogle();
+      const response = await signInWithGoogle();
+      if (response) {
+         console.log(response);
+      }
    };
 
    return (

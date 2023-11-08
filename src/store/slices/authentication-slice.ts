@@ -8,7 +8,7 @@ import { auth } from '../../firebase';
 import { RootState } from '.';
 
 const name = 'auth';
-const initialState: IReduxAuthInitialState = {
+export const initialState: IReduxAuthInitialState = {
    fields: {
       emailVerified: false,
       isAnonymous: false,

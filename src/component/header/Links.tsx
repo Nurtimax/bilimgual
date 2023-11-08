@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Button, styled } from '@mui/material';
+import { useRouter } from 'next/router';
 
 import { ERole } from '../../types/role';
 
@@ -22,10 +23,18 @@ const StyledButton = styled(Button)(() => ({
 }));
 
 const Links: FC<LinksProps> = ({ role }) => {
+   const { replace } = useRouter();
+
+   const handleLogOut = () => {
+      replace('sign-out');
+   };
+
    return (
       <StyledLinks>
          {role === 'ADMIN' ? <AdminLinksList /> : <LinksList />}
-         <StyledButton variant="login">log out</StyledButton>
+         <StyledButton variant="login" onClick={handleLogOut}>
+            log out
+         </StyledButton>
       </StyledLinks>
    );
 };

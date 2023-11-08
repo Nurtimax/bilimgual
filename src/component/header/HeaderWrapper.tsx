@@ -30,7 +30,7 @@ const HeaderWrapper: FC = () => {
    return (
       <StyledHeaderWrapper>
          <BilingualFullIcon className="logo" />
-         <Navlinks role="" />
+         <Navlinks />
       </StyledHeaderWrapper>
    );
 };
