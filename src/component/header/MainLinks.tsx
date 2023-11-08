@@ -61,8 +61,10 @@ const MainLinks: FC = () => {
             </>
          ) : (
             <>
-               <Button variant="come">TO COME IN</Button>
-               <Button variant="register" onClick={() => pathname.push('sign-in')}>
+               <Button variant="come" onClick={() => pathname.push('sign-in')}>
+                  TO COME IN
+               </Button>
+               <Button variant="register" onClick={() => pathname.push('sign-up')}>
                   REGISTER
                </Button>
             </>
