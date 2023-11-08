@@ -25,9 +25,8 @@ const Providers: FC<IProvidersProps> = ({ children }) => {
          />
          <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-               <Theme>
-                  <AuthProvider>{children}</AuthProvider>
-               </Theme>
+               <AuthProvider />
+               <Theme>{children}</Theme>
             </PersistGate>
          </Provider>
       </>

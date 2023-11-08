@@ -1,3 +1,5 @@
+import { UserInfo, UserMetadata } from 'firebase/auth';
+
 export interface IReduxAuthInitialState {
    fields: IReduxAuthInitialStateFields;
    error?: boolean;
@@ -5,7 +7,22 @@ export interface IReduxAuthInitialState {
    loading?: boolean;
 }
 
+export interface IUserMetaDataExtends extends UserMetadata {
+   createdAt?: string;
+   lastLoginAt?: string;
+}
+
 export interface IReduxAuthInitialStateFields {
-   email: string;
-   password: string;
+   emailVerified: boolean;
+   isAnonymous: boolean;
+   metadata: IUserMetaDataExtends;
+   providerData: UserInfo[];
+   refreshToken: string;
+   tenantId: null | string;
+   displayName: null | string;
+   email: null | string;
+   phoneNumber: null | string;
+   photoURL: null | string;
+   providerId: string;
+   uid: string;
 }

@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { GoogleAuthProvider, User, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
-import { IReduxAuthInitialState } from '../../types/auth';
+import { IReduxAuthInitialState, IReduxAuthInitialStateFields } from '../../types/auth';
 import { auth } from '../../firebase';
 
 import { RootState } from '.';
@@ -10,8 +10,23 @@ import { RootState } from '.';
 const name = 'auth';
 const initialState: IReduxAuthInitialState = {
    fields: {
-      email: '',
-      password: ''
+      emailVerified: false,
+      isAnonymous: false,
+      metadata: {
+         creationTime: '',
+         lastSignInTime: '',
+         createdAt: '',
+         lastLoginAt: ''
+      },
+      providerData: [],
+      refreshToken: '',
+      tenantId: null,
+      displayName: null,
+      email: null,
+      phoneNumber: null,
+      photoURL: null,
+      providerId: '',
+      uid: ''
    }
 };
 
@@ -33,7 +48,7 @@ const authenticationSlice = createSlice({
    name,
    initialState,
    reducers: {
-      authUserSave: (state, actions) => {
+      authUserSave: (state, actions: PayloadAction<IReduxAuthInitialStateFields>) => {
          const value = actions.payload;
 
          state.fields = value;
@@ -43,5 +58,37 @@ const authenticationSlice = createSlice({
 
 const actionAuthentication = authenticationSlice.actions;
 export const authSelector = (state: RootState) => state.auth;
+
+export const getAuthUserDataFields = (user: User): IReduxAuthInitialStateFields => {
+   const {
+      displayName,
+      email,
+      emailVerified,
+      isAnonymous,
+      metadata,
+      phoneNumber,
+      photoURL,
+      providerData,
+      providerId,
+      refreshToken,
+      tenantId,
+      uid
+   } = user;
+
+   return {
+      displayName,
+      email,
+      emailVerified,
+      isAnonymous,
+      metadata,
+      phoneNumber,
+      photoURL,
+      providerData,
+      providerId,
+      refreshToken,
+      tenantId,
+      uid
+   };
+};
 
 export { authenticationSlice, actionAuthentication };

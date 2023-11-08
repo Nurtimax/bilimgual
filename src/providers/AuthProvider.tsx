@@ -1,20 +1,18 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { useAppDispatch } from '../store/hooks';
-import { actionAuthentication } from '../store/slices/authentication-slice';
+import { actionAuthentication, getAuthUserDataFields } from '../store/slices/authentication-slice';
 import { auth } from '../firebase';
 
-interface IAuthProvider {
-   children: ReactNode;
-}
-
-const AuthProvider: FC<IAuthProvider> = ({ children }) => {
+const AuthProvider: FC = () => {
    const dispatch = useAppDispatch();
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-         dispatch(actionAuthentication.authUserSave(currentUser));
+         if (currentUser) {
+            dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser)));
+         }
       });
 
       return () => {
@@ -22,7 +20,7 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
       };
    }, [dispatch]);
 
-   return <>{children}</>;
+   return <></>;
 };
 
 export default AuthProvider;
