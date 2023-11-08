@@ -26,6 +26,22 @@ const MainLinks: FC = () => {
       setAnchorEl(null);
    };
 
+   const handleSignIn = () => {
+      pathname.push('sign-in');
+
+      if (!isMobile) {
+         handleClose();
+      }
+   };
+
+   const handleSignUp = () => {
+      pathname.push('sign-up');
+
+      if (!isMobile) {
+         handleClose();
+      }
+   };
+
    return (
       <StyledMainLinks>
          {!isMobile ? (
@@ -55,16 +71,16 @@ const MainLinks: FC = () => {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                >
-                  <MenuItem onClick={handleClose}>TO COME IN</MenuItem>
-                  <MenuItem onClick={handleClose}>REGISTER</MenuItem>
+                  <MenuItem onClick={handleSignIn}>TO COME IN</MenuItem>
+                  <MenuItem onClick={handleSignUp}>REGISTER</MenuItem>
                </Menu>
             </>
          ) : (
             <>
-               <Button variant="come" onClick={() => pathname.push('sign-in')}>
+               <Button variant="come" onClick={handleSignIn}>
                   TO COME IN
                </Button>
-               <Button variant="register" onClick={() => pathname.push('sign-up')}>
+               <Button variant="register" onClick={handleSignUp}>
                   REGISTER
                </Button>
             </>
