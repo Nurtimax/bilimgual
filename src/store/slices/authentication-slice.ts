@@ -1,11 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { GoogleAuthProvider, User, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 import { IReduxAuthInitialState, IReduxAuthInitialStateFields } from '../../types/auth';
 import { auth } from '../../firebase';
-
-import { RootState } from '.';
 
 const name = 'auth';
 export const initialState: IReduxAuthInitialState = {
@@ -57,38 +55,5 @@ const authenticationSlice = createSlice({
 });
 
 const actionAuthentication = authenticationSlice.actions;
-export const authSelector = (state: RootState) => state.auth;
-
-export const getAuthUserDataFields = (user: User): IReduxAuthInitialStateFields => {
-   const {
-      displayName,
-      email,
-      emailVerified,
-      isAnonymous,
-      metadata,
-      phoneNumber,
-      photoURL,
-      providerData,
-      providerId,
-      refreshToken,
-      tenantId,
-      uid
-   } = user;
-
-   return {
-      displayName,
-      email,
-      emailVerified,
-      isAnonymous,
-      metadata,
-      phoneNumber,
-      photoURL,
-      providerData,
-      providerId,
-      refreshToken,
-      tenantId,
-      uid
-   };
-};
 
 export { authenticationSlice, actionAuthentication };

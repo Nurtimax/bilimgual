@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import { auth } from '../firebase';
 import { useAppSelector } from '../store/hooks';
-import { authSelector } from '../store/slices/authentication-slice';
+import { authSelector } from '../store/helpers/auth';
 
 const SignOut: FC = () => {
    const [loading, setLoading] = useState(false);

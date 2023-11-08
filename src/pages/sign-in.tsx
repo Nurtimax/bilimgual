@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import MainSignIn from '../component/sign-in';
 import { useAppSelector } from '../store/hooks';
-import { authSelector } from '../store/slices/authentication-slice';
+import { authSelector } from '../store/helpers/auth';
 
 const StyledSignIn = styled(Box)`
    background: #6b0fa9;

@@ -2,8 +2,8 @@ import { Box, styled } from '@mui/material';
 import React, { FC } from 'react';
 
 import { useAppSelector } from '../../store/hooks';
-import { authSelector } from '../../store/slices/authentication-slice';
 import { ERole } from '../../types/role';
+import { authSelector } from '../../store/helpers/auth';
 
 import Links from './Links';
 import MainLinks from './MainLinks';
