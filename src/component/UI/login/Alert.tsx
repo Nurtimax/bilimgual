@@ -14,6 +14,7 @@ const LoginAlert: FC<ILoginAlert> = memo(({ message, errorName }) => {
       <Collapse in={open}>
          <Alert
             severity="error"
+            color="error"
             action={
                <IconButton
                   aria-label="close"
