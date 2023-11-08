@@ -17,6 +17,7 @@ const SignUp = () => {
       replace('/');
       return <></>;
    }
+
    return (
       <StyledSignUp>
          <Container></Container>
