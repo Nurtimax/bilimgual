@@ -1,57 +1,36 @@
-import { Box, Card, CardContent, CardHeader, Divider, IconButton, Paper } from '@mui/material';
-import React from 'react';
-import CloseIcon from '@mui/icons-material/Close';
+import { Box, Typography } from '@mui/material';
+import React, { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
-import SignInBilingualLogo from '../../assets/icons/SignIn';
+import LoginCard from '../UI/sign-in/LoginCard';
 
 import Forms from './Forms';
-import SocialFroms from './SocialFroms';
 
 const MainSignIn = () => {
    const pathname = useRouter();
 
-   const handleBackNavigate = () => {
+   const handleBackNavigate = useCallback(() => {
       pathname.back();
-   };
+   }, [pathname]);
 
    return (
-      <Box sx={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
-         <Card elevation={2} component={Paper} sx={{ background: 'white', width: '40%' }}>
-            <CardHeader
-               action={
-                  <IconButton onClick={handleBackNavigate}>
-                     <CloseIcon />
-                  </IconButton>
-               }
-               title={
-                  <Box sx={{ display: 'grid', placeItems: 'center' }}>
-                     <SignInBilingualLogo />
-                     Sign in
-                  </Box>
-               }
-               titleTypographyProps={{ textAlign: 'center', variant: 'body1' }}
-            />
-
-            <CardContent sx={{ px: 4 }}>
-               <Forms />
-            </CardContent>
-
-            <Divider sx={{ color: 'black', px: 4, py: 2 }}>or</Divider>
-
-            <CardContent sx={{ px: 4 }}>
-               <SocialFroms />
-            </CardContent>
-
-            <CardContent sx={{ color: 'black', display: 'flex', justifyContent: 'center', gap: 0.5, px: 4 }}>
-               Don't have an account?
-               <Link href="register" style={{ color: '#3A10E5' }}>
+      <LoginCard
+         cardHeaderTitle="Sign in"
+         forms={<Forms />}
+         handleBackNavigate={handleBackNavigate}
+         haveAccountNode={
+            <Box>
+               Don't have an account?{' '}
+               <Typography
+                  variant="bodySmall"
+                  sx={{ cursor: 'pointer', color: '#3A10E5' }}
+                  onClick={() => pathname.replace('sign-up')}
+               >
                   Register
-               </Link>
-            </CardContent>
-         </Card>
-      </Box>
+               </Typography>
+            </Box>
+         }
+      />
    );
 };
 

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
+import MainSignUp from '../component/sign-up';
 
 const StyledSignUp = styled(Box)`
    background: #6b0fa9;
@@ -20,7 +21,9 @@ const SignUp = () => {
 
    return (
       <StyledSignUp>
-         <Container></Container>
+         <Container>
+            <MainSignUp />
+         </Container>
       </StyledSignUp>
    );
 };
