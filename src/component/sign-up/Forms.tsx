@@ -1,7 +1,10 @@
 import { Button, TextField, styled } from '@mui/material';
 import React from 'react';
 
-const StyledForms = styled('form')``;
+const StyledForms = styled('form')`
+   display: grid;
+   gap: 20px;
+`;
 
 const Forms = () => {
    return (
