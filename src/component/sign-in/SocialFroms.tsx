@@ -13,7 +13,7 @@ const SocialFroms = () => {
 
       if (response) {
          try {
-            await addDoc(collection(firestore, 'users', `${response.user.email}`, response.user.uid), {
+            await addDoc(collection(firestore, 'users', `${response.user.email}`), {
                role: 'USER'
             });
          } catch (error) {
