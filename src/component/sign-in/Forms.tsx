@@ -7,7 +7,7 @@ const Forms = () => {
    return (
       <StyledForms>
          <TextField fullWidth label="Email" />
-         <TextField fullWidth label="Password" sx={{ mt: 1.5 }} />
+         <TextField fullWidth label="Password" />
          <FormGroup>
             <FormControlLabel
                required
