@@ -16,7 +16,6 @@ const StyledNavlinks = styled(Box)(() => ({
 
 const Navlinks: FC = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
-   console.log(fields);
 
    const role: ERole = fields.emailVerified ? 'USER' : '';
 
