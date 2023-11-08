@@ -18,8 +18,8 @@ const StyledAirplaneItem = styled(Box)(() => ({
 const AirplaneItem: FC<IAirplaneItemProps> = ({ flight }) => {
    return (
       <StyledAirplaneItem>
-         <motion.div variants={flight} initial="initial" animate="animate">
-            <Paper style={flight.style} />
+         <motion.div variants={flight.variants} initial="initial" animate="animate">
+            <Paper style={flight.variants.style} />
          </motion.div>
       </StyledAirplaneItem>
    );

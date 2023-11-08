@@ -14,7 +14,7 @@ const AirplaneList: FC = () => {
    return (
       <StyledAirplaneList>
          {flightVariantsArray.map((flight) => (
-            <AirplaneItem flight={flight} />
+            <AirplaneItem key={flight.id} flight={flight} />
          ))}
       </StyledAirplaneList>
    );
