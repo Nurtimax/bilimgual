@@ -18,10 +18,6 @@ const StyledLinks = styled(Box)(() => ({
    alignItems: 'center'
 }));
 
-const StyledButton = styled(Button)(() => ({
-   width: '45%'
-}));
-
 const Links: FC<LinksProps> = ({ role }) => {
    const { replace } = useRouter();
 
@@ -32,9 +28,9 @@ const Links: FC<LinksProps> = ({ role }) => {
    return (
       <StyledLinks>
          {role === 'ADMIN' ? <AdminLinksList /> : <LinksList />}
-         <StyledButton variant="login" onClick={handleLogOut}>
+         <Button sx={{ width: '140px' }} variant="login" onClick={handleLogOut}>
             log out
-         </StyledButton>
+         </Button>
       </StyledLinks>
    );
 };
