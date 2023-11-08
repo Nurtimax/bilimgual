@@ -1,8 +1,9 @@
-import { Alert, AlertTitle, Button, Collapse, IconButton, TextField, styled } from '@mui/material';
+import { Button, TextField, styled } from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
-import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import * as yup from 'yup';
+
+import LoginAlert from '../UI/login/Alert';
 
 const validationSchema = yup.object().shape({
    email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
@@ -47,8 +48,6 @@ const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISig
 };
 
 const Forms = () => {
-   const [open, setOpen] = React.useState(true);
-
    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
       initialValues: {
          email: '',
@@ -105,26 +104,7 @@ const Forms = () => {
          />
 
          {errors.afterSubmit?.message && (
-            <Collapse in={open}>
-               <Alert
-                  severity="error"
-                  action={
-                     <IconButton
-                        aria-label="close"
-                        color="inherit"
-                        size="small"
-                        onClick={() => {
-                           setOpen(false);
-                        }}
-                     >
-                        <CloseIcon fontSize="inherit" />
-                     </IconButton>
-                  }
-               >
-                  <AlertTitle>{errors.afterSubmit.name}</AlertTitle>
-                  {errors.afterSubmit.message}
-               </Alert>
-            </Collapse>
+            <LoginAlert errorName={errors.afterSubmit.name} message={errors.afterSubmit.message} />
          )}
 
          <Button variant="login" type="submit" fullWidth disabled={isSubmitting}>
