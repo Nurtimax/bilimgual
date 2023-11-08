@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material';
 import React from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
-import { addDoc, collection } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { signInWithGoogle } from '../../store/slices/authentication-slice';
@@ -13,7 +13,7 @@ const SocialFroms = () => {
 
       if (response) {
          try {
-            await addDoc(collection(firestore, 'users', `${response.user.email}`), {
+            await setDoc(doc(firestore, 'users', `${response.user.email}`), {
                role: 'USER'
             });
          } catch (error) {

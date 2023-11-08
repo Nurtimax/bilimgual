@@ -7,6 +7,7 @@ import { useAppDispatch } from '../store/hooks';
 import { actionAuthentication, initialState } from '../store/slices/authentication-slice';
 import { auth, firestore } from '../firebase';
 import { getAuthUserDataFields } from '../store/helpers/auth';
+import { IUserRole } from '../types/auth';
 
 const AuthProvider: FC = () => {
    const dispatch = useAppDispatch();
@@ -19,17 +20,18 @@ const AuthProvider: FC = () => {
 
                const docSnap = await getDoc(docRef);
 
-               console.log(docSnap.data());
+               const data = docSnap.data() as IUserRole;
+
+               if (data) {
+                  dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
+               }
             } catch (error) {
                if (error instanceof Error) {
                   toast.error(error.message);
                } else {
                   toast.error('Something is wrong');
                }
-               return;
             }
-
-            dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser)));
          } else {
             dispatch(actionAuthentication.authUserSave(initialState.fields));
          }

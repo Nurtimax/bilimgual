@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 import { IReduxAuthInitialState, IReduxAuthInitialStateFields } from '../../types/auth';
@@ -24,7 +24,8 @@ export const initialState: IReduxAuthInitialState = {
       phoneNumber: null,
       photoURL: null,
       providerId: '',
-      uid: ''
+      uid: '',
+      role: ''
    }
 };
 
@@ -38,6 +39,16 @@ export const signInWithGoogle = async () => {
          toast.error(error.message);
       } else {
          toast.error('Sorry. Something went wrong with Google sign-in');
+      }
+   }
+};
+
+export const logOutHandler = async () => {
+   try {
+      await signOut(auth);
+   } catch (error) {
+      if (error instanceof Error) {
+         toast.error(error.message);
       }
    }
 };

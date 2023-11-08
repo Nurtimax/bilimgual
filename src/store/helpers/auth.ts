@@ -1,11 +1,11 @@
 import { User } from 'firebase/auth';
 
-import { IReduxAuthInitialStateFields } from '../../types/auth';
+import { IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
 import { RootState } from '../slices';
 
 export const authSelector = (state: RootState) => state.auth;
 
-export const getAuthUserDataFields = (user: User): IReduxAuthInitialStateFields => {
+export const getAuthUserDataFields = (user: User, data: IUserRole): IReduxAuthInitialStateFields => {
    const {
       displayName,
       email,
@@ -33,6 +33,7 @@ export const getAuthUserDataFields = (user: User): IReduxAuthInitialStateFields 
       providerId,
       refreshToken,
       tenantId,
-      uid
+      uid,
+      ...data
    };
 };

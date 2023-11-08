@@ -1,5 +1,7 @@
 import { UserInfo, UserMetadata } from 'firebase/auth';
 
+import { ERole } from './role';
+
 export interface IReduxAuthInitialState {
    fields: IReduxAuthInitialStateFields;
    error?: boolean;
@@ -25,4 +27,9 @@ export interface IReduxAuthInitialStateFields {
    photoURL: null | string;
    providerId: string;
    uid: string;
+   role: ERole;
+}
+
+export interface IUserRole {
+   role: ERole;
 }
