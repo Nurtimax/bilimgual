@@ -2,6 +2,7 @@ import { Box, Button } from '@mui/material';
 import React from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
 import { addDoc, collection } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 import { signInWithGoogle } from '../../store/slices/authentication-slice';
 import { firestore } from '../../firebase';
@@ -11,7 +12,17 @@ const SocialFroms = () => {
       const response = await signInWithGoogle();
 
       if (response) {
-         await addDoc(collection(firestore, 'users', response.user.uid), { role: 'USER' });
+         try {
+            await addDoc(collection(firestore, 'users', `${response.user.email}`, response.user.uid), {
+               role: 'USER'
+            });
+         } catch (error) {
+            if (error instanceof Error) {
+               toast.error(error.message);
+            } else {
+               toast.error('Something wrong with database');
+            }
+         }
       }
    };
 
