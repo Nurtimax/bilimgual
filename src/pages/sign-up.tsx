@@ -14,7 +14,7 @@ const SignUp = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
    const { replace } = useRouter();
 
-   if (fields.emailVerified) {
+   if (fields.email) {
       replace('/');
       return <></>;
    }

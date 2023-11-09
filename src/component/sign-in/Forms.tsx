@@ -2,8 +2,10 @@ import { Button, Checkbox, FormControlLabel, FormGroup, TextField, styled } from
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import LoginAlert from '../UI/login/Alert';
+import { auth } from '../../firebase';
 
 const validationSchema = yup.object().shape({
    email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
@@ -27,7 +29,7 @@ interface ISignUpValues {
 
 const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
    try {
-      console.log(values);
+      await signInWithEmailAndPassword(auth, values.email, values.password);
       formikHelpers.resetForm();
    } catch (error) {
       const newErrors: FormikErrors<ISignUpValues> = {

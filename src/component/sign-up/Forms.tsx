@@ -2,8 +2,11 @@ import { Button, TextField, styled } from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 import LoginAlert from '../UI/login/Alert';
+import { auth, firestore } from '../../firebase';
 
 const validationSchema = yup.object().shape({
    email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
@@ -14,7 +17,6 @@ const validationSchema = yup.object().shape({
       .min(8, 'Password must be at least 8 characters long')
       .required('Password is required')
       .max(100)
-      .min(3)
 });
 
 const StyledForms = styled('form')`
@@ -32,7 +34,13 @@ interface ISignUpValues {
 
 const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
    try {
-      console.log(values);
+      const response = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      updateProfile(response.user, { displayName: `${values.firstName} ${values.lastName}` });
+
+      await setDoc(doc(firestore, 'users', `${values.email}`), {
+         role: 'USER'
+      });
+
       formikHelpers.resetForm();
    } catch (error) {
       const newErrors: FormikErrors<ISignUpValues> = {
