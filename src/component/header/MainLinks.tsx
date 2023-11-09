@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import { Box, Button, MenuItem, styled } from '@mui/material';
+import { Box, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
 import { useRouter } from 'next/router';
+import LoginIcon from '@mui/icons-material/Login';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 import HeaderMobileMenu from '../UI/menu/HeaderMobileMenu';
 
@@ -39,10 +41,29 @@ const MainLinks: FC = () => {
                </>
             }
             menuItems={
-               <>
-                  <MenuItem onClick={handleSignIn}>TO COME IN</MenuItem>
-                  <MenuItem onClick={handleSignUp}>REGISTER</MenuItem>
-               </>
+               <Box role="presentation">
+                  <List>
+                     {[
+                        { title: 'TO COME IN', icon: <LoginIcon />, click: handleSignIn },
+                        { title: 'REGISTER', icon: <HowToRegIcon />, click: handleSignUp }
+                     ].map((text) => (
+                        <ListItem
+                           key={text.title}
+                           disablePadding
+                           sx={{ borderRadius: '5px', py: 0 }}
+                           onClick={text.click}
+                        >
+                           <ListItemButton>
+                              <ListItemIcon>{text.icon}</ListItemIcon>
+                              <ListItemText
+                                 primaryTypographyProps={{ sx: { textTransform: 'uppercase' } }}
+                                 primary={text.title}
+                              />
+                           </ListItemButton>
+                        </ListItem>
+                     ))}
+                  </List>
+               </Box>
             }
          />
       </StyledMainLinks>

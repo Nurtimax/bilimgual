@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
-import { Box, Button, MenuItem, styled } from '@mui/material';
-import { useRouter } from 'next/router';
+import { Box, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import QuizIcon from '@mui/icons-material/Quiz';
+import TurnedInIcon from '@mui/icons-material/TurnedIn';
+import CategoryIcon from '@mui/icons-material/Category';
 
 import { ERole } from '../../types/role';
 import { logOutHandler } from '../../store/slices/authentication-slice';
@@ -21,7 +24,6 @@ const StyledLinks = styled(Box)(() => ({
 }));
 
 const Links: FC<LinksProps> = ({ role }) => {
-   const { push } = useRouter();
    return (
       <StyledLinks>
          <HeaderMobileMenu
@@ -34,17 +36,32 @@ const Links: FC<LinksProps> = ({ role }) => {
                </>
             }
             menuItems={
-               <>
-                  <MenuItem onClick={() => push('/tests')}>tests</MenuItem>
-
-                  {role === 'ADMIN' ? (
-                     <MenuItem onClick={() => push('/admin-result')}>submitted results</MenuItem>
-                  ) : (
-                     <MenuItem onClick={() => push('/my-result')}>MY RESULTS</MenuItem>
-                  )}
-
-                  <MenuItem onClick={logOutHandler}>log out</MenuItem>
-               </>
+               <Box role="presentation">
+                  <List>
+                     {[
+                        { title: 'tests', icon: <QuizIcon />, click: () => {} },
+                        role === 'ADMIN'
+                           ? { title: 'submitted results', icon: <TurnedInIcon />, click: () => {} }
+                           : { title: 'MY RESULTS', icon: <CategoryIcon />, click: () => {} },
+                        { title: 'log out', icon: <ExitToAppIcon color="error" />, click: logOutHandler }
+                     ].map((text) => (
+                        <ListItem
+                           key={text.title}
+                           disablePadding
+                           sx={{ borderRadius: '5px', py: 0 }}
+                           onClick={text.click}
+                        >
+                           <ListItemButton>
+                              <ListItemIcon>{text.icon}</ListItemIcon>
+                              <ListItemText
+                                 primaryTypographyProps={{ sx: { textTransform: 'uppercase' } }}
+                                 primary={text.title}
+                              />
+                           </ListItemButton>
+                        </ListItem>
+                     ))}
+                  </List>
+               </Box>
             }
          />
       </StyledLinks>

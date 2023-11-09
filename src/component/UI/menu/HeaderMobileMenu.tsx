@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, memo } from 'react';
-import { IconButton, Menu, useMediaQuery } from '@mui/material';
+import { Drawer, IconButton, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 interface IHeaderMobileMenu {
@@ -25,33 +25,19 @@ const HeaderMobileMenu: FC<IHeaderMobileMenu> = memo(({ menuItems, buttons }) =>
 
    return (
       <>
-         <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
-            color="inherit"
-         >
+         <IconButton onClick={handleMenu}>
             <MenuIcon />
          </IconButton>
-         <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{
-               vertical: 'top',
-               horizontal: 'right'
-            }}
-            keepMounted
-            transformOrigin={{
-               vertical: 'top',
-               horizontal: 'right'
-            }}
-            PaperProps={{ sx: { background: 'white', color: 'black' } }}
-            open={Boolean(anchorEl)}
+
+         <Drawer
+            anchor="right"
+            variant="temporary"
+            sx={{ width: '100vw', minWidth: '100vw' }}
+            open={!!anchorEl}
             onClose={handleClose}
          >
             {menuItems}
-         </Menu>
+         </Drawer>
       </>
    );
 });
