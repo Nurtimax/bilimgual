@@ -11,7 +11,7 @@ interface IAirplaneItemProps {
 
 const StyledAirplaneItem = styled(Box)(() => ({
    position: 'absolute',
-   zIndex: -10,
+   zIndex: 0,
    bottom: '10%'
 }));
 

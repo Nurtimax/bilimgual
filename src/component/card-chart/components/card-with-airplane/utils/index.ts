@@ -12,7 +12,7 @@ export const flightVariantsArray: IFlightVariantsArray[] = [
             y: 20
          },
          animate: {
-            x: 400,
+            x: 300,
             y: -100,
             transition: {
                duration: 3,
