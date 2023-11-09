@@ -5,7 +5,7 @@ import { ITeamImageCard } from '../../../types/team';
 
 const TeamImageCard: FC<ITeamImageCard> = ({ borderRadius, figCaption, name, staticImage, socials }) => {
    return (
-      <Card elevation={2} sx={{ width: '90%', display: 'grid', placeItems: 'center' }}>
+      <Card elevation={2} sx={{ width: '100%', display: 'grid', placeItems: 'center' }}>
          <CardMedia
             component="img"
             height="350"

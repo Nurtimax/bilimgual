@@ -80,9 +80,20 @@ const teamList: ITeamImageCard[] = [
 
 const ImageList = () => {
    return (
-      <Grid container py={6}>
+      <Grid container py={6} spacing={1}>
          {teamList.map((team) => (
-            <Grid item key={team.id} xs={2.4} sx={{ placeItems: 'center', display: 'grid' }}>
+            <Grid
+               item
+               key={team.id}
+               lg={2.4}
+               md={4}
+               sm={6}
+               smMobile={12}
+               mdMobile={12}
+               lgMobile={12}
+               xs={2.4}
+               sx={{ placeItems: 'center', display: 'grid' }}
+            >
                <TeamImageCard {...team} />
             </Grid>
          ))}
