@@ -4,16 +4,56 @@ import { IFlightVariantsArray } from '../types';
 
 const ease: Easing | Easing[] = 'backOut';
 
+function getRandomValue(min: number, max: number): number {
+   return Math.random() * (max - min) + min;
+}
+
+// Generate 10 random Flight variantes
+export const flights: IFlightVariantsArray[] = Array(5)
+   .fill('')
+   .map((_, index) => {
+      const initialX = getRandomValue(90, 290); // Start from the left (negative values)
+      const initialY = getRandomValue(80, -140); // Random initial vertical position
+      const animateX = getRandomValue(50, 230); // Move to the right (positive values)
+      const animateY = initialY - 30;
+
+      return {
+         variants: {
+            initial: {
+               x: initialX,
+               y: initialY
+            },
+            animate: {
+               x: animateX,
+               y: animateY,
+               transition: {
+                  duration: getRandomValue(2, 4),
+                  repeat: Infinity,
+                  ease,
+                  delay: getRandomValue(0.03, 0.1),
+                  repeatType: 'mirror',
+                  repeatDelay: getRandomValue(0.2, 0.4)
+               }
+            },
+            style: {
+               width: '20px',
+               height: '20px'
+            }
+         },
+         id: index + 10
+      };
+   });
+
 export const flightVariantsArray: IFlightVariantsArray[] = [
    {
       variants: {
          initial: {
-            x: 290,
-            y: 20
+            x: 180,
+            y: 50
          },
          animate: {
-            x: 300,
-            y: -100,
+            x: 270,
+            y: -150,
             transition: {
                duration: 3,
                repeat: Infinity,
@@ -33,19 +73,19 @@ export const flightVariantsArray: IFlightVariantsArray[] = [
    {
       variants: {
          initial: {
-            x: 260,
-            y: 30
+            x: 200,
+            y: 55
          },
          animate: {
-            x: 370,
-            y: -100,
+            x: 280,
+            y: -155,
             transition: {
                duration: 3,
                repeat: Infinity,
                ease,
-               delay: 0.2,
+               delay: 0.06,
                repeatType: 'mirror',
-               repeatDelay: 0.36
+               repeatDelay: 0.2
             }
          },
          style: {
@@ -58,19 +98,19 @@ export const flightVariantsArray: IFlightVariantsArray[] = [
    {
       variants: {
          initial: {
-            x: 230,
-            y: 40
+            x: 160,
+            y: 55
          },
          animate: {
-            x: 340,
-            y: -100,
+            x: 260,
+            y: -155,
             transition: {
-               duration: 3.5,
+               duration: 3,
                repeat: Infinity,
                ease,
-               delay: 0.08000000000000002,
+               delay: 0.06,
                repeatType: 'mirror',
-               repeatDelay: 0.39
+               repeatDelay: 0.1
             }
          },
          style: {
@@ -83,19 +123,19 @@ export const flightVariantsArray: IFlightVariantsArray[] = [
    {
       variants: {
          initial: {
-            x: 200,
-            y: 40
+            x: 190,
+            y: 55
          },
          animate: {
-            x: 310,
-            y: -100,
+            x: 290,
+            y: -155,
             transition: {
-               duration: 3.5,
+               duration: 3,
                repeat: Infinity,
                ease,
-               delay: 0.4,
+               delay: 0.06,
                repeatType: 'mirror',
-               repeatDelay: 0.42
+               repeatDelay: 0.4
             }
          },
          style: {
@@ -104,155 +144,5 @@ export const flightVariantsArray: IFlightVariantsArray[] = [
          }
       },
       id: 4
-   },
-   {
-      variants: {
-         initial: {
-            x: 170,
-            y: 40
-         },
-         animate: {
-            x: 290,
-            y: -100,
-            transition: {
-               duration: 3,
-               repeat: Infinity,
-               ease,
-               delay: 0.1,
-               repeatType: 'mirror',
-               repeatDelay: 0.44999999999999996
-            }
-         },
-         style: {
-            width: '20px',
-            height: '20px'
-         }
-      },
-      id: 5
-   },
-   {
-      variants: {
-         initial: {
-            x: 140,
-            y: 40
-         },
-         animate: {
-            x: 260,
-            y: -100,
-            transition: {
-               duration: 3,
-               repeat: Infinity,
-               ease,
-               delay: 0.6000000000000001,
-               repeatType: 'mirror',
-               repeatDelay: 0.48
-            }
-         },
-         style: {
-            width: '25px',
-            height: '25px'
-         }
-      },
-      id: 6
-   },
-   {
-      variants: {
-         initial: {
-            x: 110,
-            y: 40
-         },
-         animate: {
-            x: 230,
-            y: -100,
-            transition: {
-               duration: 3.5,
-               repeat: Infinity,
-               ease,
-               delay: 0.12,
-               repeatType: 'mirror',
-               repeatDelay: 0.54
-            }
-         },
-         style: {
-            width: '25px',
-            height: '25px'
-         }
-      },
-      id: 7
-   },
-   {
-      variants: {
-         initial: {
-            x: 90,
-            y: 40
-         },
-         animate: {
-            x: 200,
-            y: -100,
-            transition: {
-               duration: 3,
-               repeat: Infinity,
-               ease,
-               delay: 0.8,
-               repeatType: 'mirror',
-               repeatDelay: 0.57
-            }
-         },
-         style: {
-            width: '27px',
-            height: '27px'
-         }
-      },
-      id: 8
-   },
-   {
-      variants: {
-         initial: {
-            x: 60,
-            y: 40
-         },
-         animate: {
-            x: 170,
-            y: -100,
-            transition: {
-               duration: 3.5,
-               repeat: Infinity,
-               ease,
-               delay: 0.13999999999999999,
-               repeatType: 'mirror',
-               repeatDelay: 0.6
-            }
-         },
-         style: {
-            width: '25px',
-            height: '25px'
-         }
-      },
-      id: 9
-   },
-   {
-      variants: {
-         initial: {
-            x: 30,
-            y: 40
-         },
-         animate: {
-            x: 140,
-            y: -100,
-            transition: {
-               duration: 3,
-               repeat: Infinity,
-               ease,
-               delay: 1,
-               repeatType: 'mirror',
-               repeatDelay: 0.63
-            }
-         },
-         style: {
-            width: '20px',
-            height: '20px'
-         }
-      },
-      id: 10
    }
 ];

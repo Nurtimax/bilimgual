@@ -8,6 +8,7 @@ interface ICardBox {
 
 const StyledCardBox = styled(Box)(() => ({
    position: 'relative',
+   display: 'grid',
 
    '& #card_box': {
       position: 'absolute',

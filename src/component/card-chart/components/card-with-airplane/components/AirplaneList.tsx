@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box, styled, useMediaQuery } from '@mui/material';
 
-import { flightVariantsArray } from '../utils';
+import { flightVariantsArray, flights } from '../utils';
 
 import AirplaneItem from './AirplaneItem';
 
@@ -11,9 +11,11 @@ const StyledAirplaneList = styled(Box)(() => ({
 }));
 
 const AirplaneList: FC = () => {
+   const isMobile = useMediaQuery('(min-width:600px)');
+
    return (
       <StyledAirplaneList>
-         {flightVariantsArray.map((flight) => (
+         {[...flights, ...(isMobile ? flightVariantsArray : [])].map((flight) => (
             <AirplaneItem key={flight.id} flight={flight} />
          ))}
       </StyledAirplaneList>
