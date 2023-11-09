@@ -17,7 +17,6 @@ const validationSchema = yup.object().shape({
       .min(8, 'Password must be at least 8 characters long')
       .required('Password is required')
       .max(100)
-      .min(3)
 });
 
 const StyledForms = styled('form')`
