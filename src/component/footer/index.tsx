@@ -14,43 +14,11 @@ import AddIcon from '@mui/icons-material/Add';
 
 import { BilingualFullIcon } from '../../assets/icons/BilingualFullIcon';
 import { SOCIAL_ICONS } from '../../utils/constants/icons';
+import accordions from '../../utils/constants/accordions';
 
 const StyledMainFooter = styled(Box)`
    padding: 2rem 0 0;
 `;
-
-const accordions = [
-   {
-      id: 1,
-      summary: 'What is Bilingual?',
-      details:
-         "Please take the test in a separate, quiet room. Close all other windows and close all other programs before starting the test. An external USB keyboard or mouse can be used during the test. However, when answering test questions, you should only type on one keyboard and use one mouse. Don't switch between multiple keyboards or mice."
-   },
-   {
-      id: 2,
-      summary: 'How can I show what I am typing during the test? ',
-      details:
-         "Please take the test in a separate, quiet room. Close all other windows and close all other programs before starting the test. An external USB keyboard or mouse can be used during the test. However, when answering test questions, you should only type on one keyboard and use one mouse. Don't switch between multiple keyboards or mice."
-   },
-   {
-      id: 3,
-      summary: 'Why should I take the Bilingual English Test? ',
-      details:
-         "Please take the test in a separate, quiet room. Close all other windows and close all other programs before starting the test. An external USB keyboard or mouse can be used during the test. However, when answering test questions, you should only type on one keyboard and use one mouse. Don't switch between multiple keyboards or mice."
-   },
-   {
-      id: 4,
-      summary: 'How can I make sure my microphone picks up my voice clearly? ',
-      details:
-         "Please take the test in a separate, quiet room. Close all other windows and close all other programs before starting the test. An external USB keyboard or mouse can be used during the test. However, when answering test questions, you should only type on one keyboard and use one mouse. Don't switch between multiple keyboards or mice."
-   },
-   {
-      id: 5,
-      summary: "How can I allow a test to record my computer's screen? ",
-      details:
-         "Please take the test in a separate, quiet room. Close all other windows and close all other programs before starting the test. An external USB keyboard or mouse can be used during the test. However, when answering test questions, you should only type on one keyboard and use one mouse. Don't switch between multiple keyboards or mice."
-   }
-];
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
    () => ({
@@ -68,7 +36,7 @@ const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters
 );
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => <MuiAccordionSummary {...props} />)(({ theme }) => ({
-   backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, .05)' : 'rgba(0, 0, 0, .03)',
+   backgroundColor: 'rgba(0, 0, 0, .03)',
    padding: 0,
    color: 'white',
    fontSize: '20px',
