@@ -14,8 +14,6 @@ const AuthProvider: FC = () => {
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-         console.log(currentUser);
-
          if (currentUser) {
             try {
                const docRef = doc(firestore, 'users', `${currentUser.email}`);
@@ -23,8 +21,6 @@ const AuthProvider: FC = () => {
                const docSnap = await getDoc(docRef);
 
                const data = docSnap.data() as IUserRole;
-
-               console.log(data);
 
                if (data) {
                   dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
