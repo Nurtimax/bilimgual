@@ -2,6 +2,7 @@ import { CssBaseline, GlobalStyles } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { HelmetProvider } from 'react-helmet-async';
 
 import Theme from '../component/UI/theme';
 import { persistor, store } from '../store';
@@ -26,7 +27,9 @@ const Providers: FC<IProvidersProps> = ({ children }) => {
          <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                <AuthProvider>
-                  <Theme>{children}</Theme>
+                  <Theme>
+                     <HelmetProvider>{children}</HelmetProvider>
+                  </Theme>
                </AuthProvider>
             </PersistGate>
          </Provider>
