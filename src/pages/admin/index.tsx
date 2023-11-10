@@ -8,8 +8,9 @@ const Admin = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
    const { replace } = useRouter();
 
-   if (fields.email && fields.role && fields.role.includes('ADMIN')) {
-      return replace('/');
+   if (!fields.role.includes('ADMIN')) {
+      replace('/');
+      return <></>;
    }
 
    return <div>Admin</div>;
