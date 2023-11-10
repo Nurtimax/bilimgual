@@ -14,7 +14,7 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
       <Box>
          <Helmet>
             {title && <title>{title}</title>}
-            {canonical && <link rel="canonical" href={canonical} />}
+            {canonical && <link rel="canonical" href={window.location.origin + canonical} />}
             {description && <meta name="description" content={description} />}
          </Helmet>
          {children}
