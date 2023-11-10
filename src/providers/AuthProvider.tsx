@@ -16,8 +16,6 @@ interface IAuthProvider {
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
 
-   console.log('render auth provider');
-
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
          if (currentUser) {
