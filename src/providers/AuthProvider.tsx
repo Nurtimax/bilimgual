@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
@@ -8,7 +8,6 @@ import { actionAuthentication, initialState } from '../store/slices/authenticati
 import { auth, firestore } from '../firebase';
 import { getAuthUserDataFields } from '../store/helpers/auth';
 import { IUserRole } from '../types/auth';
-import CircularLoading from '../component/loading';
 
 interface IAuthProvider {
    children: ReactNode;
@@ -16,7 +15,8 @@ interface IAuthProvider {
 
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
-   const [loading, setLoading] = useState(false);
+
+   console.log('render auth provider');
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -31,7 +31,6 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
                if (data) {
                   dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
                }
-               setLoading(true);
             } catch (error) {
                if (error instanceof Error) {
                   toast.error(error.message);
@@ -48,10 +47,6 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
          unsubscribe();
       };
    }, [dispatch]);
-
-   if (!loading) {
-      return <CircularLoading open={!loading} />;
-   }
 
    return <>{children}</>;
 };
