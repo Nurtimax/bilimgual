@@ -8,7 +8,7 @@ const Admin = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
    const { replace } = useRouter();
 
-   if (!fields.role.includes('ADMIN')) {
+   if (fields.role.includes('ADMIN')) {
       replace('/');
       return <></>;
    }
