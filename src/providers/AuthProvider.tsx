@@ -24,11 +24,9 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
                const docSnap = await getDoc(docRef);
 
-               const data = docSnap.data() as IUserRole;
+               const data = (docSnap.data() as IUserRole) || { role: '' };
 
-               if (data) {
-                  dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
-               }
+               dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
             } catch (error) {
                if (error instanceof Error) {
                   toast.error(error.message);

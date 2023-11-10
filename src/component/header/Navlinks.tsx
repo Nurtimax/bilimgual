@@ -7,11 +7,12 @@ import { authSelector } from '../../store/helpers/auth';
 
 import Links from './Links';
 import MainLinks from './MainLinks';
+import RoleSelect from './RoleSelect';
 
 const StyledNavlinks = styled(Box)(() => ({
    display: 'flex',
    alignItems: 'center',
-   gap: '60px'
+   gap: '10px'
 }));
 
 const Navlinks: FC = () => {
@@ -19,7 +20,12 @@ const Navlinks: FC = () => {
 
    const role: ERole = fields.email ? 'USER' : '';
 
-   return <StyledNavlinks>{role !== '' ? <Links role={role} /> : <MainLinks />}</StyledNavlinks>;
+   return (
+      <StyledNavlinks>
+         {role !== '' ? <Links role={role} /> : <MainLinks />}
+         <RoleSelect />
+      </StyledNavlinks>
+   );
 };
 
 export default Navlinks;

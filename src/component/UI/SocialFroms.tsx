@@ -1,11 +1,12 @@
 import { Box, Button } from '@mui/material';
 import React from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { signInWithGoogle } from '../../store/slices/authentication-slice';
 import { firestore } from '../../firebase';
+import { IUserRole } from '../../types/auth';
 
 const SocialFroms = () => {
    const handleSignInWithGoogle = async () => {
@@ -13,9 +14,17 @@ const SocialFroms = () => {
 
       if (response) {
          try {
-            await setDoc(doc(firestore, 'users', `${response.user.email}`), {
+            const docRef = doc(firestore, 'users', `${response.user.email}`);
+
+            const docSnap = await getDoc(docRef);
+
+            const data = docSnap.data() as IUserRole;
+
+            const docData = data || {
                role: 'USER'
-            });
+            };
+
+            await setDoc(doc(firestore, 'users', `${response.user.email}`), docData);
          } catch (error) {
             if (error instanceof Error) {
                toast.error(error.message);

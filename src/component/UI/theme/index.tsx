@@ -104,7 +104,7 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          },
          MuiTypography: themeTypography,
          MuiButton: Button,
-         MuiTextField: TextField,
+         ...TextField,
          ...ThemeAccordion
       },
       palette

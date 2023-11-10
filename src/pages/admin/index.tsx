@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Container } from '@mui/material';
 
@@ -8,11 +8,17 @@ import MainAdmin from '../../component/admin';
 
 const Admin = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
-   const { replace } = useRouter();
+   const router = useRouter();
+   console.log(fields, 'admin');
+
+   useEffect(() => {
+      if (!fields.role.includes('ADMIN')) {
+         router.replace('/');
+      }
+   }, [fields.role, router]);
 
    if (!fields.role.includes('ADMIN')) {
-      replace('/');
-      return <></>;
+      return null; // or <></> if you prefer
    }
 
    return (
