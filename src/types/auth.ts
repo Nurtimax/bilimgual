@@ -28,8 +28,10 @@ export interface IReduxAuthInitialStateFields {
    providerId: string;
    uid: string;
    role: ERole;
+   currentRole: ERole;
 }
 
 export interface IUserRole {
    role: ERole;
+   currentRole: ERole;
 }

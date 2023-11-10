@@ -2,6 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import React, { FC, ReactNode, useEffect } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 import { useAppDispatch } from '../store/hooks';
 import { actionAuthentication, initialState } from '../store/slices/authentication-slice';
@@ -15,6 +16,7 @@ interface IAuthProvider {
 
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
+   const { replace } = useRouter();
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -24,9 +26,13 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
                const docSnap = await getDoc(docRef);
 
-               const data = (docSnap.data() as IUserRole) || { role: '' };
+               const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
 
                dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
+
+               if (data.currentRole === 'ADMIN') {
+                  replace('/admin');
+               }
             } catch (error) {
                if (error instanceof Error) {
                   toast.error(error.message);

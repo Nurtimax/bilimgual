@@ -21,7 +21,8 @@ const SocialFroms = () => {
             const data = docSnap.data() as IUserRole;
 
             const docData = data || {
-               role: 'USER'
+               role: 'USER',
+               currentRole: 'USER'
             };
 
             await setDoc(doc(firestore, 'users', `${response.user.email}`), docData);
