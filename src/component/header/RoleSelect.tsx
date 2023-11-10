@@ -1,6 +1,7 @@
 import React from 'react';
 import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
 import { useRouter } from 'next/router';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { useAppSelector } from '../../store/hooks';
 import { authSelector } from '../../store/helpers/auth';
@@ -19,10 +20,12 @@ const RoleSelect = () => {
 
    const handleChange = (_: unknown, newValue: string | null) => {
       setValue(newValue);
+
       if (newValue === 'ADMIN') {
-         replace('/admin');
+         return replace('/admin');
       }
-      replace('/');
+
+      return replace('/');
    };
 
    return (
@@ -44,6 +47,7 @@ const RoleSelect = () => {
                '& .MuiFormLabel-root': { fontWeight: '900', fontFamily: 'Gudea', color: '#4C4859', fontSize: '14px' }
             }}
             renderInput={(props) => <TextField label="ROLE" {...props} />}
+            popupIcon={<ArrowDropDownIcon sx={{ color: '#4C4859' }} />}
          />
       </Box>
    );
