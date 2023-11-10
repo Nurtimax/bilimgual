@@ -29,8 +29,8 @@ const MainFooter = () => {
          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <BilingualFullIcon style={{ height: '44px', width: '220px' }} />
             <Box py={1}>
-               {[SOCIAL_ICONS.youtube, SOCIAL_ICONS.facebook, SOCIAL_ICONS.instagram].map((icon) => (
-                  <IconButton color="inherit" size="large">
+               {[SOCIAL_ICONS.youtube, SOCIAL_ICONS.facebook, SOCIAL_ICONS.instagram].map((icon, i) => (
+                  <IconButton color="inherit" size="large" key={i}>
                      {icon}
                   </IconButton>
                ))}
