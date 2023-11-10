@@ -7,6 +7,7 @@ import UserExperience from '../layout/user-experience';
 import OurTeam from '../layout/out-team';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
+import Page from '../component/page';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -18,10 +19,12 @@ export default function Home() {
    console.log(fields);
 
    return (
-      <MainLayout>
-         <CardChart />
-         <UserExperience />
-         <OurTeam />
-      </MainLayout>
+      <Page title="Bilingual" canonical="/" description="Bilingual">
+         <MainLayout>
+            <CardChart />
+            <UserExperience />
+            <OurTeam />
+         </MainLayout>
+      </Page>
    );
 }
