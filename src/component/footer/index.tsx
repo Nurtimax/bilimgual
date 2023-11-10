@@ -1,14 +1,4 @@
-import {
-   Accordion as MuiAccordion,
-   AccordionDetails,
-   AccordionProps,
-   AccordionSummary as MuiAccordionSummary,
-   Box,
-   Typography,
-   styled,
-   AccordionSummaryProps,
-   IconButton
-} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, styled, IconButton } from '@mui/material';
 import React from 'react';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -19,35 +9,6 @@ import accordions from '../../utils/constants/accordions';
 const StyledMainFooter = styled(Box)`
    padding: 2rem 0 0;
 `;
-
-const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
-   () => ({
-      border: `1px solid #4A4A4A`,
-      borderRight: 'none',
-      borderLeft: 'none',
-      padding: '1rem 0',
-      '&:not(:last-child)': {
-         borderBottom: 0
-      },
-      '&:before': {
-         display: 'none'
-      }
-   })
-);
-
-const AccordionSummary = styled((props: AccordionSummaryProps) => <MuiAccordionSummary {...props} />)(({ theme }) => ({
-   backgroundColor: 'rgba(0, 0, 0, .03)',
-   padding: 0,
-   color: 'white',
-   fontSize: '20px',
-   fontWeight: '600',
-   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-      transform: 'rotate(90deg)'
-   },
-   '& .MuiAccordionSummary-content': {
-      marginLeft: theme.spacing(1)
-   }
-}));
 
 const MainFooter = () => {
    return (
