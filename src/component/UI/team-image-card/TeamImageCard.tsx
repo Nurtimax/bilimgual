@@ -9,9 +9,10 @@ const TeamImageCard: FC<ITeamImageCard> = ({ borderRadius, figCaption, name, sta
          <CardMedia
             component="img"
             height="350"
+            width="250"
             sx={{ borderRadius, objectFit: 'fill', width: '100%' }}
             image={staticImage}
-            alt="Paella dish"
+            alt={name + figCaption}
          />
          <CardContent>
             <Typography textAlign="center" variant="h6">
