@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box, Toolbar, styled } from '@mui/material';
 
 import MainHeader from '../header/MainHeader';
 import Banner from '../../component/banner';
@@ -16,6 +16,8 @@ const BilingualBox: FC<BilingualBoxProps> = () => {
    return (
       <StyledBilingualBox>
          <MainHeader />
+         <Toolbar />
+
          <Banner />
       </StyledBilingualBox>
    );
