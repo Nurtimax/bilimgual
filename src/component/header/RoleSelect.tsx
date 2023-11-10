@@ -1,11 +1,15 @@
-import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
 import React from 'react';
+import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
+import { useRouter } from 'next/router';
 
 import { useAppSelector } from '../../store/hooks';
 import { authSelector } from '../../store/helpers/auth';
 
 const RoleSelect = () => {
    const { fields } = useAppSelector((state) => authSelector(state));
+   const { replace } = useRouter();
+
+   const [value, setValue] = React.useState<string | null>(null);
 
    const roleValue = fields.role.split(',') || [''];
 
@@ -13,10 +17,20 @@ const RoleSelect = () => {
       return null;
    }
 
+   const handleChange = (_: unknown, newValue: string | null) => {
+      setValue(newValue);
+      if (newValue === 'ADMIN') {
+         replace('/admin');
+      }
+      replace('/');
+   };
+
    return (
       <Box sx={{ minWidth: 150 }}>
          <Autocomplete
             options={roleValue}
+            value={value}
+            onChange={handleChange}
             ListboxProps={{
                sx: { background: 'white', color: 'black', fontWeight: '900', fontFamily: 'Gudea' }
             }}

@@ -2,7 +2,6 @@ import { styled } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 
 import BilingualBox from './boxes/BilingualBox';
-import Footer from './footer';
 
 interface IMainLayoutProps {
    children: ReactNode;
@@ -17,7 +16,6 @@ const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
       <>
          <BilingualBox />
          <StyledMainContent>{children}</StyledMainContent>
-         <Footer />
       </>
    );
 };

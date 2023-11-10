@@ -8,6 +8,7 @@ import OurTeam from '../layout/out-team';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
+import Footer from '../component/footer';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -25,6 +26,7 @@ export default function Home() {
             <UserExperience />
             <OurTeam />
          </MainLayout>
+         <Footer />
       </Page>
    );
 }
