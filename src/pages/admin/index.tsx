@@ -13,7 +13,8 @@ const Admin = memo(() => {
    return (
       <RootStyle>
          <Container>
-            <MainHeader />
+            <MainHeader sx={{ background: '#fff' }} />
+            <Toolbar />
             <Toolbar />
 
             <MainAdmin />

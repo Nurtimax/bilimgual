@@ -2,11 +2,6 @@ import { AppBar, Container, styled, AppBarProps } from '@mui/material';
 import React, { FC, memo, ReactNode } from 'react';
 
 import HeaderWrapper from '../../component/header/HeaderWrapper';
-import ElevationScroll from '../elevation-scroll';
-
-interface MainHeaderProps {
-   [key: string]: unknown;
-}
 
 interface StyledAppBarProps extends AppBarProps {
    /*
@@ -19,15 +14,13 @@ const StyledMainHeader: FC<StyledAppBarProps> = styled(AppBar)(() => ({
    transition: 'background .5s'
 }));
 
-const MainHeader: FC<MainHeaderProps> = memo(() => {
+const MainHeader: FC<AppBarProps> = memo((props) => {
    return (
-      <ElevationScroll>
-         <StyledMainHeader>
-            <Container>
-               <HeaderWrapper />
-            </Container>
-         </StyledMainHeader>
-      </ElevationScroll>
+      <StyledMainHeader {...props}>
+         <Container>
+            <HeaderWrapper />
+         </Container>
+      </StyledMainHeader>
    );
 });
 

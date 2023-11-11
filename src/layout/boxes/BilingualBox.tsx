@@ -3,6 +3,7 @@ import { Box, Toolbar, styled } from '@mui/material';
 
 import MainHeader from '../header/MainHeader';
 import Banner from '../../component/banner';
+import ElevationScroll from '../elevation-scroll';
 
 interface BilingualBoxProps {
    [key: string]: unknown;
@@ -15,7 +16,10 @@ const StyledBilingualBox = styled(Box)(({ theme }) => ({
 const BilingualBox: FC<BilingualBoxProps> = () => {
    return (
       <StyledBilingualBox>
-         <MainHeader />
+         <ElevationScroll>
+            <MainHeader />
+         </ElevationScroll>
+
          <Toolbar />
 
          <Banner />
