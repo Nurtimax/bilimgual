@@ -59,7 +59,8 @@ const themeTable: ThemeTable = {
                color: theme.palette.common.white
             },
             [`&.${tableCellClasses.body}`]: {
-               fontSize: 14
+               fontSize: 14,
+               color: theme.palette.common.black
             }
          })
       }
@@ -71,6 +72,7 @@ const themeTable: ThemeTable = {
    MuiTableRow: {
       styleOverrides: {
          root: ({ theme }) => ({
+            backgroundColor: '#FEF5E8',
             '&:nth-of-type(odd)': {
                backgroundColor: theme.palette.action.hover
             },

@@ -41,7 +41,9 @@ export const palette: PaletteOptions = {
    },
    action: {
       disabled: '#C4C4C4',
-      active: '#3A10E5'
+      active: '#3A10E5',
+      hover: '#fff',
+      hoverOpacity: 0.2
    },
    text: {
       primary: '#ffffff',
