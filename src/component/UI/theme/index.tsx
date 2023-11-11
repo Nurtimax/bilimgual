@@ -5,6 +5,7 @@ import themeTypography from '../typography';
 import Button from '../button';
 import TextField from '../textfield';
 import ThemeAccordion from '../accordion';
+import themeTable from '../table';
 
 interface ThemeProps {
    children: ReactNode;
@@ -105,7 +106,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          MuiTypography: themeTypography,
          MuiButton: Button,
          ...TextField,
-         ...ThemeAccordion
+         ...ThemeAccordion,
+         ...themeTable
       },
       palette
    });
