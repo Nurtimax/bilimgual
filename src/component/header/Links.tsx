@@ -24,7 +24,7 @@ const StyledLinks = styled(Box)(() => ({
 }));
 
 const Links: FC<LinksProps> = ({ role }) => {
-   const roleCondition = role.includes('ADMIN');
+   const roleCondition = role?.includes('ADMIN');
 
    return (
       <StyledLinks>

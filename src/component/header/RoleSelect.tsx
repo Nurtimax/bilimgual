@@ -17,21 +17,20 @@ const RoleSelect = () => {
    const dispatch = useAppDispatch();
    const [loading, setLoading] = useState(false);
 
-   const roleValue = fields.role.split(',') || [''];
-
-   if (roleValue.length < 1) {
-      return null;
-   }
-
    const handleChange = async (_: unknown, newValue: string | null) => {
+      if (!fields.email) {
+         return;
+      }
+
       setLoading(true);
+
       const docRef = doc(firestore, 'users', `${fields.email}`);
 
       const docSnap = await getDoc(docRef);
 
       const data = docSnap.data() as IUserRole;
 
-      const docData = { ...data, currentRole: newValue };
+      const docData = { ...data, currentRole: newValue || 'USER' };
 
       await setDoc(doc(firestore, 'users', `${fields.email}`), docData);
 
@@ -40,7 +39,8 @@ const RoleSelect = () => {
       const dataAgain = docSnapAgain.data() as IUserRole;
 
       dispatch(actionAuthentication.authUserRolesSave(dataAgain));
-      setLoading(true);
+
+      setLoading(false);
       if (newValue === 'ADMIN') {
          return replace('/admin');
       }
@@ -48,12 +48,18 @@ const RoleSelect = () => {
       return replace('/');
    };
 
+   const roleValue = fields.role?.split(',');
+
+   if (roleValue.length <= 1) {
+      return null;
+   }
+
    return (
       <Box sx={{ minWidth: 150 }}>
          {loading && <CircularLoading open />}
 
          <Autocomplete
-            options={roleValue}
+            options={roleValue || []}
             value={fields.currentRole}
             onChange={handleChange}
             ListboxProps={{

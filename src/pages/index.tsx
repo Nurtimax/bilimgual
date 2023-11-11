@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
    const { fields } = useAppSelector((state) => authSelector(state));
-   console.log(fields);
+   console.log(fields, 'home');
 
    return (
       <Page title="Bilingual" canonical="/" description="Bilingual">

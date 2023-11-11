@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
@@ -9,29 +9,38 @@ import { actionAuthentication, initialState } from '../store/slices/authenticati
 import { auth, firestore } from '../firebase';
 import { getAuthUserDataFields } from '../store/helpers/auth';
 import { IUserRole } from '../types/auth';
+import CircularLoading from '../component/loading';
 
 interface IAuthProvider {
    children: ReactNode;
 }
 
+// ... (import statements remain the same)
+
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
    const { replace } = useRouter();
+   const [loading, setLoading] = useState(true); // Set to true initially
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+         console.log('render'); // Debug statement - consider removing in production
+
          if (currentUser) {
             try {
                const docRef = doc(firestore, 'users', `${currentUser.email}`);
-
                const docSnap = await getDoc(docRef);
 
                const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
+
+               console.log(data);
 
                dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
 
                if (data.currentRole === 'ADMIN') {
                   replace('/admin');
+               } else {
+                  replace('/');
                }
             } catch (error) {
                if (error instanceof Error) {
@@ -43,12 +52,19 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
          } else {
             dispatch(actionAuthentication.authUserSave(initialState.fields));
          }
+         setLoading(false); // Always set loading to true when the state changes
       });
 
+      // Cleanup function
       return () => {
-         unsubscribe();
+         unsubscribe(); // Unsubscribe from the onAuthStateChanged listener
       };
-   }, [dispatch]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
+
+   if (loading) {
+      return <CircularLoading open />;
+   }
 
    return <>{children}</>;
 };
