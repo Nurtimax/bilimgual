@@ -92,7 +92,7 @@ const UserTable = memo(() => {
                {users.map((row, i) => (
                   <TableRow key={row.id}>
                      <TableCell component="th" scope="row">
-                        {i}
+                        {i + 1}
                      </TableCell>
                      <TableCell component="th" scope="row">
                         {row.id}
