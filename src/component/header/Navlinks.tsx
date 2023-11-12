@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { ERole } from '../../types/role';
 import { authSelector } from '../../store/helpers/auth';
+import UserAvatar from '../UI/avatar';
 
 import Links from './Links';
 import MainLinks from './MainLinks';
@@ -24,6 +25,7 @@ const Navlinks: FC = () => {
       <StyledNavlinks>
          {role !== '' ? <Links role={role} /> : <MainLinks />}
          <RoleSelect />
+         <UserAvatar alt={fields.displayName || ''} url={fields.photoURL || ''} email={fields.email || ''} />
       </StyledNavlinks>
    );
 };

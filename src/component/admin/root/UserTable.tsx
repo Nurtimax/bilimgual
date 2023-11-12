@@ -69,49 +69,49 @@ const UserTable = memo(() => {
       [dispatch]
    );
 
-   if (loading) {
-      return <CircularLoading open />;
-   }
-
    return (
-      <TableContainer component={Paper}>
-         <Typography variant="h5" component="h1" pl={1}>
-            Users
-         </Typography>
-         <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-               <TableRow>
-                  <TableCell>#</TableCell>
-                  <TableCell>Email</TableCell>
-                  <TableCell align="right">currentRole</TableCell>
-                  <TableCell align="right">role</TableCell>
-                  <TableCell align="right">Add role</TableCell>
-               </TableRow>
-            </TableHead>
-            <TableBody>
-               {users.map((row, i) => (
-                  <TableRow key={row.id}>
-                     <TableCell component="th" scope="row">
-                        {i + 1}
-                     </TableCell>
-                     <TableCell component="th" scope="row">
-                        {row.id}
-                     </TableCell>
+      <>
+         {loading && <CircularLoading open />}
 
-                     <TableCell align="right">{row.currentRole}</TableCell>
-                     <TableCell align="right">{row.role}</TableCell>
-                     <TableCell align="right" width="20%">
-                        <UserRole
-                           email={row.id}
-                           roles={row.role.split(',') as ERole[]}
-                           roleHandler={handleChangeRole}
-                        />
-                     </TableCell>
+         <TableContainer component={Paper}>
+            <Typography variant="h5" component="h1" pl={1}>
+               Users
+            </Typography>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+               <TableHead>
+                  <TableRow>
+                     <TableCell>#</TableCell>
+                     <TableCell>Email</TableCell>
+                     <TableCell align="right">currentRole</TableCell>
+                     <TableCell align="right">role</TableCell>
+                     <TableCell align="right">Add role</TableCell>
                   </TableRow>
-               ))}
-            </TableBody>
-         </Table>
-      </TableContainer>
+               </TableHead>
+               <TableBody>
+                  {users.map((row, i) => (
+                     <TableRow key={row.id}>
+                        <TableCell component="th" scope="row">
+                           {i + 1}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                           {row.id}
+                        </TableCell>
+
+                        <TableCell align="right">{row.currentRole}</TableCell>
+                        <TableCell align="right">{row.role}</TableCell>
+                        <TableCell align="right" width="20%">
+                           <UserRole
+                              email={row.id}
+                              roles={row.role.split(',') as ERole[]}
+                              roleHandler={handleChangeRole}
+                           />
+                        </TableCell>
+                     </TableRow>
+                  ))}
+               </TableBody>
+            </Table>
+         </TableContainer>
+      </>
    );
 });
 
