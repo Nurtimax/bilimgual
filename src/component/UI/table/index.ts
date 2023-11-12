@@ -54,6 +54,9 @@ const themeTable: ThemeTable = {
    MuiTableCell: {
       styleOverrides: {
          root: ({ theme }) => ({
+            fontWeight: '900',
+            fontFamily: 'Gudea',
+
             [`&.${tableCellClasses.head}`]: {
                backgroundColor: theme.palette.common.black,
                color: theme.palette.common.white
@@ -65,7 +68,13 @@ const themeTable: ThemeTable = {
          })
       }
    },
-   MuiTableContainer: {},
+   MuiTableContainer: {
+      styleOverrides: {
+         root: {
+            background: '#fff'
+         }
+      }
+   },
    MuiTableFooter: {},
    MuiTableHead: {},
    MuiTablePagination: {},
@@ -73,6 +82,9 @@ const themeTable: ThemeTable = {
       styleOverrides: {
          root: ({ theme }) => ({
             backgroundColor: '#FEF5E8',
+            fontWeight: '900',
+            fontFamily: 'Gudea',
+
             '&:nth-of-type(odd)': {
                backgroundColor: theme.palette.action.hover
             },

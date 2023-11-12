@@ -6,6 +6,7 @@ import Button from '../button';
 import TextField from '../textfield';
 import ThemeAccordion from '../accordion';
 import themeTable from '../table';
+import themeAutocompleted from '../autocompleted';
 
 interface ThemeProps {
    children: ReactNode;
@@ -109,7 +110,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          MuiButton: Button,
          ...TextField,
          ...ThemeAccordion,
-         ...themeTable
+         ...themeTable,
+         MuiAutocomplete: themeAutocompleted
       },
       palette
    });

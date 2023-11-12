@@ -12,7 +12,7 @@ import { actionAuthentication } from '../../store/slices/authentication-slice';
 import CircularLoading from '../loading';
 
 const RoleSelect = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
    const { replace } = useRouter();
    const dispatch = useAppDispatch();
    const [loading, setLoading] = useState(false);
@@ -62,18 +62,11 @@ const RoleSelect = () => {
             options={roleValue || []}
             value={fields.currentRole}
             onChange={handleChange}
-            ListboxProps={{
-               sx: { background: 'white', color: 'black', fontWeight: '900', fontFamily: 'Gudea' }
-            }}
             renderOption={(props, option) => (
                <MenuItem {...props} sx={{ fontWeight: '900', fontFamily: 'Gudea' }}>
                   {option}
                </MenuItem>
             )}
-            sx={{
-               '& .MuiInputBase-input': { fontWeight: '900', fontFamily: 'Gudea', color: '#4C4859', fontSize: '14px' },
-               '& .MuiFormLabel-root': { fontWeight: '900', fontFamily: 'Gudea', color: '#4C4859', fontSize: '14px' }
-            }}
             renderInput={(props) => <TextField label="ROLE" {...props} />}
             popupIcon={<ArrowDropDownIcon sx={{ color: '#4C4859' }} />}
          />

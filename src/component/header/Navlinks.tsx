@@ -16,7 +16,7 @@ const StyledNavlinks = styled(Box)(() => ({
 }));
 
 const Navlinks: FC = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
 
    const role: ERole = fields.role;
 

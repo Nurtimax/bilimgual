@@ -35,3 +35,9 @@ export interface IUserRole {
    role: ERole;
    currentRole: ERole;
 }
+
+export interface IAdminUser {
+   role: ERole;
+   id: string;
+   currentRole?: string;
+}
