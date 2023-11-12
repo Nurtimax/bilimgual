@@ -55,6 +55,9 @@ const TextField: MuiTextField = {
             [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
                borderColor: 'var(--TextField-brandBorderFocusedColor2)'
             }
+         },
+         input: {
+            color: 'black'
          }
       }
    },

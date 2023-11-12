@@ -1,4 +1,4 @@
-import { Button, Checkbox, FormControlLabel, FormGroup, TextField, styled } from '@mui/material';
+import { Alert, Button, Checkbox, FormControlLabel, FormGroup, TextField, styled } from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import LoginAlert from '../UI/login/Alert';
 import { auth } from '../../firebase';
+import CopyClipboard from '../UI/copy-clipboard';
 
 const validationSchema = yup.object().shape({
    email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
@@ -58,6 +59,18 @@ const Forms = () => {
 
    return (
       <StyledForms onSubmit={handleSubmit}>
+         <Alert severity="success" variant="filled">
+            Use admin
+            <CopyClipboard text="administration@gmail.com" type="email" />
+            <CopyClipboard text="123123123" type="password" />
+         </Alert>
+
+         <Alert severity="success" variant="filled">
+            Use user
+            <CopyClipboard text="username@gmail.com" type="email" />
+            <CopyClipboard text="123123123" type="password" />
+         </Alert>
+
          <TextField
             fullWidth
             onChange={handleChange}
