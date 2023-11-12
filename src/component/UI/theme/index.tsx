@@ -5,6 +5,8 @@ import themeTypography from '../typography';
 import Button from '../button';
 import TextField from '../textfield';
 import ThemeAccordion from '../accordion';
+import themeTable from '../table';
+import themeAutocompleted from '../autocompleted';
 
 interface ThemeProps {
    children: ReactNode;
@@ -40,7 +42,9 @@ export const palette: PaletteOptions = {
    },
    action: {
       disabled: '#C4C4C4',
-      active: '#3A10E5'
+      active: '#3A10E5',
+      hover: '#fff',
+      hoverOpacity: 0.2
    },
    text: {
       primary: '#ffffff',
@@ -104,8 +108,10 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          },
          MuiTypography: themeTypography,
          MuiButton: Button,
-         MuiTextField: TextField,
-         ...ThemeAccordion
+         ...TextField,
+         ...ThemeAccordion,
+         ...themeTable,
+         MuiAutocomplete: themeAutocompleted
       },
       palette
    });

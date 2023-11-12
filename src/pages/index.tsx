@@ -8,6 +8,7 @@ import OurTeam from '../layout/out-team';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
+import Footer from '../component/footer';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
    const { fields } = useAppSelector((state) => authSelector(state));
-   console.log(fields);
+   console.log(fields, 'home');
 
    return (
       <Page title="Bilingual" canonical="/" description="Bilingual">
@@ -25,6 +26,7 @@ export default function Home() {
             <UserExperience />
             <OurTeam />
          </MainLayout>
+         <Footer />
       </Page>
    );
 }

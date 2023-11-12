@@ -7,19 +7,25 @@ import { authSelector } from '../../store/helpers/auth';
 
 import Links from './Links';
 import MainLinks from './MainLinks';
+import RoleSelect from './RoleSelect';
 
 const StyledNavlinks = styled(Box)(() => ({
    display: 'flex',
    alignItems: 'center',
-   gap: '60px'
+   gap: '10px'
 }));
 
 const Navlinks: FC = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
 
-   const role: ERole = fields.email ? 'USER' : '';
+   const role: ERole = fields.role;
 
-   return <StyledNavlinks>{role !== '' ? <Links role={role} /> : <MainLinks />}</StyledNavlinks>;
+   return (
+      <StyledNavlinks>
+         {role !== '' ? <Links role={role} /> : <MainLinks />}
+         <RoleSelect />
+      </StyledNavlinks>
+   );
 };
 
 export default Navlinks;

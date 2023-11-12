@@ -14,6 +14,12 @@
    src: url('../assets/font/Gilroy-FREE/Gilroy-ExtraBold.otf');
 }
 
+.aaaa {
+   color: #e0e3e7;
+   color: #b2bac2;
+   color: #6f7e8c;
+}
+
 html,
 body {
    padding: 0;

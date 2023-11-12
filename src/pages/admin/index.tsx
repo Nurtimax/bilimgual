@@ -1,19 +1,26 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React, { memo } from 'react';
+import { Box, Container, Toolbar, styled } from '@mui/material';
 
-import { useAppSelector } from '../../store/hooks';
-import { authSelector } from '../../store/helpers/auth';
+import MainAdmin from '../../component/admin';
+import MainHeader from '../../layout/header/MainHeader';
 
-const Admin = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
-   const { replace } = useRouter();
+const RootStyle = styled(Box)`
+   background-color: #afdcf0;
+   height: 100vh;
+`;
 
-   if (fields.role.includes('ADMIN')) {
-      replace('/');
-      return <></>;
-   }
+const Admin = memo(() => {
+   return (
+      <RootStyle>
+         <Container>
+            <MainHeader sx={{ background: '#fff' }} />
+            <Toolbar />
+            <Toolbar />
 
-   return <div>Admin</div>;
-};
+            <MainAdmin />
+         </Container>
+      </RootStyle>
+   );
+});
 
 export default Admin;

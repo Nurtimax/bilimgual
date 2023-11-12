@@ -34,6 +34,7 @@ export const getAuthUserDataFields = (user: User, data: IUserRole): IReduxAuthIn
       refreshToken,
       tenantId,
       uid,
-      ...data
+      role: data.role,
+      currentRole: data.currentRole
    };
 };

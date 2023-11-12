@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
-import { IReduxAuthInitialState, IReduxAuthInitialStateFields } from '../../types/auth';
+import { IReduxAuthInitialState, IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
 import { auth } from '../../firebase';
 
 const name = 'auth';
@@ -25,7 +25,8 @@ export const initialState: IReduxAuthInitialState = {
       photoURL: null,
       providerId: '',
       uid: '',
-      role: ''
+      role: '',
+      currentRole: ''
    }
 };
 
@@ -61,6 +62,12 @@ const authenticationSlice = createSlice({
          const value = actions.payload;
 
          state.fields = value;
+      },
+      authUserRolesSave: (state, actions: PayloadAction<IUserRole>) => {
+         const value = actions.payload;
+
+         state.fields.role = value.role;
+         state.fields.currentRole = value.currentRole;
       }
    }
 });

@@ -17,6 +17,8 @@ const StyledLink = styled(Box)(({ theme }) => ({
 
    color: '#4C4859',
 
+   cursor: 'pointer',
+
    '&.active': {
       color: theme.palette.primary.main
    }

@@ -24,12 +24,14 @@ const StyledLinks = styled(Box)(() => ({
 }));
 
 const Links: FC<LinksProps> = ({ role }) => {
+   const roleCondition = role?.includes('ADMIN');
+
    return (
       <StyledLinks>
          <HeaderMobileMenu
             buttons={
                <>
-                  {role === 'ADMIN' ? <AdminLinksList /> : <LinksList />}
+                  {roleCondition ? <AdminLinksList /> : <LinksList />}
                   <Button sx={{ width: '140px' }} variant="login" onClick={logOutHandler}>
                      log out
                   </Button>
@@ -40,7 +42,7 @@ const Links: FC<LinksProps> = ({ role }) => {
                   <List>
                      {[
                         { title: 'tests', icon: <QuizIcon />, click: () => {} },
-                        role === 'ADMIN'
+                        roleCondition
                            ? { title: 'submitted results', icon: <TurnedInIcon />, click: () => {} }
                            : { title: 'MY RESULTS', icon: <CategoryIcon />, click: () => {} },
                         { title: 'log out', icon: <ExitToAppIcon color="error" />, click: logOutHandler }
