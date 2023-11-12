@@ -56,8 +56,6 @@ const UserTable = memo(() => {
                role: roleConcat('USER', role)
             };
 
-            console.log(docData);
-
             await setDoc(doc(firestore, 'users', String(email)), docData);
 
             dispatch(getAdminUsersThunk());
