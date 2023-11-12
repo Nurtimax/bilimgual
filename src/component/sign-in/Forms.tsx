@@ -1,8 +1,10 @@
-import { Alert, Button, Checkbox, FormControlLabel, FormGroup, TextField, styled } from '@mui/material';
+import { Alert, Button, Checkbox, FormControlLabel, FormGroup, IconButton, TextField, styled } from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import * as yup from 'yup';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import LoginAlert from '../UI/login/Alert';
 import { auth } from '../../firebase';
@@ -44,6 +46,8 @@ const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISig
 };
 
 const Forms = () => {
+   const [passwordView, setPasswordView] = useState(false);
+
    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
       initialValues: {
          email: '',
@@ -84,11 +88,18 @@ const Forms = () => {
             fullWidth
             onChange={handleChange}
             name="password"
-            type="password"
+            type={passwordView ? 'text' : 'password'}
             value={values.password}
             helperText={errors.password}
             error={!!errors.password}
             label="Password"
+            InputProps={{
+               endAdornment: (
+                  <IconButton size="small" onClick={() => setPasswordView((prev) => !prev)}>
+                     {passwordView ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </IconButton>
+               )
+            }}
          />
          <FormGroup>
             <FormControlLabel

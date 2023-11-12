@@ -1,9 +1,11 @@
-import { Button, TextField, styled } from '@mui/material';
+import { Button, IconButton, TextField, styled } from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import * as yup from 'yup';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import LoginAlert from '../UI/login/Alert';
 import { auth, firestore } from '../../firebase';
@@ -57,6 +59,8 @@ const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISig
 };
 
 const Forms = () => {
+   const [passwordView, setPasswordView] = useState(false);
+
    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
       initialValues: {
          email: '',
@@ -107,9 +111,16 @@ const Forms = () => {
             value={values.password}
             name="password"
             label="Password"
-            type="password"
+            type={passwordView ? 'text' : 'password'}
             helperText={errors.password}
             error={!!errors.password}
+            InputProps={{
+               endAdornment: (
+                  <IconButton size="small" onClick={() => setPasswordView((prev) => !prev)}>
+                     {passwordView ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </IconButton>
+               )
+            }}
          />
 
          {errors.afterSubmit?.message && (
