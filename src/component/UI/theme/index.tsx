@@ -9,6 +9,7 @@ import themeTable from '../table';
 import themeAutocompleted from '../autocompleted';
 import themeBadge from '../badge';
 import paper from '../paper';
+import themeTab from '../tab-panel/themeTab';
 
 interface ThemeProps {
    children: ReactNode;
@@ -108,6 +109,7 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                }
             }
          },
+
          MuiTypography: themeTypography,
          MuiButton: Button,
          ...TextField,
@@ -122,7 +124,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                   height: 40
                }
             }
-         }
+         },
+         ...themeTab
       },
       palette
    });
