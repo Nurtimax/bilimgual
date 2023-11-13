@@ -53,6 +53,7 @@ const ThemeAccordion: TAccordion = {
             borderRight: 'none',
             borderLeft: 'none',
             padding: '1rem 0',
+            background: '#262626',
             '&:not(:last-child)': {
                borderBottom: 0
             },
