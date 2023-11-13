@@ -13,8 +13,6 @@ const themeAutocompleted: TAutocompleted = {
          '& .MuiFormLabel-root': { fontWeight: '900', fontFamily: 'Gudea', color: '#4C4859', fontSize: '14px' }
       },
       listbox: {
-         background: 'white',
-         color: 'black',
          fontWeight: '900',
          fontFamily: 'Gudea'
       }

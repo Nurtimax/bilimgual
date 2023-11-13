@@ -8,6 +8,7 @@ import ThemeAccordion from '../accordion';
 import themeTable from '../table';
 import themeAutocompleted from '../autocompleted';
 import themeBadge from '../badge';
+import paper from '../paper';
 
 interface ThemeProps {
    children: ReactNode;
@@ -113,7 +114,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          ...ThemeAccordion,
          ...themeTable,
          MuiAutocomplete: themeAutocompleted,
-         MuiBadge: themeBadge
+         MuiBadge: themeBadge,
+         MuiPaper: paper
       },
       palette
    });
