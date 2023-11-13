@@ -24,16 +24,12 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-         console.log('render'); // Debug statement - consider removing in production
-
          if (currentUser) {
             try {
                const docRef = doc(firestore, 'users', `${currentUser.email}`);
                const docSnap = await getDoc(docRef);
 
                const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
-
-               console.log(data);
 
                dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
 
@@ -51,6 +47,7 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
             }
          } else {
             dispatch(actionAuthentication.authUserSave(initialState.fields));
+            replace('/');
          }
          setLoading(false); // Always set loading to true when the state changes
       });

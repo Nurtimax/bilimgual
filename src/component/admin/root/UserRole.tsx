@@ -23,7 +23,7 @@ const UserRole: FC<IUserRole> = memo(({ roles, roleHandler, email, currentRole }
          value={currentRole}
          renderOption={(props, option) => (
             <MenuItem {...props} divider value={option}>
-               <Checkbox checked={checkedValue(option, roles)} />
+               <Checkbox checked={checkedValue(option, roles)} sx={{ height: 10, width: 10 }} />
                <ListItemText
                   inset
                   primary={option}
@@ -37,7 +37,7 @@ const UserRole: FC<IUserRole> = memo(({ roles, roleHandler, email, currentRole }
             }
          }}
          filterOptions={(options) => options}
-         renderInput={(props) => <TextField {...props} />}
+         renderInput={(props) => <TextField {...props} size="small" />}
       />
    );
 });

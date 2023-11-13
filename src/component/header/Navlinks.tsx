@@ -25,7 +25,9 @@ const Navlinks: FC = () => {
       <StyledNavlinks>
          {role !== '' ? <Links role={role} /> : <MainLinks />}
          <RoleSelect />
-         <UserAvatar alt={fields.displayName || ''} url={fields.photoURL || ''} email={fields.email || ''} />
+         {fields.email && (
+            <UserAvatar alt={fields.displayName || ''} url={fields.photoURL || ''} email={fields.email || ''} />
+         )}
       </StyledNavlinks>
    );
 };

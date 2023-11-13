@@ -115,7 +115,14 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          ...themeTable,
          MuiAutocomplete: themeAutocompleted,
          MuiBadge: themeBadge,
-         MuiPaper: paper
+         MuiPaper: paper,
+         MuiMenuItem: {
+            styleOverrides: {
+               root: {
+                  height: 40
+               }
+            }
+         }
       },
       palette
    });

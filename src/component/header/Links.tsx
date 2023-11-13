@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
+import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import QuizIcon from '@mui/icons-material/Quiz';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
@@ -29,14 +29,7 @@ const Links: FC<LinksProps> = ({ role }) => {
    return (
       <StyledLinks>
          <HeaderMobileMenu
-            buttons={
-               <>
-                  {roleCondition ? <AdminLinksList /> : <LinksList />}
-                  <Button sx={{ width: '140px' }} variant="login" onClick={logOutHandler}>
-                     log out
-                  </Button>
-               </>
-            }
+            buttons={roleCondition ? <AdminLinksList /> : <LinksList />}
             menuItems={
                <Box role="presentation">
                   <List>
