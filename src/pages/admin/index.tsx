@@ -6,7 +6,6 @@ import MainHeader from '../../layout/header/MainHeader';
 
 const RootStyle = styled(Box)`
    background-color: #afdcf0;
-   height: 100vh;
 `;
 
 const Admin = memo(() => {

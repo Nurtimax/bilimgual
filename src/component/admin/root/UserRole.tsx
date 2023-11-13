@@ -7,6 +7,7 @@ interface IUserRole {
    roles: ERole[];
    roleHandler: (role: ERole, email: string) => void;
    email: string;
+   currentRole: ERole;
 }
 
 const defaultRoles: ERole[] = ['ADMIN', 'USER'];
@@ -15,12 +16,11 @@ const checkedValue = (role: ERole, array: ERole[]): boolean => {
    return array.includes(role);
 };
 
-const UserRole: FC<IUserRole> = memo(({ roles, roleHandler, email }) => {
-   console.log(roles);
-
+const UserRole: FC<IUserRole> = memo(({ roles, roleHandler, email, currentRole }) => {
    return (
       <Autocomplete
          options={defaultRoles}
+         value={currentRole}
          renderOption={(props, option) => (
             <MenuItem {...props} divider value={option}>
                <Checkbox checked={checkedValue(option, roles)} />
@@ -36,6 +36,7 @@ const UserRole: FC<IUserRole> = memo(({ roles, roleHandler, email }) => {
                roleHandler(newValue, email);
             }
          }}
+         filterOptions={(options) => options}
          renderInput={(props) => <TextField {...props} />}
       />
    );

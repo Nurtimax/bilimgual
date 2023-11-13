@@ -53,8 +53,8 @@ const UserTable = memo(() => {
             // Update the role property without spreading it again
             const docData = {
                ...data,
-               role: roleConcat('USER', role)
-            };
+               role: roleConcat(data.role, role)
+            } as IUserRole;
 
             await setDoc(doc(firestore, 'users', String(email)), docData);
 
@@ -84,7 +84,6 @@ const UserTable = memo(() => {
                      <TableCell>Email</TableCell>
                      <TableCell align="right">currentRole</TableCell>
                      <TableCell align="right">role</TableCell>
-                     <TableCell align="right">Add role</TableCell>
                   </TableRow>
                </TableHead>
                <TableBody>
@@ -98,12 +97,13 @@ const UserTable = memo(() => {
                         </TableCell>
 
                         <TableCell align="right">{row.currentRole}</TableCell>
-                        <TableCell align="right">{row.role}</TableCell>
+
                         <TableCell align="right" width="20%">
                            <UserRole
                               email={row.id}
                               roles={row.role.split(',') as ERole[]}
                               roleHandler={handleChangeRole}
+                              currentRole={row.currentRole as ERole}
                            />
                         </TableCell>
                      </TableRow>
