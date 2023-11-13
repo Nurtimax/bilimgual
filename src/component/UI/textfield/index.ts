@@ -28,12 +28,8 @@ const TextField: MuiTextField = {
       styleOverrides: {
          root: {
             '--TextField-brandBorderColor': '#4C4859',
-            '--TextField-brandBorderColor2': '#4C4859',
             '--TextField-brandBorderHoverColor': '#3A10E5',
             '--TextField-brandBorderFocusedColor': '#4C4859',
-            '--TextField-brandBorderFocusedColor2': '#4C4859',
-            '--TextField-brandBorderFocusedColor3': '#4C4859',
-            '--TextField-brandBorderFocusedColor4': '#4C4859',
 
             '& .MuiOutlinedInput-root': {
                '&:hover fieldset': {
@@ -94,7 +90,7 @@ const TextField: MuiTextField = {
                borderColor: 'var(--TextField-brandBorderHoverColor)'
             },
             [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
-               borderColor: 'var(--TextField-brandBorderFocusedColor2)'
+               borderColor: 'var(--TextField-brandBorderFocusedColor)'
             }
          },
          input: {
@@ -112,7 +108,7 @@ const TextField: MuiTextField = {
                borderBottom: '2px solid var(--TextField-brandBorderHoverColor)'
             },
             '&.Mui-focused:after': {
-               borderBottom: '2px solid var(--TextField-brandBorderFocusedColor3)'
+               borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)'
             }
          }
       }
@@ -127,7 +123,7 @@ const TextField: MuiTextField = {
                borderBottom: '2px solid var(--TextField-brandBorderHoverColor)'
             },
             '&.Mui-focused:after': {
-               borderBottom: '2px solid var(--TextField-brandBorderFocusedColor4)'
+               borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)'
             }
          }
       }
