@@ -34,8 +34,49 @@ const TextField: MuiTextField = {
             '--TextField-brandBorderFocusedColor2': '#4C4859',
             '--TextField-brandBorderFocusedColor3': '#4C4859',
             '--TextField-brandBorderFocusedColor4': '#4C4859',
+
+            '& .MuiOutlinedInput-root': {
+               '&:hover fieldset': {
+                  borderColor: '#3a10e5'
+               }
+            },
+            '& fieldset': {
+               borderColor: '#BDBDBD'
+            },
+            '& label': {
+               color: '#cacaca'
+            },
             '& label.Mui-focused': {
-               color: 'var(--TextField-brandBorderFocusedColor)'
+               color: '#cacaca'
+            },
+
+            '& .Mui-error': {
+               '&.MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                     borderColor: '#d32f2f'
+                  },
+                  '&.Mui-focused fieldset': {
+                     borderColor: '#d32f2f !important'
+                  }
+               }
+            },
+
+            '& .Mui-disabled': {
+               background: '#f7f7f7',
+               '&.MuiFormLabel-root': {
+                  background: 'none'
+               },
+               '&.MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                     borderColor: '#BDBDBD'
+                  }
+               }
+            },
+
+            '& .MuiOutlinedInput-root.Mui-focused': {
+               '&.Mui-focused fieldset': {
+                  borderColor: '#3a10e5'
+               }
             }
          }
       }
