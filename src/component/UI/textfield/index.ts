@@ -36,6 +36,11 @@ const TextField: MuiTextField = {
                   borderColor: '#3a10e5'
                }
             },
+
+            '& .MuiInputLabel-asterisk': {
+               color: 'red'
+            },
+
             '& fieldset': {
                borderColor: '#BDBDBD'
             },
@@ -93,6 +98,7 @@ const TextField: MuiTextField = {
                borderColor: 'var(--TextField-brandBorderFocusedColor)'
             }
          },
+
          input: {
             color: 'black'
          }

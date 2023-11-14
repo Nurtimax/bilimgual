@@ -10,6 +10,7 @@ import themeAutocompleted from '../autocompleted';
 import themeBadge from '../badge';
 import paper from '../paper';
 import themeTab from '../tab-panel/themeTab';
+import themeSwitch from '../switch';
 
 interface ThemeProps {
    children: ReactNode;
@@ -125,7 +126,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
                }
             }
          },
-         ...themeTab
+         ...themeTab,
+         MuiSwitch: themeSwitch
       },
       palette
    });
