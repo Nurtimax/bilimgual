@@ -1,13 +1,19 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { addDoc, collection } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 import { ITeamImageCard } from '../../types/team';
 import { ISocialIcons, SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
+import { firestore } from '../../firebase';
+
+import { RootState } from '.';
 
 const name = 'adminCreateTeam';
 
 interface InitialState {
    forms: ITeamImageCard;
    isByIdForms: boolean;
+   loading: boolean;
 }
 
 interface IChangeValueWithKeyPayload {
@@ -34,8 +40,27 @@ const initialState: InitialState = {
       company: '',
       role: ''
    },
-   isByIdForms: false
+   isByIdForms: false,
+   loading: false
 };
+
+export const createNewTeam = createAsyncThunk(`${name}/createNewTeam`, async (_, { rejectWithValue, getState }) => {
+   try {
+      const state = getState() as RootState;
+
+      if (state?.adminCreateTeam) {
+         const forms = state?.adminCreateTeam.forms;
+
+         await addDoc(collection(firestore, 'team'), forms);
+      }
+      toast.warn('Sorry. Something wrong with form fields');
+   } catch (error) {
+      if (error instanceof Error) {
+         toast.error(error.message);
+      }
+      return rejectWithValue(error);
+   }
+});
 
 const adminCreateTeam = createSlice({
    name,
@@ -67,7 +92,18 @@ const adminCreateTeam = createSlice({
          }
       }
    },
-   extraReducers: () => {}
+   extraReducers: (builder) => {
+      builder
+         .addCase(createNewTeam.fulfilled, (state) => {
+            state.loading = false;
+         })
+         .addCase(createNewTeam.rejected, (state) => {
+            state.loading = false;
+         })
+         .addCase(createNewTeam.pending, (state) => {
+            state.loading = true;
+         });
+   }
 });
 
 export const actionAdminCreateTeam = adminCreateTeam.actions;

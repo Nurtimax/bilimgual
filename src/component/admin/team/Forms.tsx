@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import React, { FC, FormEvent, memo } from 'react';
 
 import { useAppDispatch } from '../../../store/hooks';
-import { actionAdminCreateTeam } from '../../../store/slices/admin-create-team';
+import { actionAdminCreateTeam, createNewTeam } from '../../../store/slices/admin-create-team';
 import { InitialStateTeamForms } from '../../../types/team';
 
 import validationSchema from './validate';
@@ -33,9 +33,16 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
          linkedIn: '',
          portfolio: '',
          youtube: '',
-         facebook: ''
+         facebook: '',
+         borderRadius: '',
+         figCaption: '',
+         name: '',
+         staticImage: '',
+         socials: []
       },
-      onSubmit: () => {},
+      onSubmit: () => {
+         dispatch(createNewTeam());
+      },
       validationSchema,
       validateOnChange: false
    });
