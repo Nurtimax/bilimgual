@@ -1,12 +1,9 @@
-import { Card, CardContent } from '@mui/material';
 import React from 'react';
 
+import TeamImageCard from '../../UI/team-image-card/TeamImageCard';
+
 const UserResult = () => {
-   return (
-      <Card>
-         <CardContent></CardContent>
-      </Card>
-   );
+   return <TeamImageCard borderRadius="" figCaption="" id={1} name="" socials={[]} staticImage="" />;
 };
 
 export default UserResult;

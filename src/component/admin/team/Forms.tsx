@@ -28,15 +28,12 @@ const Forms = memo(() => {
       onSubmit: (values) => {
          console.log(values);
       },
-      validationSchema
+      validationSchema,
+      validateOnChange: false
    });
    return (
-      <Card>
-         <CardContent
-            sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1 }}
-            component="form"
-            onSubmit={handleSubmit}
-         >
+      <Card component="form" onSubmit={handleSubmit}>
+         <CardContent sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1 }}>
             <TextField
                fullWidth
                helperText={errors.fullName && errors.fullName}
@@ -199,7 +196,9 @@ const Forms = memo(() => {
             />
          </CardContent>
          <CardActions sx={{ justifyContent: 'flex-end' }}>
-            <Button variant="contained">Create User</Button>
+            <Button variant="contained" type="submit">
+               Create User
+            </Button>
          </CardActions>
       </Card>
    );
