@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import React, { memo } from 'react';
+import React, { FormEvent, memo } from 'react';
 
 import validationSchema from './validate';
 
@@ -32,7 +32,13 @@ const Forms = memo(() => {
       validateOnChange: false
    });
    return (
-      <Card component="form" onSubmit={handleSubmit}>
+      <Card
+         component="form"
+         onSubmit={(e) => {
+            const event = e as unknown as FormEvent<HTMLFormElement>;
+            handleSubmit(event);
+         }}
+      >
          <CardContent sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1 }}>
             <TextField
                fullWidth
