@@ -27,6 +27,7 @@ const UserChart = () => {
          <CardContent sx={{ p: 0 }}>
             <Tabs
                onChange={handleChange}
+               value={value}
                textColor="primary"
                indicatorColor="primary"
                sx={{ background: '#23212a', color: 'white', p: 0.5 }}
@@ -34,12 +35,12 @@ const UserChart = () => {
                scrollButtons={false}
             >
                <Tab label="day" value="1" />
-               <Tab label="week" value="1" />
-               <Tab label="2 week" value="1" />
-               <Tab label="month" value="2" />
-               <Tab label="last month" value="2" />
-               <Tab label="quarter" value="2" />
-               <Tab label="year" value="3" />
+               <Tab label="week" value="2" />
+               <Tab label="2 week" value="3" />
+               <Tab label="month" value="4" />
+               <Tab label="last month" value="5" />
+               <Tab label="quarter" value="6" />
+               <Tab label="year" value="7" />
             </Tabs>
             <CustomTabPanel value="1" index={value}>
                Item One

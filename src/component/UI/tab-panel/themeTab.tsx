@@ -19,8 +19,22 @@ const themeTab: Tab = {
          root: {
             padding: 1,
             color: 'white',
-            background: 'black',
-            borderRadius: '5px'
+            background: '#575353',
+            borderRadius: '5px',
+            '&:hover': {
+               background: '#6e6363'
+            }
+         },
+         selected: {
+            color: 'white',
+            background: '#393838'
+         }
+      }
+   },
+   MuiTabs: {
+      styleOverrides: {
+         flexContainer: {
+            gap: 10
          }
       }
    }
