@@ -1,5 +1,14 @@
 import { Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
 import React, { FC } from 'react';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import BusinessIcon from '@mui/icons-material/Business';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import LanguageIcon from '@mui/icons-material/Language';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
+import AllInboxIcon from '@mui/icons-material/AllInbox';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 import { ITeamImageCard } from '../../../types/team';
 
@@ -31,42 +40,36 @@ const TeamImageCard: FC<ITeamImageCard> = ({
             image={staticImage}
             alt={name + figCaption}
          />
-         <CardContent>
-            <Typography textAlign="center" variant="h6">
-               {name}
+         <CardContent sx={{ display: 'grid', gap: 1 }}>
+            <Typography variant="body2">{fullName}</Typography>
+            <Typography variant="body4">{figCaption}</Typography>
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <MailOutlineIcon /> {email}
             </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {figCaption}
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <PhoneIphoneIcon /> {phoneNumber}
             </Typography>
-            <Typography textAlign="center" variant="h6">
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <BusinessIcon /> {company}
+            </Typography>
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <SupervisorAccountIcon /> {role}
+            </Typography>
+            <Typography variant="body3" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <LocationOnIcon />
                {address}
             </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {city}
+            <Typography variant="body3" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <LocationCityIcon /> {city}
             </Typography>
-            <Typography textAlign="center" variant="h6">
-               {company}
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <LanguageIcon /> {country}
             </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {country}
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <HomeWorkIcon /> {stateRegion}
             </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {email}
-            </Typography>
-            <Typography textAlign="center" variant="h6">
-               {fullName}
-            </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {phoneNumber}
-            </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {role}
-            </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {stateRegion}
-            </Typography>
-            <Typography textAlign="center" variant="bodySmall">
-               {zipCode}
+            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+               <AllInboxIcon /> {zipCode}
             </Typography>
          </CardContent>
          <CardContent>
