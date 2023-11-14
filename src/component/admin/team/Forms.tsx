@@ -1,17 +1,22 @@
 import { Button, Card, CardActions, CardContent, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import React, { FormEvent, memo } from 'react';
+import React, { FC, FormEvent, memo } from 'react';
 
 import { useAppDispatch } from '../../../store/hooks';
 import { actionAdminCreateTeam } from '../../../store/slices/admin-create-team';
+import { InitialStateTeamForms } from '../../../types/team';
 
 import validationSchema from './validate';
 
-const Forms = memo(() => {
+interface IForms {
+   initialValues?: InitialStateTeamForms;
+}
+
+const Forms: FC<IForms> = memo(({ initialValues }) => {
    const dispatch = useAppDispatch();
 
    const { values, handleChange, handleSubmit, errors, isSubmitting } = useFormik({
-      initialValues: {
+      initialValues: initialValues || {
          fullName: '',
          email: '',
          phoneNumber: '',

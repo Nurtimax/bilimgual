@@ -161,7 +161,7 @@ const UploadUserImage = () => {
          <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
             <div>
                <Typography variant="h6">Email verified</Typography>
-               <Typography variant="subtitle2">
+               <Typography variant="regular">
                   Disabling this will automatically send the user a verification email
                </Typography>
             </div>

@@ -24,3 +24,13 @@ export interface ITeamImageCard {
    company: string;
    role: string;
 }
+
+export interface InitialStateTeamForms extends ITeamImageCard {
+   github?: string;
+   telegram?: string;
+   instagram?: string;
+   linkedIn?: string;
+   portfolio?: string;
+   youtube?: string;
+   facebook?: string;
+}

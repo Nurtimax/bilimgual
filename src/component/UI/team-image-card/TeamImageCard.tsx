@@ -28,7 +28,7 @@ const TeamImageCard: FC<ITeamImageCard> = ({
             height="350"
             width="250"
             sx={{ borderRadius, objectFit: 'fill', width: '90%', height: '350px', background: '#0000005a', mt: 2 }}
-            image={staticImage || '/static/images/asatbek.jpg'}
+            image={staticImage}
             alt={name + figCaption}
          />
          <CardContent>

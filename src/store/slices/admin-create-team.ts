@@ -7,6 +7,7 @@ const name = 'adminCreateTeam';
 
 interface InitialState {
    forms: ITeamImageCard;
+   isByIdForms: boolean;
 }
 
 interface IChangeValueWithKeyPayload {
@@ -32,7 +33,8 @@ const initialState: InitialState = {
       zipCode: '',
       company: '',
       role: ''
-   }
+   },
+   isByIdForms: false
 };
 
 const adminCreateTeam = createSlice({
