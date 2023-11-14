@@ -30,9 +30,7 @@ const Forms = memo(() => {
          youtube: '',
          facebook: ''
       },
-      onSubmit: (values) => {
-         console.log(values);
-      },
+      onSubmit: () => {},
       validationSchema,
       validateOnChange: false
    });
