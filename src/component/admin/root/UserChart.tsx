@@ -28,8 +28,6 @@ const UserChart = () => {
             <Tabs
                onChange={handleChange}
                value={value}
-               textColor="primary"
-               indicatorColor="primary"
                sx={{ background: '#23212a', color: 'white', p: 0.5 }}
                variant="scrollable"
                scrollButtons={false}
