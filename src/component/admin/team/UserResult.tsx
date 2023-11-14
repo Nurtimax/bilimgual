@@ -1,28 +1,13 @@
 import React from 'react';
 
 import TeamImageCard from '../../UI/team-image-card/TeamImageCard';
+import { useAppSelector } from '../../../store/hooks';
+import { adminCreateTeamSelector } from '../../../store/helpers/create-team';
 
 const UserResult = () => {
-   return (
-      <TeamImageCard
-         borderRadius=""
-         figCaption=""
-         id={1}
-         name=""
-         socials={[]}
-         staticImage=""
-         address=""
-         city=""
-         company=""
-         country=""
-         email=""
-         fullName=""
-         phoneNumber=""
-         role=""
-         stateRegion=""
-         zipCode=""
-      />
-   );
+   const { forms } = useAppSelector(adminCreateTeamSelector);
+
+   return <TeamImageCard {...forms} />;
 };
 
 export default UserResult;

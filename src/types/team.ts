@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface ISocials {
    icon: ReactNode;
-   id: number;
+   id: string;
    link: string;
 }
 

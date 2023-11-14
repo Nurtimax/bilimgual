@@ -2,10 +2,15 @@ import { Button, Card, CardActions, CardContent, TextField } from '@mui/material
 import { useFormik } from 'formik';
 import React, { FormEvent, memo } from 'react';
 
+import { useAppDispatch } from '../../../store/hooks';
+import { actionAdminCreateTeam } from '../../../store/slices/admin-create-team';
+
 import validationSchema from './validate';
 
 const Forms = memo(() => {
-   const { values, handleChange, handleSubmit, errors } = useFormik({
+   const dispatch = useAppDispatch();
+
+   const { values, handleChange, handleSubmit, errors, isSubmitting } = useFormik({
       initialValues: {
          fullName: '',
          email: '',
@@ -20,7 +25,7 @@ const Forms = memo(() => {
          github: '',
          telegram: '',
          instagram: '',
-         linkedin: '',
+         linkedIn: '',
          portfolio: '',
          youtube: '',
          facebook: ''
@@ -31,6 +36,16 @@ const Forms = memo(() => {
       validationSchema,
       validateOnChange: false
    });
+
+   const onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => {
+      const key = e.target.name;
+      const value = e.target.value;
+
+      dispatch(actionAdminCreateTeam.changeValueWithKey({ key, value }));
+
+      handleChange(e);
+   };
+
    return (
       <Card
          component="form"
@@ -44,7 +59,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.fullName && errors.fullName}
                error={!!errors.fullName}
-               onChange={handleChange}
+               onChange={onChange}
                name="fullName"
                value={values.fullName}
                label="Full Name"
@@ -54,7 +69,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.email && errors.email}
                error={!!errors.email}
-               onChange={handleChange}
+               onChange={onChange}
                name="email"
                value={values.email}
                label="Email Address"
@@ -64,7 +79,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.phoneNumber && errors.phoneNumber}
                error={!!errors.phoneNumber}
-               onChange={handleChange}
+               onChange={onChange}
                name="phoneNumber"
                value={values.phoneNumber}
                label="Phone Number"
@@ -73,7 +88,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.country && errors.country}
                error={!!errors.country}
-               onChange={handleChange}
+               onChange={onChange}
                name="country"
                value={values.country}
                label="Country"
@@ -83,7 +98,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.stateRegion && errors.stateRegion}
                error={!!errors.stateRegion}
-               onChange={handleChange}
+               onChange={onChange}
                name="stateRegion"
                value={values.stateRegion}
                label="State/Region"
@@ -92,7 +107,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.city && errors.city}
                error={!!errors.city}
-               onChange={handleChange}
+               onChange={onChange}
                name="city"
                value={values.city}
                label="City"
@@ -102,7 +117,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.address && errors.address}
                error={!!errors.address}
-               onChange={handleChange}
+               onChange={onChange}
                name="address"
                value={values.address}
                label="Address"
@@ -111,7 +126,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.zipCode && errors.zipCode}
                error={!!errors.zipCode}
-               onChange={handleChange}
+               onChange={onChange}
                name="zipCode"
                value={values.zipCode}
                label="Zip/Code"
@@ -120,7 +135,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.company && errors.company}
                error={!!errors.company}
-               onChange={handleChange}
+               onChange={onChange}
                name="company"
                value={values.company}
                label="Company"
@@ -130,7 +145,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.role && errors.role}
                error={!!errors.role}
-               onChange={handleChange}
+               onChange={onChange}
                name="role"
                value={values.role}
                label="Role"
@@ -140,7 +155,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.github && errors.github}
                error={!!errors.github}
-               onChange={handleChange}
+               onChange={onChange}
                name="github"
                value={values.github}
                label="Github"
@@ -150,7 +165,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.telegram && errors.telegram}
                error={!!errors.telegram}
-               onChange={handleChange}
+               onChange={onChange}
                name="telegram"
                value={values.telegram}
                label="Telegram"
@@ -159,25 +174,25 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.instagram && errors.instagram}
                error={!!errors.instagram}
-               onChange={handleChange}
+               onChange={onChange}
                name="instagram"
                value={values.instagram}
                label="Instagram"
             />
             <TextField
                fullWidth
-               helperText={errors.linkedin && errors.linkedin}
-               error={!!errors.linkedin}
-               onChange={handleChange}
-               name="linkedin"
-               value={values.linkedin}
+               helperText={errors.linkedIn && errors.linkedIn}
+               error={!!errors.linkedIn}
+               onChange={onChange}
+               name="linkedIn"
+               value={values.linkedIn}
                label="LinkedIn"
             />
             <TextField
                fullWidth
                helperText={errors.portfolio && errors.portfolio}
                error={!!errors.portfolio}
-               onChange={handleChange}
+               onChange={onChange}
                name="portfolio"
                value={values.portfolio}
                label="Portfolio"
@@ -186,7 +201,7 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.youtube && errors.youtube}
                error={!!errors.youtube}
-               onChange={handleChange}
+               onChange={onChange}
                name="youtube"
                value={values.youtube}
                label="Youtube"
@@ -195,14 +210,14 @@ const Forms = memo(() => {
                fullWidth
                helperText={errors.facebook && errors.facebook}
                error={!!errors.facebook}
-               onChange={handleChange}
+               onChange={onChange}
                name="facebook"
                value={values.facebook}
                label="Facebook"
             />
          </CardContent>
          <CardActions sx={{ justifyContent: 'flex-end' }}>
-            <Button variant="contained" type="submit">
+            <Button variant="contained" type="submit" disabled={isSubmitting}>
                Create User
             </Button>
          </CardActions>

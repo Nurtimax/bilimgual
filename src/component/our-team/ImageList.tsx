@@ -15,7 +15,7 @@ const teamList: ITeamImageCard[] = [
       socials: [
          {
             icon: SOCIAL_ICONS.github,
-            id: 1,
+            id: 'github',
             link: 'https://github.com/AzamatovaAlbina'
          }
       ],
@@ -39,7 +39,7 @@ const teamList: ITeamImageCard[] = [
       socials: [
          {
             icon: SOCIAL_ICONS.github,
-            id: 1,
+            id: 'github',
             link: 'https://github.com/Asatbek1'
          }
       ],
@@ -63,7 +63,7 @@ const teamList: ITeamImageCard[] = [
       socials: [
          {
             icon: SOCIAL_ICONS.github,
-            id: 1,
+            id: 'github',
             link: 'https://github.com/kaamilov'
          }
       ],
@@ -87,7 +87,7 @@ const teamList: ITeamImageCard[] = [
       socials: [
          {
             icon: SOCIAL_ICONS.github,
-            id: 1,
+            id: 'github',
             link: 'https://github.com/Nurtimax'
          }
       ],
@@ -111,7 +111,7 @@ const teamList: ITeamImageCard[] = [
       socials: [
          {
             icon: SOCIAL_ICONS.github,
-            id: 1,
+            id: 'github',
             link: 'https://github.com/saltanatzakypova'
          }
       ],
