@@ -18,7 +18,17 @@ const teamList: ITeamImageCard[] = [
             id: 1,
             link: 'https://github.com/AzamatovaAlbina'
          }
-      ]
+      ],
+      address: '',
+      city: '',
+      company: '',
+      country: '',
+      email: '',
+      fullName: '',
+      phoneNumber: '',
+      role: '',
+      stateRegion: '',
+      zipCode: ''
    },
    {
       id: 2,
@@ -32,7 +42,17 @@ const teamList: ITeamImageCard[] = [
             id: 1,
             link: 'https://github.com/Asatbek1'
          }
-      ]
+      ],
+      address: '',
+      city: '',
+      company: '',
+      country: '',
+      email: '',
+      fullName: '',
+      phoneNumber: '',
+      role: '',
+      stateRegion: '',
+      zipCode: ''
    },
    {
       id: 3,
@@ -46,7 +66,17 @@ const teamList: ITeamImageCard[] = [
             id: 1,
             link: 'https://github.com/kaamilov'
          }
-      ]
+      ],
+      address: '',
+      city: '',
+      company: '',
+      country: '',
+      email: '',
+      fullName: '',
+      phoneNumber: '',
+      role: '',
+      stateRegion: '',
+      zipCode: ''
    },
    {
       id: 4,
@@ -60,7 +90,17 @@ const teamList: ITeamImageCard[] = [
             id: 1,
             link: 'https://github.com/Nurtimax'
          }
-      ]
+      ],
+      address: '',
+      city: '',
+      company: '',
+      country: '',
+      email: '',
+      fullName: '',
+      phoneNumber: '',
+      role: '',
+      stateRegion: '',
+      zipCode: ''
    },
    {
       id: 5,
@@ -74,7 +114,17 @@ const teamList: ITeamImageCard[] = [
             id: 1,
             link: 'https://github.com/saltanatzakypova'
          }
-      ]
+      ],
+      address: '',
+      city: '',
+      company: '',
+      country: '',
+      email: '',
+      fullName: '',
+      phoneNumber: '',
+      role: '',
+      stateRegion: '',
+      zipCode: ''
    }
 ];
 

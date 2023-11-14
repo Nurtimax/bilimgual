@@ -13,4 +13,14 @@ export interface ITeamImageCard {
    figCaption: string;
    socials: ISocials[];
    id: number;
+   fullName: string;
+   email: string;
+   phoneNumber: string;
+   country: string;
+   stateRegion: string;
+   city: string;
+   address: string;
+   zipCode: string;
+   company: string;
+   role: string;
 }
