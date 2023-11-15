@@ -5,6 +5,7 @@ import React, { FC, FormEvent, memo } from 'react';
 import { useAppDispatch } from '../../../store/hooks';
 import { actionAdminCreateTeam, createNewTeam } from '../../../store/slices/admin-create-team';
 import { InitialStateTeamForms } from '../../../types/team';
+import LoginAlert from '../../UI/login/Alert';
 
 import validationSchema from './validate';
 
@@ -15,7 +16,7 @@ interface IForms {
 const Forms: FC<IForms> = memo(({ initialValues }) => {
    const dispatch = useAppDispatch();
 
-   const { values, handleChange, handleSubmit, errors, isSubmitting } = useFormik({
+   const { values, handleChange, handleSubmit, errors } = useFormik({
       initialValues: initialValues || {
          fullName: '',
          email: '',
@@ -38,10 +39,21 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
          figCaption: '',
          name: '',
          staticImage: '',
-         socials: []
+         socials: [],
+         afterSubmit: {
+            name: '',
+            message: ''
+         }
       },
-      onSubmit: () => {
-         dispatch(createNewTeam());
+      onSubmit: async (_, { resetForm, setErrors }) => {
+         try {
+            await dispatch(createNewTeam()).unwrap();
+            resetForm();
+         } catch (error) {
+            if (error instanceof Error) {
+               setErrors({ afterSubmit: { message: error.message, name: error.name } });
+            }
+         }
       },
       validationSchema,
       validateOnChange: false
@@ -64,6 +76,12 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
             handleSubmit(event);
          }}
       >
+         {errors.afterSubmit && (
+            <LoginAlert
+               errorName={typeof errors.afterSubmit === 'object' ? errors.afterSubmit.name : ''}
+               message={typeof errors.afterSubmit === 'object' ? errors.afterSubmit.message : ''}
+            />
+         )}
          <CardContent sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1 }}>
             <TextField
                fullWidth
@@ -227,7 +245,7 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
             />
          </CardContent>
          <CardActions sx={{ justifyContent: 'flex-end' }}>
-            <Button variant="contained" type="submit" disabled={isSubmitting}>
+            <Button variant="contained" type="submit">
                Create User
             </Button>
          </CardActions>

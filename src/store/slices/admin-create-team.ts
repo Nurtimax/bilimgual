@@ -1,5 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { addDoc, collection } from 'firebase/firestore';
+import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { ITeamImageCard } from '../../types/team';
@@ -24,9 +24,9 @@ interface IChangeValueWithKeyPayload {
 const initialState: InitialState = {
    forms: {
       staticImage: '',
-      borderRadius: '',
-      name: '',
-      figCaption: '',
+      borderRadius: '1px 1px 1px 20px',
+      name: 'asdf',
+      figCaption: 'asdfasdf',
       socials: [],
       id: 0,
       fullName: '',
@@ -51,9 +51,16 @@ export const createNewTeam = createAsyncThunk(`${name}/createNewTeam`, async (_,
       if (state?.adminCreateTeam) {
          const forms = state?.adminCreateTeam.forms;
 
-         await addDoc(collection(firestore, 'team'), forms);
+         const docData = {
+            ...forms,
+            socials: forms.socials.map((el) => ({ ...el, icon: el.id })),
+            dateExample: Timestamp.fromDate(new Date('December 10, 1815'))
+         };
+
+         await addDoc(collection(firestore, 'team'), docData);
+      } else {
+         toast.warn('Sorry. Something wrong with form fields');
       }
-      toast.warn('Sorry. Something wrong with form fields');
    } catch (error) {
       if (error instanceof Error) {
          toast.error(error.message);

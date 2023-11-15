@@ -33,4 +33,10 @@ export interface InitialStateTeamForms extends ITeamImageCard {
    portfolio?: string;
    youtube?: string;
    facebook?: string;
+   afterSubmit?: IAfterSubmit;
+}
+
+export interface IAfterSubmit {
+   name?: string;
+   message?: string;
 }
