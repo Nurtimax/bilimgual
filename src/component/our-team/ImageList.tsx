@@ -3,7 +3,6 @@ import React from 'react';
 
 import TeamImageCard from '../UI/team-image-card/TeamImageCard';
 import { ITeamImageCard } from '../../types/team';
-import { SOCIAL_ICONS } from '../../utils/constants/icons';
 
 const teamList: ITeamImageCard[] = [
    {
@@ -14,7 +13,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: SOCIAL_ICONS.github,
+            icon: 'github',
             id: 'github',
             link: 'https://github.com/AzamatovaAlbina'
          }
@@ -28,7 +27,8 @@ const teamList: ITeamImageCard[] = [
       phoneNumber: '',
       role: '',
       stateRegion: '',
-      zipCode: ''
+      zipCode: '',
+      position: ''
    },
    {
       id: 2,
@@ -38,7 +38,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: SOCIAL_ICONS.github,
+            icon: 'github',
             id: 'github',
             link: 'https://github.com/Asatbek1'
          }
@@ -52,7 +52,8 @@ const teamList: ITeamImageCard[] = [
       phoneNumber: '',
       role: '',
       stateRegion: '',
-      zipCode: ''
+      zipCode: '',
+      position: ''
    },
    {
       id: 3,
@@ -62,7 +63,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: SOCIAL_ICONS.github,
+            icon: 'github',
             id: 'github',
             link: 'https://github.com/kaamilov'
          }
@@ -76,7 +77,8 @@ const teamList: ITeamImageCard[] = [
       phoneNumber: '',
       role: '',
       stateRegion: '',
-      zipCode: ''
+      zipCode: '',
+      position: ''
    },
    {
       id: 4,
@@ -86,7 +88,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: SOCIAL_ICONS.github,
+            icon: 'github',
             id: 'github',
             link: 'https://github.com/Nurtimax'
          }
@@ -100,7 +102,8 @@ const teamList: ITeamImageCard[] = [
       phoneNumber: '',
       role: '',
       stateRegion: '',
-      zipCode: ''
+      zipCode: '',
+      position: ''
    },
    {
       id: 5,
@@ -110,7 +113,7 @@ const teamList: ITeamImageCard[] = [
       borderRadius: '1px 1px 1px 20px',
       socials: [
          {
-            icon: SOCIAL_ICONS.github,
+            icon: 'github',
             id: 'github',
             link: 'https://github.com/saltanatzakypova'
          }
@@ -124,7 +127,8 @@ const teamList: ITeamImageCard[] = [
       phoneNumber: '',
       role: '',
       stateRegion: '',
-      zipCode: ''
+      zipCode: '',
+      position: ''
    }
 ];
 

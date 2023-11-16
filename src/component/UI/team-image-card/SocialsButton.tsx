@@ -29,7 +29,7 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
                            ...(initialColor && {
                               color: socialColor,
                               '&:hover': {
-                                 bgcolor: alpha(socialColor, 0.08)
+                                 bgcolor: alpha(socialColor || '#fff', 0.08)
                               }
                            }),
                            ...sx
@@ -56,7 +56,7 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
                         borderColor: socialColor,
                         '&:hover': {
                            borderColor: socialColor,
-                           bgcolor: alpha(socialColor, 0.08)
+                           bgcolor: alpha(socialColor || '#fff', 0.08)
                         }
                      }),
                      ...sx

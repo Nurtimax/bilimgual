@@ -2,7 +2,7 @@ export interface ISocials {
    icon: string;
    id: string;
    link: string;
-   socialColor: string;
+   socialColor?: string;
 }
 
 export interface ITeamImageCard {
