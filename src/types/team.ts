@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
-
 export interface ISocials {
-   icon: ReactNode;
+   icon: string;
    id: string;
    link: string;
+   socialColor: string;
 }
 
 export interface ITeamImageCard {
@@ -23,6 +22,7 @@ export interface ITeamImageCard {
    zipCode: string;
    company: string;
    role: string;
+   position: string;
 }
 
 export interface InitialStateTeamForms extends ITeamImageCard {

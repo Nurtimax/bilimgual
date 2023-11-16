@@ -3,7 +3,7 @@ import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { ITeamImageCard } from '../../types/team';
-import { ISocialIcons, SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
+import { SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
 import { firestore } from '../../firebase';
 
 import { RootState } from '.';
@@ -19,6 +19,7 @@ interface InitialState {
 interface IChangeValueWithKeyPayload {
    key: string;
    value: string;
+   socialColor: string;
 }
 
 const initialState: InitialState = {
@@ -38,7 +39,8 @@ const initialState: InitialState = {
       address: '',
       zipCode: '',
       company: '',
-      role: ''
+      role: '',
+      position: ''
    },
    isByIdForms: false,
    loading: false
@@ -74,7 +76,7 @@ const adminCreateTeam = createSlice({
    initialState,
    reducers: {
       changeValueWithKey: (state, actions: PayloadAction<IChangeValueWithKeyPayload>) => {
-         const { key, value } = actions.payload;
+         const { key, value, socialColor } = actions.payload;
 
          if (key in state.forms) {
             state.forms = { ...state.forms, [key]: value };
@@ -90,8 +92,9 @@ const adminCreateTeam = createSlice({
                   if (key in SOCIAL_ICONS) {
                      state.forms.socials.push({
                         id: key,
-                        icon: SOCIAL_ICONS?.[key as keyof ISocialIcons],
-                        link: value
+                        icon: key,
+                        link: value,
+                        socialColor
                      });
                   }
                }

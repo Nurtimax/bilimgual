@@ -1,84 +1,70 @@
-import { Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
+import { Avatar, Box, Card, Stack, Typography, styled } from '@mui/material';
 import React, { FC } from 'react';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import BusinessIcon from '@mui/icons-material/Business';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import LocationCityIcon from '@mui/icons-material/LocationCity';
-import LanguageIcon from '@mui/icons-material/Language';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import AllInboxIcon from '@mui/icons-material/AllInbox';
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 import { ITeamImageCard } from '../../../types/team';
+import Image from '../Image';
+import cssStyles from '../../../utils/helpers/cssStyle';
 
-const TeamImageCard: FC<ITeamImageCard> = ({
-   borderRadius,
-   figCaption,
-   name,
-   staticImage,
-   socials,
-   address,
-   city,
-   company,
-   country,
-   email,
-   fullName,
-   id,
-   phoneNumber,
-   role,
-   stateRegion,
-   zipCode
-}) => {
+import SvgIconStyle from './SvgIconStyle';
+import SocialsButton from './SocialsButton';
+
+const OverlayStyle = styled('div')(({ theme }) => ({
+   ...cssStyles(theme).bgBlur({ blur: 2, color: theme.palette.primary.dark }),
+   top: 0,
+   zIndex: 8,
+   content: "''",
+   width: '100%',
+   height: '100%',
+   position: 'absolute'
+}));
+
+const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position }) => {
    return (
-      <Card elevation={2} sx={{ width: '100%', display: 'grid', placeItems: 'center' }} id={String(id)}>
-         <CardMedia
-            component="img"
-            height="350"
-            width="250"
-            sx={{ borderRadius, objectFit: 'fill', width: '90%', height: '350px', background: '#0000005a', mt: 2 }}
-            image={staticImage}
-            alt={name + figCaption}
-         />
-         <CardContent sx={{ display: 'grid', gap: 1 }}>
-            <Typography variant="body2">{fullName}</Typography>
-            <Typography variant="body4">{figCaption}</Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <MailOutlineIcon /> {email}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <PhoneIphoneIcon /> {phoneNumber}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <BusinessIcon /> {company}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <SupervisorAccountIcon /> {role}
-            </Typography>
-            <Typography variant="body3" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <LocationOnIcon />
-               {address}
-            </Typography>
-            <Typography variant="body3" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <LocationCityIcon /> {city}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <LanguageIcon /> {country}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <HomeWorkIcon /> {stateRegion}
-            </Typography>
-            <Typography variant="body4" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-               <AllInboxIcon /> {zipCode}
-            </Typography>
-         </CardContent>
-         <CardContent>
-            {socials.map((social) => (
-               <IconButton href={social.link} key={social.id}>
-                  {social.icon}
-               </IconButton>
-            ))}
-         </CardContent>
+      <Card sx={{ textAlign: 'center' }}>
+         <Box sx={{ position: 'relative' }}>
+            <SvgIconStyle
+               src="https://minimal-assets-api-dev.vercel.app/assets/icons/shape-avatar.svg"
+               sx={{
+                  width: 144,
+                  height: 62,
+                  zIndex: 10,
+                  left: 0,
+                  right: 0,
+                  bottom: -26,
+                  mx: 'auto',
+                  position: 'absolute',
+                  color: 'background.paper'
+               }}
+            />
+            <Avatar
+               alt={name}
+               src={staticImage}
+               sx={{
+                  width: 64,
+                  height: 64,
+                  zIndex: 11,
+                  left: 0,
+                  right: 0,
+                  bottom: -32,
+                  mx: 'auto',
+                  position: 'absolute'
+               }}
+            />
+            <OverlayStyle />
+            <Image src={staticImage} alt={name} ratio="16/9" />
+         </Box>
+
+         <Typography variant="subtitle1" sx={{ mt: 6 }}>
+            {name}
+         </Typography>
+
+         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            {position}
+         </Typography>
+
+         <Stack alignItems="center">
+            <SocialsButton initialColor sx={{ my: 2.5 }} socials={[]} />
+         </Stack>
       </Card>
    );
 };
