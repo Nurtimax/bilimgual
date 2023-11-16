@@ -1,6 +1,6 @@
 // @mui
 import { SxProps, alpha } from '@mui/material/styles';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Link, Stack, Button, Tooltip, IconButton, IconButtonProps } from '@mui/material';
 
 import { ISocials } from '../../../types/team';

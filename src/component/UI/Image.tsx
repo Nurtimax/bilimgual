@@ -1,7 +1,7 @@
 import { LazyLoadImage, Effect, LazyLoadImageProps } from 'react-lazy-load-image-component';
 // @mui
 import { Box, BoxProps, SxProps } from '@mui/material';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 interface ImageProps extends LazyLoadImageProps {
    ratio?: string;
