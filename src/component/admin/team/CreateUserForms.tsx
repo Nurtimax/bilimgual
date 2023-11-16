@@ -6,6 +6,7 @@ import { adminCreateTeamSelector } from '../../../store/helpers/create-team';
 
 import Forms from './Forms';
 import UserResult from './UserResult';
+import UserCardStyle from './UserCardStyle';
 
 const CreateUserForms = () => {
    const { isByIdForms, forms } = useAppSelector(adminCreateTeamSelector);
@@ -23,8 +24,9 @@ const CreateUserForms = () => {
          <Grid item xs={8}>
             {renderContent}
          </Grid>
-         <Grid item xs={4}>
+         <Grid item xs={4} gap={1} display="grid">
             <UserResult />
+            <UserCardStyle />
          </Grid>
       </Grid>
    );
