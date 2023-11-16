@@ -21,10 +21,10 @@ const CreateUserForms = () => {
 
    return (
       <Grid container spacing={2}>
-         <Grid item xs={8}>
+         <Grid item xs={7}>
             {renderContent}
          </Grid>
-         <Grid item xs={4} gap={1} display="grid">
+         <Grid item xs={5} gap={1} display="grid">
             <UserResult />
             <UserCardStyle />
          </Grid>

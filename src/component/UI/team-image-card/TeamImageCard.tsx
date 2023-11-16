@@ -20,7 +20,7 @@ const OverlayStyle = styled('div')(({ theme }) => ({
 
 const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position }) => {
    return (
-      <Card sx={{ textAlign: 'center' }}>
+      <Card sx={{ textAlign: 'center', width: 350 }}>
          <Box sx={{ position: 'relative' }}>
             <SvgIconStyle
                src="https://minimal-assets-api-dev.vercel.app/assets/icons/shape-avatar.svg"
