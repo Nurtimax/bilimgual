@@ -80,7 +80,12 @@ const UploadUserImage = () => {
             () => {
                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                   setFile(downloadURL);
-                  dispatch(actionAdminCreateTeam.changeValueWithKey({ key: 'staticImage', value: downloadURL }));
+                  dispatch(
+                     actionAdminCreateTeam.changeValueWithKey({
+                        key: 'staticImage',
+                        value: downloadURL
+                     })
+                  );
                });
             }
          );

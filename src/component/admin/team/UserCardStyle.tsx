@@ -4,10 +4,10 @@ import React from 'react';
 const UserCardStyle = () => {
    return (
       <Card>
-         <CardContent>
-            <TextField />
-            <TextField />
-            <TextField />
+         <CardContent sx={{ display: 'grid', gap: 2 }}>
+            <TextField fullWidth />
+            <TextField fullWidth />
+            <TextField fullWidth />
          </CardContent>
       </Card>
    );

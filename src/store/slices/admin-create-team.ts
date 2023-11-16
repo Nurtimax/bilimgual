@@ -19,7 +19,7 @@ interface InitialState {
 interface IChangeValueWithKeyPayload {
    key: string;
    value: string;
-   socialColor: string;
+   socialColor?: string;
 }
 
 const initialState: InitialState = {
@@ -94,7 +94,7 @@ const adminCreateTeam = createSlice({
                         id: key,
                         icon: key,
                         link: value,
-                        socialColor
+                        socialColor: socialColor || ''
                      });
                   }
                }

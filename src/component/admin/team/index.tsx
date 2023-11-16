@@ -8,7 +8,7 @@ import UserCardStyle from './UserCardStyle';
 const MainAdminTeam = () => {
    return (
       <Grid container spacing={2}>
-         <Grid item xs={3}>
+         <Grid item xs={3} gap={1} display="grid">
             <UploadUserImage />
             <UserCardStyle />
          </Grid>
