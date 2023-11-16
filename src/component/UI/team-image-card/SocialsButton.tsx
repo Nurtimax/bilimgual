@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import { Link, Stack, Button, Tooltip, IconButton, IconButtonProps } from '@mui/material';
 
 import { ISocials } from '../../../types/team';
+import { ISocialIcons, SOCIAL_ICONS } from '../../../utils/constants/icons';
 //
 
 // ----------------------------------------------------------------------
@@ -27,7 +28,7 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
                         color="inherit"
                         sx={{
                            ...(initialColor && {
-                              color: socialColor,
+                              color: socialColor || '#fff',
                               '&:hover': {
                                  bgcolor: alpha(socialColor || '#fff', 0.08)
                               }
@@ -36,7 +37,7 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
                         }}
                         {...other}
                      >
-                        {icon}
+                        {SOCIAL_ICONS[icon as unknown as keyof ISocialIcons]}
                      </IconButton>
                   </Tooltip>
                </Link>
@@ -52,10 +53,10 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
                      m: 0.5,
                      flexShrink: 0,
                      ...(initialColor && {
-                        color: socialColor,
-                        borderColor: socialColor,
+                        color: socialColor || '#fff',
+                        borderColor: socialColor || '#fff',
                         '&:hover': {
-                           borderColor: socialColor,
+                           borderColor: socialColor || '#fff',
                            bgcolor: alpha(socialColor || '#fff', 0.08)
                         }
                      }),

@@ -18,7 +18,7 @@ const OverlayStyle = styled('div')(({ theme }) => ({
    position: 'absolute'
 }));
 
-const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position }) => {
+const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position, socials }) => {
    return (
       <Card sx={{ textAlign: 'center', width: 350 }}>
          <Box sx={{ position: 'relative' }}>
@@ -63,7 +63,7 @@ const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position }) => {
          </Typography>
 
          <Stack alignItems="center">
-            <SocialsButton initialColor sx={{ my: 2.5 }} socials={[]} />
+            <SocialsButton simple sx={{ my: 2.5 }} socials={socials} />
          </Stack>
       </Card>
    );
