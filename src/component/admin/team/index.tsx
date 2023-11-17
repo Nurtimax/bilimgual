@@ -6,7 +6,7 @@ import CreateUserForms from './CreateUserForms';
 
 const MainAdminTeam = () => {
    return (
-      <Grid container spacing={2}>
+      <Grid container spacing={2} pb={5}>
          <Grid item xs={3}>
             <UploadUserImage />
          </Grid>

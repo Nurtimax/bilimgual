@@ -1,7 +1,19 @@
 import React, { FormEvent } from 'react';
-import { Card, CardContent, Stack, TextField } from '@mui/material';
+import {
+   Box,
+   Card,
+   CardContent,
+   FormControl,
+   FormControlLabel,
+   FormLabel,
+   Radio,
+   RadioGroup,
+   Stack,
+   TextField
+} from '@mui/material';
 import { SketchPicker, ColorChangeHandler } from 'react-color';
 import { useFormik } from 'formik';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 const UserCardStyle = () => {
    const { values, errors, handleChange, handleSubmit, setFieldValue } = useFormik({
@@ -13,7 +25,8 @@ const UserCardStyle = () => {
          portfolio: '',
          youtube: '',
          linkedIn: '',
-         telegram: ''
+         telegram: '',
+         radioValue: 'github'
       },
       onSubmit() {}
    });
@@ -23,7 +36,7 @@ const UserCardStyle = () => {
       if (color.rgb.a !== 1) {
          colorStr = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
       }
-      setFieldValue('color', colorStr);
+      setFieldValue(values.radioValue, colorStr);
    };
 
    return (
@@ -35,83 +48,142 @@ const UserCardStyle = () => {
          }}
       >
          <CardContent sx={{ display: 'grid', gap: 2 }}>
-            <Stack direction="row" gap={1}>
-               <Stack gap={1}>
-                  <TextField
-                     fullWidth
-                     label="Github"
-                     required
-                     value={values.github}
+            <Stack direction="row">
+               <FormControl>
+                  <FormLabel id="demo-radio-buttons-group-label">Icon hover Color</FormLabel>
+                  <RadioGroup
+                     aria-labelledby="demo-radio-buttons-group-label"
+                     defaultValue="female"
+                     name="radioValue"
+                     sx={{ display: 'grid', gap: 1, pt: 1.5 }}
+                     value={values.radioValue}
                      onChange={handleChange}
-                     error={!!errors.github}
-                     helperText={errors.github && errors.github}
-                  />
-                  <TextField
-                     fullWidth
-                     label="Facebook"
-                     value={values.facebook}
-                     onChange={handleChange}
-                     error={!!errors.facebook}
-                     helperText={errors.facebook && errors.facebook}
-                  />
+                  >
+                     <FormControlLabel
+                        value="github"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Github"
+                              required
+                              value={values.github}
+                              onChange={handleChange}
+                              error={!!errors.github}
+                              helperText={errors.github && errors.github}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.github }} />
+                              }}
+                           />
+                        }
+                     />
 
-                  <TextField
-                     fullWidth
-                     label="Instagram"
-                     value={values.instagram}
-                     onChange={handleChange}
-                     error={!!errors.instagram}
-                     helperText={errors.instagram && errors.instagram}
-                  />
-                  <TextField
-                     fullWidth
-                     label="LinkedIn"
-                     value={values.linkedIn}
-                     onChange={handleChange}
-                     error={!!errors.linkedIn}
-                     helperText={errors.linkedIn && errors.linkedIn}
-                  />
-                  <TextField
-                     fullWidth
-                     label="Portfolio"
-                     value={values.portfolio}
-                     onChange={handleChange}
-                     error={!!errors.portfolio}
-                     helperText={errors.portfolio && errors.portfolio}
-                  />
-                  <TextField
-                     fullWidth
-                     label="Telegram"
-                     value={values.telegram}
-                     onChange={handleChange}
-                     error={!!errors.telegram}
-                     helperText={errors.telegram && errors.telegram}
-                  />
-                  <TextField
-                     fullWidth
-                     label="Youtube"
-                     value={values.youtube}
-                     onChange={handleChange}
-                     error={!!errors.youtube}
-                     helperText={errors.youtube && errors.youtube}
-                  />
-               </Stack>
-               <SketchPicker onChange={handleChangeColor} color={values.color} />
+                     <FormControlLabel
+                        value="facebook"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Facebook"
+                              value={values.facebook}
+                              onChange={handleChange}
+                              error={!!errors.facebook}
+                              helperText={errors.facebook && errors.facebook}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.facebook }} />
+                              }}
+                           />
+                        }
+                     />
+                     <FormControlLabel
+                        value="instagram"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Instagram"
+                              value={values.instagram}
+                              onChange={handleChange}
+                              error={!!errors.instagram}
+                              helperText={errors.instagram && errors.instagram}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.instagram }} />
+                              }}
+                           />
+                        }
+                     />
+                     <FormControlLabel
+                        value="youtube"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Youtube"
+                              value={values.youtube}
+                              onChange={handleChange}
+                              error={!!errors.youtube}
+                              helperText={errors.youtube && errors.youtube}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.youtube }} />
+                              }}
+                           />
+                        }
+                     />
+                     <FormControlLabel
+                        value="telegram"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Telegram"
+                              value={values.telegram}
+                              onChange={handleChange}
+                              error={!!errors.telegram}
+                              helperText={errors.telegram && errors.telegram}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.telegram }} />
+                              }}
+                           />
+                        }
+                     />
+                     <FormControlLabel
+                        value="portfolio"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="Portfolio"
+                              value={values.portfolio}
+                              onChange={handleChange}
+                              error={!!errors.portfolio}
+                              helperText={errors.portfolio && errors.portfolio}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.portfolio }} />
+                              }}
+                           />
+                        }
+                     />
+                     <FormControlLabel
+                        value="linkedIn"
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label="LinkedIn"
+                              value={values.linkedIn}
+                              onChange={handleChange}
+                              error={!!errors.linkedIn}
+                              helperText={errors.linkedIn && errors.linkedIn}
+                              InputProps={{
+                                 endAdornment: <ColorLensIcon sx={{ color: values.linkedIn }} />
+                              }}
+                           />
+                        }
+                     />
+                  </RadioGroup>
+               </FormControl>
+               <SketchPicker onChange={handleChangeColor} color={values[values.radioValue]} />
             </Stack>
-            <TextField
-               fullWidth
-               value={values.color}
-               onChange={handleChange}
-               error={!!errors.color}
-               helperText={errors.color && errors.color}
-            />
-            <TextField
-               fullWidth
-               value={values.color}
-               onChange={handleChange}
-               error={!!errors.color}
-               helperText={errors.color && errors.color}
-            />
          </CardContent>
       </Card>
    );
