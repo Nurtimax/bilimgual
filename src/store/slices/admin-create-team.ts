@@ -22,6 +22,11 @@ interface IChangeValueWithKeyPayload {
    socialColor?: string;
 }
 
+interface IChangeSocialValueByIdPayload {
+   value: string;
+   id: string;
+}
+
 const initialState: InitialState = {
    forms: {
       staticImage: '',
@@ -100,6 +105,23 @@ const adminCreateTeam = createSlice({
                }
             }
          }
+      },
+      changeSocialValueById: (state, actions: PayloadAction<IChangeSocialValueByIdPayload>) => {
+         const { id, value } = actions.payload;
+
+         const socials = state.forms.socials;
+
+         const newSocials = socials.map((el) => {
+            if (el.id === id) {
+               return {
+                  ...el,
+                  socialColor: value
+               };
+            }
+            return el;
+         });
+
+         state.forms.socials = newSocials;
       }
    },
    extraReducers: (builder) => {
