@@ -54,7 +54,7 @@ const Image: FC<ImageProps> = ({ ratio, disabledEffect = false, effect = 'blur',
                component={LazyLoadImage}
                wrapperClassName="wrapper"
                effect={disabledEffect ? undefined : effect}
-               placeholderSrc="/static/images/nurtilek.jpg"
+               placeholderSrc="/static/images/placeholder.png"
                sx={{ width: 1, height: 1, objectFit: 'cover' }}
                {...other}
             />
