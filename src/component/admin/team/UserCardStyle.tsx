@@ -1,6 +1,5 @@
 import React, { FormEvent } from 'react';
 import {
-   Box,
    Card,
    CardContent,
    FormControl,
@@ -182,7 +181,10 @@ const UserCardStyle = () => {
                      />
                   </RadioGroup>
                </FormControl>
-               <SketchPicker onChange={handleChangeColor} color={values[values.radioValue]} />
+               <SketchPicker
+                  onChange={handleChangeColor}
+                  color={(values as { [key: string]: string })[values.radioValue]}
+               />
             </Stack>
          </CardContent>
       </Card>
