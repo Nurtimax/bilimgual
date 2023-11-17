@@ -124,7 +124,7 @@ const teamList: ITeamImageCard[] = [
 
 const ImageList = () => {
    return (
-      <Grid container py={6} spacing={1}>
+      <Grid container py={6} spacing={1} rowSpacing={5}>
          {teamList.map((team) => (
             <Grid
                item
