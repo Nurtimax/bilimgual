@@ -7,7 +7,6 @@ import {
    FormLabel,
    Radio,
    RadioGroup,
-   Stack,
    TextField
 } from '@mui/material';
 import { SketchPicker, ColorChangeHandler } from 'react-color';
@@ -74,48 +73,46 @@ const UserCardStyle = () => {
             handleSubmit(event);
          }}
       >
-         <CardContent sx={{ display: 'grid', gap: 2 }}>
-            <Stack direction="row">
-               <FormControl>
-                  <FormLabel id="demo-radio-buttons-group-label">Icon hover Color</FormLabel>
-                  <RadioGroup
-                     aria-labelledby="demo-radio-buttons-group-label"
-                     name="radioValue"
-                     sx={{ display: 'grid', gap: 1, pt: 1.5 }}
-                     value={values.radioValue}
-                     onChange={handleChangeValue}
-                  >
-                     {forms.socials.map((el) => (
-                        <FormControlLabel
-                           value={el.id}
-                           control={<Radio />}
-                           label={
-                              <TextField
-                                 fullWidth
-                                 label={String(el.id)}
-                                 value={(values as { [key: string]: string })[el.id]}
-                                 onChange={handleChangeValue}
-                                 error={!!(errors as { [key: string]: string })[el.id]}
-                                 helperText={
-                                    (errors as { [key: string]: string })[el.id] &&
-                                    (errors as { [key: string]: string })[el.id]
-                                 }
-                                 InputProps={{
-                                    endAdornment: (
-                                       <ColorLensIcon sx={{ color: (values as { [key: string]: string })[el.id] }} />
-                                    )
-                                 }}
-                              />
-                           }
-                        />
-                     ))}
-                  </RadioGroup>
-               </FormControl>
-               <SketchPicker
-                  onChange={handleChangeColor}
-                  color={(values as { [key: string]: string })[values.radioValue]}
-               />
-            </Stack>
+         <CardContent sx={{ display: 'grid', gap: 2, gridTemplateColumns: '1fr 1fr' }}>
+            <FormControl>
+               <FormLabel id="demo-radio-buttons-group-label">Icon hover Color</FormLabel>
+               <RadioGroup
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  name="radioValue"
+                  sx={{ display: 'grid', gap: 1, pt: 1.5 }}
+                  value={values.radioValue}
+                  onChange={handleChangeValue}
+               >
+                  {forms.socials.map((el) => (
+                     <FormControlLabel
+                        value={el.id}
+                        control={<Radio />}
+                        label={
+                           <TextField
+                              fullWidth
+                              label={String(el.id)}
+                              value={(values as { [key: string]: string })[el.id]}
+                              onChange={handleChangeValue}
+                              error={!!(errors as { [key: string]: string })[el.id]}
+                              helperText={
+                                 (errors as { [key: string]: string })[el.id] &&
+                                 (errors as { [key: string]: string })[el.id]
+                              }
+                              InputProps={{
+                                 endAdornment: (
+                                    <ColorLensIcon sx={{ color: (values as { [key: string]: string })[el.id] }} />
+                                 )
+                              }}
+                           />
+                        }
+                     />
+                  ))}
+               </RadioGroup>
+            </FormControl>
+            <SketchPicker
+               onChange={handleChangeColor}
+               color={(values as { [key: string]: string })[values.radioValue]}
+            />
          </CardContent>
       </Card>
    );
