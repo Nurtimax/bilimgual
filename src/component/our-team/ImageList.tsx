@@ -129,7 +129,7 @@ const ImageList = () => {
             <Grid
                item
                key={team.id}
-               lg={2.4}
+               lg={3}
                md={4}
                sm={6}
                smMobile={12}
