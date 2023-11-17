@@ -8,8 +8,6 @@ export interface ISocials {
 export interface ITeamImageCard {
    staticImage: string;
    borderRadius: string;
-   name: string;
-   figCaption: string;
    socials: ISocials[];
    id: number;
    fullName: string;
