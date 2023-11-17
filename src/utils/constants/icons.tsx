@@ -19,12 +19,12 @@ export interface ISocialIcons {
 
 export const SOCIAL_ICONS: ISocialIcons = {
    github: <GitHubIcon sx={{ color: '#000' }} />,
-   telegram: <TelegramIcon />,
-   instagram: <InstagramIcon />,
-   linkedIn: <LinkedInIcon />,
-   portfolio: <OpenInNewIcon />,
-   youtube: <YouTubeIcon />,
-   facebook: <FacebookIcon />
+   telegram: <TelegramIcon sx={{ color: '#28a5e1' }} />,
+   instagram: <InstagramIcon sx={{ color: '#bd3593' }} />,
+   linkedIn: <LinkedInIcon sx={{ color: '#0077B5' }} />,
+   portfolio: <OpenInNewIcon sx={{ color: '#000' }} />,
+   youtube: <YouTubeIcon sx={{ color: '#FF0000' }} />,
+   facebook: <FacebookIcon sx={{ color: '#0165E1' }} />
 };
 
 export const SOCIAL_ICONS_KEYS = Object.keys(SOCIAL_ICONS);
