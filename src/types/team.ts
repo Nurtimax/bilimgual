@@ -21,6 +21,7 @@ export interface ITeamImageCard {
    company: string;
    role: string;
    position: string;
+   profileBackground: string;
 }
 
 export interface InitialStateTeamForms extends ITeamImageCard {

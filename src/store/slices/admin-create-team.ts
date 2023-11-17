@@ -42,7 +42,8 @@ const initialState: InitialState = {
       zipCode: '',
       company: '',
       role: '',
-      position: ''
+      position: '',
+      profileBackground: ''
    },
    isByIdForms: false,
    loading: false

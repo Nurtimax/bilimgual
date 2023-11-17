@@ -36,10 +36,10 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
          youtube: '',
          facebook: '',
          borderRadius: '',
-         figCaption: '',
-         name: '',
          staticImage: '',
          socials: [],
+         position: '',
+         profileBackground: '',
          afterSubmit: {
             name: '',
             message: ''
@@ -91,6 +91,17 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
                name="fullName"
                value={values.fullName}
                label="Full Name"
+               required
+            />
+            <TextField
+               fullWidth
+               helperText={errors.position && errors.position}
+               error={!!errors.position}
+               onChange={onChange}
+               name="position"
+               value={values.position}
+               label="Position"
+               placeholder="Frontend Developer"
                required
             />
             <TextField
