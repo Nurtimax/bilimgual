@@ -63,7 +63,7 @@ const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position, social
          </Typography>
 
          <Stack alignItems="center">
-            <SocialsButton simple sx={{ my: 2.5 }} socials={socials} />
+            <SocialsButton initialColor simple sx={{ my: 2.5 }} socials={socials} />
          </Stack>
       </Card>
    );

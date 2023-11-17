@@ -63,7 +63,7 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
       const key = e.target.name;
       const value = e.target.value;
 
-      dispatch(actionAdminCreateTeam.changeValueWithKey({ key, value, socialColor: value }));
+      dispatch(actionAdminCreateTeam.changeValueWithKey({ key, value }));
 
       handleChange(e);
    };

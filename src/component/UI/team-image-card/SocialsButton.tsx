@@ -21,6 +21,7 @@ const SocialsButton: FC<ISocialsButton> = ({ socials, initialColor, simple, sx, 
       <Stack direction="row" flexWrap="wrap" alignItems="center">
          {socials.map((social) => {
             const { id, icon, link, socialColor } = social;
+
             return simple ? (
                <Link key={id} href={link}>
                   <Tooltip title={id} placement="top">

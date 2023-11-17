@@ -19,7 +19,6 @@ interface InitialState {
 interface IChangeValueWithKeyPayload {
    key: string;
    value: string;
-   socialColor?: string;
 }
 
 interface IChangeSocialValueByIdPayload {
@@ -81,7 +80,7 @@ const adminCreateTeam = createSlice({
    initialState,
    reducers: {
       changeValueWithKey: (state, actions: PayloadAction<IChangeValueWithKeyPayload>) => {
-         const { key, value, socialColor } = actions.payload;
+         const { key, value } = actions.payload;
 
          if (key in state.forms) {
             state.forms = { ...state.forms, [key]: value };
@@ -99,7 +98,7 @@ const adminCreateTeam = createSlice({
                         id: key,
                         icon: key,
                         link: value,
-                        socialColor: socialColor || ''
+                        socialColor: ''
                      });
                   }
                }
