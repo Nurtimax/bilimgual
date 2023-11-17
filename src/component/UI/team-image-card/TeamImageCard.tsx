@@ -18,7 +18,7 @@ const OverlayStyle = styled('div')(({ theme }) => ({
    position: 'absolute'
 }));
 
-const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position, socials }) => {
+const TeamImageCard: FC<ITeamImageCard> = ({ staticImage, position, socials, fullName }) => {
    return (
       <Card sx={{ textAlign: 'center', width: 350 }}>
          <Box sx={{ position: 'relative' }}>
@@ -33,11 +33,11 @@ const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position, social
                   bottom: -26,
                   mx: 'auto',
                   position: 'absolute',
-                  color: 'background.paper'
+                  background: 'white'
                }}
             />
             <Avatar
-               alt={name}
+               alt={fullName}
                src={staticImage}
                sx={{
                   width: 64,
@@ -51,11 +51,11 @@ const TeamImageCard: FC<ITeamImageCard> = ({ name, staticImage, position, social
                }}
             />
             <OverlayStyle />
-            <Image src={staticImage} alt={name} ratio="16/9" />
+            <Image src={staticImage} alt={fullName} ratio="16/9" />
          </Box>
 
          <Typography variant="subtitle1" sx={{ mt: 6 }}>
-            {name}
+            {fullName}
          </Typography>
 
          <Typography variant="body2" sx={{ color: 'text.secondary' }}>

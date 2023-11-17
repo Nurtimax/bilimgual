@@ -30,8 +30,6 @@ const initialState: InitialState = {
    forms: {
       staticImage: '',
       borderRadius: '1px 1px 1px 20px',
-      name: 'asdf',
-      figCaption: 'asdfasdf',
       socials: [],
       id: 0,
       fullName: '',

@@ -7,8 +7,7 @@ import { ITeamImageCard } from '../../types/team';
 const teamList: ITeamImageCard[] = [
    {
       id: 1,
-      name: 'Albina',
-      figCaption: 'Frontend developer',
+      fullName: 'Albina',
       staticImage: '/static/images/albina.jpg',
       borderRadius: '1px 1px 1px 20px',
       socials: [
@@ -23,7 +22,6 @@ const teamList: ITeamImageCard[] = [
       company: '',
       country: '',
       email: '',
-      fullName: '',
       phoneNumber: '',
       role: '',
       stateRegion: '',
@@ -32,8 +30,7 @@ const teamList: ITeamImageCard[] = [
    },
    {
       id: 2,
-      name: 'Asatbek',
-      figCaption: 'Frontend developer',
+      fullName: 'Asatbek',
       staticImage: '/static/images/asatbek.jpg',
       borderRadius: '1px 1px 1px 20px',
       socials: [
@@ -48,7 +45,6 @@ const teamList: ITeamImageCard[] = [
       company: '',
       country: '',
       email: '',
-      fullName: '',
       phoneNumber: '',
       role: '',
       stateRegion: '',
@@ -57,8 +53,7 @@ const teamList: ITeamImageCard[] = [
    },
    {
       id: 3,
-      name: 'Abdumalik',
-      figCaption: 'Frontend developer',
+      fullName: 'Abdumalik',
       staticImage: '/static/images/malik.jpg',
       borderRadius: '1px 1px 1px 20px',
       socials: [
@@ -73,7 +68,6 @@ const teamList: ITeamImageCard[] = [
       company: '',
       country: '',
       email: '',
-      fullName: '',
       phoneNumber: '',
       role: '',
       stateRegion: '',
@@ -82,8 +76,7 @@ const teamList: ITeamImageCard[] = [
    },
    {
       id: 4,
-      name: 'Nurtilek',
-      figCaption: 'Frontend developer',
+      fullName: 'Nurtilek',
       staticImage: '/static/images/nurtilek.jpg',
       borderRadius: '1px 1px 1px 20px',
       socials: [
@@ -98,7 +91,6 @@ const teamList: ITeamImageCard[] = [
       company: '',
       country: '',
       email: '',
-      fullName: '',
       phoneNumber: '',
       role: '',
       stateRegion: '',
@@ -107,8 +99,7 @@ const teamList: ITeamImageCard[] = [
    },
    {
       id: 5,
-      name: 'Saltanat',
-      figCaption: 'Frontend developer',
+      fullName: 'Saltanat',
       staticImage: '/static/images/saltanat.jpg',
       borderRadius: '1px 1px 1px 20px',
       socials: [
@@ -123,7 +114,6 @@ const teamList: ITeamImageCard[] = [
       company: '',
       country: '',
       email: '',
-      fullName: '',
       phoneNumber: '',
       role: '',
       stateRegion: '',
