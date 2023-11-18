@@ -11,6 +11,7 @@ import themeBadge from '../badge';
 import paper from '../paper';
 import themeTab from '../tab-panel/themeTab';
 import themeSwitch from '../switch';
+import themeBreadcrumbs from '../breadcrumbs/theme';
 
 interface ThemeProps {
    children: ReactNode;
@@ -127,7 +128,8 @@ const Theme: FC<ThemeProps> = ({ children }) => {
             }
          },
          ...themeTab,
-         MuiSwitch: themeSwitch
+         MuiSwitch: themeSwitch,
+         MuiBreadcrumbs: themeBreadcrumbs
       },
       palette
    });
