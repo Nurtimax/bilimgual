@@ -22,9 +22,13 @@ export const getOurTeamThunk = createAsyncThunk(`${name}/getOurTeamThunk`, async
    try {
       const response = await axiosInctanse.get('/teams.json');
 
-      const teams = Object.keys(response.data).map((key) => ({ ...response.data[key], id: key }));
+      if (response.data) {
+         const teams = Object.keys(response.data).map((key) => ({ ...response.data[key], id: key }));
 
-      return teams;
+         return teams;
+      }
+
+      return [];
    } catch (error) {
       if (error instanceof Error) {
          toast.error(error.message);
