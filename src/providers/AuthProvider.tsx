@@ -19,7 +19,7 @@ interface IAuthProvider {
 
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
-   const { replace } = useRouter();
+   const { replace, pathname } = useRouter();
    const [loading, setLoading] = useState(true); // Set to true initially
 
    useEffect(() => {
@@ -34,7 +34,9 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
                dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
 
                if (data.currentRole === 'ADMIN') {
-                  replace('/admin');
+                  if (!pathname.includes('admin')) {
+                     replace('/admin');
+                  }
                } else {
                   replace('/');
                }
