@@ -25,6 +25,7 @@
       "@storybook/addon-actions": "^7.0.4",
       "@types/next-auth": "^3.15.0",
       "@types/three": "0.143.2",
+      "axios": "^1.6.2",
       "bcryptjs": "^2.4.3",
       "cookie": "^0.5.0",
       "crypto-browserify": "^3.12.0",
