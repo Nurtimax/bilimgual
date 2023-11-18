@@ -1,4 +1,4 @@
-import { Card, CardContent, CircularProgress, Switch, Typography, alpha, styled } from '@mui/material';
+import { Card, CardContent, CircularProgress, Typography, alpha, styled } from '@mui/material';
 import React, { useCallback, useState } from 'react';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import { useDropzone } from 'react-dropzone';
@@ -137,7 +137,7 @@ const UploadUserImage = () => {
                      }}
                   >
                      <AddAPhotoIcon sx={{ width: 24, height: 24, mb: 1 }} color="primary" />
-                     <Typography variant="caption">{file ? 'Update photo' : 'Upload photo'}</Typography>
+                     <Typography variant="caption">{file ? 'Update Avatar' : 'Upload Avatar'}</Typography>
                   </PlaceholderStyle>
                </DropZoneStyle>
                {progress !== 0 && progress !== 100 && (
@@ -162,15 +162,6 @@ const UploadUserImage = () => {
             </RootStyle>
 
             {fileRejections.length > 0 && <LoginAlert />}
-         </CardContent>
-         <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-            <div>
-               <Typography variant="h6">Email verified</Typography>
-               <Typography variant="regular">
-                  Disabling this will automatically send the user a verification email
-               </Typography>
-            </div>
-            <Switch id="ios" />
          </CardContent>
       </Card>
    );
