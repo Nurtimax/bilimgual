@@ -1,11 +1,11 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { Timestamp } from 'firebase/firestore';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 
 import { ITeamImageCard } from '../../types/team';
 import { SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
 import { FIREBASE_REALTIME_URL } from '../../utils/constants/_api';
+import axiosInctanse from '../../utils/helpers/axiosInstance';
 
 import { RootState } from '.';
 
@@ -63,7 +63,7 @@ export const createNewTeam = createAsyncThunk(`${name}/createNewTeam`, async (_,
             dateExample: Timestamp.fromDate(new Date('December 10, 1815'))
          };
 
-         await axios.post(`${FIREBASE_REALTIME_URL}/teams.json`, docData);
+         await axiosInctanse.post(`${FIREBASE_REALTIME_URL}teams.json`, docData);
       } else {
          toast.warn('Sorry. Something wrong with form fields');
       }

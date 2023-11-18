@@ -14,7 +14,7 @@ export interface IUserMetaDataExtends extends UserMetadata {
    lastLoginAt?: string;
 }
 
-export interface IReduxAuthInitialStateFields {
+export interface IReduxAuthInitialStateFields extends IUserRole {
    emailVerified: boolean;
    isAnonymous: boolean;
    metadata: IUserMetaDataExtends;
@@ -27,8 +27,8 @@ export interface IReduxAuthInitialStateFields {
    photoURL: null | string;
    providerId: string;
    uid: string;
-   role: ERole;
-   currentRole: ERole;
+
+   tokenId: string;
 }
 
 export interface IUserRole {

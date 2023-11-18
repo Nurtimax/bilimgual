@@ -4,17 +4,20 @@ import GoogleIcon from '@mui/icons-material/Google';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
-import { signInWithGoogle } from '../../store/slices/authentication-slice';
+import { signInWithGoogleThunk } from '../../store/slices/authentication-slice';
 import { firestore } from '../../firebase';
 import { IUserRole } from '../../types/auth';
+import { useAppDispatch } from '../../store/hooks';
 
 const SocialFroms = () => {
+   const dispatch = useAppDispatch();
+
    const handleSignInWithGoogle = async () => {
-      const response = await signInWithGoogle();
+      const response = await dispatch(signInWithGoogleThunk()).unwrap();
 
       if (response) {
          try {
-            const docRef = doc(firestore, 'users', `${response.user.email}`);
+            const docRef = doc(firestore, 'users', `${response.email}`);
 
             const docSnap = await getDoc(docRef);
 
@@ -25,7 +28,7 @@ const SocialFroms = () => {
                currentRole: 'USER'
             };
 
-            await setDoc(doc(firestore, 'users', `${response.user.email}`), docData);
+            await setDoc(doc(firestore, 'users', `${response.email}`), docData);
          } catch (error) {
             if (error instanceof Error) {
                toast.error(error.message);

@@ -1,9 +1,11 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { doc, getDoc } from 'firebase/firestore';
 
 import { IReduxAuthInitialState, IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
-import { auth } from '../../firebase';
+import { auth, firestore } from '../../firebase';
+import { getAuthUserDataFields } from '../helpers/auth';
 
 const name = 'auth';
 export const initialState: IReduxAuthInitialState = {
@@ -26,23 +28,37 @@ export const initialState: IReduxAuthInitialState = {
       providerId: '',
       uid: '',
       role: '',
-      currentRole: ''
+      currentRole: '',
+      tokenId: ''
    }
 };
 
-export const signInWithGoogle = async () => {
-   try {
-      const provider = new GoogleAuthProvider();
+export const signInWithGoogleThunk = createAsyncThunk(
+   `${name}/signInWithGoogleThunk`,
+   async (_, { rejectWithValue }) => {
+      try {
+         const provider = new GoogleAuthProvider();
+         const response = await signInWithPopup(auth, provider);
+         const user = { ...response.user, tokenId: await response.user.getIdToken() };
 
-      return await signInWithPopup(auth, provider);
-   } catch (error) {
-      if (error instanceof Error) {
-         toast.error(error.message);
-      } else {
-         toast.error('Sorry. Something went wrong with Google sign-in');
+         const docRef = doc(firestore, 'users', `${user.email}`);
+         const docSnap = await getDoc(docRef);
+
+         const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
+
+         const tokenId = await user.getIdToken();
+
+         return getAuthUserDataFields(user, data, tokenId);
+      } catch (error) {
+         if (error instanceof Error) {
+            toast.error(error.message);
+         } else {
+            toast.error('Sorry. Something went wrong with Google sign-in');
+         }
+         return rejectWithValue(error);
       }
    }
-};
+);
 
 export const logOutHandler = async () => {
    try {
@@ -69,6 +85,18 @@ const authenticationSlice = createSlice({
          state.fields.role = value.role;
          state.fields.currentRole = value.currentRole;
       }
+   },
+   extraReducers: (builder) => {
+      builder
+         .addCase(signInWithGoogleThunk.pending, () => {})
+         .addCase(signInWithGoogleThunk.fulfilled, (state, action) => {
+            const payload = action.payload;
+
+            if (payload) {
+               state.fields = payload;
+            }
+         })
+         .addCase(signInWithGoogleThunk.rejected, () => {});
    }
 });
 

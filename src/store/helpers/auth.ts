@@ -5,7 +5,7 @@ import { RootState } from '../slices';
 
 export const authSelector = (state: RootState) => state.auth;
 
-export const getAuthUserDataFields = (user: User, data: IUserRole): IReduxAuthInitialStateFields => {
+export const getAuthUserDataFields = (user: User, data: IUserRole, tokenId: string): IReduxAuthInitialStateFields => {
    const {
       displayName,
       email,
@@ -35,6 +35,7 @@ export const getAuthUserDataFields = (user: User, data: IUserRole): IReduxAuthIn
       tenantId,
       uid,
       role: data.role,
-      currentRole: data.currentRole
+      currentRole: data.currentRole,
+      tokenId
    };
 };

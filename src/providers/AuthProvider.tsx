@@ -31,7 +31,9 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
                const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
 
-               dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data)));
+               const tokenId = await currentUser.getIdToken();
+
+               dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data, tokenId)));
 
                if (data.currentRole === 'ADMIN') {
                   if (!pathname.includes('admin')) {
