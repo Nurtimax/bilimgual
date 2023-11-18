@@ -11,7 +11,7 @@ const AdminNavigateActions = () => {
    return (
       <Stack direction="row" gap={1} py={3}>
          <Button endIcon={<Groups3Icon />} variant="contained" onClick={() => push('admin/team')}>
-            Add team
+            Teams
          </Button>
          <Button endIcon={<ViewCarouselIcon />} variant="contained" onClick={() => push('admin/banner')}>
             Change banner
