@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
    Card,
    CardContent,
@@ -21,7 +21,7 @@ const UserCardStyle = () => {
    const dispatch = useAppDispatch();
    const { forms } = useAppSelector(adminCreateTeamSelector);
 
-   const { values, errors, handleChange, handleSubmit, setFieldValue } = useFormik({
+   const { values, errors, handleChange, setFieldValue } = useFormik({
       initialValues: {
          color: '',
          instagram: '',
@@ -66,13 +66,7 @@ const UserCardStyle = () => {
    }, [dispatch, values]);
 
    return (
-      <Card
-         component="form"
-         onSubmit={(e) => {
-            const event = e as unknown as FormEvent<HTMLFormElement>;
-            handleSubmit(event);
-         }}
-      >
+      <Card>
          <CardContent sx={{ display: 'grid', gap: 2, gridTemplateColumns: '1fr 1fr' }}>
             <FormControl>
                <FormLabel id="demo-radio-buttons-group-label">Icon hover Color</FormLabel>

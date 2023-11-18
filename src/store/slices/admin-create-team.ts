@@ -120,6 +120,9 @@ const adminCreateTeam = createSlice({
          });
 
          state.forms.socials = newSocials;
+      },
+      resetForms: (state) => {
+         state.forms = initialState.forms;
       }
    },
    extraReducers: (builder) => {

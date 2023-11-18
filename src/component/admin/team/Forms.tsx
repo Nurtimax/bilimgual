@@ -49,6 +49,7 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
          try {
             await dispatch(createNewTeam()).unwrap();
             resetForm();
+            dispatch(actionAdminCreateTeam.resetForms());
          } catch (error) {
             if (error instanceof Error) {
                setErrors({ afterSubmit: { message: error.message, name: error.name } });
