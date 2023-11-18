@@ -19,10 +19,7 @@ axiosInctanse.interceptors.request.use(
       const refreshToken = store.getState()?.auth?.fields.tokenId;
 
       if (refreshToken) {
-         if (updateConfig.headers) {
-            updateConfig.headers.Authorization = `Bearer ${refreshToken}`;
-            updateConfig.params = { auth: refreshToken };
-         }
+         updateConfig.params = { auth: refreshToken };
       }
       return updateConfig;
    },

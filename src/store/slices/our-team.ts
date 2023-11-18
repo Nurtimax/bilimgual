@@ -1,9 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { collection, getDocs } from 'firebase/firestore';
 
 import { ITeamImageCard } from '../../types/team';
-import { firestore } from '../../firebase';
+import axiosInctanse from '../../utils/helpers/axiosInstance';
 
 import { RootState } from '.';
 
@@ -20,12 +19,10 @@ const initialState: InitialState = {
 };
 
 export const getOurTeamThunk = createAsyncThunk(`${name}/getOurTeamThunk`, async (_, { rejectWithValue }) => {
-   const teams: ITeamImageCard[] = [];
    try {
-      const querySnapshot = await getDocs(collection(firestore, 'team'));
-      querySnapshot.forEach((doc) => {
-         teams.push({ ...doc.data(), id: doc.id } as unknown as ITeamImageCard);
-      });
+      const response = await axiosInctanse.get('/teams.json');
+
+      const teams = Object.keys(response.data).map((key) => ({ ...response.data[key], id: key }));
 
       return teams;
    } catch (error) {
