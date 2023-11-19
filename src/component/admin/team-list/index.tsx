@@ -1,15 +1,22 @@
 import { Avatar, Button, IconButton, Stack } from '@mui/material';
-import React, { useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import CustomTable, { ITableHeaders } from '../../UI/table/CustomTable';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { getOurTeamThunk, selectorOurTeam } from '../../../store/slices/our-team';
+import {
+   IRemoveOurTeamByIdThunk,
+   getOurTeamThunk,
+   removeOurTeamByIdThunk,
+   selectorOurTeam
+} from '../../../store/slices/our-team';
 import CircularLoading from '../../loading';
 import ImageList from '../../our-team/ImageList';
 
@@ -34,6 +41,7 @@ const tableHeaders: ITableHeaders[] = [
 
 const MainTeamList = () => {
    const [view, setView] = React.useState('list');
+   const { push } = useRouter();
 
    const handleChange = (_event: React.MouseEvent<HTMLElement>, nextView: string) => {
       setView(nextView);
@@ -47,6 +55,21 @@ const MainTeamList = () => {
       dispatch(getOurTeamThunk());
    }, [dispatch]);
 
+   const handleEdit = useCallback(
+      (id: string) => {
+         push(`team/${id}`);
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      []
+   );
+
+   const handleRemove = useCallback(
+      (thunkProps: IRemoveOurTeamByIdThunk) => {
+         dispatch(removeOurTeamByIdThunk(thunkProps));
+      },
+      [dispatch]
+   );
+
    const tableRows = useMemo(
       () =>
          teams.map((team) => ({
@@ -57,33 +80,37 @@ const MainTeamList = () => {
             company: team.company,
             city: team.city,
             edit: (
-               <IconButton>
+               <IconButton onClick={() => handleEdit(team.id)}>
                   <ManageAccountsIcon />
                </IconButton>
             ),
             delete: (
-               <IconButton>
+               <IconButton onClick={() => handleRemove({ fullName: team.fullName, id: team.id })} color="error">
                   <DeleteIcon />
                </IconButton>
             )
          })),
-      [teams]
+      [handleEdit, handleRemove, teams]
    );
 
-   if (loading) {
-      return <CircularLoading open />;
-   }
-
    if (!teams.length) {
-      return null;
+      return (
+         <Stack direction="row" alignItems="center" gap={2}>
+            <Link href="team/create">
+               <Button variant="come">create team</Button>
+            </Link>
+         </Stack>
+      );
    }
 
    return (
       <>
-         <Stack direction="row" justifyContent="flex-end" alignItems="center" gap={2}>
-            <Button variant="come" href="team/action">
-               create team
-            </Button>
+         {loading && <CircularLoading open />}
+
+         <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2}>
+            <Link href="team/create" style={{ justifySelf: 'flex-start' }}>
+               <Button variant="come">create team</Button>
+            </Link>
 
             <ToggleButtonGroup
                orientation="horizontal"

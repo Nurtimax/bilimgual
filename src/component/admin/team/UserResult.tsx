@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Stack } from '@mui/material';
 
 import TeamImageCard from '../../UI/team-image-card/TeamImageCard';
 import { useAppSelector } from '../../../store/hooks';
-import { adminCreateTeamSelector } from '../../../store/helpers/create-team';
+import { selectorOurTeam } from '../../../store/slices/our-team';
 
-const UserResult = () => {
-   const { forms } = useAppSelector(adminCreateTeamSelector);
+const UserResult = memo(() => {
+   const { team } = useAppSelector(selectorOurTeam);
 
    return (
       <Stack justifySelf="center">
-         <TeamImageCard {...forms} />
+         <TeamImageCard {...team} />
       </Stack>
    );
-};
+});
 
 export default UserResult;

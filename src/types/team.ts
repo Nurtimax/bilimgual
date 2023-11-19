@@ -9,7 +9,7 @@ export interface ITeamImageCard {
    staticImage: string;
    borderRadius: string;
    socials: ISocials[];
-   id: number;
+   id: string;
    fullName: string;
    email: string;
    phoneNumber: string;

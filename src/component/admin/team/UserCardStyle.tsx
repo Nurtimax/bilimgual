@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import {
    Card,
    CardContent,
@@ -14,12 +14,11 @@ import { useFormik } from 'formik';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { actionAdminCreateTeam } from '../../../store/slices/admin-create-team';
-import { adminCreateTeamSelector } from '../../../store/helpers/create-team';
+import { actionOurTeam, selectorOurTeam } from '../../../store/slices/our-team';
 
-const UserCardStyle = () => {
+const UserCardStyle = memo(() => {
    const dispatch = useAppDispatch();
-   const { forms } = useAppSelector(adminCreateTeamSelector);
+   const { team } = useAppSelector(selectorOurTeam);
 
    const { values, errors, handleChange, setFieldValue } = useFormik({
       initialValues: {
@@ -56,7 +55,7 @@ const UserCardStyle = () => {
       initialValues.forEach((key) => {
          if ((values as { [key: string]: string })[key]) {
             dispatch(
-               actionAdminCreateTeam.changeSocialValueById({
+               actionOurTeam.changeSocialValueById({
                   id: key,
                   value: (values as { [key: string]: string })[key]
                })
@@ -64,6 +63,8 @@ const UserCardStyle = () => {
          }
       });
    }, [dispatch, values]);
+
+   const findValue = team.socials.find((social) => social.id === values.radioValue);
 
    return (
       <Card>
@@ -77,7 +78,7 @@ const UserCardStyle = () => {
                   value={values.radioValue}
                   onChange={handleChangeValue}
                >
-                  {forms.socials.map((el) => (
+                  {team.socials.map((el) => (
                      <FormControlLabel
                         value={el.id}
                         control={<Radio />}
@@ -85,7 +86,7 @@ const UserCardStyle = () => {
                            <TextField
                               fullWidth
                               label={String(el.id)}
-                              value={(values as { [key: string]: string })[el.id]}
+                              value={el.socialColor || ''}
                               onChange={handleChangeValue}
                               error={!!(errors as { [key: string]: string })[el.id]}
                               helperText={
@@ -93,9 +94,7 @@ const UserCardStyle = () => {
                                  (errors as { [key: string]: string })[el.id]
                               }
                               InputProps={{
-                                 endAdornment: (
-                                    <ColorLensIcon sx={{ color: (values as { [key: string]: string })[el.id] }} />
-                                 )
+                                 endAdornment: <ColorLensIcon sx={{ color: el.socialColor || '' }} />
                               }}
                            />
                         }
@@ -103,13 +102,10 @@ const UserCardStyle = () => {
                   ))}
                </RadioGroup>
             </FormControl>
-            <SketchPicker
-               onChange={handleChangeColor}
-               color={(values as { [key: string]: string })[values.radioValue]}
-            />
+            <SketchPicker onChange={handleChangeColor} color={findValue?.socialColor || ''} />
          </CardContent>
       </Card>
    );
-};
+});
 
 export default UserCardStyle;

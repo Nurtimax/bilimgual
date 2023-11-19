@@ -7,9 +7,8 @@ import WallpaperIcon from '@mui/icons-material/Wallpaper';
 
 import { storage } from '../../../firebase';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { actionAdminCreateTeam } from '../../../store/slices/admin-create-team';
 import LoginAlert from '../../UI/login/Alert';
-import { adminCreateTeamSelector } from '../../../store/helpers/create-team';
+import { actionOurTeam, selectorOurTeam } from '../../../store/slices/our-team';
 
 import { emailRegex } from './validate';
 
@@ -50,17 +49,17 @@ const UploadUserBackground = () => {
 
    const dispatch = useAppDispatch();
 
-   const { forms } = useAppSelector(adminCreateTeamSelector);
+   const { team } = useAppSelector(selectorOurTeam);
 
-   const file = forms.profileBackground;
+   const file = team.profileBackground;
 
-   const emailMathes = emailRegex.test(forms.email);
+   const emailMathes = emailRegex.test(team.email);
 
    const handleDropUserImage = useCallback(
       (acceptedFiles: File[]) => {
          const file = acceptedFiles[0];
 
-         const storageRef = ref(storage, `team/${forms.email}/${file.name}`);
+         const storageRef = ref(storage, `team/${team.email}/${file.name}`);
 
          const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -76,7 +75,7 @@ const UploadUserBackground = () => {
             () => {
                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                   dispatch(
-                     actionAdminCreateTeam.changeValueWithKey({
+                     actionOurTeam.changeValueWithKey({
                         key: 'profileBackground',
                         value: downloadURL
                      })

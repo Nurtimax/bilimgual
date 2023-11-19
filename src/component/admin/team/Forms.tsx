@@ -1,55 +1,77 @@
 import { Button, Card, CardActions, CardContent, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import React, { FC, FormEvent, memo } from 'react';
+import { useRouter } from 'next/router';
 
-import { useAppDispatch } from '../../../store/hooks';
-import { actionAdminCreateTeam, createNewTeam } from '../../../store/slices/admin-create-team';
-import { InitialStateTeamForms } from '../../../types/team';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import LoginAlert from '../../UI/login/Alert';
+import { actionOurTeam, createNewTeam, putOurTeamByIdThunk, selectorOurTeam } from '../../../store/slices/our-team';
 
 import validationSchema from './validate';
 
-interface IForms {
-   initialValues?: InitialStateTeamForms;
-}
+const Forms: FC = memo(() => {
+   const { team } = useAppSelector(selectorOurTeam);
+   const { query, push } = useRouter();
 
-const Forms: FC<IForms> = memo(({ initialValues }) => {
    const dispatch = useAppDispatch();
 
+   const isCreate = query?.action !== 'create';
+
+   const initialValues = isCreate
+      ? {
+           ...team,
+           ...team.socials.reduce((curr, soc) => {
+              return { ...curr, [soc.id]: soc.link };
+           }, {}),
+           afterSubmit: {
+              name: '',
+              message: ''
+           }
+        }
+      : {
+           fullName: '',
+           email: '',
+           phoneNumber: '',
+           country: '',
+           stateRegion: '',
+           city: '',
+           address: '',
+           zipCode: '',
+           company: '',
+           role: '',
+           github: '',
+           telegram: '',
+           instagram: '',
+           linkedIn: '',
+           portfolio: '',
+           youtube: '',
+           facebook: '',
+           borderRadius: '',
+           staticImage: '',
+           socials: [],
+           position: '',
+           profileBackground: '',
+           afterSubmit: {
+              name: '',
+              message: ''
+           }
+        };
+
    const { values, handleChange, handleSubmit, errors } = useFormik({
-      initialValues: initialValues || {
-         fullName: '',
-         email: '',
-         phoneNumber: '',
-         country: '',
-         stateRegion: '',
-         city: '',
-         address: '',
-         zipCode: '',
-         company: '',
-         role: '',
-         github: '',
-         telegram: '',
-         instagram: '',
-         linkedIn: '',
-         portfolio: '',
-         youtube: '',
-         facebook: '',
-         borderRadius: '',
-         staticImage: '',
-         socials: [],
-         position: '',
-         profileBackground: '',
-         afterSubmit: {
-            name: '',
-            message: ''
-         }
-      },
+      initialValues,
       onSubmit: async (_, { resetForm, setErrors }) => {
          try {
-            await dispatch(createNewTeam()).unwrap();
+            if (!isCreate) {
+               await dispatch(createNewTeam()).unwrap();
+            } else {
+               if (query.action) {
+                  await dispatch(putOurTeamByIdThunk({ id: query?.action as string })).unwrap();
+               }
+            }
+
             resetForm();
-            dispatch(actionAdminCreateTeam.resetForms());
+            dispatch(actionOurTeam.resetForms());
+            push('/admin/team');
          } catch (error) {
             if (error instanceof Error) {
                setErrors({ afterSubmit: { message: error.message, name: error.name } });
@@ -64,7 +86,7 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
       const key = e.target.name;
       const value = e.target.value;
 
-      dispatch(actionAdminCreateTeam.changeValueWithKey({ key, value }));
+      dispatch(actionOurTeam.changeValueWithKey({ key, value }));
 
       handleChange(e);
    };
@@ -258,7 +280,7 @@ const Forms: FC<IForms> = memo(({ initialValues }) => {
          </CardContent>
          <CardActions sx={{ justifyContent: 'flex-end' }}>
             <Button variant="contained" type="submit">
-               Create User
+               {team ? 'Edit user' : 'Create user'}
             </Button>
          </CardActions>
       </Card>
