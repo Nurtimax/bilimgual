@@ -41,7 +41,8 @@ const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISig
 
       await setDoc(doc(firestore, 'users', `${values.email}`), {
          role: 'USER',
-         currentRole: 'USER'
+         currentRole: 'USER',
+         createdAt: new Date()
       });
 
       formikHelpers.resetForm();

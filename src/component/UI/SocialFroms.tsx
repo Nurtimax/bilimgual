@@ -25,7 +25,8 @@ const SocialFroms = () => {
 
             const docData = data || {
                role: 'USER',
-               currentRole: 'USER'
+               currentRole: 'USER',
+               createdAt: new Date()
             };
 
             await setDoc(doc(firestore, 'users', `${response.email}`), docData);

@@ -21,8 +21,12 @@ export const getAdminUsersThunk = createAsyncThunk(`${name}/getAdminUsersThunk`,
    const users: IAdminUser[] = [];
    try {
       const querySnapshot = await getDocs(collection(firestore, 'users'));
+
       querySnapshot.forEach((doc) => {
-         users.push({ ...doc.data(), id: doc.id } as IAdminUser);
+         users.push({
+            ...doc.data(),
+            id: doc.id
+         } as IAdminUser);
       });
 
       return users;

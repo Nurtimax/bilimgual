@@ -1,5 +1,15 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import {
+   Chip,
+   Paper,
+   Table,
+   TableBody,
+   TableCell,
+   TableContainer,
+   TableHead,
+   TableRow,
+   Typography
+} from '@mui/material';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
@@ -10,6 +20,7 @@ import { firestore } from '../../../firebase';
 import { IUserRole } from '../../../types/auth';
 import CircularLoading from '../../loading';
 import { getAdminUsersThunk } from '../../../store/slices/admin-users';
+import { getFormattedDate } from '../../../utils/helpers/date';
 
 import UserRole from './UserRole';
 
@@ -82,32 +93,49 @@ const UserTable = memo(() => {
                   <TableRow>
                      <TableCell>#</TableCell>
                      <TableCell>Email</TableCell>
+                     <TableCell>Time Status</TableCell>
                      <TableCell align="right">currentRole</TableCell>
                      <TableCell align="right">role</TableCell>
                   </TableRow>
                </TableHead>
                <TableBody>
-                  {users.map((row, i) => (
-                     <TableRow key={row.id}>
-                        <TableCell component="th" scope="row">
-                           {i + 1}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                           {row.id}
-                        </TableCell>
+                  {users.map((row, i) => {
+                     const date = row?.createdAt?.seconds && getFormattedDate(row?.createdAt?.seconds);
 
-                        <TableCell align="right">{row.currentRole}</TableCell>
+                     const days = date && new Date(date).getDate() - new Date().getDate();
 
-                        <TableCell align="right" width="20%">
-                           <UserRole
-                              email={row.id}
-                              roles={row.role.split(',') as ERole[]}
-                              roleHandler={handleChangeRole}
-                              currentRole={row.currentRole as ERole}
-                           />
-                        </TableCell>
-                     </TableRow>
-                  ))}
+                     const label = typeof days === 'number' ? (days > 10 ? `${days} days` : 'New') : 'No Date';
+
+                     return (
+                        <TableRow key={row.id}>
+                           <TableCell component="th" scope="row">
+                              {i + 1}
+                           </TableCell>
+                           <TableCell component="th" scope="row">
+                              {row.id}
+                           </TableCell>
+
+                           <TableCell component="th" scope="row">
+                              <Chip
+                                 label={label}
+                                 color={label === 'No Date' ? 'error' : 'success'}
+                                 sx={{ color: 'white' }}
+                              />
+                           </TableCell>
+
+                           <TableCell align="right">{row.currentRole}</TableCell>
+
+                           <TableCell align="right" width="20%">
+                              <UserRole
+                                 email={row.id}
+                                 roles={row.role.split(',') as ERole[]}
+                                 roleHandler={handleChangeRole}
+                                 currentRole={row.currentRole as ERole}
+                              />
+                           </TableCell>
+                        </TableRow>
+                     );
+                  })}
                </TableBody>
             </Table>
          </TableContainer>

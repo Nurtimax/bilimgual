@@ -1,6 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { Timestamp } from 'firebase/firestore';
 
 import { ITeamImageCard } from '../../types/team';
 import axiosInctanse from '../../utils/helpers/axiosInstance';
@@ -135,7 +134,7 @@ export const createNewTeam = createAsyncThunk(`${name}/createNewTeam`, async (_,
          const docData = {
             ...forms,
             socials: forms.socials.map((el) => ({ ...el, icon: el.id })),
-            dateExample: Timestamp.fromDate(new Date('December 10, 1815'))
+            createdAt: new Date()
          };
 
          await axiosInctanse.post(`teams.json`, docData);

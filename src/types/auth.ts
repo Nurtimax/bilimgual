@@ -36,8 +36,14 @@ export interface IUserRole {
    currentRole: ERole;
 }
 
+export interface IAdminUserCreatedAt {
+   seconds: number;
+   nanoseconds: number;
+}
+
 export interface IAdminUser {
    role: ERole;
    id: string;
    currentRole?: string;
+   createdAt?: IAdminUserCreatedAt;
 }
