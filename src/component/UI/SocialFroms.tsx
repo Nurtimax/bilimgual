@@ -8,6 +8,7 @@ import { signInWithGoogleThunk } from '../../store/slices/authentication-slice';
 import { firestore } from '../../firebase';
 import { IUserRole } from '../../types/auth';
 import { useAppDispatch } from '../../store/hooks';
+import { putUsersClickRequest } from '../../utils/helpers/date';
 
 const SocialFroms = () => {
    const dispatch = useAppDispatch();
@@ -30,6 +31,8 @@ const SocialFroms = () => {
             };
 
             await setDoc(doc(firestore, 'users', `${response.email}`), docData);
+
+            await putUsersClickRequest(response?.email || '');
          } catch (error) {
             if (error instanceof Error) {
                toast.error(error.message);

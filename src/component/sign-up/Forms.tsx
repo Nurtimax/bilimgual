@@ -9,6 +9,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import LoginAlert from '../UI/login/Alert';
 import { auth, firestore } from '../../firebase';
+import { putUsersClickRequest } from '../../utils/helpers/date';
 
 const validationSchema = yup.object().shape({
    email: yup.string().email('Invalid email format').required('Email is required').max(100).min(3),
@@ -35,27 +36,35 @@ interface ISignUpValues {
 }
 
 const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISignUpValues>) => {
+   const displayName = `${values.firstName} ${values.lastName}`;
+
+   const date = new Date();
+
    try {
       const response = await createUserWithEmailAndPassword(auth, values.email, values.password);
-      updateProfile(response.user, { displayName: `${values.firstName} ${values.lastName}` });
+      updateProfile(response.user, { displayName });
 
       await setDoc(doc(firestore, 'users', `${values.email}`), {
          role: 'USER',
          currentRole: 'USER',
-         createdAt: new Date()
+         createdAt: date
       });
+
+      await putUsersClickRequest(values.email);
 
       formikHelpers.resetForm();
    } catch (error) {
-      const newErrors: FormikErrors<ISignUpValues> = {
-         afterSubmit: { message: '', name: '' },
-         firstName: '',
-         lastName: '',
-         email: '',
-         password: ''
-      };
+      if (error instanceof Error) {
+         const newErrors: FormikErrors<ISignUpValues> = {
+            afterSubmit: { message: error.message, name: error.name },
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: ''
+         };
 
-      formikHelpers.setErrors(newErrors);
+         formikHelpers.setErrors(newErrors);
+      }
    }
 };
 
