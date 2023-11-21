@@ -16,7 +16,7 @@ const MainAdmin = () => {
    }, [dispatch]);
 
    return (
-      <Grid container spacing={2}>
+      <Grid container spacing={2} pb={5}>
          <Grid item xs={12}>
             <AdminNavigateActions />
          </Grid>
