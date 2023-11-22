@@ -24,8 +24,6 @@ const StyledTableCell = styled(TableCell)`
 const Body = memo(() => {
    const { data, year } = useAppSelector((state) => selectorGithubGraph(state));
 
-   console.log(data);
-
    const arrayCalendarGrid = createCalendarGrid(data, year);
 
    return (
