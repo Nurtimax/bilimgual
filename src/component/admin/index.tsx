@@ -21,10 +21,10 @@ const MainAdmin = () => {
          <Grid item xs={12}>
             <AdminNavigateActions />
          </Grid>
-         <Grid item xs={9}>
+         <Grid item xs={8}>
             <UserTable />
          </Grid>
-         <Grid item xs={3} display="flex" flexDirection="column" gap={10}>
+         <Grid item xs={4} display="flex" flexDirection="column" gap={10}>
             <UserChart />
             <UserGraphChart />
          </Grid>
