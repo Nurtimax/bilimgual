@@ -22,7 +22,7 @@ const MainFooter = () => {
                   <AccordionSummary expandIcon={<AddIcon sx={{ color: 'white' }} />}>
                      {accordion.summary}{' '}
                   </AccordionSummary>
-                  <AccordionDetails>{accordion.details}</AccordionDetails>
+                  <AccordionDetails sx={{ color: '#fff' }}>{accordion.details}</AccordionDetails>
                </Accordion>
             ))}
          </Box>
