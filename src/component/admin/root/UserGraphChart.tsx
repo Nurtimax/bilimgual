@@ -1,4 +1,4 @@
-import { Paper, Table, TableContainer } from '@mui/material';
+import { Paper, Table, TableContainer, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 
 import GithubGraphCard from '../../UI/GithubGraphCard';
@@ -16,7 +16,10 @@ const UserGraphChart = () => {
    }, [dispatch]);
 
    return (
-      <TableContainer sx={{ py: 3, px: 1 }} component={Paper}>
+      <TableContainer sx={{ py: 1, px: 1 }} component={Paper}>
+         <Typography variant="body2" py={1}>
+            User graph
+         </Typography>
          <Table color="inherit">
             <TableHead />
             <Body />

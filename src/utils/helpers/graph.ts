@@ -76,7 +76,7 @@ export const chartBackground = (value: number, alpha: string) => {
    // Ensure value is a number between 0 and maxValue
    const numericValue = parseFloat(String(value));
    if (isNaN(numericValue) || numericValue <= 0) {
-      return { background: '#f5f5f5' }; // Default color
+      return { background: '#ccc' }; // Default color
    }
 
    return {

@@ -12,10 +12,10 @@ const StyledTableCell = styled(TableCell)`
    border-radius: 2px;
    height: 10px;
    width: 15px;
-   min-height: 6px;
+   min-height: 15px;
    min-width: 10px;
    line-height: 0.8;
-   border: none;
+   border: 0;
    font-size: 10px;
    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
    font-weight: 400;

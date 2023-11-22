@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { TableRow, TableHead as MuiTableHead, TableCell } from '@mui/material';
 
 // Create an array of day names for the table header
-const daysOfMonth = ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', ''];
+const daysOfMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', ''];
 
 const TableHead = memo(() => {
    return (
@@ -16,6 +16,7 @@ const TableHead = memo(() => {
                   letterSpacing: 0,
                   width: '20px'
                }}
+               colSpan={1}
             />
             {daysOfMonth.map((day) => (
                <TableCell
