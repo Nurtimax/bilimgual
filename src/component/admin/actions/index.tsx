@@ -13,8 +13,8 @@ const AdminNavigateActions = () => {
          <Button endIcon={<Groups3Icon />} variant="contained" onClick={() => push('admin/team')}>
             Teams
          </Button>
-         <Button endIcon={<ViewCarouselIcon />} variant="contained" onClick={() => push('admin/banner')}>
-            Change banner
+         <Button endIcon={<ViewCarouselIcon />} variant="contained" onClick={() => push('admin/sliders')}>
+            Change sliders
          </Button>
          <Button endIcon={<WebAssetIcon />} variant="contained" onClick={() => push('admin/footer')}>
             Change footer
