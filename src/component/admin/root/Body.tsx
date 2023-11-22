@@ -30,7 +30,7 @@ const Body = memo(() => {
       <TableBody>
          {arrayCalendarGrid.map((el, i) => (
             <TableRow>
-               <StyledTableCell align="center">{daysOfWeek[i % 2 === 0 ? i : -1]}</StyledTableCell>
+               <StyledTableCell align="center">{daysOfWeek[i % 2 === 1 ? i : -1]}</StyledTableCell>
                {el.map((sub) => (
                   <Tooltip
                      title={
