@@ -24,7 +24,7 @@ const MainAdmin = () => {
          <Grid item xs={8}>
             <UserTable />
          </Grid>
-         <Grid item xs={4} display="flex" flexDirection="column" gap={10}>
+         <Grid item xs={4} display="flex" flexDirection="column" gap={3}>
             <UserChart />
             <UserGraphChart />
          </Grid>
