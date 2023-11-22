@@ -7,6 +7,7 @@ import { getAdminUsersThunk } from '../../store/slices/admin-users';
 import UserTable from './root/UserTable';
 import AdminNavigateActions from './actions';
 import UserChart from './root/UserChart';
+import UserGraphChart from './root/UserGraphChart';
 
 const MainAdmin = () => {
    const dispatch = useAppDispatch();
@@ -23,8 +24,9 @@ const MainAdmin = () => {
          <Grid item xs={9}>
             <UserTable />
          </Grid>
-         <Grid item xs={3}>
+         <Grid item xs={3} display="flex" flexDirection="column" gap={10}>
             <UserChart />
+            <UserGraphChart />
          </Grid>
       </Grid>
    );

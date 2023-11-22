@@ -21,10 +21,8 @@ const initialState: InitialState = {
 };
 
 export interface IUsersChartData {
-   [year: string]: {
-      [month: string]: {
-         [day: string]: string[];
-      };
+   [month: string]: {
+      [day: string]: string[];
    };
 }
 
