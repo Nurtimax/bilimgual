@@ -7,7 +7,7 @@ const daysOfMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 const daysOfMonths = () => {
    const currentMonth = new Date().getMonth();
 
-   const sortedMonths = [...daysOfMonth.slice(currentMonth + 1), ...daysOfMonth.slice(0, currentMonth + 1)];
+   const sortedMonths = [...daysOfMonth.slice(currentMonth), ...daysOfMonth.slice(0, currentMonth + 1)];
 
    return sortedMonths;
 };
@@ -28,12 +28,12 @@ const TableHead = memo(() => {
                }}
                colSpan={1}
             />
-            {arrayDaysOfMonths.map((day, i) => (
+            {arrayDaysOfMonths.map((day) => (
                <TableCell
                   align="center"
                   sx={{ fontSize: '12px', p: 0, lineHeight: 1, letterSpacing: 0 }}
                   padding="none"
-                  colSpan={i === 0 ? 5 : i === arrayDaysOfMonths.length ? 5 : 4}
+                  colSpan={4}
                   key={day}
                >
                   {day}
