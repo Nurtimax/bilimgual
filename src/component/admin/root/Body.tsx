@@ -12,11 +12,11 @@ const StyledTableCell = styled(TableCell)`
    border-radius: 2px;
    height: 10px;
    width: 15px;
-   min-height: 15px;
-   min-width: 10px;
-   line-height: 0.8;
+   max-height: 5px;
+   min-width: 9px;
+   line-height: 0.6;
    border: 0;
-   font-size: 10px;
+   font-size: 8px;
    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
    font-weight: 400;
 `;
@@ -36,7 +36,8 @@ const Body = memo(() => {
                      title={
                         <>
                            {sub.date} <br />
-                           count users {sub.value.length}
+                           count users{' '}
+                           <span style={{ color: sub.value.length ? '#26a641' : 'red' }}>{sub.value.length}</span>
                         </>
                      }
                      placement="top"
@@ -49,7 +50,7 @@ const Body = memo(() => {
                         padding="none"
                         sx={{
                            width: '10px',
-                           ...chartBackground(sub.value.length, sub.alpha)
+                           ...chartBackground(sub.value.length)
                         }}
                      />
                   </Tooltip>

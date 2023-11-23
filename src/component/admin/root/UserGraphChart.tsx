@@ -26,11 +26,11 @@ const UserGraphChart = () => {
          </Table>
          <GithubGraphCard
             list={[
-               { color: '#b6b9b7', id: 1 },
-               { color: '#0e4429', id: 2 },
-               { color: '#006d32', id: 3 },
-               { color: '#26a641', id: 4 },
-               { color: '#39d353', id: 5 }
+               { color: '#eae6e6', id: 1, text: '0 users' },
+               { color: '#0e4429', id: 2, text: '0 and 10 users' },
+               { color: '#006d32', id: 3, text: '10 and 30 users' },
+               { color: '#26a641', id: 4, text: '30 and 50 users' },
+               { color: '#39d353', id: 5, text: '50 and 70+ users' }
             ]}
          />
       </TableContainer>

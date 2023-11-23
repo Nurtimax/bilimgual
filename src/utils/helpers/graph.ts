@@ -5,7 +5,7 @@ import { IUsersChartData } from '../../store/slices/admin-users-chart';
 interface DayData {
    date: string;
    value: string[]; // Adjust the type here
-   alpha: string;
+   alpha?: string;
 }
 
 export const dateFormat = (date: Date): string => {
@@ -22,8 +22,7 @@ export function fillMissingDates(dataArray: IUsersChartData, year: number): DayD
          return Object.keys(dataArray[month])
             .map((day) => ({
                date: dateFormat(new Date(`${year}.${month}.${day}`)),
-               value: Object.values(dataArray[month][day]).flat(), // Adjust the type here
-               alpha: `${day},${month},`
+               value: Object.values(dataArray[month][day]).flat() // Adjust the type here
             }))
             .flat();
       })
@@ -50,7 +49,6 @@ export const createCalendarGrid = (date: IUsersChartData, year: number): DayData
 
    const array = newDate.reduce((acc, curr, i) => {
       const day = new Date(curr.date).getDay();
-      const alpha = `0.${curr.value.length}`;
 
       if (i === 0 && day > 1) {
          const dummyArray = [...Array(day - 1)];
@@ -60,11 +58,11 @@ export const createCalendarGrid = (date: IUsersChartData, year: number): DayData
          reversedIndexes.forEach((index, i) => {
             const dayBefore = dateFormat(new Date(new Date(curr.date).getTime() - 24 * index * 60 * 60 * 1000));
 
-            acc[i]?.push({ date: dayBefore, value: [], alpha } as DayData);
+            acc[i]?.push({ date: dayBefore, value: [] } as DayData);
          });
       }
 
-      acc[day === 0 ? 6 : day - 1]?.push({ ...curr, alpha } as DayData);
+      acc[day === 0 ? 6 : day - 1]?.push({ ...curr } as DayData);
 
       return acc;
    }, arrayWeek);
@@ -72,14 +70,29 @@ export const createCalendarGrid = (date: IUsersChartData, year: number): DayData
    return array;
 };
 
-export const chartBackground = (value: number, alpha: string) => {
-   // Ensure value is a number between 0 and maxValue
-   const numericValue = parseFloat(String(value));
-   if (isNaN(numericValue) || numericValue <= 0) {
-      return { background: '#ccc' }; // Default color
+export const chartBackground = (value: number) => {
+   if (value > 0 && value <= 10) {
+      return {
+         background: `#0e4429`
+      };
+   }
+   if (value > 10 && value <= 30) {
+      return {
+         background: `#006d32`
+      };
+   }
+   if (value > 30 && value <= 50) {
+      return {
+         background: `#26a641`
+      };
+   }
+   if (value > 50 && value <= 70) {
+      return {
+         background: `#39d353`
+      };
    }
 
    return {
-      background: `rgba(2, 170, 86, ${alpha})`
+      background: `#eae6e6`
    };
 };

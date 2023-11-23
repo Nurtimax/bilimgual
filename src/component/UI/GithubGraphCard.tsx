@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from '@mui/material';
+import { Box, Tooltip, Typography, styled } from '@mui/material';
 import React, { FC, memo } from 'react';
 
 import { ICardGraphList } from '../../types/graph';
@@ -20,7 +20,9 @@ const GithubGraphCard: FC<IGithubGraphCard> = memo(({ endTitle, startTitle, list
       <Box pt={1} display="flex" alignItems="center" gap={0.2}>
          <Typography sx={{ fontSize: '12px' }}>{startTitle || 'Less'}</Typography>
          {list.map((item) => (
-            <StyledCard key={item.id} sx={{ background: item.color }} />
+            <Tooltip title={item?.text || ''}>
+               <StyledCard key={item.id} sx={{ background: item.color }} />
+            </Tooltip>
          ))}
 
          <Typography sx={{ fontSize: '12px' }}>{endTitle || 'More'}</Typography>

@@ -24,4 +24,5 @@ export interface Month {
 export interface ICardGraphList {
    id: number | string;
    color: string;
+   text?: string;
 }
