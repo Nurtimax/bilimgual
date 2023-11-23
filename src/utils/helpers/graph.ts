@@ -1,29 +1,56 @@
 import dayjs from 'dayjs';
+import { ThemeInput } from 'react-activity-calendar';
 
 import { IUsersChartData } from '../../store/slices/admin-users-chart';
 
 interface DayData {
    date: string;
-   value: string[]; // Adjust the type here
-   alpha?: string;
+   count: number; // Adjust the type here
+   level: 0 | 1 | 2 | 3 | 4;
 }
 
 export const dateFormat = (date: Date): string => {
    return dayjs(date).format('YYYY-MM-DD');
 };
 
+export const DEFAULT_THEME: ThemeInput = {
+   light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+};
+
+export const chartBackground = (value: number): number => {
+   if (value > 0 && value <= 10) {
+      return 1;
+   }
+   if (value > 10 && value <= 30) {
+      return 2;
+   }
+   if (value > 30 && value <= 50) {
+      return 3;
+   }
+   if (value > 50 && value <= 70) {
+      return 4;
+   }
+
+   return 0;
+};
+
 export function fillMissingDates(dataArray: IUsersChartData, year: number): DayData[] {
    const endDate = new Date();
-   const startDate = new Date(`${endDate.getFullYear() - 1}-${endDate.getMonth()}-${endDate.getDate() - 1}`);
+   const startDate = new Date(`${endDate.getFullYear() - 1}-${endDate.getMonth() + 1}-${endDate.getDate() + 2}`);
    const filledData: DayData[] = [];
 
    const array = Object.keys(dataArray)
       .map((month) => {
          return Object.keys(dataArray[month])
-            .map((day) => ({
-               date: dateFormat(new Date(`${year}.${month}.${day}`)),
-               value: Object.values(dataArray[month][day]).flat() // Adjust the type here
-            }))
+            .map(
+               (day) =>
+                  ({
+                     date: dateFormat(new Date(`${year}.${month}.${day}`)),
+                     count: Object.values(dataArray[month][day]).flat().length, // Adjust the type here,
+                     level: chartBackground(Object.values(dataArray[month][day]).flat().length)
+                  } as DayData)
+            )
             .flat();
       })
       .flat();
@@ -35,7 +62,7 @@ export function fillMissingDates(dataArray: IUsersChartData, year: number): DayD
       if (existingData) {
          filledData.push(existingData);
       } else {
-         filledData.push({ date: dateString, value: [], alpha: '0' });
+         filledData.push({ date: dateString, count: 0, level: 0 });
       }
    }
 
@@ -58,7 +85,7 @@ export const createCalendarGrid = (date: IUsersChartData, year: number): DayData
          reversedIndexes.forEach((index, i) => {
             const dayBefore = dateFormat(new Date(new Date(curr.date).getTime() - 24 * index * 60 * 60 * 1000));
 
-            acc[i]?.push({ date: dayBefore, value: [] } as DayData);
+            acc[i]?.push({ date: dayBefore, count: 0, level: 0 } as DayData);
          });
       }
 
@@ -68,31 +95,4 @@ export const createCalendarGrid = (date: IUsersChartData, year: number): DayData
    }, arrayWeek);
 
    return array;
-};
-
-export const chartBackground = (value: number) => {
-   if (value > 0 && value <= 10) {
-      return {
-         background: `#0e4429`
-      };
-   }
-   if (value > 10 && value <= 30) {
-      return {
-         background: `#006d32`
-      };
-   }
-   if (value > 30 && value <= 50) {
-      return {
-         background: `#26a641`
-      };
-   }
-   if (value > 50 && value <= 70) {
-      return {
-         background: `#39d353`
-      };
-   }
-
-   return {
-      background: `#eae6e6`
-   };
 };
