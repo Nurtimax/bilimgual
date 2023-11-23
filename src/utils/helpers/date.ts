@@ -25,7 +25,7 @@ export const getFormattedDate = (timestamp: number): string => {
 export const putUsersClickRequest = async (email: string) => {
    try {
       const year = new Date().getFullYear();
-      const month = new Date().getMonth();
+      const month = new Date().getMonth() + 1;
       const day = new Date().getDate();
 
       const url = `/usersChart/${year}/${month}.json`;
@@ -56,7 +56,7 @@ export const putUsersClickRequest = async (email: string) => {
 
 export const customUrls = (param: TUsersTimeChartTabValues): string => {
    const year = new Date().getFullYear();
-   const month = new Date().getMonth();
+   const month = new Date().getMonth() + 1;
    const day = new Date().getDate();
 
    const lastMonth = month - 1 > 0 ? `${year}/${month - 1}` : `${year - 1}/${11 - 1}`;
