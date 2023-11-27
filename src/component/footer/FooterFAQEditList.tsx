@@ -8,13 +8,14 @@ import FooterFAQEditAccordion from './FooterFAQEditAccordion';
 
 interface IFooterFAQEditList {
    values: IFAQValues[];
+   removeFields: (id: string) => void;
    setValues: (
       values: React.SetStateAction<IFAQValues[]>,
       shouldValidate?: boolean | undefined
    ) => Promise<FormikErrors<IFAQValues[]>> | Promise<void>;
 }
 
-const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues }) => {
+const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues, removeFields }) => {
    const handleChangeAnswer = (newValue: string, id: string) => {
       setValues((prev) =>
          prev.map((el) => {
@@ -30,7 +31,7 @@ const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues }) => {
       setValues((prev) =>
          prev.map((el) => {
             if (el.id === id) {
-               return { ...el, answer: newValue };
+               return { ...el, question: newValue };
             }
             return el;
          })
@@ -46,6 +47,7 @@ const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues }) => {
                changeAnswer={handleChangeAnswer}
                changeQuestion={handleChangeQuestion}
                id={value?.id || ''}
+               removeFields={removeFields}
             />
          ))}
       </CardContent>
