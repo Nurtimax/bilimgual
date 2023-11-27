@@ -38,6 +38,14 @@ const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues, removeFi
       );
    };
 
+   if (!values.length) {
+      return (
+         <CardContent>
+            <FooterFAQEditAccordion answerValue="Something is wrong with response" questionValue="No Data" id="" />
+         </CardContent>
+      );
+   }
+
    return (
       <CardContent>
          {values.map((value) => (

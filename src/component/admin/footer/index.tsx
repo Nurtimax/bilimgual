@@ -105,8 +105,8 @@ const MainAdminFooter: FC = memo(() => {
 
             <FooterFAQEditList setValues={setValues} values={values} removeFields={removeFields} />
 
-            <CardActions sx={{ justifyContent: 'flex-end' }}>
-               <Button color="success" onClick={addNewFields}>
+            <CardActions sx={{ justifyContent: 'flex-end', pb: 4 }}>
+               <Button color="success" onClick={addNewFields} disabled={values.length === 20}>
                   Add Field
                </Button>
                <Button color="warning" onClick={saveValues} disabled={disabled}>

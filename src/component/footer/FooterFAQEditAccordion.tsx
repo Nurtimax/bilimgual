@@ -4,9 +4,9 @@ import React, { FC, useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 interface IFooterFAQEditAccordion {
-   changeQuestion: (value: string, id: string) => void;
-   changeAnswer: (value: string, id: string) => void;
-   removeFields: (id: string) => void;
+   changeQuestion?: (value: string, id: string) => void;
+   changeAnswer?: (value: string, id: string) => void;
+   removeFields?: (id: string) => void;
    questionValue: string;
    answerValue: string;
    id: string;
@@ -22,21 +22,34 @@ const FooterFAQEditAccordion: FC<IFooterFAQEditAccordion> = ({
 }) => {
    const [open, setOpen] = useState(true);
 
+   const handleQuestions: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => {
+      if (typeof changeQuestion === 'function') {
+         changeQuestion(e.target.value, id);
+      }
+   };
+
+   const handleRemoveField = () => {
+      if (typeof removeFields === 'function') {
+         removeFields(id);
+      }
+   };
+
+   const handleAnswer: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => {
+      if (typeof changeAnswer === 'function') {
+         changeAnswer(e.target.value, id);
+      }
+   };
+
    return (
       <>
          <Divider color="#4A4A4A" />
 
          <Stack direction="row" display="grid" gridTemplateColumns="39fr 1fr 1fr" pt={1}>
-            <Input
-               placeholder="Enter Questions"
-               id="faq"
-               value={questionValue}
-               onChange={(e) => changeQuestion(e.target.value, id)}
-            />
+            <Input placeholder="Enter Questions" id="faq" value={questionValue} onChange={handleQuestions} />
             <IconButton onClick={() => setOpen((prev) => !prev)}>
                <AddIcon />
             </IconButton>
-            <IconButton color="error" onClick={() => removeFields(id)}>
+            <IconButton color="error" onClick={handleRemoveField}>
                <DeleteIcon />
             </IconButton>
          </Stack>
@@ -48,7 +61,7 @@ const FooterFAQEditAccordion: FC<IFooterFAQEditAccordion> = ({
                fullWidth
                sx={{ pl: 1, py: 1.5 }}
                value={answerValue}
-               onChange={(e) => changeAnswer(e.target.value, id)}
+               onChange={handleAnswer}
             />
          </Collapse>
       </>
