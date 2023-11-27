@@ -122,6 +122,7 @@ const TextField: MuiTextField = {
    MuiInput: {
       styleOverrides: {
          root: {
+            color: '#ccc',
             '&:before': {
                borderBottom: '2px solid var(--TextField-brandBorderColor)'
             },
@@ -130,7 +131,9 @@ const TextField: MuiTextField = {
             },
             '&.Mui-focused:after': {
                borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)'
-            }
+            },
+            '& #faq': { color: 'white', fontSize: '20px', fontWeight: 600 },
+            '& #faq_answer': { color: 'white', fontSize: '1rem', fontWeight: 400 }
          }
       }
    }
