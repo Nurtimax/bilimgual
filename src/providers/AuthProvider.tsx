@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useAppDispatch } from '../store/hooks';
 import { actionAuthentication, initialState } from '../store/slices/authentication-slice';
 import { auth, firestore } from '../firebase';
-import { getAuthUserDataFields } from '../store/helpers/auth';
+import { IAuthUserData, getAuthUserDataFields } from '../store/helpers/auth';
 import { IUserRole } from '../types/auth';
 import CircularLoading from '../component/loading';
 
@@ -31,9 +31,7 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
                const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
 
-               const tokenId = await currentUser.getIdToken();
-
-               dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser, data, tokenId)));
+               dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser as IAuthUserData, data)));
 
                if (data.currentRole === 'ADMIN') {
                   if (!pathname.includes('admin')) {
