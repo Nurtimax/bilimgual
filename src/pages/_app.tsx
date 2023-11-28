@@ -5,11 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Providers from '../providers';
-import { FIREBASE_REALTIME_URL } from '../utils/constants/_api';
 
 export default function App({ Component, pageProps }: AppProps) {
-   console.log(FIREBASE_REALTIME_URL);
-
    return (
       <Providers>
          <Component {...pageProps} />
