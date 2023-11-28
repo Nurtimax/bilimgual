@@ -4,11 +4,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import { useRouter } from 'next/router';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { ERole } from '../../types/role';
 import { authSelector } from '../../store/helpers/auth';
 import UserAvatar from '../UI/avatar';
-import { logOutHandler } from '../../store/slices/authentication-slice';
+import { logOutAuthThunk } from '../../store/slices/authentication-slice';
+import CircularLoading from '../loading';
 
 import Links from './Links';
 import MainLinks from './MainLinks';
@@ -21,8 +22,9 @@ const StyledNavlinks = styled(Box)(() => ({
 }));
 
 const Navlinks: FC = () => {
-   const { fields } = useAppSelector(authSelector);
+   const { fields, loading } = useAppSelector(authSelector);
    const { push } = useRouter();
+   const dispatch = useAppDispatch();
 
    const role: ERole = fields.role;
 
@@ -39,11 +41,13 @@ const Navlinks: FC = () => {
             }
          }
       },
-      { id: 2, text: 'Log out', icon: <LogoutIcon />, settingFunction: logOutHandler }
+      { id: 2, text: 'Log out', icon: <LogoutIcon />, settingFunction: () => dispatch(logOutAuthThunk()) }
    ];
 
    return (
       <StyledNavlinks>
+         {loading && <CircularLoading open />}
+
          {role !== '' ? <Links role={role} /> : <MainLinks />}
 
          <RoleSelect fields={fields} />

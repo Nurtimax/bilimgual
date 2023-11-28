@@ -1,11 +1,12 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 import { IReduxAuthInitialState, IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
 import { auth, firestore } from '../../firebase';
-import { getAuthUserDataFields } from '../helpers/auth';
+import { IAuthUserData, getAuthUserDataFields } from '../helpers/auth';
+import { putUsersClickRequest } from '../../utils/helpers/date';
 
 const name = 'auth';
 export const initialState: IReduxAuthInitialState = {
@@ -30,7 +31,10 @@ export const initialState: IReduxAuthInitialState = {
       role: '',
       currentRole: '',
       tokenId: ''
-   }
+   },
+   loading: false,
+   error: false,
+   errorMessage: ''
 };
 
 export const signInWithGoogleThunk = createAsyncThunk(
@@ -39,16 +43,41 @@ export const signInWithGoogleThunk = createAsyncThunk(
       try {
          const provider = new GoogleAuthProvider();
          const response = await signInWithPopup(auth, provider);
-         const user = { ...response.user, tokenId: await response.user.getIdToken() };
+
+         const user = response.user as IAuthUserData;
 
          const docRef = doc(firestore, 'users', `${user.email}`);
          const docSnap = await getDoc(docRef);
 
          const data = (docSnap.data() as IUserRole) || { role: '', currentRole: '' };
 
-         const tokenId = await user.getIdToken();
+         if (user) {
+            try {
+               const docRef = doc(firestore, 'users', `${user.email}`);
 
-         return getAuthUserDataFields(user, data, tokenId);
+               const docSnap = await getDoc(docRef);
+
+               const data = docSnap.data() as IUserRole;
+
+               const docData = data || {
+                  role: 'USER',
+                  currentRole: 'USER',
+                  createdAt: new Date()
+               };
+
+               await setDoc(doc(firestore, 'users', `${user.email}`), docData);
+
+               await putUsersClickRequest(user?.email || '');
+            } catch (error) {
+               if (error instanceof Error) {
+                  toast.error(error.message);
+               } else {
+                  toast.error('Something wrong with database');
+               }
+            }
+         }
+
+         return getAuthUserDataFields(user, data);
       } catch (error) {
          if (error instanceof Error) {
             toast.error(error.message);
@@ -60,7 +89,7 @@ export const signInWithGoogleThunk = createAsyncThunk(
    }
 );
 
-export const logOutHandler = async () => {
+export const logOutAuthThunk = createAsyncThunk(`${name}/logOutAuthThunk`, async () => {
    try {
       await signOut(auth);
    } catch (error) {
@@ -68,7 +97,7 @@ export const logOutHandler = async () => {
          toast.error(error.message);
       }
    }
-};
+});
 
 const authenticationSlice = createSlice({
    name,
@@ -88,15 +117,30 @@ const authenticationSlice = createSlice({
    },
    extraReducers: (builder) => {
       builder
-         .addCase(signInWithGoogleThunk.pending, () => {})
+         .addCase(signInWithGoogleThunk.pending, (state) => {
+            state.loading = true;
+         })
          .addCase(signInWithGoogleThunk.fulfilled, (state, action) => {
             const payload = action.payload;
 
             if (payload) {
                state.fields = payload;
             }
+
+            state.loading = false;
          })
-         .addCase(signInWithGoogleThunk.rejected, () => {});
+         .addCase(signInWithGoogleThunk.rejected, (state) => {
+            state.loading = false;
+         })
+         .addCase(logOutAuthThunk.pending, (state) => {
+            state.loading = true;
+         })
+         .addCase(logOutAuthThunk.fulfilled, (state) => {
+            state.loading = false;
+         })
+         .addCase(logOutAuthThunk.rejected, (state) => {
+            state.loading = false;
+         });
    }
 });
 

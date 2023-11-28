@@ -3,9 +3,17 @@ import { User } from 'firebase/auth';
 import { IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
 import { RootState } from '../slices';
 
+export interface IAuthUserData extends User {
+   stsTokenManager: {
+      accessToken?: string;
+      expirationTime: number;
+      refreshToken: string;
+   };
+}
+
 export const authSelector = (state: RootState) => state.auth;
 
-export const getAuthUserDataFields = (user: User, data: IUserRole, tokenId: string): IReduxAuthInitialStateFields => {
+export const getAuthUserDataFields = (user: IAuthUserData, data: IUserRole): IReduxAuthInitialStateFields => {
    const {
       displayName,
       email,
@@ -18,7 +26,8 @@ export const getAuthUserDataFields = (user: User, data: IUserRole, tokenId: stri
       providerId,
       refreshToken,
       tenantId,
-      uid
+      uid,
+      stsTokenManager
    } = user;
 
    return {
@@ -36,6 +45,6 @@ export const getAuthUserDataFields = (user: User, data: IUserRole, tokenId: stri
       uid,
       role: data.role,
       currentRole: data.currentRole,
-      tokenId
+      tokenId: stsTokenManager.accessToken || ''
    };
 };
