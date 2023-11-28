@@ -17,6 +17,7 @@ const AdminTeam = () => {
                Create new user
             </Typography>
             <Breadcrumbs
+               color="black"
                breadcrumbs={[
                   { id: '1', link: '/admin', title: 'Admin' },
                   { id: '2', link: '/admin/team', title: 'teams' }

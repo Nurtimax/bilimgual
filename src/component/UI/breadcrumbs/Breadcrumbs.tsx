@@ -1,26 +1,32 @@
 import React, { FC, ReactNode } from 'react';
-import { Breadcrumbs as MuiBreadcrumbs, Typography } from '@mui/material';
+import { BreadcrumbsProps, Breadcrumbs as MuiBreadcrumbs, Typography } from '@mui/material';
 import Link from 'next/link';
 
 interface IBreadcrumb {
    title: string;
-   link: string;
+   link?: string;
    id: string;
    icon?: ReactNode;
 }
 
-interface IBreadcrumbs {
+interface IBreadcrumbs extends BreadcrumbsProps {
    breadcrumbs: IBreadcrumb[];
    breadcrumbsIcon?: ReactNode;
 }
 
-const Breadcrumbs: FC<IBreadcrumbs> = ({ breadcrumbs, breadcrumbsIcon }) => {
+const Breadcrumbs: FC<IBreadcrumbs> = ({ breadcrumbs, breadcrumbsIcon, ...props }) => {
    return (
-      <MuiBreadcrumbs separator={breadcrumbsIcon || '›'} aria-label="breadcrumb">
+      <MuiBreadcrumbs separator={breadcrumbsIcon || '›'} aria-label="breadcrumb" {...props}>
          {breadcrumbs.map((breadcrumb) => (
-            <Link key={breadcrumb.id} href={breadcrumb.link} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+            <Link
+               key={breadcrumb.id}
+               href={breadcrumb?.link || ''}
+               style={{ display: 'flex', alignItems: 'center', gap: 5 }}
+            >
                {breadcrumb.icon}
-               <Typography variant="bodySmall">{breadcrumb.title}</Typography>
+               <Typography variant="bodySmall" color="inherit">
+                  {breadcrumb.title}
+               </Typography>
             </Link>
          ))}
       </MuiBreadcrumbs>

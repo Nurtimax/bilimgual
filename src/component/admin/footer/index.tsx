@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardHeader } from '@mui/material';
+import { Button, Card, CardActions } from '@mui/material';
 import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
@@ -101,8 +101,6 @@ const MainAdminFooter: FC = memo(() => {
          {loading && <CircularLoading open />}
 
          <Card sx={{ background: 'inherit' }} elevation={0}>
-            <CardHeader title="FAQ:" titleTypographyProps={{ sx: { color: 'white' } }} />
-
             <FooterFAQEditList setValues={setValues} values={values} removeFields={removeFields} />
 
             <CardActions sx={{ justifyContent: 'flex-end', pb: 4 }}>
