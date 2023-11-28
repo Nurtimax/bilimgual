@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
 import { useRouter } from 'next/router';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { authSelector } from '../../store/helpers/auth';
+import { useAppDispatch } from '../../store/hooks';
 import { firestore } from '../../firebase';
-import { IUserRole } from '../../types/auth';
+import { IReduxAuthInitialStateFields, IUserRole } from '../../types/auth';
 import { actionAuthentication } from '../../store/slices/authentication-slice';
 import CircularLoading from '../loading';
 
-const RoleSelect = () => {
-   const { fields } = useAppSelector(authSelector);
+interface IRoleSelectProps {
+   fields: IReduxAuthInitialStateFields;
+}
+
+const RoleSelect: FC<IRoleSelectProps> = ({ fields }) => {
    const { replace } = useRouter();
    const dispatch = useAppDispatch();
    const [loading, setLoading] = useState(false);

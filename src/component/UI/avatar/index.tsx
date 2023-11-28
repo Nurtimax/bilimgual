@@ -1,24 +1,24 @@
 import * as React from 'react';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
-import { Box, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import LogoutIcon from '@mui/icons-material/Logout';
+import { Box, Divider, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
 
-import { logOutHandler } from '../../../store/slices/authentication-slice';
+export interface IAvatarSettings {
+   id?: number;
+   text?: string;
+   icon: React.ReactNode;
+   settingFunction: () => void;
+}
 
 interface IUserAvatar {
    url: string;
    alt: string;
    email: string;
+   settings: IAvatarSettings[];
 }
 
-const settings = [
-   { id: 1, text: 'Main', icon: <HomeIcon />, settingFunction: () => {} },
-   { id: 2, text: 'Log out', icon: <LogoutIcon />, settingFunction: logOutHandler }
-];
-
-const UserAvatar: React.FC<IUserAvatar> = React.memo(({ alt, url, email }) => {
+const UserAvatar: React.FC<IUserAvatar> = React.memo(({ alt, url, email, settings }) => {
    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -62,9 +62,19 @@ const UserAvatar: React.FC<IUserAvatar> = React.memo(({ alt, url, email }) => {
                open={Boolean(anchorElUser)}
                onClose={handleCloseUserMenu}
             >
+               <MenuItem sx={{ minHeight: 0, maxHeight: 10 }}>
+                  <ListItemIcon>
+                     <EmailIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText primaryTypographyProps={{ fontSize: 10 }} primary={email} />
+               </MenuItem>
+
+               <Divider />
+
                {settings.map((setting) => (
                   <MenuItem
                      key={setting.id}
+                     sx={{ minWidth: 150 }}
                      onClick={() => {
                         handleCloseUserMenu();
                         if (typeof setting.settingFunction === 'function') {
