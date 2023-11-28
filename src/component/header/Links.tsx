@@ -6,7 +6,8 @@ import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import CategoryIcon from '@mui/icons-material/Category';
 
 import { ERole } from '../../types/role';
-import { logOutHandler } from '../../store/slices/authentication-slice';
+import { useAppDispatch } from '../../store/hooks';
+import { logOutAuthThunk } from '../../store/slices/authentication-slice';
 import HeaderMobileMenu from '../UI/menu/HeaderMobileMenu';
 
 import AdminLinksList from './AdminLinksList';
@@ -25,6 +26,12 @@ const StyledLinks = styled(Box)(() => ({
 
 const Links: FC<LinksProps> = ({ role }) => {
    const roleCondition = role?.includes('ADMIN');
+
+   const dispatch = useAppDispatch();
+
+   const logOutHandler = () => {
+      dispatch(logOutAuthThunk());
+   };
 
    return (
       <StyledLinks>
