@@ -9,6 +9,7 @@ import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
 import Footer from '../component/footer';
+import LayoutSlider from '../component/slider';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -25,6 +26,7 @@ export default function Home() {
             <CardChart />
             <UserExperience />
             <OurTeam />
+            <LayoutSlider />
          </MainLayout>
          <Footer />
       </Page>
