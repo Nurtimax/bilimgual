@@ -9,9 +9,12 @@ interface AdminLinksListProps {
 
 const AdminLinksList: FC<AdminLinksListProps> = () => {
    return (
-      <Grid container columnSpacing={7.9}>
-         <LinkItem to="/tests">tests</LinkItem>
-         <LinkItem to="/admin-result">submitted results</LinkItem>
+      <Grid container columnSpacing={3}>
+         <LinkItem to="/admin/tests">tests</LinkItem>
+         <LinkItem to="/admin/result">submitted results</LinkItem>
+         <LinkItem to="/admin/team">teams</LinkItem>
+         <LinkItem to="/admin/sliders">sliders</LinkItem>
+         <LinkItem to="/admin/footer">footer</LinkItem>
       </Grid>
    );
 };
