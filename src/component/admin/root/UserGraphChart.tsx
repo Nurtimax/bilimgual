@@ -16,6 +16,10 @@ const UserGraphChart = () => {
       dispatch(getDataThunk());
    }, [dispatch]);
 
+   if (!arrayCalendarGrid.length) {
+      return null;
+   }
+
    return (
       <Card
          sx={{
