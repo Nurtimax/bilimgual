@@ -5,7 +5,6 @@ import { useAppDispatch } from '../../store/hooks';
 import { getAdminUsersThunk } from '../../store/slices/admin-users';
 
 import UserTable from './root/UserTable';
-import AdminNavigateActions from './actions';
 import UserChart from './root/UserChart';
 import UserGraphChart from './root/UserGraphChart';
 
@@ -18,9 +17,6 @@ const MainAdmin = () => {
 
    return (
       <Grid container spacing={2} pb={5}>
-         <Grid item xs={12}>
-            <AdminNavigateActions />
-         </Grid>
          <Grid item xs={8}>
             <UserTable />
          </Grid>
