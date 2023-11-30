@@ -1,9 +1,9 @@
 import { Card, CardHeader, CardMedia } from '@mui/material';
-import React from 'react';
+import React, { FC } from 'react';
 
-const SliderCard = () => {
-   const url =
-      'https://firebasestorage.googleapis.com/v0/b/bilingual-b4413.appspot.com/o/team%2Fslider-globus.svg?alt=media&token=936a8771-1ee5-4881-9302-7e5da4c0d402';
+import { ISlidersInitialStateData } from '../../../store/slices/sliders';
+
+const SliderCard: FC<ISlidersInitialStateData> = ({ url, title, subTitle }) => {
    return (
       <Card
          elevation={10}
@@ -18,9 +18,9 @@ const SliderCard = () => {
          }}
       >
          <CardHeader
-            title="Confirm your English proficiency today!"
+            title={title}
             titleTypographyProps={{ sx: { fontSize: 38, color: '#FE9102' } }}
-            subheader="For nearly 30 years, learners have turned to Rosetta Stone to build the fluency and confidence they need to speak new languages."
+            subheader={subTitle}
             subheaderTypographyProps={{ sx: { fontSize: 24, pt: 5, color: 'white' } }}
          />
          <CardMedia image={url} sx={{ backgroundSize: 'contain', height: '320px' }} />
