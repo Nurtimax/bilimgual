@@ -1,9 +1,14 @@
 import { Box, IconButton, styled } from '@mui/material';
-import React, { ReactNode, useRef } from 'react';
+import React, { FC, ReactNode, memo, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 import SliderCard from '../UI/slide-card';
+import { ISlidersInitialStateData } from '../../store/slices/sliders';
+
+interface ISliderListProps {
+   sliders?: ISlidersInitialStateData[];
+}
 
 const RootStyle = styled(Box)`
    padding-top: 3rem;
@@ -35,7 +40,7 @@ const RootStyle = styled(Box)`
    }
 `;
 
-const SliderList = () => {
+const SliderList: FC<ISliderListProps> = memo(({ sliders }) => {
    const sliderRef = useRef<Slider | null>();
 
    const settings: Settings = {
@@ -93,13 +98,12 @@ const SliderList = () => {
    return (
       <RootStyle>
          <Slider ref={sliderRef as React.RefObject<Slider>} {...settings}>
-            <SliderCard />
-            <SliderCard />
-            <SliderCard />
-            <SliderCard />
+            {sliders?.map((slide) => (
+               <SliderCard key={slide.id} {...slide} />
+            ))}
          </Slider>
       </RootStyle>
    );
-};
+});
 
 export default SliderList;

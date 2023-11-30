@@ -1,9 +1,24 @@
 import { Box, Container, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { getSlidersDataThunk, selectorSliders } from '../../store/slices/sliders';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 import SliderList from './SliderList';
 
 const LayoutSlider = () => {
+   const { data } = useAppSelector(selectorSliders);
+
+   const dispatch = useAppDispatch();
+
+   useEffect(() => {
+      dispatch(getSlidersDataThunk());
+   }, [dispatch]);
+
+   if (!data.length) {
+      return 'No Data';
+   }
+
    return (
       <Container>
          <Box pt={5}>
@@ -11,7 +26,7 @@ const LayoutSlider = () => {
                Check out each question type
             </Typography>
 
-            <SliderList />
+            <SliderList sliders={data} />
          </Box>
       </Container>
    );
