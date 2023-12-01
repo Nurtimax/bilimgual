@@ -8,11 +8,15 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'node_modules/video-react/dist/video-react.css';
 
 import Providers from '../providers';
+import MainLayout from '../layout';
 
 export default function App({ Component, pageProps }: AppProps) {
    return (
       <Providers>
-         <Component {...pageProps} />
+         <MainLayout>
+            <Component {...pageProps} />
+         </MainLayout>
+
          <ToastContainer
             position="top-right"
             autoClose={5000}

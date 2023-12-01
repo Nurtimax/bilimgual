@@ -14,6 +14,7 @@ const AdminLinksList: FC<AdminLinksListProps> = () => {
          <LinkItem to="/admin/result">submitted results</LinkItem>
          <LinkItem to="/admin/team">teams</LinkItem>
          <LinkItem to="/admin/sliders">sliders</LinkItem>
+         <LinkItem to="/admin/videos">videos</LinkItem>
          <LinkItem to="/admin/footer">footer</LinkItem>
       </Grid>
    );
