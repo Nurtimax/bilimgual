@@ -10,6 +10,7 @@ import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
 import Footer from '../component/footer';
 import LayoutSlider from '../component/slider';
+import UseFullVideos from '../component/usefull-videos';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -27,6 +28,7 @@ export default function Home() {
             <UserExperience />
             <OurTeam />
             <LayoutSlider />
+            <UseFullVideos />
          </MainLayout>
          <Footer />
       </Page>
