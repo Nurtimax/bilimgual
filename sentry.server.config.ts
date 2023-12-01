@@ -4,8 +4,10 @@
 
 import * as Sentry from '@sentry/nextjs';
 
+import { SENTRY_DNS_URL } from './src/utils/constants/_api';
+
 Sentry.init({
-   dsn: 'https://fb4a704e214113dfe0ab87b4ee0da091@o4506100062420992.ingest.sentry.io/4506316611911680',
+   dsn: SENTRY_DNS_URL,
 
    // Adjust this value in production, or use tracesSampler for greater control
    tracesSampleRate: 1,
