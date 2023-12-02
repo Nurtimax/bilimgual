@@ -1,4 +1,16 @@
-import { Alert, Button, Checkbox, FormControlLabel, FormGroup, IconButton, TextField, styled } from '@mui/material';
+import {
+   Alert,
+   Button,
+   Checkbox,
+   FormControlLabel,
+   FormGroup,
+   IconButton,
+   Stack,
+   Tab,
+   Tabs,
+   TextField,
+   styled
+} from '@mui/material';
 import { FormikErrors, FormikHelpers, useFormik } from 'formik';
 import React, { useState } from 'react';
 import * as yup from 'yup';
@@ -47,6 +59,7 @@ const onSubmit = async (values: ISignUpValues, formikHelpers: FormikHelpers<ISig
 
 const Forms = () => {
    const [passwordView, setPasswordView] = useState(false);
+   const [value, setValue] = useState('user');
 
    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
       initialValues: {
@@ -61,19 +74,33 @@ const Forms = () => {
       validationSchema
    });
 
+   const handleChangeTab = (_: React.SyntheticEvent, newValue: 'admin' | 'user') => {
+      setValue(newValue);
+   };
+
    return (
       <StyledForms onSubmit={handleSubmit}>
-         <Alert severity="success" variant="filled">
-            Use admin
-            <CopyClipboard text="administration@gmail.com" type="email" />
-            <CopyClipboard text="123123123" type="password" />
-         </Alert>
+         <Stack direction="row" gap={2}>
+            <Tabs
+               onChange={handleChangeTab}
+               value={value}
+               variant="scrollable"
+               orientation="vertical"
+               scrollButtons={false}
+            >
+               <Tab label="User" value="user" />
+               <Tab label="Admin" value="admin" />
+            </Tabs>
 
-         <Alert severity="success" variant="filled">
-            Use user
-            <CopyClipboard text="username@gmail.com" type="email" />
-            <CopyClipboard text="123123123" type="password" />
-         </Alert>
+            <Alert severity="success" variant="filled" sx={{ width: '80%' }}>
+               Use {value === 'admin' ? 'admin' : 'user'}
+               <CopyClipboard
+                  text={value === 'admin' ? 'administration@gmail.com' : 'username@gmail.com'}
+                  type="email"
+               />
+               <CopyClipboard text="123123123" type="password" />
+            </Alert>
+         </Stack>
 
          <TextField
             fullWidth

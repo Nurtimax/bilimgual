@@ -11,6 +11,8 @@ interface IMainLayoutProps {
 const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
    const { pathname } = useRouter();
 
+   const disabledPages = ['sign-in', 'sign-up'];
+
    return (
       <>
          {pathname === '/' ? (
@@ -18,7 +20,7 @@ const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
                <MainHeader />
             </ElevationScroll>
          ) : (
-            <MainHeader sx={{ background: '#fff' }} />
+            <>{disabledPages.includes(pathname) && <MainHeader sx={{ background: '#fff' }} />}</>
          )}
 
          <>{children}</>
