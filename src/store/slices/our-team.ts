@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { ITeamImageCard } from '../../types/team';
 import axiosInctanse from '../../utils/helpers/axiosInstance';
-import { SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
+import { ISocialIcons, SOCIAL_ICONS, SOCIAL_ICONS_KEYS, socialHoverColors } from '../../utils/constants/icons';
 
 import { RootState } from '.';
 
@@ -164,15 +164,20 @@ const ourTeamSlice = createSlice({
                const foundSocial = socialsValue.find((social) => social.id === key);
 
                if (foundSocial) {
-                  const updatedSocials = socialsValue.map((el) => (el.id === key ? { ...el, link: value } : el));
-                  state.team.socials = updatedSocials;
+                  if (value) {
+                     const updatedSocials = socialsValue.map((el) => (el.id === key ? { ...el, link: value } : el));
+                     state.team.socials = updatedSocials;
+                  } else {
+                     const updatedSocials = socialsValue.filter((social) => social.id !== key);
+                     state.team.socials = updatedSocials;
+                  }
                } else {
                   if (key in SOCIAL_ICONS) {
                      state.team.socials.push({
                         id: key,
                         icon: key,
                         link: value,
-                        socialColor: ''
+                        socialColor: socialHoverColors(key as keyof ISocialIcons)
                      });
                   }
                }

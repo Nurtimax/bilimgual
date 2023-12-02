@@ -28,3 +28,17 @@ export const SOCIAL_ICONS: ISocialIcons = {
 };
 
 export const SOCIAL_ICONS_KEYS = Object.keys(SOCIAL_ICONS);
+
+export const socialHoverColors = (key: keyof ISocialIcons) => {
+   const colors = {
+      github: '#000',
+      telegram: '#28a5e1',
+      instagram: '#bd3593',
+      linkedIn: '#0077B5',
+      portfolio: '#000',
+      youtube: '#FF0000',
+      facebook: '#0165E1'
+   };
+
+   return colors[key];
+};
