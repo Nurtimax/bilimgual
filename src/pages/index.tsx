@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import MainLayout from '../layout';
 import CardChart from '../layout/card-chart';
 import UserExperience from '../layout/user-experience';
 import OurTeam from '../layout/out-team';
@@ -10,6 +9,8 @@ import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
 import Footer from '../component/footer';
 import LayoutSlider from '../component/slider';
+import UseFullVideos from '../component/usefull-videos';
+import Banner from '../component/banner';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -22,12 +23,12 @@ export default function Home() {
 
    return (
       <Page title="Bilingual" canonical="/" description="Bilingual">
-         <MainLayout>
-            <CardChart />
-            <UserExperience />
-            <OurTeam />
-            <LayoutSlider />
-         </MainLayout>
+         <Banner />
+         <CardChart />
+         <UserExperience />
+         <OurTeam />
+         <LayoutSlider />
+         <UseFullVideos />
          <Footer />
       </Page>
    );
