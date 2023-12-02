@@ -3,7 +3,6 @@ import React from 'react';
 
 import Forms from './Forms';
 import UserResult from './UserResult';
-import UserCardStyle from './UserCardStyle';
 
 const CreateUserForms = () => {
    return (
@@ -13,7 +12,6 @@ const CreateUserForms = () => {
          </Grid>
          <Grid item xs={5} gap={1} display="grid">
             <UserResult />
-            <UserCardStyle />
          </Grid>
       </Grid>
    );

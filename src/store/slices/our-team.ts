@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { ITeamImageCard } from '../../types/team';
 import axiosInctanse from '../../utils/helpers/axiosInstance';
-import { SOCIAL_ICONS, SOCIAL_ICONS_KEYS } from '../../utils/constants/icons';
+import { ISocialIcons, SOCIAL_ICONS, SOCIAL_ICONS_KEYS, socialHoverColors } from '../../utils/constants/icons';
 
 import { RootState } from '.';
 
@@ -172,7 +172,7 @@ const ourTeamSlice = createSlice({
                         id: key,
                         icon: key,
                         link: value,
-                        socialColor: ''
+                        socialColor: socialHoverColors(key as keyof ISocialIcons)
                      });
                   }
                }
