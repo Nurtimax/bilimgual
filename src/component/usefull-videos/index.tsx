@@ -22,6 +22,10 @@ const UseFullVideos = () => {
       return <CircularLoading open />;
    }
 
+   if (!cards.length) {
+      return null;
+   }
+
    return (
       <Container>
          <Stack py={8}>
