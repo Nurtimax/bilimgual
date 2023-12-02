@@ -28,7 +28,9 @@ const MainAdminUsefullList: FC<IMainAdminUsefullListProps> = ({ cards }) => {
       setValues((prev) =>
          prev.map((el) => {
             if (el.id === id) {
-               return { ...el, [key]: value };
+               const newEl = { ...el, [key]: value };
+
+               return newEl;
             }
             return el;
          })

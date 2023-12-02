@@ -1,17 +1,23 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import React from 'react';
+import React, { FC } from 'react';
 import { Player } from 'video-react';
 
-const VideoCard = () => {
+import { IVideoCardProps } from '../../store/slices/usefull';
+
+const VideoCard: FC<IVideoCardProps> = ({ duration, title, video, isSaved }) => {
+   if (!isSaved) {
+      return null;
+   }
+
    return (
       <Card sx={{ height: '100%', width: '100%' }}>
-         <Player playsInline poster="/assets/images/placeholder.png" src="/static/images/Adil_Gitaram.mp4" />
+         <Player playsInline poster="/assets/images/placeholder.png" src={video} />
          <CardContent>
             <Typography gutterBottom variant="body3" component="div">
-               Test Overview
+               {title}
             </Typography>
             <Typography variant="bodySmall" color="text.secondary">
-               Duration 5:00
+               Duration {duration}
             </Typography>
          </CardContent>
       </Card>

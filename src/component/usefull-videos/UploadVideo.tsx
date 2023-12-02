@@ -120,17 +120,9 @@ const UploadVideo: FC<IUploadVideoProps> = ({ id, video, handleChangeVideo }) =>
             >
                <input disabled={!emailMathes} {...getInputProps()} />
 
-               {video && <video autoPlay src={typeof video === 'string' ? video : ''} />}
-
                <PlaceholderStyle
                   className="placeholder"
                   sx={{
-                     ...(video && {
-                        opacity: 0,
-                        color: 'common.white',
-                        bgcolor: 'grey.900',
-                        '&:hover': { opacity: 0.72 }
-                     }),
                      ...((isDragReject || error) && {
                         bgcolor: 'error.lighter'
                      })

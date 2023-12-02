@@ -3,10 +3,15 @@ import React, { FC, useState } from 'react';
 import { Player } from 'video-react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VideoSettingsIcon from '@mui/icons-material/VideoSettings';
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import SaveIcon from '@mui/icons-material/Save';
 import { FormikErrors } from 'formik';
 
-import { IVideoCardProps, deleteUsefullVideoCardByIdThunk } from '../../store/slices/usefull';
+import {
+   IVideoCardProps,
+   deleteUsefullVideoCardByIdThunk,
+   saveUsefullVideoCardByIdThunk
+} from '../../store/slices/usefull';
 import LoginAlert from '../UI/login/Alert';
 import { useAppDispatch } from '../../store/hooks';
 
@@ -38,6 +43,10 @@ const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
       dispatch(deleteUsefullVideoCardByIdThunk(id));
    };
 
+   const handleSave = () => {
+      dispatch(saveUsefullVideoCardByIdThunk({ title, video, duration, id, isSaved: true }));
+   };
+
    return (
       <Card sx={{ height: '100%', width: '100%' }}>
          {findError && (
@@ -47,7 +56,7 @@ const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
          )}
 
          <Box sx={{ height: 266, display: 'grid', placeItems: 'center' }}>
-            {edit && video ? (
+            {video && !edit ? (
                <Player playsInline poster="/assets/images/placeholder.png" src={video} />
             ) : (
                <UploadVideo id={id} video={video} handleChangeVideo={handleChangeVideo} />
@@ -62,6 +71,7 @@ const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
                   name="title"
                   onChange={handleChange}
                   id={String(id)}
+                  sx={{ fontSize: 24, color: 'black' }}
                />
             </Typography>
             <Typography variant="bodySmall" color="text.secondary">
@@ -70,16 +80,20 @@ const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
          </CardContent>
 
          <CardActions sx={{ justifyContent: 'space-between' }}>
-            <Button variant="come" endIcon={<VideoSettingsIcon />} onClick={() => setEdit((prev) => !prev)}>
+            <Button
+               variant="come"
+               endIcon={!edit ? <VideoSettingsIcon /> : <OndemandVideoIcon />}
+               onClick={() => setEdit((prev) => !prev)}
+            >
                Edit video
             </Button>
 
-            <Button variant="contained" color="success" endIcon={<SaveIcon />}>
+            <Button variant="contained" color="success" endIcon={<SaveIcon />} onClick={handleSave}>
                save
             </Button>
 
             <Button onClick={handleDelete} variant="contained" color="error" endIcon={<DeleteIcon />}>
-               card
+               Delete
             </Button>
          </CardActions>
       </Card>

@@ -43,7 +43,7 @@ export const getUsefullVideoCardsThunk = createAsyncThunk(
          querySnapshot.forEach((doc) => {
             usefullCards.push({
                ...doc.data(),
-               id: doc.id
+               id: +doc.id
             } as unknown as IVideoCardProps);
          });
 
@@ -91,6 +91,22 @@ export const deleteUsefullVideoCardByIdThunk = createAsyncThunk(
    }
 );
 
+export const saveUsefullVideoCardByIdThunk = createAsyncThunk(
+   `${name}/saveUsefullVideoCardByIdThunk`,
+   async (data: IVideoCardProps, { rejectWithValue, dispatch }) => {
+      try {
+         await setDoc(doc(firestore, 'usefullCards', `${data.id}`), data);
+
+         await dispatch(getUsefullVideoCardsThunk()).unwrap();
+      } catch (error) {
+         if (error instanceof Error) {
+            toast.error(error.message);
+         }
+         return rejectWithValue(error);
+      }
+   }
+);
+
 const usefullSlice = createSlice({
    name,
    initialState,
@@ -122,6 +138,24 @@ const usefullSlice = createSlice({
             state.loading = false;
          })
          .addCase(saveUsefullVideoCardsThunk.rejected, (state) => {
+            state.loading = false;
+         })
+         .addCase(deleteUsefullVideoCardByIdThunk.pending, (state) => {
+            state.loading = true;
+         })
+         .addCase(deleteUsefullVideoCardByIdThunk.fulfilled, (state) => {
+            state.loading = false;
+         })
+         .addCase(deleteUsefullVideoCardByIdThunk.rejected, (state) => {
+            state.loading = false;
+         })
+         .addCase(saveUsefullVideoCardByIdThunk.pending, (state) => {
+            state.loading = true;
+         })
+         .addCase(saveUsefullVideoCardByIdThunk.fulfilled, (state) => {
+            state.loading = false;
+         })
+         .addCase(saveUsefullVideoCardByIdThunk.rejected, (state) => {
             state.loading = false;
          })
          .addCase(getUsefullVideoCardsThunk.pending, (state) => {
