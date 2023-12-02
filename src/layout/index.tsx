@@ -20,7 +20,7 @@ const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
                <MainHeader />
             </ElevationScroll>
          ) : (
-            <>{disabledPages.includes(pathname) && <MainHeader sx={{ background: '#fff' }} />}</>
+            <>{disabledPages.includes(pathname) || <MainHeader sx={{ background: '#fff' }} />}</>
          )}
 
          <>{children}</>

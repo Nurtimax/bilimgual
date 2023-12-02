@@ -21,7 +21,7 @@ interface IChangeVideoCardProps extends IVideoCardProps {
    errors: (FormikErrors<IVideoCardProps> | undefined)[];
    index: number;
    handleChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-   handleChangeVideo: (id: number, value: string) => void;
+   handleChangeVideo: (id: string, value: string) => void;
 }
 
 const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
