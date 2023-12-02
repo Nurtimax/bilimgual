@@ -26,7 +26,7 @@ const Navlinks: FC = () => {
    const { push } = useRouter();
    const dispatch = useAppDispatch();
 
-   const role: ERole = fields.role;
+   const role: ERole = fields.currentRole;
 
    const settings = [
       {
