@@ -164,8 +164,13 @@ const ourTeamSlice = createSlice({
                const foundSocial = socialsValue.find((social) => social.id === key);
 
                if (foundSocial) {
-                  const updatedSocials = socialsValue.map((el) => (el.id === key ? { ...el, link: value } : el));
-                  state.team.socials = updatedSocials;
+                  if (value) {
+                     const updatedSocials = socialsValue.map((el) => (el.id === key ? { ...el, link: value } : el));
+                     state.team.socials = updatedSocials;
+                  } else {
+                     const updatedSocials = socialsValue.filter((social) => social.id !== key);
+                     state.team.socials = updatedSocials;
+                  }
                } else {
                   if (key in SOCIAL_ICONS) {
                      state.team.socials.push({
