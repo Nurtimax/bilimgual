@@ -1,24 +1,30 @@
-import { Box, Grid } from '@mui/material';
-import React from 'react';
-import { useFormik } from 'formik';
+import { Box } from '@mui/material';
+import React, { useEffect } from 'react';
 
-import ChangeVideoCard, { IVideoCardProps } from './ChangeVideoCard';
+import { getUsefullVideoCardsThunk, selectorUsefull } from '../../store/slices/usefull';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import CircularLoading from '../loading';
+
+import MainAdminUsefullList from './MainAdminUsefullList';
 
 const MainAdminUsefull = () => {
-   const { values } = useFormik<IVideoCardProps[]>({
-      initialValues: [{ id: 1, duration: 5, title: '', video: '' }],
-      onSubmit: () => {}
-   });
+   const dispatch = useAppDispatch();
+
+   const { cards, loading } = useAppSelector(selectorUsefull);
+
+   useEffect(() => {
+      dispatch(getUsefullVideoCardsThunk());
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [dispatch]);
+
+   if (loading) {
+      return <CircularLoading open />;
+   }
 
    return (
       <Box pb={5}>
-         <Grid container minHeight={350} spacing={8} pt={5}>
-            {values.map((el) => (
-               <Grid item xs={4} key={el.id}>
-                  <ChangeVideoCard {...el} />
-               </Grid>
-            ))}
-         </Grid>
+         <MainAdminUsefullList cards={cards} />
       </Box>
    );
 };
