@@ -1,8 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { collection, doc, getDocs, setDoc, deleteDoc } from 'firebase/firestore';
 
-import { firestore } from '../../firebase';
+import axiosInctanse from '../../utils/helpers/axiosInstance';
 
 import { RootState } from '.';
 
@@ -11,7 +10,7 @@ export interface IVideoCardProps {
    title: string;
    duration: number;
    isSaved: boolean;
-   id: number;
+   id: string;
 }
 
 interface InitialState {
@@ -22,7 +21,7 @@ interface InitialState {
 export interface IChangeUsefullVideoCardByIdPayload {
    key: keyof IVideoCardProps;
    value: string;
-   id: number;
+   id: string;
 }
 
 const name = 'usefull';
@@ -36,16 +35,9 @@ export const getUsefullVideoCardsThunk = createAsyncThunk(
    `${name}/getUsefullVideoCards`,
    async (_, { rejectWithValue }) => {
       try {
-         const usefullCards: IVideoCardProps[] = [];
+         const { data } = await axiosInctanse.get('/usefullCards.json');
 
-         const querySnapshot = await getDocs(collection(firestore, 'usefullCards'));
-
-         querySnapshot.forEach((doc) => {
-            usefullCards.push({
-               ...doc.data(),
-               id: +doc.id
-            } as unknown as IVideoCardProps);
-         });
+         const usefullCards: IVideoCardProps[] = Object.keys(data || {}).map((key) => ({ ...data[key], id: key }));
 
          return usefullCards;
       } catch (error) {
@@ -61,7 +53,7 @@ export const saveUsefullVideoCardsThunk = createAsyncThunk(
    `${name}/saveUsefullVideoCards`,
    async (data: IVideoCardProps, { rejectWithValue, dispatch }) => {
       try {
-         await setDoc(doc(firestore, 'usefullCards', `${Date.now()}`), data);
+         await axiosInctanse.post('/usefullCards.json', data);
 
          await dispatch(getUsefullVideoCardsThunk()).unwrap();
 
@@ -77,9 +69,9 @@ export const saveUsefullVideoCardsThunk = createAsyncThunk(
 
 export const deleteUsefullVideoCardByIdThunk = createAsyncThunk(
    `${name}/deleteUsefullVideoCardByIdThunk`,
-   async (id: number, { rejectWithValue, dispatch }) => {
+   async (id: string, { rejectWithValue, dispatch }) => {
       try {
-         await deleteDoc(doc(firestore, 'usefullCards', `${id}`));
+         await axiosInctanse.delete(`/usefullCards/${id}.json`);
 
          await dispatch(getUsefullVideoCardsThunk()).unwrap();
       } catch (error) {
@@ -95,7 +87,7 @@ export const saveUsefullVideoCardByIdThunk = createAsyncThunk(
    `${name}/saveUsefullVideoCardByIdThunk`,
    async (data: IVideoCardProps, { rejectWithValue, dispatch }) => {
       try {
-         await setDoc(doc(firestore, 'usefullCards', `${data.id}`), data);
+         await axiosInctanse.put(`/usefullCards/${data.id}.json`, data);
 
          await dispatch(getUsefullVideoCardsThunk()).unwrap();
       } catch (error) {

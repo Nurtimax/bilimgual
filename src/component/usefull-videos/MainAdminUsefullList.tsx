@@ -23,7 +23,7 @@ const MainAdminUsefullList: FC<IMainAdminUsefullListProps> = ({ cards }) => {
    const handleChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => {
       const key = e.target.name;
       const value = e.target.value;
-      const id = Number(e.target.id);
+      const id = e.target.id;
 
       setValues((prev) =>
          prev.map((el) => {
@@ -37,7 +37,7 @@ const MainAdminUsefullList: FC<IMainAdminUsefullListProps> = ({ cards }) => {
       );
    };
 
-   const handleChangeVideo = (id: number, value: string) => {
+   const handleChangeVideo = (id: string, value: string) => {
       setValues((prev) =>
          prev.map((el) => {
             if (el.id === id) {
@@ -50,7 +50,7 @@ const MainAdminUsefullList: FC<IMainAdminUsefullListProps> = ({ cards }) => {
 
    const addNewFieldsVideoCards = async () => {
       await dispatch(
-         saveUsefullVideoCardsThunk({ id: Date.now(), duration: 0, title: '', video: '', isSaved: false })
+         saveUsefullVideoCardsThunk({ id: '', duration: 0, title: '', video: '', isSaved: false })
       ).unwrap();
    };
 

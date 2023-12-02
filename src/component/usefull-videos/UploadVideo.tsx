@@ -13,7 +13,7 @@ import { authSelector } from '../../store/helpers/auth';
 import { IVideoCardProps } from '../../store/slices/usefull';
 
 interface IUploadVideoProps extends Pick<IVideoCardProps, 'id' | 'video'> {
-   handleChangeVideo: (id: number, value: string) => void;
+   handleChangeVideo: (id: string, value: string) => void;
 }
 
 const RootStyle = styled('div')(({ theme }) => ({
