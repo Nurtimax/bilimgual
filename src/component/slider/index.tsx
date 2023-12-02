@@ -21,7 +21,7 @@ const LayoutSlider = () => {
 
    return (
       <Container>
-         <Box pt={5}>
+         <Box py={5}>
             <Typography variant="h4" sx={{ color: '#3752B4', textAlign: 'center' }}>
                Check out each question type
             </Typography>
