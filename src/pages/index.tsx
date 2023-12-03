@@ -11,6 +11,7 @@ import Footer from '../component/@layout/footer';
 import LayoutSlider from '../component/@layout/slider';
 import UseFullVideos from '../component/@development/usefull-videos';
 import Banner from '../component/@layout/banner';
+import LayoutExpand from '../layout/expand';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -29,6 +30,7 @@ export default function Home() {
          <OurTeam />
          <LayoutSlider />
          <UseFullVideos />
+         <LayoutExpand />
          <Footer />
       </Page>
    );
