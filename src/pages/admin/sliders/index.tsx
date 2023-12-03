@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
 
-import MainAdminBanner from '../../../component/admin/banner';
+import MainAdminBanner from '../../../component/@admin/banner';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
 
 const AdminBanner = () => {

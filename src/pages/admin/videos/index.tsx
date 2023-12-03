@@ -2,7 +2,7 @@ import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
-import MainAdminUsefull from '../../../component/usefull-videos/MainAdminUsefull';
+import MainAdminUsefull from '../../../component/@development/usefull-videos/MainAdminUsefull';
 
 const AdminVideos = () => {
    return (

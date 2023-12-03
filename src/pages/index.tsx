@@ -7,10 +7,10 @@ import OurTeam from '../layout/out-team';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
-import Footer from '../component/footer';
-import LayoutSlider from '../component/slider';
-import UseFullVideos from '../component/usefull-videos';
-import Banner from '../component/banner';
+import Footer from '../component/@layout/footer';
+import LayoutSlider from '../component/@layout/slider';
+import UseFullVideos from '../component/@development/usefull-videos';
+import Banner from '../component/@layout/banner';
 
 export const metadata: Metadata = {
    title: 'Home',

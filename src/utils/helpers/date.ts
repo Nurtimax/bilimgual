@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import { AxiosError } from 'axios';
 
-import { TUsersTimeChartTabValues } from '../../component/admin/root/UserChart';
+import { TUsersTimeChartTabValues } from '../../component/@admin/root/UserChart';
 import { IUsersChartData } from '../../store/slices/admin-users-chart';
 
 import axiosInctanse from './axiosInstance';

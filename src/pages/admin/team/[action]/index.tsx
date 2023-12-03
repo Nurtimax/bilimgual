@@ -2,7 +2,7 @@ import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
 import Breadcrumbs from '../../../../component/UI/breadcrumbs/Breadcrumbs';
-import MainAdminTeam from '../../../../component/admin/team';
+import MainAdminTeam from '../../../../component/@admin/team';
 
 const TeamEdit = () => {
    return (

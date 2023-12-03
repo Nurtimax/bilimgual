@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
-import MainAdminFooter from '../../../component/admin/footer';
+import MainAdminFooter from '../../../component/@admin/footer';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
 
 const AdminFooter = () => {
