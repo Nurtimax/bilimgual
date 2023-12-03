@@ -1,7 +1,7 @@
 import { AppBar, Container, styled, AppBarProps } from '@mui/material';
 import React, { FC, memo, ReactNode } from 'react';
 
-import HeaderWrapper from '../../component/header/HeaderWrapper';
+import HeaderWrapper from '../../component/@layout/header/HeaderWrapper';
 
 interface StyledAppBarProps extends AppBarProps {
    /*

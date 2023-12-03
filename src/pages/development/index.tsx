@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import MainDevelopment from '../../component/development';
+import MainDevelopment from '../../component/@development';
 import Page from '../../component/page';
 
 const Development: FC = () => {
