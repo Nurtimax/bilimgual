@@ -35,19 +35,23 @@ const MainFooter = () => {
 
    return (
       <StyledMainFooter>
-         <Typography variant="h5" color="inherit">
-            FAQ:
-         </Typography>
-         <Box pt={5} pb={10}>
-            {accordions.map((accordion) => (
-               <Accordion key={accordion.id}>
-                  <AccordionSummary expandIcon={<AddIcon sx={{ color: 'white' }} />}>
-                     {accordion.question}{' '}
-                  </AccordionSummary>
-                  <AccordionDetails sx={{ color: '#fff' }}>{accordion.answer}</AccordionDetails>
-               </Accordion>
-            ))}
-         </Box>
+         {!!accordions.length && (
+            <>
+               <Typography variant="h5" color="inherit">
+                  FAQ:
+               </Typography>
+               <Box pt={5} pb={10}>
+                  {accordions.map((accordion) => (
+                     <Accordion key={accordion.id}>
+                        <AccordionSummary expandIcon={<AddIcon sx={{ color: 'white' }} />}>
+                           {accordion.question}{' '}
+                        </AccordionSummary>
+                        <AccordionDetails sx={{ color: '#fff' }}>{accordion.answer}</AccordionDetails>
+                     </Accordion>
+                  ))}
+               </Box>
+            </>
+         )}
          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <BilingualFullIcon style={{ height: '44px', width: '220px' }} />
             <Box py={1}>
