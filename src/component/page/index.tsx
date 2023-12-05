@@ -14,8 +14,21 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
       <Box>
          <Helmet>
             {title && <title>{title}</title>}
+
             {canonical && <link rel="canonical" href={window.location.origin + canonical} />}
+
             {description && <meta name="description" content={description} />}
+
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
+            <script
+               dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               
+               gtag('config', 'G-V4WF9Z7HM5');`
+               }}
+            />
          </Helmet>
          {children}
       </Box>
