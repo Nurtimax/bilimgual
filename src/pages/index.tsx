@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import MainLayout from '../layout';
 import CardChart from '../layout/card-chart';
 import UserExperience from '../layout/user-experience';
 import OurTeam from '../layout/out-team';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
-import Footer from '../component/footer';
-import LayoutSlider from '../component/slider';
+import Footer from '../component/@layout/footer';
+import LayoutSlider from '../component/@layout/slider';
+import UseFullVideos from '../component/@development/usefull-videos';
+import Banner from '../component/@layout/banner';
+import LayoutExpand from '../layout/expand';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -22,12 +24,13 @@ export default function Home() {
 
    return (
       <Page title="Bilingual" canonical="/" description="Bilingual">
-         <MainLayout>
-            <CardChart />
-            <UserExperience />
-            <OurTeam />
-            <LayoutSlider />
-         </MainLayout>
+         <Banner />
+         <CardChart />
+         <UserExperience />
+         <OurTeam />
+         <LayoutSlider />
+         <UseFullVideos />
+         <LayoutExpand />
          <Footer />
       </Page>
    );

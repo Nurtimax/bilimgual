@@ -74,15 +74,11 @@ const slidersSlice = createSlice({
       changeArrayValuesWithKey: (state, actions: PayloadAction<IChangeArrayValuesWithKeyPayload>) => {
          const { key, value, id } = actions.payload;
 
-         console.log(value, id);
-
          const indexToUpdate = state.data.findIndex((el) => el.id === id);
 
          if (indexToUpdate !== -1) {
             const newData = [...state.data];
             newData[indexToUpdate] = { ...newData[indexToUpdate], [key]: value };
-
-            console.log(newData[indexToUpdate]);
 
             state.data = newData;
             state.selectedData = { ...newData[indexToUpdate] };

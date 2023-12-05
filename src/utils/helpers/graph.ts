@@ -51,8 +51,8 @@ export function fillMissingDates(dataArray: IUsersChartData, year: number): DayD
                (day) =>
                   ({
                      date: dateFormat(new Date(`${year}.${month}.${day}`)),
-                     count: Object.values(dataArray[month][day]).flat().length, // Adjust the type here,
-                     level: chartBackground(Object.values(dataArray[month][day]).flat().length)
+                     count: Object.values(dataArray[month][day] || {}).flat().length, // Adjust the type here,
+                     level: chartBackground(Object.values(dataArray[month][day] || {}).flat().length)
                   } as DayData)
             )
             .flat();

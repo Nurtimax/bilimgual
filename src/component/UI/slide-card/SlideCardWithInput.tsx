@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card, CardHeader, Input } from '@mui/material';
 
-import UploadImage from '../../admin/banner/UploadImage';
+import UploadImage from '../../@admin/banner/UploadImage';
 import { ISlidersInitialStateData, actionSliders } from '../../../store/slices/sliders';
 import { useAppDispatch } from '../../../store/hooks';
 

@@ -1,21 +1,29 @@
-import { styled } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
+import { useRouter } from 'next/router';
 
-import BilingualBox from './boxes/BilingualBox';
+import ElevationScroll from './elevation-scroll';
+import MainHeader from './header/MainHeader';
 
 interface IMainLayoutProps {
    children: ReactNode;
 }
 
-const StyledMainContent = styled('main')(() => ({
-   padding: '127px 0'
-}));
-
 const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
+   const { pathname } = useRouter();
+
+   const disabledPages = ['sign-in', 'sign-up'];
+
    return (
       <>
-         <BilingualBox />
-         <StyledMainContent>{children}</StyledMainContent>
+         {pathname === '/' ? (
+            <ElevationScroll>
+               <MainHeader />
+            </ElevationScroll>
+         ) : (
+            <>{disabledPages.includes(pathname) || <MainHeader sx={{ background: '#fff' }} />}</>
+         )}
+
+         <>{children}</>
       </>
    );
 };

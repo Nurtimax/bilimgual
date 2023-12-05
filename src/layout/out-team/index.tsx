@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/material';
 
-import MainOutTeam from '../../component/our-team';
+import MainOutTeam from '../../component/@layout/our-team';
 
 const OurTeam = () => {
    return (

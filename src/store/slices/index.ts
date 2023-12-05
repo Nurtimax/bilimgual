@@ -6,6 +6,7 @@ import ourTeam from './our-team';
 import adminUsersChart from './admin-users-chart';
 import githubGraph from './github-graph';
 import sliders from './sliders';
+import usefull from './usefull';
 
 const rootReducer = combineReducers({
    auth: authenticationSlice.reducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
    ourTeam,
    adminUsersChart,
    githubGraph,
-   sliders
+   sliders,
+   usefull
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
