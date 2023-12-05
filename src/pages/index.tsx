@@ -23,7 +23,11 @@ export default function Home() {
    console.log(fields, 'home');
 
    return (
-      <Page title="Bilingual" canonical="/" description="Bilingual">
+      <Page
+         title="Bilingual"
+         canonical="/"
+         description="Bilingual is a web service designed for creating and taking tests in two languages."
+      >
          <Banner />
          <CardChart />
          <UserExperience />
