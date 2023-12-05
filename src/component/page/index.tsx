@@ -20,18 +20,21 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
 
             {description && <meta name="description" content={description} />}
 
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
-            <script
-               dangerouslySetInnerHTML={{
-                  __html: `window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
+            {process.env.NODE_ENV === 'production' && (
+               <>
+                  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
+                  <script
+                     dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
+                              function gtag(){dataLayer.push(arguments);}
+                              gtag('js', new Date());
                
-               gtag('config', 'G-V4WF9Z7HM5');`
-               }}
-            />
-
-            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
+                              gtag('config', 'G-V4WF9Z7HM5');`
+                     }}
+                  />
+                  <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
+               </>
+            )}
          </Helmet>
          {children}
          <script
