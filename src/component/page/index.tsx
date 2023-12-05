@@ -38,7 +38,7 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
                   })(window,document,'script','dataLayer','GTM-MJN54M5X');`
                }}
             ></script>
-            <meta name="google-site-verification" content="N3hDHHqJPXq9Sz5dE1yZDVrjeagdOzcjLHvvL0cBNzs" />
+            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
          </Helmet>
          {children}
          <noscript>
