@@ -7,6 +7,7 @@ interface TabPanelProps {
    children?: React.ReactNode;
    index: number | string;
    value: number | string;
+   style?: React.CSSProperties;
 }
 
 export function CustomTabPanel(props: TabPanelProps) {

@@ -39,7 +39,7 @@ const MainClientTest = () => {
             </CardContent>
 
             {dummy.map((el, i) => (
-               <CustomTabPanel key={el.id} index={i} value={testIndex}>
+               <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={i} value={testIndex}>
                   <TestByType type={el.type} />
                </CustomTabPanel>
             ))}
