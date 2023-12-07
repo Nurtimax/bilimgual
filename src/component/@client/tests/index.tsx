@@ -1,9 +1,35 @@
 import { Box, Button, Card, CardActions, CardContent, Divider, LinearProgress, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
 
-import TestSelect from './test-select';
+import { CustomTabPanel } from '../../UI/tab-panel';
+
+import TestByType, { TestType } from './TestByType';
+
+interface ITest {
+   type: TestType;
+   id: number;
+}
+
+const dummy: ITest[] = [
+   { id: 1, type: 'descriptionImage' },
+   { id: 2, type: 'select' }
+];
 
 const MainClientTest = () => {
+   const [testIndex, setTestIndex] = useState(0);
+   const formik = useFormik({ initialValues: {}, onSubmit: () => {} });
+
+   const handleNextTestIndex = () => {
+      setTestIndex((prev) => prev + 1);
+   };
+
+   const handlePrevTestIndex = () => {
+      setTestIndex((prev) => prev && prev - 1);
+   };
+
+   console.log(formik);
+
    return (
       <Box>
          <Card sx={{ borderRadius: 5 }}>
@@ -12,12 +38,21 @@ const MainClientTest = () => {
                <LinearProgress variant="determinate" value={10} sx={{ height: 10, borderRadius: 5 }} />
             </CardContent>
 
-            <TestSelect />
+            {dummy.map((el, i) => (
+               <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={i} value={testIndex}>
+                  <TestByType type={el.type} />
+               </CustomTabPanel>
+            ))}
 
             <Divider />
 
             <CardActions sx={{ justifyContent: 'flex-end', p: 3 }}>
-               <Button variant="come">Next</Button>
+               <Button variant="come" onClick={handlePrevTestIndex} disabled={!testIndex}>
+                  Prev
+               </Button>
+               <Button variant="come" onClick={handleNextTestIndex} disabled={testIndex === dummy.length - 1}>
+                  Next
+               </Button>
             </CardActions>
          </Card>
       </Box>
