@@ -2,6 +2,7 @@ import { Container, Toolbar } from '@mui/material';
 import React from 'react';
 
 import MainClientTest from '../../component/@client/tests';
+import PracticeTest from '../../component/@client/tests/practice-test';
 
 const ClientTests = () => {
    return (
@@ -11,6 +12,7 @@ const ClientTests = () => {
 
          <Container>
             <MainClientTest />
+            <PracticeTest />
          </Container>
       </>
    );
