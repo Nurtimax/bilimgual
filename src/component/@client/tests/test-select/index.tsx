@@ -1,51 +1,130 @@
-import { List, ListItem, Paper, Stack } from '@mui/material';
+import { Box, CardContent, CardHeader, Paper, styled } from '@mui/material';
 import React, { useState } from 'react';
+
+interface ItemObject {
+   id: number;
+   title: string;
+}
+
+const Item = styled(Paper)(({ theme }) => ({
+   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+   ...theme.typography.body2,
+   padding: '0.5rem 1.2rem',
+   textAlign: 'center',
+   color: '#4C4859',
+   fontWeight: 900,
+   fontFamily: 'Gudea',
+   fontSize: 16,
+   border: '1.5px solid #4C4859',
+   borderRadius: 8
+}));
+
+const array: ItemObject[] = [
+   { id: 1, title: 'twall' },
+   { id: 2, title: 'dreesey' },
+   { id: 3, title: 'jelance' },
+   { id: 4, title: 'cability' },
+   { id: 5, title: 'advantage' },
+   { id: 6, title: 'port' },
+   { id: 7, title: 'ecorated' },
+   { id: 8, title: 'beathing' },
+   { id: 9, title: 'distinge' },
+   { id: 10, title: 'soap' },
+   { id: 11, title: 'vivory' },
+   { id: 12, title: 'internate' },
+   { id: 13, title: 'outee' },
+   { id: 14, title: 'uncove' },
+   { id: 15, title: 'fold' },
+   { id: 16, title: 'beer' },
+   { id: 17, title: 'filend' },
+   { id: 18, title: 'living' }
+];
 
 const WIDGET_TYPE = 'widgetType';
 
-const array = ['Widgget A', 'Widgget B', 'Widgget C', 'Widgget D'];
-
 const TestSelect = () => {
-   const [widgets, setWidgets] = useState<string[]>([]);
+   const [widgets, setWidgets] = useState<ItemObject[]>([]);
+   const [items, setItems] = useState<ItemObject[]>(array);
 
-   const handleOnDrag = (e: React.DragEvent, widgetType: string) => {
-      e.dataTransfer.setData(WIDGET_TYPE, widgetType);
+   const handleRemoveItem = (id: number) => {
+      setItems((prev) => prev.filter((item) => item.id !== id));
+   };
+
+   const handleRemoveWidget = (id: number) => {
+      setWidgets((prev) => prev.filter((item) => item.id !== id));
+   };
+
+   const handleOnDrag = (e: React.DragEvent, widgetType: ItemObject) => {
+      e.dataTransfer.setData(WIDGET_TYPE, JSON.stringify(widgetType));
    };
 
    const handleOnDrop = (e: React.DragEvent) => {
-      const widgetType = e.dataTransfer.getData(WIDGET_TYPE) as string;
+      const widgetType = JSON?.parse(e.dataTransfer.getData(WIDGET_TYPE) || '{}') as ItemObject;
 
-      setWidgets((prev) => [...prev, widgetType]);
+      if (widgetType) {
+         handleRemoveItem(widgetType.id);
+         setWidgets((prev) => [...prev, widgetType]);
+      }
    };
 
-   const handleDragOvver = (e: React.DragEvent) => {
+   const handleDragOver = (e: React.DragEvent) => {
       e.preventDefault();
    };
 
+   const handleClickItem = (obj: ItemObject) => {
+      handleRemoveItem(obj.id);
+      setWidgets((prev) => [...prev, obj]);
+   };
+
+   const handleClickSelectedItem = (obj: ItemObject) => {
+      handleRemoveWidget(obj.id);
+      setItems((prev) => [...prev, obj]);
+   };
+
    return (
-      <Stack direction="row" display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={5}>
-         <List>
-            {array.map((item) => (
-               <ListItem key={item} draggable onDragStart={(e) => handleOnDrag(e, item)}>
-                  {item}
-               </ListItem>
+      <>
+         <CardHeader
+            title="Select the real English words in this list"
+            titleTypographyProps={{ textAlign: 'center' }}
+         />
+
+         <CardContent sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, p: 3, justifyContent: 'flex-start' }}>
+            {items.map((item) => (
+               <Item
+                  draggable
+                  key={item.id}
+                  onClick={() => handleClickItem(item)}
+                  onDragStart={(e) => handleOnDrag(e, item)}
+               >
+                  {item.title}
+               </Item>
             ))}
-         </List>
-         <Paper
-            onDrop={handleOnDrop}
-            onDragOver={handleDragOvver}
-            elevation={3}
-            sx={{ border: '1px dashed', minHeight: 300, minWidth: 300 }}
-         >
-            <List>
-               {widgets.map((item) => (
-                  <ListItem key={item} draggable onDragStart={(e) => handleOnDrag(e, item)}>
-                     {item}
-                  </ListItem>
+         </CardContent>
+
+         <CardContent sx={{ p: 3, justifyContent: 'flex-end', display: 'flex' }}>
+            <Box
+               sx={{
+                  border: '1px dashed',
+                  minHeight: 150,
+                  minWidth: 400,
+                  width: '30%',
+                  borderRadius: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'baseline',
+                  gap: 1
+               }}
+               onDrop={handleOnDrop}
+               onDragOver={handleDragOver}
+            >
+               {widgets.map((widget) => (
+                  <Item key={widget.id} onClick={() => handleClickSelectedItem(widget)}>
+                     {widget.title}
+                  </Item>
                ))}
-            </List>
-         </Paper>
-      </Stack>
+            </Box>
+         </CardContent>
+      </>
    );
 };
 
