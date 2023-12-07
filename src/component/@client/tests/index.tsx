@@ -50,7 +50,7 @@ const MainClientTest = () => {
                <Button variant="come" onClick={handlePrevTestIndex} disabled={!testIndex}>
                   Prev
                </Button>
-               <Button variant="come" onClick={handleNextTestIndex} disabled={testIndex === dummy.length}>
+               <Button variant="come" onClick={handleNextTestIndex} disabled={testIndex === dummy.length - 1}>
                   Next
                </Button>
             </CardActions>
