@@ -2,7 +2,7 @@ import { Box, CardContent, CardHeader, Stack, TextField, Typography } from '@mui
 import React, { useState } from 'react';
 import { TokenAnnotator } from 'react-text-annotate';
 
-const TEXT =
+export const TEXT =
    'When Sebastian Thrun started working on self-driving cars at Google in 2007, few people outside of the company took him seriously. “I can tell you very senior CEOs of major American car companies would shake my hand and turn away because I wasn’t worth talking to,” said Thrun, now the co-founder and CEO of online higher education startup Udacity, in an interview with Recode earlier this week. A little less than a decade later, dozens of self-driving startups have cropped up while automakers around the world clamor, wallet in hand, to secure their place in the fast-moving world of fully automated transportation.';
 
 interface TokenSpan {
