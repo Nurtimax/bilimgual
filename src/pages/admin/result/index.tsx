@@ -1,7 +1,7 @@
 import { Box, Toolbar } from '@mui/material';
 import React from 'react';
 
-import ClientRole from '../../../component/@client/tests/client-role/ClientRole';
+import ClientRole from '../../../component/@client/tests/components/ClientRole';
 
 const AdminResults = () => {
    return (

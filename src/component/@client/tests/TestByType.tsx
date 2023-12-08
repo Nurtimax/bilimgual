@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import TestDescriptionImage from './description-image';
-import TestSelect from './test-select';
-import PracticeTest from './practice-test';
-import HighlightsAnswer from './highlights_the_answer';
-import SelectMainIdea from './select-main-idea';
+import TestDescriptionImage from './components/DescriptionImage';
+import TestSelect from './components/TestSelect';
+import PracticeTest from './components/PracticeTest';
+import HighlightsAnswer from './components/HighlightsAnswer';
+import SelectMainIdea from './components/SelectMainIdea';
 
 export type TestType = 'descriptionImage' | 'select' | 'practice' | 'highlight' | 'mainIdea';
 
