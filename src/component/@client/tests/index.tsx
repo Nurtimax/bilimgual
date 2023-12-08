@@ -1,8 +1,9 @@
 import { Box, Button, Card, CardActions, CardContent, Divider, LinearProgress, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 
 import { CustomTabPanel } from '../../UI/tab-panel';
+import { checkArray } from '../../../utils/helpers/array';
 
 import TestByType, { TestType } from './TestByType';
 
@@ -11,35 +12,82 @@ interface ITest {
    id: number;
 }
 
-const dummy: ITest[] = [
-   { id: 1, type: 'descriptionImage' },
-   { id: 2, type: 'select' }
-];
+interface IUseFormikInitialValues {
+   selected: ITest;
+   list: ITest[];
+}
+
+const normalise = (array: ITest[], value: number) => {
+   const MIN = Math.min(...array.map((el) => el.id));
+   const MAX = Math.max(...array.map((el) => el.id));
+
+   const result = ((value - MIN) * 100) / (MAX - MIN);
+
+   return result;
+};
 
 const MainClientTest = () => {
-   const [testIndex, setTestIndex] = useState(0);
-   const formik = useFormik({ initialValues: {}, onSubmit: () => {} });
+   const { values, setValues } = useFormik<IUseFormikInitialValues>({
+      initialValues: {
+         selected: { id: 1, type: 'highlight' },
+         list: [
+            { id: 1, type: 'highlight' },
+            { id: 2, type: 'select' },
+            { id: 3, type: 'descriptionImage' },
+            { id: 4, type: 'practice' }
+         ]
+      },
+      onSubmit: () => {}
+   });
 
    const handleNextTestIndex = () => {
-      setTestIndex((prev) => prev + 1);
+      setValues((prev) => {
+         const newSelected = prev.list.findIndex((el) => el.id === prev.selected.id);
+
+         if (newSelected !== -1) {
+            return {
+               ...prev,
+               selected: prev.list[newSelected + 1]
+            };
+         }
+
+         return prev;
+      });
    };
 
    const handlePrevTestIndex = () => {
-      setTestIndex((prev) => prev && prev - 1);
+      setValues((prev) => {
+         const newSelected = prev.list.findIndex((el) => el.id === prev.selected.id);
+
+         if (newSelected !== -1) {
+            return {
+               ...prev,
+               selected: prev.list[newSelected - 1]
+            };
+         }
+
+         return prev;
+      });
    };
 
-   console.log(formik);
+   const valuesList = checkArray(values.list);
+   const firstListItem = valuesList?.[0];
+   const lastListItem = valuesList?.[valuesList.length - 1];
 
    return (
       <Box>
          <Card sx={{ borderRadius: 5 }}>
             <CardContent sx={{ p: 3 }}>
                <Typography variant="h3">0:21</Typography>
-               <LinearProgress variant="determinate" value={10} sx={{ height: 10, borderRadius: 5 }} />
+               <LinearProgress
+                  variant="determinate"
+                  value={normalise(valuesList, values.selected.id)}
+                  sx={{ height: 10, borderRadius: 5 }}
+               />
             </CardContent>
 
-            {dummy.map((el, i) => (
-               <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={i} value={testIndex}>
+            {valuesList.map((el) => (
+               <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
                   <TestByType type={el.type} />
                </CustomTabPanel>
             ))}
@@ -47,10 +95,10 @@ const MainClientTest = () => {
             <Divider />
 
             <CardActions sx={{ justifyContent: 'flex-end', p: 3 }}>
-               <Button variant="come" onClick={handlePrevTestIndex} disabled={!testIndex}>
+               <Button variant="come" onClick={handlePrevTestIndex} disabled={values.selected.id === firstListItem.id}>
                   Prev
                </Button>
-               <Button variant="come" onClick={handleNextTestIndex} disabled={testIndex === dummy.length - 1}>
+               <Button variant="come" onClick={handleNextTestIndex} disabled={values.selected.id === lastListItem.id}>
                   Next
                </Button>
             </CardActions>
