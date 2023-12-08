@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 
-import { TEXT } from '../highlights_the_answer';
+import { TEXT } from './HighlightsAnswer';
 
 const dummy = [
    { id: 1, title: 'There are many variations of passages of lorem ipsum available, but the majority have.' },
