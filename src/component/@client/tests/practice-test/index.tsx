@@ -33,12 +33,7 @@ const StyledMiniContainer = styled(Box)(() => ({
    alignItems: 'start',
    justifyContent: 'start',
    flexDirection: 'column',
-   borderRadius: '10px',
-   '& .Laptop, & .AvTimer, & .ContactEmergency ,': {
-      display: 'flex',
-      textAlign: 'center',
-      gap: '1.5rem'
-   }
+   borderRadius: '10px'
 }));
 
 const ContainerIkons = styled(Box)(() => ({
