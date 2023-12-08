@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Box } from '@mui/system';
 import { Laptop, AvTimer, ContactEmergency } from '@mui/icons-material';
-import { Button } from '@mui/material';
 
 import BannerTest from '../../../../assets/icons/BannerTest';
 
@@ -63,23 +62,6 @@ const StyledContainerMain = styled(Box)(() => ({
    }
 }));
 
-const StyledContainerButtons = styled(Box)(() => ({
-   display: 'flex',
-   alignItems: 'start',
-   justifyContent: 'space-between',
-   marginTop: '2rem',
-   '.CANCEL': {
-      marginLeft: '2.5rem',
-      border: '2px solid #3A10E5'
-   },
-
-   '.PRACTICE': {
-      marginRight: '2.5rem',
-      color: '#fff',
-      background: 'var(--Blue-Corporate-color, #3A10E5)'
-   }
-}));
-
 const PracticeTest = () => (
    <StyledContainer>
       <StyledContainerMain>
@@ -103,11 +85,6 @@ const PracticeTest = () => (
                </StyledMiniContainer>
             </ContainerIkons>
             <p>* The practice test may include question types that may not appear on the certified test.</p>
-            <hr />
-            <StyledContainerButtons>
-               <Button className="CANCEL">CANCEL</Button>
-               <Button className="PRACTICE">PRACTICE TEST</Button>
-            </StyledContainerButtons>
          </div>
       </StyledContainerMain>
    </StyledContainer>
