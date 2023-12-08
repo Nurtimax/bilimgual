@@ -4,8 +4,9 @@ import TestDescriptionImage from './description-image';
 import TestSelect from './test-select';
 import PracticeTest from './practice-test';
 import HighlightsAnswer from './highlights_the_answer';
+import SelectMainIdea from './select-main-idea';
 
-export type TestType = 'descriptionImage' | 'select' | 'practice' | 'highlight';
+export type TestType = 'descriptionImage' | 'select' | 'practice' | 'highlight' | 'mainIdea';
 
 interface ITestByTypeProps {
    type: TestType;
@@ -26,6 +27,10 @@ const TestByType: FC<ITestByTypeProps> = ({ type }) => {
 
    if (type === 'highlight') {
       return <HighlightsAnswer />;
+   }
+
+   if (type === 'mainIdea') {
+      return <SelectMainIdea />;
    }
 
    return <div>TestByType</div>;
