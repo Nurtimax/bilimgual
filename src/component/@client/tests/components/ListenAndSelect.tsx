@@ -28,7 +28,7 @@ const ListenAndSelect = () => {
    return (
       <>
          <CardHeader
-            title="Write on more sentences that describe the image"
+            title="Select the real English words in this list"
             titleTypographyProps={{ textAlign: 'center' }}
          />
 
