@@ -36,7 +36,8 @@ const MainClientTest = () => {
             { id: 3, type: 'descriptionImage' },
             { id: 4, type: 'mainIdea' },
             { id: 5, type: 'listenAndSelect' },
-            { id: 6, type: 'practice' }
+            { id: 6, type: 'recordSaying' },
+            { id: 7, type: 'practice' }
          ]
       },
       onSubmit: () => {}

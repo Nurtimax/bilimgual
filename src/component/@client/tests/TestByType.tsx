@@ -6,8 +6,16 @@ import PracticeTest from './components/PracticeTest';
 import HighlightsAnswer from './components/HighlightsAnswer';
 import SelectMainIdea from './components/SelectMainIdea';
 import ListenAndSelect from './components/ListenAndSelect';
+import RecordSaying from './components/RecordSaying';
 
-export type TestType = 'descriptionImage' | 'select' | 'practice' | 'highlight' | 'mainIdea' | 'listenAndSelect';
+export type TestType =
+   | 'descriptionImage'
+   | 'select'
+   | 'practice'
+   | 'highlight'
+   | 'mainIdea'
+   | 'listenAndSelect'
+   | 'recordSaying';
 
 interface ITestByTypeProps {
    type: TestType;
@@ -36,6 +44,10 @@ const TestByType: FC<ITestByTypeProps> = ({ type }) => {
 
    if (type === 'listenAndSelect') {
       return <ListenAndSelect />;
+   }
+
+   if (type === 'recordSaying') {
+      return <RecordSaying />;
    }
 
    return <div>TestByType</div>;
