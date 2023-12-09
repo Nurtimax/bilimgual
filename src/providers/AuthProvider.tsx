@@ -15,12 +15,10 @@ interface IAuthProvider {
    children: ReactNode;
 }
 
-// ... (import statements remain the same)
-
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const dispatch = useAppDispatch();
    const { replace, pathname } = useRouter();
-   const [loading, setLoading] = useState(true); // Set to true initially
+   const [loading, setLoading] = useState(true);
 
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -38,7 +36,7 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
                      replace('/admin');
                   }
                } else {
-                  replace('/');
+                  if (pathname.includes('admin')) replace('/');
                }
             } catch (error) {
                if (error instanceof Error) {
@@ -51,12 +49,11 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
             dispatch(actionAuthentication.authUserSave(initialState.fields));
             replace('/');
          }
-         setLoading(false); // Always set loading to true when the state changes
+         setLoading(false);
       });
 
-      // Cleanup function
       return () => {
-         unsubscribe(); // Unsubscribe from the onAuthStateChanged listener
+         unsubscribe();
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
