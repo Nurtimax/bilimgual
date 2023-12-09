@@ -2,6 +2,7 @@ import { CardContent, CardHeader, Grid, IconButton, Paper, Stack, Typography, st
 import React from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import CheckIcon from '@mui/icons-material/Check';
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 const Item = styled(Paper)(({ theme }) => ({
    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,6 +19,12 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ListenAndSelect = () => {
+   const { speak } = useSpeechSynthesis();
+
+   const handleClickAndSpeak = (text: string) => {
+      speak({ text });
+   };
+
    return (
       <>
          <CardHeader
@@ -27,11 +34,11 @@ const ListenAndSelect = () => {
 
          <CardContent sx={{ p: 3 }}>
             <Grid container spacing={3}>
-               {[...Array(10)].map((_, i) => (
+               {['Nurti', 'Perfect', 'Super'].map((text, i) => (
                   <Grid item key={i} xs={4}>
                      <Item>
                         <Stack direction="row" minWidth="10rem" alignItems="center" gap={1}>
-                           <IconButton>
+                           <IconButton onClick={() => handleClickAndSpeak(text)}>
                               <VolumeUpIcon />
                            </IconButton>
                            <Typography variant="body2">WORD {i}</Typography>
