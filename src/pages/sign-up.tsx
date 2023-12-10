@@ -1,14 +1,17 @@
 import React from 'react';
-import { Box, Container, styled } from '@mui/material';
+import { Container, styled } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import MainSignUp from '../component/sign-up';
 import Page from '../component/page';
+import ToolbarComponent from '../component/page/ToolbarComponent';
 
-const StyledSignUp = styled(Box)`
+const StyledSignUp = styled(ToolbarComponent)`
    background: #6b0fa9;
+   min-height: 100vh;
+   padding-bottom: 3rem;
 `;
 
 const SignUp = () => {

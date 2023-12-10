@@ -11,7 +11,7 @@ interface IMainLayoutProps {
 const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
    const { pathname } = useRouter();
 
-   const disabledPages = ['sign-in', 'sign-up'];
+   const disabledPages = ['/sign-in', '/sign-up'];
 
    return (
       <>

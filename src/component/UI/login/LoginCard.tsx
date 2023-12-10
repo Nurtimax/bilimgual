@@ -14,7 +14,7 @@ interface ILoginCard {
 
 const LoginCard: FC<ILoginCard> = memo(({ handleBackNavigate, cardHeaderTitle, forms, haveAccountNode }) => {
    return (
-      <Box sx={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
+      <Box sx={{ display: 'grid', placeItems: 'center' }}>
          <Card elevation={2} component={Paper} sx={{ background: 'white', width: '40%' }}>
             <CardHeader
                action={
