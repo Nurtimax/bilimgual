@@ -32,11 +32,11 @@ const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowP
                ))}
             </TableHead>
             {tableRows.length === 0 ? (
-               <TableProductsNotFound />
+               <TableProductsNotFound colSpan={tableHeaders.length} />
             ) : (
                <TableBody>
                   {tableRows.map((row, i) => (
-                     <TableRow key={i}>
+                     <TableRow key={i} onClick={() => {}}>
                         {tableHeaders.map((header, index) => (
                            <TableCell
                               key={index}

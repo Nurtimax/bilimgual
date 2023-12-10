@@ -1,19 +1,19 @@
 import { Container, Toolbar } from '@mui/material';
 import React from 'react';
 
-import MainClientTest from '../../component/@client';
+import MainClientTestItem from '../../../component/@client/tests';
 
-const ClientTests = () => {
+const ClientTestById = () => {
    return (
       <>
          <Toolbar />
          <Toolbar />
 
          <Container>
-            <MainClientTest />
+            <MainClientTestItem />
          </Container>
       </>
    );
 };
 
-export default ClientTests;
+export default ClientTestById;
