@@ -33,7 +33,7 @@ const tableHeaders: ITableHeaders[] = [
       tableProps: { sx: { width: '5%' } }
    },
    {
-      label: 'Delete',
+      label: 'delete',
       rowKey: 'delete',
       tableProps: { sx: { width: '5%' } }
    }
@@ -107,18 +107,12 @@ const MainTeamList = () => {
       <>
          {loading && <CircularLoading open />}
 
-         <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2}>
+         <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2} py={3}>
             <Link href="team/create" style={{ justifySelf: 'flex-start' }}>
                <Button variant="come">create team</Button>
             </Link>
 
-            <ToggleButtonGroup
-               orientation="horizontal"
-               value={view}
-               exclusive
-               onChange={handleChange}
-               sx={{ justifyContent: 'flex-end', py: 3 }}
-            >
+            <ToggleButtonGroup orientation="horizontal" value={view} exclusive onChange={handleChange}>
                <ToggleButton value="list" aria-label="list">
                   <ViewListIcon />
                </ToggleButton>
