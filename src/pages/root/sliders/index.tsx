@@ -1,14 +1,13 @@
 import React from 'react';
-import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
+import { Container, Stack, Typography } from '@mui/material';
 
 import MainAdminBanner from '../../../component/@admin/banner';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
+import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminBanner = () => {
    return (
-      <Box>
-         <Toolbar />
-         <Toolbar />
+      <ToolbarComponent>
          <Container>
             <Stack py={3}>
                <Typography variant="h4" component="h1">
@@ -25,7 +24,7 @@ const AdminBanner = () => {
 
             <MainAdminBanner />
          </Container>
-      </Box>
+      </ToolbarComponent>
    );
 };
 

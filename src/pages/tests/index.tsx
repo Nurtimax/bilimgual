@@ -1,18 +1,16 @@
-import { Container, Toolbar } from '@mui/material';
+import { Container } from '@mui/material';
 import React from 'react';
 
 import MainClientTest from '../../component/@client';
+import ToolbarComponent from '../../component/page/ToolbarComponent';
 
 const ClientTests = () => {
    return (
-      <>
-         <Toolbar />
-         <Toolbar />
-
+      <ToolbarComponent>
          <Container>
             <MainClientTest />
          </Container>
-      </>
+      </ToolbarComponent>
    );
 };
 

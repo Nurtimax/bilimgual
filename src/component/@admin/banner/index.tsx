@@ -44,7 +44,7 @@ const MainAdminBanner = () => {
    }
 
    return (
-      <Box>
+      <>
          {saveLoading && <CircularLoading open />}
 
          <Stack display="grid" gridTemplateColumns="9fr 1.8fr">
@@ -81,7 +81,7 @@ const MainAdminBanner = () => {
          </Typography>
 
          <SliderList sliders={data} />
-      </Box>
+      </>
    );
 };
 

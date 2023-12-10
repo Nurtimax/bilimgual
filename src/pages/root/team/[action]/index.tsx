@@ -1,14 +1,13 @@
-import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
+import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import Breadcrumbs from '../../../../component/UI/breadcrumbs/Breadcrumbs';
 import MainAdminTeam from '../../../../component/@admin/team';
+import ToolbarComponent from '../../../../component/page/ToolbarComponent';
 
 const TeamEdit = () => {
    return (
-      <Box>
-         <Toolbar />
-         <Toolbar />
+      <ToolbarComponent>
          <Container>
             <Stack py={3}>
                <Typography variant="h4" component="h1">
@@ -25,7 +24,7 @@ const TeamEdit = () => {
 
             <MainAdminTeam />
          </Container>
-      </Box>
+      </ToolbarComponent>
    );
 };
 

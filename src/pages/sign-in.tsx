@@ -1,4 +1,4 @@
-import { Box, Container, styled } from '@mui/material';
+import { Container, styled } from '@mui/material';
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 
@@ -6,9 +6,12 @@ import MainSignIn from '../component/sign-in';
 import { useAppSelector } from '../store/hooks';
 import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
+import ToolbarComponent from '../component/page/ToolbarComponent';
 
-const StyledSignIn = styled(Box)`
+const StyledSignIn = styled(ToolbarComponent)`
    background: #6b0fa9;
+   min-height: 100vh;
+   padding-bottom: 3rem;
 `;
 
 const SignIn: FC = () => {

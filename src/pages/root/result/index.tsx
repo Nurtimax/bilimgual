@@ -1,16 +1,16 @@
-import { Box, Toolbar } from '@mui/material';
 import React from 'react';
+import { Container } from '@mui/material';
 
 import ClientRole from '../../../component/@client/tests/components/ClientRole';
+import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminResults = () => {
    return (
-      <Box>
-         <Toolbar />
-         <Toolbar />
-
-         <ClientRole />
-      </Box>
+      <ToolbarComponent>
+         <Container>
+            <ClientRole />
+         </Container>
+      </ToolbarComponent>
    );
 };
 
