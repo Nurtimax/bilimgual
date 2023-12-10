@@ -1,14 +1,13 @@
-import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
+import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import MainAdminFooter from '../../../component/@admin/footer';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
+import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminFooter = () => {
    return (
-      <Box sx={{ background: '#262626', minHeight: '100vh' }}>
-         <Toolbar />
-         <Toolbar />
+      <ToolbarComponent sx={{ background: '#262626', minHeight: '100vh' }}>
          <Container>
             <Stack py={3}>
                <Typography variant="h4" component="h1" color="white">
@@ -25,7 +24,7 @@ const AdminFooter = () => {
 
             <MainAdminFooter />
          </Container>
-      </Box>
+      </ToolbarComponent>
    );
 };
 

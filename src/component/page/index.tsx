@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-import { Box } from '@mui/material';
 import React, { FC, ReactNode, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -12,7 +11,7 @@ interface IPage {
 
 const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
    return (
-      <Box>
+      <>
          <Helmet>
             {title && <title>{title}</title>}
 
@@ -37,7 +36,7 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
             )}
          </Helmet>
          {children}
-      </Box>
+      </>
    );
 });
 

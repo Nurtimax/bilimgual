@@ -1,14 +1,13 @@
-import { Box, Container, Toolbar } from '@mui/material';
+import { Container } from '@mui/material';
 import React from 'react';
+
+import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminTest = () => {
    return (
-      <Box>
-         <Toolbar />
-         <Toolbar />
-
+      <ToolbarComponent>
          <Container>{/* Admin Test  */}</Container>
-      </Box>
+      </ToolbarComponent>
    );
 };
 

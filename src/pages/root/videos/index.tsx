@@ -1,14 +1,13 @@
-import { Box, Container, Stack, Toolbar, Typography } from '@mui/material';
+import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
 import MainAdminUsefull from '../../../component/@development/usefull-videos/MainAdminUsefull';
+import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminVideos = () => {
    return (
-      <Box>
-         <Toolbar />
-         <Toolbar />
+      <ToolbarComponent>
          <Container>
             <Stack py={3}>
                <Typography variant="h4" component="h1" color="black">
@@ -24,7 +23,7 @@ const AdminVideos = () => {
             </Stack>
             <MainAdminUsefull />
          </Container>
-      </Box>
+      </ToolbarComponent>
    );
 };
 

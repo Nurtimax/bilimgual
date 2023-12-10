@@ -3,6 +3,7 @@ import React, { FC, ReactNode, useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import { FirebaseError } from 'firebase/app';
 
 import { useAppDispatch } from '../store/hooks';
 import { actionAuthentication, initialState } from '../store/slices/authentication-slice';
@@ -20,6 +21,12 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
    const { replace, pathname } = useRouter();
    const [loading, setLoading] = useState(true);
 
+   const redirectToPath = (path: string): void => {
+      if (!pathname.includes(path)) {
+         replace(`/${path}`);
+      }
+   };
+
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
          if (currentUser) {
@@ -32,21 +39,19 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
                dispatch(actionAuthentication.authUserSave(getAuthUserDataFields(currentUser as IAuthUserData, data)));
 
                if (data.currentRole === 'ADMIN') {
-                  if (!pathname.includes('admin')) {
-                     replace('/admin');
-                  }
+                  redirectToPath('admin');
                } else if (data.currentRole === 'ROOT') {
-                  if (!pathname.includes('root')) {
-                     replace('/root');
-                  }
+                  redirectToPath('root');
                } else {
                   if (pathname.includes('admin')) replace('/');
                }
             } catch (error) {
-               if (error instanceof Error) {
-                  toast.error(error.message);
+               if (error instanceof FirebaseError) {
+                  toast.error(`Firebase Error: ${error.message}`);
+               } else if (error instanceof Error) {
+                  toast.error(`Error: ${error.message}`);
                } else {
-                  toast.error('Something is wrong');
+                  toast.error('Something went wrong');
                }
             }
          } else {

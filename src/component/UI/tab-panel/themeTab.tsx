@@ -25,7 +25,6 @@ const themeTab: Tab = {
                background: '#6e6363'
             },
             '&.Mui-selected': {
-               // Use this syntax for the selected state
                color: 'white',
                background: '#393838'
             }

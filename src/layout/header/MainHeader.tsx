@@ -4,9 +4,6 @@ import React, { FC, memo, ReactNode } from 'react';
 import HeaderWrapper from '../../component/@layout/header/HeaderWrapper';
 
 interface StyledAppBarProps extends AppBarProps {
-   /*
-    * Define any additional props for the component here
-    */
    children?: ReactNode;
 }
 
