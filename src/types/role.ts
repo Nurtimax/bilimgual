@@ -1,1 +1,1 @@
-export type ERole = 'ADMIN' | 'USER' | '';
+export type ERole = 'ADMIN' | 'USER' | 'ROOT';

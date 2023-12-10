@@ -35,6 +35,10 @@ const AuthProvider: FC<IAuthProvider> = ({ children }) => {
                   if (!pathname.includes('admin')) {
                      replace('/admin');
                   }
+               } else if (data.currentRole === 'ROOT') {
+                  if (!pathname.includes('root')) {
+                     replace('/root');
+                  }
                } else {
                   if (pathname.includes('admin')) replace('/');
                }

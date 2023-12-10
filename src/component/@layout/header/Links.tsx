@@ -4,6 +4,7 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import QuizIcon from '@mui/icons-material/Quiz';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import CategoryIcon from '@mui/icons-material/Category';
+import { useRouter } from 'next/router';
 
 import { ERole } from '../../../types/role';
 import { useAppDispatch } from '../../../store/hooks';
@@ -12,6 +13,7 @@ import HeaderMobileMenu from '../../UI/menu/HeaderMobileMenu';
 
 import AdminLinksList from './AdminLinksList';
 import LinksList from './LinksList';
+import RootLinksList from './RootLinksList';
 
 interface LinksProps {
    role: ERole;
@@ -26,6 +28,8 @@ const StyledLinks = styled(Box)(() => ({
 
 const Links: FC<LinksProps> = ({ role }) => {
    const roleCondition = role?.includes('ADMIN');
+   const roleRoot = role?.includes('ROOT');
+   const { push } = useRouter();
 
    const dispatch = useAppDispatch();
 
@@ -36,14 +40,24 @@ const Links: FC<LinksProps> = ({ role }) => {
    return (
       <StyledLinks>
          <HeaderMobileMenu
-            buttons={roleCondition ? <AdminLinksList /> : <LinksList />}
+            buttons={roleRoot ? <RootLinksList /> : roleCondition ? <AdminLinksList /> : <LinksList />}
             menuItems={
                <Box role="presentation">
                   <List>
                      {[
-                        { title: 'tests', icon: <QuizIcon />, click: () => {} },
+                        {
+                           title: 'tests',
+                           icon: <QuizIcon />,
+                           click: () => {
+                              push('/tests');
+                           }
+                        },
                         roleCondition
-                           ? { title: 'submitted results', icon: <TurnedInIcon />, click: () => {} }
+                           ? {
+                                title: 'submitted results',
+                                icon: <TurnedInIcon />,
+                                click: () => {}
+                             }
                            : { title: 'MY RESULTS', icon: <CategoryIcon />, click: () => {} },
                         { title: 'log out', icon: <ExitToAppIcon color="error" />, click: logOutHandler }
                      ].map((text) => (
