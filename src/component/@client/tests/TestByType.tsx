@@ -7,6 +7,7 @@ import HighlightsAnswer from './components/HighlightsAnswer';
 import SelectMainIdea from './components/SelectMainIdea';
 import ListenAndSelect from './components/ListenAndSelect';
 import RecordSaying from './components/RecordSaying';
+import RespondWords from './components/RespondWords';
 
 export type TestType =
    | 'descriptionImage'
@@ -15,7 +16,8 @@ export type TestType =
    | 'highlight'
    | 'mainIdea'
    | 'listenAndSelect'
-   | 'recordSaying';
+   | 'recordSaying'
+   | 'respondWords';
 
 interface ITestByTypeProps {
    type: TestType;
@@ -48,6 +50,10 @@ const TestByType: FC<ITestByTypeProps> = ({ type }) => {
 
    if (type === 'recordSaying') {
       return <RecordSaying />;
+   }
+
+   if (type === 'respondWords') {
+      return <RespondWords />;
    }
 
    return <div>TestByType</div>;
