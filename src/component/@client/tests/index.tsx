@@ -32,13 +32,13 @@ const MainClientTest = () => {
          selected: { id: 1, type: 'highlight' },
          list: [
             { id: 1, type: 'highlight' },
-            { id: 8, type: 'respondWords' },
             { id: 2, type: 'select' },
             { id: 3, type: 'descriptionImage' },
             { id: 4, type: 'mainIdea' },
             { id: 5, type: 'listenAndSelect' },
             { id: 6, type: 'recordSaying' },
-            { id: 7, type: 'practice' }
+            { id: 7, type: 'practice' },
+            { id: 8, type: 'respondWords' }
          ]
       },
       onSubmit: () => {}
