@@ -1,15 +1,5 @@
-import React, { memo, useCallback, useState } from 'react';
-import {
-   Chip,
-   Paper,
-   Table,
-   TableBody,
-   TableCell,
-   TableContainer,
-   TableHead,
-   TableRow,
-   Typography
-} from '@mui/material';
+import React, { memo, useCallback, useMemo, useState } from 'react';
+import { Chip } from '@mui/material';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
@@ -17,12 +7,21 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { adminUsersSelector } from '../../../store/helpers/admin-users';
 import { ERole } from '../../../types/role';
 import { firestore } from '../../../firebase';
-import { IUserRole } from '../../../types/auth';
+import { IAdminUserCreatedAt, IUserRole } from '../../../types/auth';
 import CircularLoading from '../../loading';
 import { getAdminUsersThunk } from '../../../store/slices/admin-users';
 import { getFormattedDate } from '../../../utils/helpers/date';
+import CustomTable, { ITableHeaders, ITableRow } from '../../UI/table/CustomTable';
 
 import UserRole from './UserRole';
+
+const tableHeaders: ITableHeaders[] = [
+   { label: '#', rowKey: 'id' },
+   { label: 'Email', rowKey: 'email' },
+   { label: 'Time Status', rowKey: 'timeStatus' },
+   { label: 'currentRole', rowKey: 'currentRole', tableProps: {} },
+   { label: 'role', rowKey: 'role', tableProps: {} }
+];
 
 const roleConcat = (string: ERole, value: ERole): string => {
    const splitString = string.split(',');
@@ -32,6 +31,16 @@ const roleConcat = (string: ERole, value: ERole): string => {
    }
    splitString.push(value);
    return splitString.join(',');
+};
+
+const dateLabel = (createdAt: IAdminUserCreatedAt | undefined) => {
+   const date = createdAt?.seconds && getFormattedDate(createdAt?.seconds);
+
+   const days = date && new Date(date).getDate() - new Date().getDate();
+
+   const label = typeof days === 'number' ? (days > 10 ? `${days} days` : 'New') : 'No Date';
+
+   return label;
 };
 
 const UserTable = memo(() => {
@@ -54,14 +63,12 @@ const UserTable = memo(() => {
             const docSnap = await getDoc(docRef);
 
             if (!docSnap.exists()) {
-               // Handle the case when the document doesn't exist
                setLoading(false);
                return toast.error('User not found');
             }
 
             const data = docSnap.data() as IUserRole;
 
-            // Update the role property without spreading it again
             const docData = {
                ...data,
                role: roleConcat(data.role, role)
@@ -80,65 +87,30 @@ const UserTable = memo(() => {
       [dispatch]
    );
 
+   const tableRows: ITableRow[] = useMemo(
+      () =>
+         users.map((user, i) => ({
+            id: i,
+            email: user.id,
+            timeStatus: <Chip label={dateLabel(user.createdAt)} />,
+            currentRole: user.currentRole,
+            role: (
+               <UserRole
+                  email={user.id}
+                  roles={user.role.split(',') as ERole[]}
+                  roleHandler={handleChangeRole}
+                  currentRole={user.currentRole as ERole}
+               />
+            )
+         })),
+      [handleChangeRole, users]
+   );
+
    return (
       <>
          {loading && <CircularLoading open />}
 
-         <TableContainer component={Paper}>
-            <Typography variant="h5" component="h1" pl={1}>
-               Users
-            </Typography>
-            <Table sx={{ minWidth: 700 }} aria-label="customized table">
-               <TableHead>
-                  <TableRow>
-                     <TableCell>#</TableCell>
-                     <TableCell>Email</TableCell>
-                     <TableCell>Time Status</TableCell>
-                     <TableCell align="right">currentRole</TableCell>
-                     <TableCell align="right">role</TableCell>
-                  </TableRow>
-               </TableHead>
-               <TableBody>
-                  {users.map((row, i) => {
-                     const date = row?.createdAt?.seconds && getFormattedDate(row?.createdAt?.seconds);
-
-                     const days = date && new Date(date).getDate() - new Date().getDate();
-
-                     const label = typeof days === 'number' ? (days > 10 ? `${days} days` : 'New') : 'No Date';
-
-                     return (
-                        <TableRow key={row.id}>
-                           <TableCell component="th" scope="row">
-                              {i + 1}
-                           </TableCell>
-                           <TableCell component="th" scope="row">
-                              {row.id}
-                           </TableCell>
-
-                           <TableCell component="th" scope="row">
-                              <Chip
-                                 label={label}
-                                 color={label === 'No Date' ? 'error' : 'success'}
-                                 sx={{ color: 'white' }}
-                              />
-                           </TableCell>
-
-                           <TableCell align="right">{row.currentRole}</TableCell>
-
-                           <TableCell align="right" width="20%">
-                              <UserRole
-                                 email={row.id}
-                                 roles={row.role.split(',') as ERole[]}
-                                 roleHandler={handleChangeRole}
-                                 currentRole={row.currentRole as ERole}
-                              />
-                           </TableCell>
-                        </TableRow>
-                     );
-                  })}
-               </TableBody>
-            </Table>
-         </TableContainer>
+         <CustomTable tableHeaders={tableHeaders} tableRows={tableRows} />
       </>
    );
 });
