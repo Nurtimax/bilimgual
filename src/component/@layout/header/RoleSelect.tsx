@@ -47,6 +47,10 @@ const RoleSelect: FC<IRoleSelectProps> = ({ fields }) => {
          return replace('/admin');
       }
 
+      if (newValue === 'ROOT') {
+         return replace('/root');
+      }
+
       return replace('/');
    };
 

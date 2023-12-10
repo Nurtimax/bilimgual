@@ -48,7 +48,7 @@ const Navlinks: FC = () => {
       <StyledNavlinks>
          {loading && <CircularLoading open />}
 
-         {role !== '' ? <Links role={role} /> : <MainLinks />}
+         {role ? <Links role={role} /> : <MainLinks />}
 
          <RoleSelect fields={fields} />
 
