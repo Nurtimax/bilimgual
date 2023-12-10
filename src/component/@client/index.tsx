@@ -42,6 +42,25 @@ const MainClientTest = () => {
                   </IconButton>
                </Stack>
             )
+         },
+         {
+            id: <Stack onClick={() => handleNavigate(1)}>{1}</Stack>,
+            date: (
+               <Stack onClick={() => handleNavigate(1)}>
+                  <Typography variant="body3">{dateFormat(new Date())}</Typography>
+                  <Typography variant="body2">{dateFormat(new Date())}</Typography>
+               </Stack>
+            ),
+            name: <Stack onClick={() => handleNavigate(1)}>English advanced test</Stack>,
+            status: <Stack onClick={() => handleNavigate(1)}>Not availabled</Stack>,
+            score: <Stack onClick={() => handleNavigate(1)}>0</Stack>,
+            actions: (
+               <Stack onClick={() => handleNavigate(1)} alignItems="flex-end">
+                  <IconButton color="error">
+                     <DeleteIcon />
+                  </IconButton>
+               </Stack>
+            )
          }
       ],
       // eslint-disable-next-line react-hooks/exhaustive-deps

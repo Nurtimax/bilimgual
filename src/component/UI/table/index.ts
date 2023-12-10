@@ -1,4 +1,4 @@
-import { ComponentsOverrides, ComponentsProps, ComponentsVariants, Theme, tableCellClasses } from '@mui/material';
+import { ComponentsOverrides, ComponentsProps, ComponentsVariants, Theme } from '@mui/material';
 
 type ThemeTable = {
    MuiTable?: {
@@ -49,49 +49,57 @@ type ThemeTable = {
 };
 
 const themeTable: ThemeTable = {
-   MuiTable: {},
-   MuiTableBody: {},
+   MuiTable: {
+      styleOverrides: {
+         root: {
+            borderSpacing: '0 14px',
+            borderCollapse: 'separate',
+            border: 0
+         }
+      }
+   },
+   MuiTableBody: {
+      styleOverrides: {}
+   },
    MuiTableCell: {
       styleOverrides: {
-         root: ({ theme }) => ({
+         root: () => ({
             fontWeight: '900',
             fontFamily: 'Gudea',
-
-            [`&.${tableCellClasses.head}`]: {
-               backgroundColor: theme.palette.common.black,
-               color: theme.palette.common.white
-            },
-            [`&.${tableCellClasses.body}`]: {
-               fontSize: 14,
-               color: theme.palette.common.black
-            }
+            color: 'inherit',
+            border: 0
          })
       }
    },
    MuiTableContainer: {
       styleOverrides: {
          root: {
-            background: '#fff'
+            background: '#fff',
+            padding: '50px 99px',
+            borderRadius: '20px',
+            minHeight: '70vh'
          }
       }
    },
    MuiTableFooter: {},
-   MuiTableHead: {},
+   MuiTableHead: {
+      styleOverrides: {
+         root: {
+            background: 'white',
+            color: 'black'
+         }
+      }
+   },
    MuiTablePagination: {},
    MuiTableRow: {
       styleOverrides: {
          root: ({ theme }) => ({
-            backgroundColor: '#FEF5E8',
             fontWeight: '900',
             fontFamily: 'Gudea',
 
-            '&:nth-of-type(odd)': {
-               backgroundColor: theme.palette.action.hover
-            },
-            // hide last border
-            '&:last-child td, &:last-child th': {
-               border: 0
-            }
+            boxShadow:
+               '0px 3px 5px -1px rgba(103, 101, 101,0.2), 0px 5px 8px 0px rgba(103, 101, 100,0.14), 0px 1px 14px 0px rgba(103, 101, 101,0.12)',
+            borderRadius: theme.spacing(1)
          })
       }
    },
