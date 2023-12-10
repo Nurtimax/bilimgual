@@ -76,7 +76,8 @@ const themeTable: ThemeTable = {
          root: {
             background: '#fff',
             padding: '50px 99px',
-            borderRadius: '20px'
+            borderRadius: '20px',
+            minHeight: '70vh'
          }
       }
    },
