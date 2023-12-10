@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, Divider, LinearProgress, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Divider, LinearProgress, Typography } from '@mui/material';
 import React from 'react';
 import { useFormik } from 'formik';
 
@@ -26,7 +26,7 @@ const normalise = (array: ITest[], value: number) => {
    return result;
 };
 
-const MainClientTest = () => {
+const MainClientTestItem = () => {
    const { values, setValues } = useFormik<IUseFormikInitialValues>({
       initialValues: {
          selected: { id: 1, type: 'highlight' },
@@ -79,36 +79,34 @@ const MainClientTest = () => {
    const lastListItem = valuesList?.[valuesList.length - 1];
 
    return (
-      <Box>
-         <Card sx={{ borderRadius: 5 }}>
-            <CardContent sx={{ p: 3 }}>
-               <Typography variant="h3">0:21</Typography>
-               <LinearProgress
-                  variant="determinate"
-                  value={normalise(valuesList, values.selected.id)}
-                  sx={{ height: 10, borderRadius: 5 }}
-               />
-            </CardContent>
+      <Card sx={{ borderRadius: 5 }}>
+         <CardContent sx={{ p: 3 }}>
+            <Typography variant="h3">0:21</Typography>
+            <LinearProgress
+               variant="determinate"
+               value={normalise(valuesList, values.selected.id)}
+               sx={{ height: 10, borderRadius: 5 }}
+            />
+         </CardContent>
 
-            {valuesList.map((el) => (
-               <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
-                  <TestByType type={el.type} />
-               </CustomTabPanel>
-            ))}
+         {valuesList.map((el) => (
+            <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
+               <TestByType type={el.type} />
+            </CustomTabPanel>
+         ))}
 
-            <Divider />
+         <Divider />
 
-            <CardActions sx={{ justifyContent: 'flex-end', p: 3 }}>
-               <Button variant="come" onClick={handlePrevTestIndex} disabled={values.selected.id === firstListItem.id}>
-                  Prev
-               </Button>
-               <Button variant="come" onClick={handleNextTestIndex} disabled={values.selected.id === lastListItem.id}>
-                  Next
-               </Button>
-            </CardActions>
-         </Card>
-      </Box>
+         <CardActions sx={{ justifyContent: 'flex-end', p: 3 }}>
+            <Button variant="come" onClick={handlePrevTestIndex} disabled={values.selected.id === firstListItem.id}>
+               Prev
+            </Button>
+            <Button variant="come" onClick={handleNextTestIndex} disabled={values.selected.id === lastListItem.id}>
+               Next
+            </Button>
+         </CardActions>
+      </Card>
    );
 };
 
-export default MainClientTest;
+export default MainClientTestItem;
