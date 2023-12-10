@@ -18,11 +18,13 @@ interface ICustomTable {
    tableHeaders: ITableHeaders[];
    tableRows: ITableRow[];
    tableRowProps?: TableCellProps;
+   head?: ReactNode;
 }
 
-const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowProps }) => {
+const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowProps, head }) => {
    return (
       <TableContainer>
+         {head && head}
          <Table>
             <TableHead>
                {tableHeaders.map((cell, index) => (
