@@ -32,6 +32,7 @@ const MainClientTest = () => {
          selected: { id: 1, type: 'highlight' },
          list: [
             { id: 1, type: 'highlight' },
+            { id: 8, type: 'respondWords' },
             { id: 2, type: 'select' },
             { id: 3, type: 'descriptionImage' },
             { id: 4, type: 'mainIdea' },
