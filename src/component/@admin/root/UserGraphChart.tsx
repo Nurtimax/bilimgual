@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { Card, CardContent } from '@mui/material';
 import Calendar from 'react-activity-calendar';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { DEFAULT_THEME, fillMissingDates } from '../../../utils/helpers/graph';
 import { getDataThunk, selectorGithubGraph } from '../../../store/slices/github-graph';
+import Card from '../../UI/card';
 
 const UserGraphChart = () => {
    const dispatch = useAppDispatch();
@@ -22,23 +22,26 @@ const UserGraphChart = () => {
 
    return (
       <Card
-         sx={{
-            '& svg': {
-               width: 'inherit',
-               height: 'inherit'
+         cardProps={{
+            sx: {
+               '& svg': {
+                  width: 'inherit',
+                  height: 'inherit'
+               }
             }
          }}
-      >
-         <CardContent>
-            <Calendar
-               data={arrayCalendarGrid}
-               theme={DEFAULT_THEME}
-               colorScheme="light"
-               blockSize={10}
-               blockMargin={1}
-            />
-         </CardContent>
-      </Card>
+         contentProps={{
+            children: (
+               <Calendar
+                  data={arrayCalendarGrid}
+                  theme={DEFAULT_THEME}
+                  colorScheme="light"
+                  blockSize={10}
+                  blockMargin={1}
+               />
+            )
+         }}
+      />
    );
 };
 

@@ -1,4 +1,4 @@
-import { CardContent, CircularProgress, Typography, alpha, styled } from '@mui/material';
+import { CircularProgress, Typography, alpha, styled } from '@mui/material';
 import React, { FC, memo, useCallback, useState } from 'react';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
@@ -11,6 +11,7 @@ import { storage } from '../../../firebase';
 import LoginAlert from '../../UI/login/Alert';
 import { authSelector } from '../../../store/helpers/auth';
 import { ISlidersInitialStateData, actionSliders } from '../../../store/slices/sliders';
+import Card from '../../UI/card';
 
 const RootStyle = styled('div')(({ theme }) => ({
    width: 144,
@@ -111,71 +112,77 @@ const UploadImage: FC<ISlidersInitialStateData> = memo(({ id, url }) => {
 
    return (
       <>
-         {!emailMathes && (
-            <CardContent>
-               <LoginAlert errorName="Email " message="Please enter a valid email address." />
-            </CardContent>
-         )}
-         <CardContent sx={{ height: 300, display: 'grid', placeItems: 'center' }}>
-            <RootStyle
-               sx={{
-                  ...((isDragReject || error) && {
-                     borderColor: 'error.light'
-                  }),
-                  position: 'relative'
-               }}
-            >
-               <DropZoneStyle
-                  {...getRootProps()}
-                  sx={{
-                     ...(isDragActive && { opacity: 0.72 })
-                  }}
-               >
-                  <input disabled={!emailMathes} {...getInputProps()} />
+         <Card
+            headerProps={{
+               children: !emailMathes && <LoginAlert errorName="Email " message="Please enter a valid email address." />
+            }}
+            contentProps={{
+               children: (
+                  <>
+                     <RootStyle
+                        sx={{
+                           ...((isDragReject || error) && {
+                              borderColor: 'error.light'
+                           }),
+                           position: 'relative'
+                        }}
+                     >
+                        <DropZoneStyle
+                           {...getRootProps()}
+                           sx={{
+                              ...(isDragActive && { opacity: 0.72 })
+                           }}
+                        >
+                           <input disabled={!emailMathes} {...getInputProps()} />
 
-                  {file && <img alt="" src={typeof file === 'string' ? file : ''} />}
+                           {file && <img alt="" src={typeof file === 'string' ? file : ''} />}
 
-                  <PlaceholderStyle
-                     className="placeholder"
-                     sx={{
-                        ...(file && {
-                           opacity: 0,
-                           color: 'common.white',
-                           bgcolor: 'grey.900',
-                           '&:hover': { opacity: 0.72 }
-                        }),
-                        ...((isDragReject || error) && {
-                           bgcolor: 'error.lighter'
-                        })
-                     }}
-                  >
-                     <AddAPhotoIcon sx={{ width: 24, height: 24, mb: 1 }} color="primary" />
-                     <Typography variant="caption">{file ? 'Update Slider image' : 'Upload Slider image'}</Typography>
-                  </PlaceholderStyle>
-               </DropZoneStyle>
-               {progress !== 0 && progress !== 100 && (
-                  <CircularProgress
-                     variant="determinate"
-                     sx={{
-                        position: 'absolute',
-                        left: -5,
-                        top: -5,
-                        zIndex: 2,
-                        width: '152px !important',
-                        height: '152px !important',
-                        '& svg': {
-                           width: 'inherit !important',
-                           height: 'inherit !important'
-                        }
-                     }}
-                     size="1px"
-                     value={progress}
-                  />
-               )}
-            </RootStyle>
+                           <PlaceholderStyle
+                              className="placeholder"
+                              sx={{
+                                 ...(file && {
+                                    opacity: 0,
+                                    color: 'common.white',
+                                    bgcolor: 'grey.900',
+                                    '&:hover': { opacity: 0.72 }
+                                 }),
+                                 ...((isDragReject || error) && {
+                                    bgcolor: 'error.lighter'
+                                 })
+                              }}
+                           >
+                              <AddAPhotoIcon sx={{ width: 24, height: 24, mb: 1 }} color="primary" />
+                              <Typography variant="caption">
+                                 {file ? 'Update Slider image' : 'Upload Slider image'}
+                              </Typography>
+                           </PlaceholderStyle>
+                        </DropZoneStyle>
+                        {progress !== 0 && progress !== 100 && (
+                           <CircularProgress
+                              variant="determinate"
+                              sx={{
+                                 position: 'absolute',
+                                 left: -5,
+                                 top: -5,
+                                 zIndex: 2,
+                                 width: '152px !important',
+                                 height: '152px !important',
+                                 '& svg': {
+                                    width: 'inherit !important',
+                                    height: 'inherit !important'
+                                 }
+                              }}
+                              size="1px"
+                              value={progress}
+                           />
+                        )}
+                     </RootStyle>
 
-            {fileRejections.length > 0 && <LoginAlert />}
-         </CardContent>
+                     {fileRejections.length > 0 && <LoginAlert />}
+                  </>
+               )
+            }}
+         />
       </>
    );
 });

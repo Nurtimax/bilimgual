@@ -1,4 +1,4 @@
-import { Button, Card, CardActions } from '@mui/material';
+import { Button } from '@mui/material';
 import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import FooterFAQEditList from '../../@layout/footer/FooterFAQEditList';
 import axiosInctanse from '../../../utils/helpers/axiosInstance';
 import CircularLoading from '../../loading';
+import Card from '../../UI/card';
 
 // Define the Yup validation schema
 const validationSchema = Yup.object().shape({
@@ -100,21 +101,26 @@ const MainAdminFooter: FC = memo(() => {
       <>
          {loading && <CircularLoading open />}
 
-         <Card sx={{ background: 'inherit' }} elevation={0}>
-            <FooterFAQEditList setValues={setValues} values={values} removeFields={removeFields} />
-
-            <CardActions sx={{ justifyContent: 'flex-end', pb: 4 }}>
-               <Button color="success" onClick={addNewFields} disabled={values.length === 20}>
-                  Add Field
-               </Button>
-               <Button color="warning" onClick={saveValues} disabled={disabled}>
-                  Save
-               </Button>
-               <Button variant="contained" onClick={changeValues} disabled={disabled}>
-                  Change
-               </Button>
-            </CardActions>
-         </Card>
+         <Card
+            contentProps={{
+               children: <FooterFAQEditList setValues={setValues} values={values} removeFields={removeFields} />
+            }}
+            actionProps={{
+               children: (
+                  <>
+                     <Button color="success" onClick={addNewFields} disabled={values.length === 20}>
+                        Add Field
+                     </Button>
+                     <Button color="warning" onClick={saveValues} disabled={disabled}>
+                        Save
+                     </Button>
+                     <Button variant="contained" onClick={changeValues} disabled={disabled}>
+                        Change
+                     </Button>
+                  </>
+               )
+            }}
+         />
       </>
    );
 });

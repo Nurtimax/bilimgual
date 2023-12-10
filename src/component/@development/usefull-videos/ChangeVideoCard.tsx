@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, Input, Typography } from '@mui/material';
+import { Box, Button, Input, Typography } from '@mui/material';
 import React, { FC, useState } from 'react';
 import { Player } from 'video-react';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -14,6 +14,7 @@ import {
 } from '../../../store/slices/usefull';
 import LoginAlert from '../../UI/login/Alert';
 import { useAppDispatch } from '../../../store/hooks';
+import Card from '../../UI/card';
 
 import UploadVideo from './UploadVideo';
 
@@ -48,55 +49,57 @@ const ChangeVideoCard: FC<IChangeVideoCardProps> = ({
    };
 
    return (
-      <Card sx={{ height: '100%', width: '100%' }}>
-         {findError && (
-            <CardContent>
-               <LoginAlert errorName={findError.title} message={findError.video} />
-            </CardContent>
-         )}
+      <Card
+         headerProps={{ children: findError && <LoginAlert errorName={findError.title} message={findError.video} /> }}
+         contentProps={{
+            children: (
+               <>
+                  <Box sx={{ height: 266, display: 'grid', placeItems: 'center' }}>
+                     {video && !edit ? (
+                        <Player playsInline poster="/assets/images/placeholder.png" src={video} />
+                     ) : (
+                        <UploadVideo id={id} video={video} handleChangeVideo={handleChangeVideo} />
+                     )}
+                  </Box>
 
-         <Box sx={{ height: 266, display: 'grid', placeItems: 'center' }}>
-            {video && !edit ? (
-               <Player playsInline poster="/assets/images/placeholder.png" src={video} />
-            ) : (
-               <UploadVideo id={id} video={video} handleChangeVideo={handleChangeVideo} />
-            )}
-         </Box>
+                  <Typography gutterBottom variant="body3" component="div">
+                     <Input
+                        placeholder="Enter your title"
+                        value={title}
+                        name="title"
+                        onChange={handleChange}
+                        id={String(id)}
+                        sx={{ fontSize: 24, color: 'black' }}
+                     />
+                  </Typography>
+                  <Typography variant="bodySmall" color="text.secondary">
+                     Duration {duration}
+                  </Typography>
+               </>
+            )
+         }}
+         actionProps={{
+            children: (
+               <>
+                  <Button
+                     variant="come"
+                     endIcon={!edit ? <VideoSettingsIcon /> : <OndemandVideoIcon />}
+                     onClick={() => setEdit((prev) => !prev)}
+                  >
+                     Edit video
+                  </Button>
 
-         <CardContent>
-            <Typography gutterBottom variant="body3" component="div">
-               <Input
-                  placeholder="Enter your title"
-                  value={title}
-                  name="title"
-                  onChange={handleChange}
-                  id={String(id)}
-                  sx={{ fontSize: 24, color: 'black' }}
-               />
-            </Typography>
-            <Typography variant="bodySmall" color="text.secondary">
-               Duration {duration}
-            </Typography>
-         </CardContent>
+                  <Button variant="contained" color="success" endIcon={<SaveIcon />} onClick={handleSave}>
+                     save
+                  </Button>
 
-         <CardActions sx={{ justifyContent: 'space-between' }}>
-            <Button
-               variant="come"
-               endIcon={!edit ? <VideoSettingsIcon /> : <OndemandVideoIcon />}
-               onClick={() => setEdit((prev) => !prev)}
-            >
-               Edit video
-            </Button>
-
-            <Button variant="contained" color="success" endIcon={<SaveIcon />} onClick={handleSave}>
-               save
-            </Button>
-
-            <Button onClick={handleDelete} variant="contained" color="error" endIcon={<DeleteIcon />}>
-               Delete
-            </Button>
-         </CardActions>
-      </Card>
+                  <Button onClick={handleDelete} variant="contained" color="error" endIcon={<DeleteIcon />}>
+                     Delete
+                  </Button>
+               </>
+            )
+         }}
+      />
    );
 };
 

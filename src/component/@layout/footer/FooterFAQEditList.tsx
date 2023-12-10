@@ -1,4 +1,3 @@
-import { CardContent } from '@mui/material';
 import React, { FC } from 'react';
 import { FormikErrors } from 'formik';
 
@@ -39,15 +38,11 @@ const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues, removeFi
    };
 
    if (!values.length) {
-      return (
-         <CardContent>
-            <FooterFAQEditAccordion answerValue="Something is wrong with response" questionValue="No Data" id="" />
-         </CardContent>
-      );
+      return <FooterFAQEditAccordion answerValue="Something is wrong with response" questionValue="No Data" id="" />;
    }
 
    return (
-      <CardContent>
+      <>
          {values.map((value) => (
             <FooterFAQEditAccordion
                answerValue={value?.answer || ''}
@@ -58,7 +53,7 @@ const FooterFAQEditList: FC<IFooterFAQEditList> = ({ values, setValues, removeFi
                removeFields={removeFields}
             />
          ))}
-      </CardContent>
+      </>
    );
 };
 
