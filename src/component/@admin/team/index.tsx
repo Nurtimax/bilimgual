@@ -1,10 +1,11 @@
-import { Card, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import CircularLoading from '../../loading';
 import { getOurTeamByIdThunk, selectorOurTeam } from '../../../store/slices/our-team';
+import Card from '../../UI/card';
 
 import UploadUserImage from './UploadUserImage';
 import CreateUserForms from './CreateUserForms';
@@ -30,10 +31,16 @@ const MainAdminTeam = () => {
    return (
       <Grid container spacing={2} pb={5}>
          <Grid item xs={3}>
-            <Card>
-               <UploadUserImage />
-               <UploadUserBackground />
-            </Card>
+            <Card
+               contentProps={{
+                  children: (
+                     <>
+                        <UploadUserImage />
+                        <UploadUserBackground />
+                     </>
+                  )
+               }}
+            />
          </Grid>
          <Grid item xs={9}>
             <CreateUserForms />

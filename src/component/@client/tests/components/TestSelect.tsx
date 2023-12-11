@@ -1,4 +1,4 @@
-import { Box, CardContent, CardHeader, Paper, styled } from '@mui/material';
+import { Box, Grid, Paper, styled } from '@mui/material';
 import React, { useState } from 'react';
 
 interface ItemObject {
@@ -82,13 +82,8 @@ const TestSelect = () => {
    };
 
    return (
-      <>
-         <CardHeader
-            title="Select the real English words in this list"
-            titleTypographyProps={{ textAlign: 'center' }}
-         />
-
-         <CardContent sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, p: 3, justifyContent: 'flex-start' }}>
+      <Grid container minHeight="inherit" gap={3}>
+         <Grid item xs={12} display="flex" flexWrap="wrap" alignItems="baseline" alignContent="flex-start" gap={1}>
             {items.map((item) => (
                <Item
                   draggable
@@ -99,9 +94,8 @@ const TestSelect = () => {
                   {item.title}
                </Item>
             ))}
-         </CardContent>
-
-         <CardContent sx={{ p: 3, justifyContent: 'flex-end', display: 'flex' }}>
+         </Grid>
+         <Grid item xs={12} display="flex" justifyContent="flex-end" alignItems="flex-end">
             <Box
                sx={{
                   border: '1px dashed',
@@ -123,8 +117,8 @@ const TestSelect = () => {
                   </Item>
                ))}
             </Box>
-         </CardContent>
-      </>
+         </Grid>
+      </Grid>
    );
 };
 

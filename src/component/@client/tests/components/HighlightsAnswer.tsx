@@ -1,4 +1,4 @@
-import { Box, CardContent, CardHeader, Stack, TextField, Typography } from '@mui/material';
+import { Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { TokenAnnotator } from 'react-text-annotate';
 
@@ -23,38 +23,31 @@ const HighlightsAnswer = () => {
    };
 
    return (
-      <>
-         <CardHeader
-            title="Write on more sentences that describe the image"
-            titleTypographyProps={{ textAlign: 'center' }}
-         />
-
-         <CardContent sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch', gap: 1, p: 3 }}>
-            <Box sx={{ border: '1.5px solid #dfdfdf', borderRadius: 2 }}>
-               <Typography variant="h5" sx={{ border: '1.5px solid #dfdfdf', borderRadius: 2, px: 2 }}>
-                  Passage
-               </Typography>
-               <TokenAnnotator
-                  style={{
-                     maxWidth: 500,
-                     lineHeight: 1.5,
-                     padding: 16
-                  }}
-                  tokens={TEXT.split(' ')}
-                  value={state ? [state] : []}
-                  onChange={handleChange}
-                  getSpan={(span: TokenSpan) => ({ ...span, tag: ' ' })}
-               />
-            </Box>
-            <Stack gap={2} justifyContent="space-between">
-               <Typography variant="h5" lineHeight={1.2}>
-                  Click and drad text to highlight the answerr to the question below
-               </Typography>
-               <Typography variant="body3">What did rresidents think could happen with new bridge?</Typography>
-               <TextField value={state?.tokens.join(' ')} fullWidth rows={5} multiline />
-            </Stack>
-         </CardContent>
-      </>
+      <Grid container spacing={3}>
+         <Grid item xs={6}>
+            <Typography variant="h5" sx={{ border: '1.5px solid #dfdfdf', borderRadius: 2, px: 2 }}>
+               Passage
+            </Typography>
+            <TokenAnnotator
+               style={{
+                  maxWidth: 500,
+                  lineHeight: 1.5,
+                  padding: 16
+               }}
+               tokens={TEXT.split(' ')}
+               value={state ? [state] : []}
+               onChange={handleChange}
+               getSpan={(span: TokenSpan) => ({ ...span, tag: ' ' })}
+            />
+         </Grid>
+         <Grid item xs={6}>
+            <Typography variant="h5" lineHeight={1.2}>
+               Click and drad text to highlight the answerr to the question below
+            </Typography>
+            <Typography variant="body3">What did rresidents think could happen with new bridge?</Typography>
+            <TextField value={state?.tokens.join(' ')} fullWidth rows={5} multiline />
+         </Grid>
+      </Grid>
    );
 };
 

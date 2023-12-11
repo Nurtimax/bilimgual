@@ -1,4 +1,4 @@
-import { CardContent, LinearProgress, Typography, alpha, styled } from '@mui/material';
+import { LinearProgress, Typography, alpha, styled } from '@mui/material';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
@@ -9,6 +9,7 @@ import { storage } from '../../../firebase';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import LoginAlert from '../../UI/login/Alert';
 import { actionOurTeam, selectorOurTeam } from '../../../store/slices/our-team';
+import Card from '../../UI/card';
 
 import { emailRegex } from './validate';
 
@@ -95,48 +96,48 @@ const UploadUserBackground = () => {
    });
 
    return (
-      <>
-         {!emailMathes && (
-            <CardContent>
-               <LoginAlert errorName="Email " message="Please enter a valid email address." />
-            </CardContent>
-         )}
-         <CardContent>
-            <Placeholder
-               sx={{
-                  ...(isDragReject && {
-                     borderColor: 'error.light'
-                  })
-               }}
-            >
-               <DropZoneStyle {...getRootProps()}>
-                  <input disabled={!emailMathes} {...getInputProps()} />
-
-                  {file && <img alt="" src={typeof file === 'string' ? file : ''} />}
-
-                  <div
-                     style={{
-                        placeItems: 'center',
-                        display: file ? 'none' : 'grid',
-                        ...(isDragActive && { opacity: 0.72 })
+      <Card
+         contentProps={{
+            children: (
+               <>
+                  <Placeholder
+                     sx={{
+                        ...(isDragReject && {
+                           borderColor: 'error.light'
+                        })
                      }}
                   >
-                     <WallpaperIcon sx={{ width: 24, height: 24, mb: 1 }} color="primary" />
-                     <Typography variant="caption">
-                        {file ? 'Update Background image' : 'Upload Background image'}
-                     </Typography>
-                  </div>
-               </DropZoneStyle>
-            </Placeholder>
+                     <DropZoneStyle {...getRootProps()}>
+                        <input disabled={!emailMathes} {...getInputProps()} />
 
-            {fileRejections.length > 0 && <LoginAlert />}
-         </CardContent>
-         <CardContent>
-            {progress !== 0 && progress !== 100 && (
-               <LinearProgress variant="buffer" value={progress} valueBuffer={progress + 10} />
-            )}
-         </CardContent>
-      </>
+                        {file && <img alt="" src={typeof file === 'string' ? file : ''} />}
+
+                        <div
+                           style={{
+                              placeItems: 'center',
+                              display: file ? 'none' : 'grid',
+                              ...(isDragActive && { opacity: 0.72 })
+                           }}
+                        >
+                           <WallpaperIcon sx={{ width: 24, height: 24, mb: 1 }} color="primary" />
+                           <Typography variant="caption">
+                              {file ? 'Update Background image' : 'Upload Background image'}
+                           </Typography>
+                        </div>
+                     </DropZoneStyle>
+                  </Placeholder>
+
+                  {fileRejections.length > 0 && <LoginAlert />}
+                  {progress !== 0 && progress !== 100 && (
+                     <LinearProgress variant="buffer" value={progress} valueBuffer={progress + 10} />
+                  )}
+               </>
+            )
+         }}
+         headerProps={{
+            children: !emailMathes && <LoginAlert errorName="Email " message="Please enter a valid email address." />
+         }}
+      />
    );
 };
 

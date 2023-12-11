@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { Card, CardHeader, Input } from '@mui/material';
+import { Input } from '@mui/material';
 
 import UploadImage from '../../@admin/banner/UploadImage';
 import { ISlidersInitialStateData, actionSliders } from '../../../store/slices/sliders';
 import { useAppDispatch } from '../../../store/hooks';
+import Card from '../card';
 
 const SlideCardWithInput: FC<ISlidersInitialStateData> = ({ subTitle, title, id, url }) => {
    const dispatch = useAppDispatch();
@@ -19,19 +20,20 @@ const SlideCardWithInput: FC<ISlidersInitialStateData> = ({ subTitle, title, id,
 
    return (
       <Card
-         elevation={10}
-         sx={{
-            justifySelf: 'flex-end',
-            width: '90%',
-            borderRadius: '3.5rem 3.5rem 3.5rem 0',
-            p: '3.5rem',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            background: '#212629'
+         cardProps={{
+            elevation: 10,
+            sx: {
+               justifySelf: 'flex-end',
+               width: '90%',
+               borderRadius: '3.5rem 3.5rem 3.5rem 0',
+               p: '3.5rem',
+               display: 'grid',
+               gridTemplateColumns: '1fr 1fr',
+               background: '#212629'
+            }
          }}
-      >
-         <CardHeader
-            title={
+         headerProps={{
+            title: (
                <Input
                   onChange={handleChange}
                   placeholder="Enter your title"
@@ -41,8 +43,8 @@ const SlideCardWithInput: FC<ISlidersInitialStateData> = ({ subTitle, title, id,
                   fullWidth
                   multiline
                />
-            }
-            subheader={
+            ),
+            subheader: (
                <Input
                   onChange={handleChange}
                   value={subTitle}
@@ -52,10 +54,10 @@ const SlideCardWithInput: FC<ISlidersInitialStateData> = ({ subTitle, title, id,
                   fullWidth
                   multiline
                />
-            }
-         />
-         <UploadImage id={id} url={url} subTitle="" title="" />
-      </Card>
+            )
+         }}
+         contentProps={{ children: <UploadImage id={id} url={url} subTitle="" title="" /> }}
+      />
    );
 };
 
