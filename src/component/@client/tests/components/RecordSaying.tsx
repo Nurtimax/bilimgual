@@ -4,8 +4,6 @@ import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import VoiceOverOffIcon from '@mui/icons-material/VoiceOverOff';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-import Card from '../../../UI/card';
-
 const RecordSaying = () => {
    const { transcript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
@@ -16,34 +14,22 @@ const RecordSaying = () => {
    }
 
    return (
-      <Card
-         headerProps={{
-            title: 'Record yourself  saying the statement below:',
-            titleTypographyProps: { textAlign: 'center' }
-         }}
-         contentProps={{
-            children: (
-               <>
-                  <Grid container spacing={5}>
-                     <Grid item xs={6} justifyContent="flex-end" display="flex" alignItems="center">
-                        {listening ? (
-                           <IconButton onClick={SpeechRecognition.stopListening} size="large" sx={{ p: 5 }}>
-                              <RecordVoiceOverIcon sx={{ width: '100%', height: '100%', aspectRatio: '1/1' }} />
-                           </IconButton>
-                        ) : (
-                           <IconButton onClick={startListening} size="large" sx={{ p: 5 }}>
-                              <VoiceOverOffIcon sx={{ width: '100%', height: '100%', aspectRatio: '1/1' }} />
-                           </IconButton>
-                        )}
-                     </Grid>
-                     <Grid item xs={6} display="flex" alignItems="center">
-                        <Typography variant="body2">"{transcript}".</Typography>
-                     </Grid>
-                  </Grid>
-               </>
-            )
-         }}
-      />
+      <Grid container spacing={5}>
+         <Grid item xs={6} justifyContent="flex-end" display="flex" alignItems="center">
+            {listening ? (
+               <IconButton onClick={SpeechRecognition.stopListening} size="large" sx={{ p: 5 }}>
+                  <RecordVoiceOverIcon sx={{ width: '100%', height: '100%', aspectRatio: '1/1' }} />
+               </IconButton>
+            ) : (
+               <IconButton onClick={startListening} size="large" sx={{ p: 5 }}>
+                  <VoiceOverOffIcon sx={{ width: '100%', height: '100%', aspectRatio: '1/1' }} />
+               </IconButton>
+            )}
+         </Grid>
+         <Grid item xs={6} display="flex" alignItems="center">
+            <Typography variant="body2">"{transcript}".</Typography>
+         </Grid>
+      </Grid>
    );
 };
 

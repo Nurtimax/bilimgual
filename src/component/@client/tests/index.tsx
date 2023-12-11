@@ -84,13 +84,6 @@ const MainClientTestItem = () => {
          contentProps={{
             children: (
                <>
-                  <Typography variant="h3">0:21</Typography>
-                  <LinearProgress
-                     variant="determinate"
-                     value={normalise(valuesList, values.selected.id)}
-                     sx={{ height: 10, borderRadius: 5 }}
-                  />
-
                   {valuesList.map((el) => (
                      <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
                         <TestByType type={el.type} />
@@ -99,7 +92,18 @@ const MainClientTestItem = () => {
                </>
             )
          }}
-         headerProps={{}}
+         headerProps={{
+            title: (
+               <>
+                  <Typography variant="h3">0:21</Typography>
+                  <LinearProgress
+                     variant="determinate"
+                     value={normalise(valuesList, values.selected.id)}
+                     sx={{ height: 10, borderRadius: 5 }}
+                  />
+               </>
+            )
+         }}
          actionProps={{
             children: (
                <>

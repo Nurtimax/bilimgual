@@ -1,8 +1,6 @@
 import { Box, Grid, Paper, styled } from '@mui/material';
 import React, { useState } from 'react';
 
-import Card from '../../../UI/card';
-
 interface ItemObject {
    id: number;
    title: string;
@@ -84,53 +82,43 @@ const TestSelect = () => {
    };
 
    return (
-      <Card
-         headerProps={{
-            title: 'Select the real English words in this list',
-            titleTypographyProps: { textAlign: 'center' }
-         }}
-         contentProps={{
-            children: (
-               <Grid container>
-                  <Grid item>
-                     {items.map((item) => (
-                        <Item
-                           draggable
-                           key={item.id}
-                           onClick={() => handleClickItem(item)}
-                           onDragStart={(e) => handleOnDrag(e, item)}
-                        >
-                           {item.title}
-                        </Item>
-                     ))}
-                  </Grid>
-                  <Grid item>
-                     <Box
-                        sx={{
-                           border: '1px dashed',
-                           minHeight: 150,
-                           minWidth: 400,
-                           width: '30%',
-                           borderRadius: 2,
-                           display: 'flex',
-                           flexWrap: 'wrap',
-                           alignItems: 'baseline',
-                           gap: 1
-                        }}
-                        onDrop={handleOnDrop}
-                        onDragOver={handleDragOver}
-                     >
-                        {widgets.map((widget) => (
-                           <Item key={widget.id} onClick={() => handleClickSelectedItem(widget)}>
-                              {widget.title}
-                           </Item>
-                        ))}
-                     </Box>
-                  </Grid>
-               </Grid>
-            )
-         }}
-      />
+      <Grid container minHeight="inherit" gap={3}>
+         <Grid item xs={12} display="flex" flexWrap="wrap" alignItems="baseline" alignContent="flex-start" gap={1}>
+            {items.map((item) => (
+               <Item
+                  draggable
+                  key={item.id}
+                  onClick={() => handleClickItem(item)}
+                  onDragStart={(e) => handleOnDrag(e, item)}
+               >
+                  {item.title}
+               </Item>
+            ))}
+         </Grid>
+         <Grid item xs={12} display="flex" justifyContent="flex-end" alignItems="flex-end">
+            <Box
+               sx={{
+                  border: '1px dashed',
+                  minHeight: 150,
+                  minWidth: 400,
+                  width: '30%',
+                  borderRadius: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'baseline',
+                  gap: 1
+               }}
+               onDrop={handleOnDrop}
+               onDragOver={handleDragOver}
+            >
+               {widgets.map((widget) => (
+                  <Item key={widget.id} onClick={() => handleClickSelectedItem(widget)}>
+                     {widget.title}
+                  </Item>
+               ))}
+            </Box>
+         </Grid>
+      </Grid>
    );
 };
 

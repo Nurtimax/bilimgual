@@ -4,8 +4,6 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import CheckIcon from '@mui/icons-material/Check';
 import { useSpeechSynthesis } from 'react-speech-kit';
 
-import Card from '../../../UI/card';
-
 const Item = styled(Paper)(({ theme }) => ({
    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
    ...theme.typography.body2,
@@ -28,35 +26,23 @@ const ListenAndSelect = () => {
    };
 
    return (
-      <Card
-         headerProps={{
-            title: 'Select the real English words in this list',
-            titleTypographyProps: { textAlign: 'center' }
-         }}
-         contentProps={{
-            children: (
-               <>
-                  <Grid container spacing={3}>
-                     {['Nurti', 'Perfect', 'Super'].map((text, i) => (
-                        <Grid item key={i} xs={4}>
-                           <Item>
-                              <Stack direction="row" minWidth="10rem" alignItems="center" gap={1}>
-                                 <IconButton onClick={() => handleClickAndSpeak(text)}>
-                                    <VolumeUpIcon />
-                                 </IconButton>
-                                 <Typography variant="body2">WORD {i}</Typography>
-                              </Stack>
-                              <IconButton sx={{ borderLeft: '1.5px solid', p: 1, borderRadius: 0 }}>
-                                 <CheckIcon />
-                              </IconButton>
-                           </Item>
-                        </Grid>
-                     ))}
-                  </Grid>
-               </>
-            )
-         }}
-      />
+      <Grid container spacing={3}>
+         {['Nurti', 'Perfect', 'Super'].map((text, i) => (
+            <Grid item key={i} xs={4}>
+               <Item>
+                  <Stack direction="row" minWidth="10rem" alignItems="center" gap={1}>
+                     <IconButton onClick={() => handleClickAndSpeak(text)}>
+                        <VolumeUpIcon />
+                     </IconButton>
+                     <Typography variant="body2">WORD {i}</Typography>
+                  </Stack>
+                  <IconButton sx={{ borderLeft: '1.5px solid', p: 1, borderRadius: 0 }}>
+                     <CheckIcon />
+                  </IconButton>
+               </Item>
+            </Grid>
+         ))}
+      </Grid>
    );
 };
 
