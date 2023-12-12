@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
-import { IconButton, Stack, Switch, Typography } from '@mui/material';
+import { Button, IconButton, Stack, Switch, Typography } from '@mui/material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
 
@@ -35,7 +36,20 @@ const MainAdmin = () => {
       []
    );
 
-   return <CustomTable tableHeaders={tableHeaders} tableRows={data} tableRowProps={{ sx: { px: 2 } }} />;
+   return (
+      <CustomTable
+         head={
+            <Stack direction="row" justifyContent="flex-end">
+               <Button variant="come" startIcon={<AddIcon />}>
+                  ADD NEW TEST
+               </Button>
+            </Stack>
+         }
+         tableHeaders={tableHeaders}
+         tableRows={data}
+         tableRowProps={{ sx: { px: 2 } }}
+      />
+   );
 };
 
 export default MainAdmin;
