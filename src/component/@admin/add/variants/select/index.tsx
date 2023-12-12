@@ -10,11 +10,16 @@ import {
    Stack,
    TextField
 } from '@mui/material';
+import dayjs, { Dayjs } from 'dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 import Card from '../../../../UI/card';
 
 const MainAdminTestAddVariantsSelect = () => {
    const [type, setType] = React.useState('');
+   const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
 
    const handleChange = (event: SelectChangeEvent) => {
       setType(event.target.value);
@@ -32,8 +37,16 @@ const MainAdminTestAddVariantsSelect = () => {
                         <TextField />
                      </Stack>
                      <Stack gap={1}>
-                        <FormLabel id="demo-simple-select-helper-label">Duration (in minutes)</FormLabel>
-                        <TextField />
+                        <FormLabel id="demo-simple-select-helper-label">
+                           Duration <br /> (in minutes)
+                        </FormLabel>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                           <TimePicker
+                              label="Controlled picker"
+                              value={value}
+                              onChange={(newValue) => setValue(newValue)}
+                           />
+                        </LocalizationProvider>
                      </Stack>
                   </Stack>
                   <Stack>
