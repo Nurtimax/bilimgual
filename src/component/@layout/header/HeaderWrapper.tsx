@@ -1,5 +1,6 @@
 import { Box, styled } from '@mui/material';
 import React, { FC } from 'react';
+import Link from 'next/link';
 
 import { BilingualFullIcon } from '../../../assets/icons/BilingualFullIcon';
 
@@ -29,7 +30,9 @@ const StyledHeaderWrapper = styled(Box)(({ theme }) => ({
 const HeaderWrapper: FC = () => {
    return (
       <StyledHeaderWrapper>
-         <BilingualFullIcon className="logo" />
+         <Link href="/">
+            <BilingualFullIcon className="logo" />
+         </Link>
          <Navlinks />
       </StyledHeaderWrapper>
    );

@@ -11,7 +11,7 @@ const LinksList: FC<LinksListProps> = () => {
    return (
       <Grid container columnSpacing={7.9}>
          <LinkItem to="/tests">tests</LinkItem>
-         <LinkItem to="/my-result">MY RESULTS</LinkItem>
+         <LinkItem to="/results">MY RESULTS</LinkItem>
       </Grid>
    );
 };

@@ -47,11 +47,6 @@ a {
    }
 }
 
-svg {
-   width: 60px;
-   height: 60px;
-}
-
 li {
    background: rgb(161, 190, 190);
    margin: 10px;

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, memo, useState } from 'react';
 import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
 import { useRouter } from 'next/router';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -14,7 +14,7 @@ interface IRoleSelectProps {
    fields: IReduxAuthInitialStateFields;
 }
 
-const RoleSelect: FC<IRoleSelectProps> = ({ fields }) => {
+const RoleSelect: FC<IRoleSelectProps> = memo(({ fields }) => {
    const { replace } = useRouter();
    const dispatch = useAppDispatch();
    const [loading, setLoading] = useState(false);
@@ -78,6 +78,6 @@ const RoleSelect: FC<IRoleSelectProps> = ({ fields }) => {
          />
       </Box>
    );
-};
+});
 
 export default RoleSelect;

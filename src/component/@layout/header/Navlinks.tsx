@@ -1,5 +1,5 @@
 import { Box, styled } from '@mui/material';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import { useRouter } from 'next/router';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -21,7 +21,7 @@ const StyledNavlinks = styled(Box)(() => ({
    gap: '10px'
 }));
 
-const Navlinks: FC = () => {
+const Navlinks: FC = memo(() => {
    const { fields, loading } = useAppSelector(authSelector);
    const { push } = useRouter();
    const dispatch = useAppDispatch();
@@ -62,6 +62,6 @@ const Navlinks: FC = () => {
          )}
       </StyledNavlinks>
    );
-};
+});
 
 export default Navlinks;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { Box, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
 import { useRouter } from 'next/router';
 import LoginIcon from '@mui/icons-material/Login';
@@ -16,7 +16,7 @@ const StyledMainLinks = styled(Box)(() => ({
    width: '100%'
 }));
 
-const MainLinks: FC = () => {
+const MainLinks: FC = memo(() => {
    const pathname = useRouter();
 
    const handleSignIn = () => {
@@ -68,6 +68,6 @@ const MainLinks: FC = () => {
          />
       </StyledMainLinks>
    );
-};
+});
 
 export default MainLinks;
