@@ -1,7 +1,7 @@
 import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 
-import MainAdminFooter from '../../../component/@admin/footer';
+import MainAdminFooter from '../../../component/@root/footer';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
 import ToolbarComponent from '../../../component/page/ToolbarComponent';
 

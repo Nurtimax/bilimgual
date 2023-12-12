@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { useDropzone } from 'react-dropzone';
 
 import { useAppSelector } from '../../../store/hooks';
-import { emailRegex } from '../../@admin/team/validate';
+import { emailRegex } from '../../@root/team/validate';
 import { storage } from '../../../firebase';
 import LoginAlert from '../../UI/login/Alert';
 import { authSelector } from '../../../store/helpers/auth';

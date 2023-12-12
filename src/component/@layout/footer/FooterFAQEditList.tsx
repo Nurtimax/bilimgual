@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { FormikErrors } from 'formik';
 
-import { IFAQValues } from '../../@admin/footer';
+import { IFAQValues } from '../../@root/footer';
 
 import FooterFAQEditAccordion from './FooterFAQEditAccordion';
 

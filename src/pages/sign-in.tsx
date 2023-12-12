@@ -15,7 +15,7 @@ const StyledSignIn = styled(ToolbarComponent)`
 `;
 
 const SignIn: FC = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
    const { replace } = useRouter();
 
    if (fields.email) {

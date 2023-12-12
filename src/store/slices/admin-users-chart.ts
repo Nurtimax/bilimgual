@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { AxiosError } from 'axios';
 
 import axiosInctanse from '../../utils/helpers/axiosInstance';
-import { TUsersTimeChartTabValues } from '../../component/@admin/root/UserChart';
+import { TUsersTimeChartTabValues } from '../../component/@root/root/UserChart';
 import { customData, customUrls } from '../../utils/helpers/date';
 
 import { RootState } from '.';

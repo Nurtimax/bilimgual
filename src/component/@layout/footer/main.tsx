@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { BilingualFullIcon } from '../../../assets/icons/BilingualFullIcon';
 import { SOCIAL_ICONS } from '../../../utils/constants/icons';
 import axiosInctanse from '../../../utils/helpers/axiosInstance';
-import { IFAQValues } from '../../@admin/footer';
+import { IFAQValues } from '../../@root/footer';
 
 const StyledMainFooter = styled(Box)`
    padding: 2rem 0 0;

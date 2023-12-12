@@ -15,7 +15,7 @@ const StyledSignUp = styled(ToolbarComponent)`
 `;
 
 const SignUp = () => {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
    const { replace } = useRouter();
 
    if (fields.email) {

@@ -1,5 +1,14 @@
 import React, { FC, ReactNode, memo } from 'react';
-import { Table, TableBody, TableCell, TableCellProps, TableContainer, TableHead, TableRow } from '@mui/material';
+import {
+   Table,
+   TableBody,
+   TableCell,
+   TableCellProps,
+   TableContainer,
+   TableHead,
+   TableRow,
+   TableRowProps
+} from '@mui/material';
 
 import TableProductsNotFound from './TableProductsNotFound';
 
@@ -17,7 +26,7 @@ export interface ITableRow {
 interface ICustomTable {
    tableHeaders: ITableHeaders[];
    tableRows: ITableRow[];
-   tableRowProps?: TableCellProps;
+   tableRowProps?: TableRowProps;
    head?: ReactNode;
 }
 
@@ -38,11 +47,10 @@ const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowP
             ) : (
                <TableBody>
                   {tableRows.map((row, i) => (
-                     <TableRow key={i} onClick={() => {}}>
+                     <TableRow key={i} onClick={() => {}} {...tableRowProps}>
                         {tableHeaders.map((header, index) => (
                            <TableCell
                               key={index}
-                              {...tableRowProps}
                               sx={{
                                  whiteSpace: 'nowrap',
                                  overflow: 'hidden',
