@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, FormLabel, Stack, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import AddIcon from '@mui/icons-material/Add';
+import Link from 'next/link';
 
 import Card from '../../UI/card';
 
@@ -65,9 +66,11 @@ const MainAdminTestAdd = () => {
                      SAVE
                   </Button>
                   {values.shortDescription && values.title && (
-                     <Button variant="contained" startIcon={<AddIcon />}>
-                        ADD QUESTIONS
-                     </Button>
+                     <Link href="/admin/tests/add/variants">
+                        <Button variant="contained" startIcon={<AddIcon />}>
+                           ADD QUESTIONS
+                        </Button>
+                     </Link>
                   )}
                </Stack>
             )

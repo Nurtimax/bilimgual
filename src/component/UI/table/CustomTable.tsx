@@ -28,9 +28,10 @@ interface ICustomTable {
    tableRows: ITableRow[];
    tableRowProps?: TableRowProps;
    head?: ReactNode;
+   footer?: ReactNode;
 }
 
-const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowProps, head }) => {
+const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowProps, head, footer }) => {
    return (
       <TableContainer>
          {head && head}
@@ -65,6 +66,7 @@ const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowP
                </TableBody>
             )}
          </Table>
+         {footer}
       </TableContainer>
    );
 });
