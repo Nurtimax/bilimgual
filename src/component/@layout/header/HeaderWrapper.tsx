@@ -1,10 +1,8 @@
 import { Box, styled } from '@mui/material';
 import React, { FC } from 'react';
-import Link from 'next/link';
-
-import { BilingualFullIcon } from '../../../assets/icons/BilingualFullIcon';
 
 import Navlinks from './Navlinks';
+import LogoWrapper from './LogoWrapper';
 
 const StyledHeaderWrapper = styled(Box)(({ theme }) => ({
    display: 'flex',
@@ -30,9 +28,7 @@ const StyledHeaderWrapper = styled(Box)(({ theme }) => ({
 const HeaderWrapper: FC = () => {
    return (
       <StyledHeaderWrapper>
-         <Link href="/">
-            <BilingualFullIcon className="logo" />
-         </Link>
+         <LogoWrapper />
          <Navlinks />
       </StyledHeaderWrapper>
    );

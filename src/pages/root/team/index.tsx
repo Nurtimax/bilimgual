@@ -2,7 +2,7 @@ import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
-import MainTeamList from '../../../component/@admin/team-list';
+import MainTeamList from '../../../component/@root/team-list';
 import ToolbarComponent from '../../../component/page/ToolbarComponent';
 
 const AdminTeam = () => {

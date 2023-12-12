@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Stack, Typography } from '@mui/material';
 
-import MainAdminBanner from '../../../component/@admin/banner';
+import MainAdminBanner from '../../../component/@root/banner';
 import Breadcrumbs from '../../../component/UI/breadcrumbs/Breadcrumbs';
 import ToolbarComponent from '../../../component/page/ToolbarComponent';
 

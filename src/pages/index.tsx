@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-   const { fields } = useAppSelector((state) => authSelector(state));
+   const { fields } = useAppSelector(authSelector);
    console.log(fields, 'home');
 
    return (
