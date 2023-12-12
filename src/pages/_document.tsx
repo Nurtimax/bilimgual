@@ -17,6 +17,7 @@ export default function Document() {
                gtag('config', 'G-V4WF9Z7HM5');`
                }}
             />
+            <link rel="icon" href="static/icons/logoB.jpg" />
          </Head>
          <body>
             <Main />
