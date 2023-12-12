@@ -29,7 +29,7 @@ const MainAdmin = () => {
                   <IconButton>
                      <EditNoteIcon />
                   </IconButton>
-                  <IconButton>
+                  <IconButton color="error">
                      <DeleteIcon />
                   </IconButton>
                </Stack>
