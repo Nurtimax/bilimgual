@@ -3,6 +3,7 @@ import { Button, Divider, IconButton, Stack, Switch, Typography } from '@mui/mat
 import AddIcon from '@mui/icons-material/Add';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Link from 'next/link';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../../../UI/table/CustomTable';
 
@@ -57,9 +58,11 @@ const MainAdminTestAddVariants = () => {
                      </Typography>
                   </Stack>
                   <Stack direction="row" justifyContent="flex-end" py="22px">
-                     <Button variant="contained" startIcon={<AddIcon />}>
-                        ADD MORE QUESTIONS{' '}
-                     </Button>
+                     <Link href="/admin/tests/add/variants/select">
+                        <Button variant="contained" startIcon={<AddIcon />}>
+                           ADD MORE QUESTIONS
+                        </Button>
+                     </Link>
                   </Stack>
                   <Divider />
                </Stack>
