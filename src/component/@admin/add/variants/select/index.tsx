@@ -14,10 +14,10 @@ import {
 import Card from '../../../../UI/card';
 
 const MainAdminTestAddVariantsSelect = () => {
-   const [age, setAge] = React.useState(10);
+   const [type, setType] = React.useState('');
 
    const handleChange = (event: SelectChangeEvent) => {
-      setAge(+event.target.value);
+      setType(event.target.value);
    };
 
    return (
@@ -42,11 +42,14 @@ const MainAdminTestAddVariantsSelect = () => {
                         <Select
                            labelId="demo-simple-select-helper-label"
                            id="demo-simple-select-helper"
-                           value={String(age)}
+                           value={String(type)}
                            inputProps={{}}
                            input={<OutlinedInput sx={{ border: '2px solid #bdbdbd' }} />}
                            onChange={handleChange}
                         >
+                           <MenuItem value="">
+                              <em>None</em>
+                           </MenuItem>
                            <MenuItem value={10}>Select real English words</MenuItem>
                            <MenuItem value={20}>Listen and select word</MenuItem>
                            <MenuItem value={30}>Type what you hear</MenuItem>
