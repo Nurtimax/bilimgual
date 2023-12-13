@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, SelectChangeEvent, Stack, TextField } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 import { TestType } from '../../../../@client/tests/TestByType';
 
@@ -10,6 +10,13 @@ import SelectType, { ISelectItem } from './UI/Select';
 interface FormFieldProps {
    label: string;
    input: ReactNode;
+}
+
+interface IVariantsSelectFieldsProps {
+   handleChangeType: (event: SelectChangeEvent) => void;
+   typeValue: TestType | '';
+   duration: dayjs.Dayjs | null;
+   handleChangeDuration: (value: dayjs.Dayjs | null) => void;
 }
 
 const FormField: FC<FormFieldProps> = ({ label, input }) => (
@@ -29,25 +36,26 @@ const selectItems: ISelectItem[] = [
 
 // Reusable component for controlled time picker
 
-const VariantsSelectFields = () => {
-   const [type, setType] = React.useState<TestType | ''>('');
-   const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
-
-   const handleChange = (event: SelectChangeEvent) => {
-      setType(event.target.value as TestType);
-   };
-
+const VariantsSelectFields: FC<IVariantsSelectFieldsProps> = ({
+   handleChangeType,
+   typeValue,
+   duration,
+   handleChangeDuration
+}) => {
    return (
       <Stack>
-         <Stack gap={3} display="grid" gridTemplateColumns="7fr 1fr" alignItems="flex-end" py={2}>
+         <Stack gap={3} display="grid" gridTemplateColumns="6fr 1fr" alignItems="flex-end" py={2}>
             <FormField label="Title" input={<TextField />} />
-            <FormField label="Duration (in minutes)" input={<TimePickerHour value={value} onChange={setValue} />} />
+            <FormField
+               label="Duration (in minutes)"
+               input={<TimePickerHour value={duration} onChange={handleChangeDuration} />}
+            />
          </Stack>
          <Stack>
             <FormControl sx={{ minWidth: 120 }}>
                <FormField
                   label="Type"
-                  input={<SelectType value={String(type)} onChange={handleChange} items={selectItems} />}
+                  input={<SelectType value={String(typeValue)} onChange={handleChangeType} items={selectItems} />}
                />
             </FormControl>
          </Stack>
