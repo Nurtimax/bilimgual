@@ -1,77 +1,24 @@
 import React from 'react';
-import {
-   FormControl,
-   FormHelperText,
-   FormLabel,
-   MenuItem,
-   OutlinedInput,
-   Select,
-   SelectChangeEvent,
-   Stack,
-   TextField
-} from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { Button, Stack } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 import Card from '../../../../UI/card';
 
+import VariantsSelectFields from './VariantsSelectFields';
+
 const MainAdminTestAddVariantsSelect = () => {
-   const [type, setType] = React.useState('');
-   const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
-
-   const handleChange = (event: SelectChangeEvent) => {
-      setType(event.target.value);
-   };
-
    return (
       <Card
-         cardProps={{ sx: { width: '80%', margin: '0 auto', borderRadius: '20px' } }}
+         cardProps={{ sx: { width: '80%', margin: '0 auto', borderRadius: '20px', p: '30px 80px 50px' } }}
          contentProps={{
+            children: <VariantsSelectFields />
+         }}
+         actionProps={{
             children: (
-               <Stack>
-                  <Stack gap={3} display="grid" gridTemplateColumns="7fr 1fr" alignItems="flex-end" py={2}>
-                     <Stack gap={1}>
-                        <FormLabel id="demo-simple-select-helper-label">Title</FormLabel>
-                        <TextField />
-                     </Stack>
-                     <Stack gap={1}>
-                        <FormLabel id="demo-simple-select-helper-label">
-                           Duration <br /> (in minutes)
-                        </FormLabel>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                           <TimePicker
-                              label="Controlled picker"
-                              value={value}
-                              onChange={(newValue) => setValue(newValue)}
-                           />
-                        </LocalizationProvider>
-                     </Stack>
-                  </Stack>
-                  <Stack>
-                     <FormControl sx={{ minWidth: 120 }}>
-                        <FormLabel id="demo-simple-select-helper-label">Type</FormLabel>
-                        <Select
-                           labelId="demo-simple-select-helper-label"
-                           id="demo-simple-select-helper"
-                           value={String(type)}
-                           inputProps={{}}
-                           input={<OutlinedInput sx={{ border: '2px solid #bdbdbd' }} />}
-                           onChange={handleChange}
-                        >
-                           <MenuItem value="">
-                              <em>None</em>
-                           </MenuItem>
-                           <MenuItem value={10}>Select real English words</MenuItem>
-                           <MenuItem value={20}>Listen and select word</MenuItem>
-                           <MenuItem value={30}>Type what you hear</MenuItem>
-                           <MenuItem value={30}>Record saying statement</MenuItem>
-                           <MenuItem value={30}>Respond in at least N words</MenuItem>
-                        </Select>
-                        <FormHelperText>With label + helper text</FormHelperText>
-                     </FormControl>
-                  </Stack>
+               <Stack direction="row" justifyContent="flex-end" width="100%">
+                  <Button variant="contained" startIcon={<AddIcon />}>
+                     ADD MORE QUESTIONS
+                  </Button>
                </Stack>
             )
          }}
