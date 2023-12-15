@@ -5,25 +5,41 @@ import { useFormik } from 'formik';
 import dayjs from 'dayjs';
 
 import Card from '../../../../UI/card';
-import { TestType } from '../../../../@client/tests/TestByType';
+import { TestType } from '../../../../TestByType';
 
 import VariantsSelectFields from './VariantsSelectFields';
 
-export interface IFormikInitialValues {
-   type: TestType | '';
+type TCustomTestType = TestType | '';
+
+export interface IFormikInitialValuesFields {
+   type: TCustomTestType;
    duration: dayjs.Dayjs | null;
    title: string;
+}
+
+export interface IFormikInitialValuesSelectedType {
+   type: TCustomTestType;
+}
+
+export interface IFormikInitialValues {
+   fields: IFormikInitialValuesFields;
+   selectedType: IFormikInitialValuesSelectedType;
 }
 
 const MainAdminTestAddVariantsSelect = () => {
    const { values, setValues, handleSubmit, handleChange, isValid, dirty, errors } = useFormik<IFormikInitialValues>({
       initialValues: {
-         type: '',
-         duration: dayjs(null),
-         title: ''
+         fields: {
+            type: '',
+            duration: dayjs(null),
+            title: ''
+         },
+         selectedType: {
+            type: ''
+         }
       },
-      onSubmit: () => {
-         console.log('submit');
+      onSubmit: (values, { setFieldValue }) => {
+         setFieldValue('selectedType', { type: values.fields.type });
       }
    });
 
@@ -52,8 +68,8 @@ const MainAdminTestAddVariantsSelect = () => {
             children: (
                <VariantsSelectFields
                   handleChangeType={handleChangeType}
-                  typeValue={values.type}
-                  duration={values.duration}
+                  typeValue={values.fields.type}
+                  duration={values.fields.duration}
                   handleChangeDuration={handleChangeDuration}
                   errors={errors}
                   values={values}
@@ -63,11 +79,15 @@ const MainAdminTestAddVariantsSelect = () => {
          }}
          actionProps={{
             children: (
-               <Stack direction="row" justifyContent="flex-end" width="100%">
-                  <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>
-                     ADD MORE QUESTIONS
-                  </Button>
-               </Stack>
+               <>
+                  {values.selectedType.type && (
+                     <Stack direction="row" justifyContent="flex-end" width="100%">
+                        <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>
+                           ADD MORE QUESTIONS
+                        </Button>
+                     </Stack>
+                  )}
+               </>
             )
          }}
       />

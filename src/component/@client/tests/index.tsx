@@ -5,8 +5,7 @@ import { useFormik } from 'formik';
 import { CustomTabPanel } from '../../UI/tab-panel';
 import { checkArray } from '../../../utils/helpers/array';
 import Card from '../../UI/card';
-
-import TestByType, { TestType } from './TestByType';
+import TestByType, { TestType } from '../../TestByType';
 
 interface ITest {
    type: TestType;
@@ -86,7 +85,7 @@ const MainClientTestItem = () => {
                <>
                   {valuesList.map((el) => (
                      <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
-                        <TestByType type={el.type} />
+                        <TestByType variants="USER" type={el.type} />
                      </CustomTabPanel>
                   ))}
                </>

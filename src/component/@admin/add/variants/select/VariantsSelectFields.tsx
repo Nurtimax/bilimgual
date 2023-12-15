@@ -1,19 +1,15 @@
-import { FormControl, FormLabel, SelectChangeEvent, Stack, TextField } from '@mui/material';
-import React, { FC, ReactNode } from 'react';
+import { FormControl, SelectChangeEvent, Stack, TextField } from '@mui/material';
+import React, { FC } from 'react';
 import dayjs from 'dayjs';
 import { FormikErrors } from 'formik';
 
-import { TestType } from '../../../../@client/tests/TestByType';
+import { TestType } from '../../../../TestByType';
 
 import TimePickerHour from './UI/Time';
 import SelectType, { ISelectItem } from './UI/Select';
+import FormField from './UI/FormField';
 
 import { IFormikInitialValues } from '.';
-
-interface FormFieldProps {
-   label: string;
-   input: ReactNode;
-}
 
 interface IVariantsSelectFieldsProps {
    handleChangeType: (event: SelectChangeEvent) => void;
@@ -24,13 +20,6 @@ interface IVariantsSelectFieldsProps {
    errors: FormikErrors<IFormikInitialValues>;
    handleChange: (e: React.ChangeEvent<unknown>) => void;
 }
-
-const FormField: FC<FormFieldProps> = ({ label, input }) => (
-   <Stack gap={1}>
-      <FormLabel id={`demo-simple-select-helper-label-${label}`}>{label}</FormLabel>
-      {input}
-   </Stack>
-);
 
 const selectItems: ISelectItem[] = [
    { id: 1, title: 'Select real English words', type: 'select' },
@@ -59,9 +48,9 @@ const VariantsSelectFields: FC<IVariantsSelectFieldsProps> = ({
                input={
                   <TextField
                      name="title"
-                     value={values.title}
-                     error={!!errors.title}
-                     helperText={errors.title}
+                     value={values.fields.title}
+                     error={!!errors.fields?.title}
+                     helperText={errors.fields?.title}
                      onChange={handleChange}
                   />
                }

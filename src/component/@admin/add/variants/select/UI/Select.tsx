@@ -1,7 +1,7 @@
 import { FormHelperText, MenuItem, OutlinedInput, Select, SelectChangeEvent } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 
-import { TestType } from '../../../../../@client/tests/TestByType';
+import { TestType } from '../../../../../TestByType';
 
 export interface ISelectItem {
    id: number;
@@ -34,7 +34,7 @@ const SelectType: FC<SelectControlledProps> = ({ value, onChange, items, helperT
             </MenuItem>
          ))}
       </Select>
-      {helperText && <FormHelperText>With label + helper text</FormHelperText>}
+      {helperText && <FormHelperText>{helperText}</FormHelperText>}
    </>
 );
 
