@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Button, SelectChangeEvent, Stack } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useFormik } from 'formik';
@@ -9,18 +9,22 @@ import { TestType } from '../../../../@client/tests/TestByType';
 
 import VariantsSelectFields from './VariantsSelectFields';
 
-interface IFormikInitialValues {
+export interface IFormikInitialValues {
    type: TestType | '';
    duration: dayjs.Dayjs | null;
+   title: string;
 }
 
 const MainAdminTestAddVariantsSelect = () => {
-   const { values, setValues } = useFormik<IFormikInitialValues>({
+   const { values, setValues, handleSubmit, handleChange, isValid, dirty, errors } = useFormik<IFormikInitialValues>({
       initialValues: {
          type: '',
-         duration: dayjs(null)
+         duration: dayjs(null),
+         title: ''
       },
-      onSubmit: () => {}
+      onSubmit: () => {
+         console.log('submit');
+      }
    });
 
    const handleChangeType = (event: SelectChangeEvent) => {
@@ -32,9 +36,18 @@ const MainAdminTestAddVariantsSelect = () => {
       setValues((prev) => ({ ...prev, duration: value }));
    };
 
+   const disabledButton = !dirty || !isValid;
+
    return (
       <Card
-         cardProps={{ sx: { width: '80%', margin: '0 auto', borderRadius: '20px', p: '30px 80px 50px' } }}
+         cardProps={{
+            sx: { width: '80%', margin: '0 auto', borderRadius: '20px', p: '30px 80px 50px' },
+            component: 'form',
+            onSubmit: (e) => {
+               const event = e as unknown as FormEvent<HTMLFormElement>;
+               handleSubmit(event);
+            }
+         }}
          contentProps={{
             children: (
                <VariantsSelectFields
@@ -42,13 +55,16 @@ const MainAdminTestAddVariantsSelect = () => {
                   typeValue={values.type}
                   duration={values.duration}
                   handleChangeDuration={handleChangeDuration}
+                  errors={errors}
+                  values={values}
+                  handleChange={handleChange}
                />
             )
          }}
          actionProps={{
             children: (
                <Stack direction="row" justifyContent="flex-end" width="100%">
-                  <Button variant="contained" startIcon={<AddIcon />} disabled={!values.type}>
+                  <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>
                      ADD MORE QUESTIONS
                   </Button>
                </Stack>

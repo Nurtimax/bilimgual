@@ -1,11 +1,14 @@
 import { FormControl, FormLabel, SelectChangeEvent, Stack, TextField } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 import dayjs from 'dayjs';
+import { FormikErrors } from 'formik';
 
 import { TestType } from '../../../../@client/tests/TestByType';
 
 import TimePickerHour from './UI/Time';
 import SelectType, { ISelectItem } from './UI/Select';
+
+import { IFormikInitialValues } from '.';
 
 interface FormFieldProps {
    label: string;
@@ -17,6 +20,9 @@ interface IVariantsSelectFieldsProps {
    typeValue: TestType | '';
    duration: dayjs.Dayjs | null;
    handleChangeDuration: (value: dayjs.Dayjs | null) => void;
+   values: IFormikInitialValues;
+   errors: FormikErrors<IFormikInitialValues>;
+   handleChange: (e: React.ChangeEvent<unknown>) => void;
 }
 
 const FormField: FC<FormFieldProps> = ({ label, input }) => (
@@ -40,12 +46,26 @@ const VariantsSelectFields: FC<IVariantsSelectFieldsProps> = ({
    handleChangeType,
    typeValue,
    duration,
-   handleChangeDuration
+   handleChangeDuration,
+   values,
+   errors,
+   handleChange
 }) => {
    return (
       <Stack>
          <Stack gap={3} display="grid" gridTemplateColumns="6fr 1fr" alignItems="flex-end" py={2}>
-            <FormField label="Title" input={<TextField />} />
+            <FormField
+               label="Title"
+               input={
+                  <TextField
+                     name="title"
+                     value={values.title}
+                     error={!!errors.title}
+                     helperText={errors.title}
+                     onChange={handleChange}
+                  />
+               }
+            />
             <FormField
                label="Duration (in minutes)"
                input={<TimePickerHour value={duration} onChange={handleChangeDuration} />}
