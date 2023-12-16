@@ -46,7 +46,7 @@ const MainAdmin = () => {
    const data: ITableRow[] = useMemo(
       () =>
          test.map((item) => ({
-            loading: item.loading,
+            loading: item?.loading,
             title: (
                <Typography color="#4C4859" variant="body2">
                   {item.title}

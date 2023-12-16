@@ -6,7 +6,7 @@ export interface InitialStateTestQuestions {
    duration: number;
    questionType: TestType;
    active: boolean;
-   loading: boolean;
+   loading?: boolean;
 }
 
 export interface InitialStateTest {
@@ -15,7 +15,7 @@ export interface InitialStateTest {
    active: boolean;
    shortDescription: string;
    questions: InitialStateTestQuestions[];
-   loading: boolean;
+   loading?: boolean;
 }
 
 export interface InitialState {

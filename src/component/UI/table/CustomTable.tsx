@@ -21,7 +21,7 @@ export interface ITableHeaders {
 
 export interface ITableRow {
    [key: string]: ReactNode;
-   loading: boolean;
+   loading?: boolean;
 }
 
 interface ICustomTable {
