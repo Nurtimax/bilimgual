@@ -6,6 +6,10 @@ import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-test';
+import generateId from '../../utils/helpers/generate';
+import { createTestThunk } from '../../store/thunks/admin-test';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '', rowKey: 'title' },
@@ -14,13 +18,38 @@ const tableHeaders: ITableHeaders[] = [
 
 const MainAdmin = () => {
    const { push } = useRouter();
+   const { test } = useAppSelector(selectorAdminTest);
+   const dispatch = useAppDispatch();
+
+   const handleAddTest = async () => {
+      const id = generateId();
+
+      const newData = {
+         active: false,
+         id,
+         questions: [],
+         shortDescription: '',
+         title: '',
+         loading: false
+      };
+
+      dispatch(actionsAdminTest.createTest(newData));
+
+      dispatch(createTestThunk(newData))
+         .unwrap()
+         .then(() => {
+            push(`/admin/tests/${id}`);
+         })
+         .catch(() => {});
+   };
 
    const data: ITableRow[] = useMemo(
-      () => [
-         {
+      () =>
+         test.map((item) => ({
+            loading: item?.loading,
             title: (
                <Typography color="#4C4859" variant="body2">
-                  {'Test  number 1'}
+                  {item.title}
                </Typography>
             ),
             actions: (
@@ -34,16 +63,15 @@ const MainAdmin = () => {
                   </IconButton>
                </Stack>
             )
-         }
-      ],
-      []
+         })),
+      [test]
    );
 
    return (
       <CustomTable
          head={
             <Stack direction="row" justifyContent="flex-end">
-               <Button variant="come" startIcon={<AddIcon />} onClick={() => push('/admin/tests/add')}>
+               <Button variant="come" startIcon={<AddIcon />} onClick={handleAddTest}>
                   ADD NEW TEST
                </Button>
             </Stack>

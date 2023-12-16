@@ -3,6 +3,7 @@ import { Button, FormLabel, Stack, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import AddIcon from '@mui/icons-material/Add';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Card from '../../UI/card';
 
@@ -12,10 +13,15 @@ export interface IAdminTestAddValues {
 }
 
 const MainAdminTestAdd = () => {
+   const { query } = useRouter();
+   console.log(query);
+
    const { values, errors, handleChange } = useFormik<IAdminTestAddValues>({
       initialValues: { title: '', shortDescription: '' },
       onSubmit: () => {}
    });
+
+   const handleSave = () => {};
 
    return (
       <Card
@@ -62,7 +68,7 @@ const MainAdminTestAdd = () => {
             children: (
                <Stack direction="row" gap={2} justifyContent="flex-end" width="100%">
                   <Button variant="login">GO BACK</Button>
-                  <Button variant="contained" color="success">
+                  <Button variant="contained" color="success" onClick={handleSave}>
                      SAVE
                   </Button>
                   {values.shortDescription && values.title && (

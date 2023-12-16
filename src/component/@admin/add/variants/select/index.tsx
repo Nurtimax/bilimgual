@@ -1,78 +1,102 @@
-import React from 'react';
-import {
-   FormControl,
-   FormHelperText,
-   FormLabel,
-   MenuItem,
-   OutlinedInput,
-   Select,
-   SelectChangeEvent,
-   Stack,
-   TextField
-} from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import React, { FormEvent } from 'react';
+import { Button, SelectChangeEvent, Stack } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import { useFormik } from 'formik';
+import dayjs from 'dayjs';
 
 import Card from '../../../../UI/card';
+import TestByType, { TestType } from '../../../../TestByType';
+
+import VariantsSelectFields from './VariantsSelectFields';
+
+type TCustomTestType = TestType | '';
+
+export interface IFormikInitialValuesFields {
+   type: TCustomTestType;
+   duration: dayjs.Dayjs | null;
+   title: string;
+}
+
+export interface IFormikInitialValuesSelectedType {
+   type: TCustomTestType;
+}
+
+export interface IFormikInitialValues {
+   fields: IFormikInitialValuesFields;
+   selectedType: IFormikInitialValuesSelectedType;
+}
 
 const MainAdminTestAddVariantsSelect = () => {
-   const [type, setType] = React.useState('');
-   const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
+   const { values, setValues, handleSubmit, handleChange, isValid, dirty, errors } = useFormik<IFormikInitialValues>({
+      initialValues: {
+         fields: {
+            type: '',
+            duration: dayjs(),
+            title: ''
+         },
+         selectedType: {
+            type: ''
+         }
+      },
+      onSubmit: (values, { setFieldValue }) => {
+         setFieldValue('selectedType', { type: values.fields.type });
+      }
+   });
 
-   const handleChange = (event: SelectChangeEvent) => {
-      setType(event.target.value);
+   const handleChangeType = (event: SelectChangeEvent) => {
+      const value = event.target.value as TestType;
+
+      setValues((prev) => ({
+         ...prev,
+         fields: {
+            ...prev.fields,
+            type: value
+         }
+      }));
    };
+
+   const handleChangeDuration = (value: dayjs.Dayjs | null) => {
+      setValues((prev) => ({ ...prev, duration: value }));
+   };
+
+   const disabledButton = !dirty || !isValid;
 
    return (
       <Card
-         cardProps={{ sx: { width: '80%', margin: '0 auto', borderRadius: '20px' } }}
+         cardProps={{
+            sx: { width: '80%', margin: '0 auto', borderRadius: '20px', p: '30px 80px 50px' },
+            component: 'form',
+            onSubmit: (e) => {
+               const event = e as unknown as FormEvent<HTMLFormElement>;
+               handleSubmit(event);
+            }
+         }}
          contentProps={{
             children: (
-               <Stack>
-                  <Stack gap={3} display="grid" gridTemplateColumns="7fr 1fr" alignItems="flex-end" py={2}>
-                     <Stack gap={1}>
-                        <FormLabel id="demo-simple-select-helper-label">Title</FormLabel>
-                        <TextField />
+               <VariantsSelectFields
+                  handleChangeType={handleChangeType}
+                  typeValue={values.fields.type}
+                  duration={values.fields.duration}
+                  handleChangeDuration={handleChangeDuration}
+                  errors={errors}
+                  values={values}
+                  handleChange={handleChange}
+               />
+            )
+         }}
+         actionProps={{
+            children: (
+               <>
+                  {values.selectedType.type && values.selectedType.type === values.fields.type ? (
+                     <TestByType type={values.selectedType.type} variants="ADMIN" />
+                  ) : (
+                     <Stack direction="row" justifyContent="flex-end" width="100%">
+                        <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>
+                           ADD MORE QUESTIONS
+                        </Button>
                      </Stack>
-                     <Stack gap={1}>
-                        <FormLabel id="demo-simple-select-helper-label">
-                           Duration <br /> (in minutes)
-                        </FormLabel>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                           <TimePicker
-                              label="Controlled picker"
-                              value={value}
-                              onChange={(newValue) => setValue(newValue)}
-                           />
-                        </LocalizationProvider>
-                     </Stack>
-                  </Stack>
-                  <Stack>
-                     <FormControl sx={{ minWidth: 120 }}>
-                        <FormLabel id="demo-simple-select-helper-label">Type</FormLabel>
-                        <Select
-                           labelId="demo-simple-select-helper-label"
-                           id="demo-simple-select-helper"
-                           value={String(type)}
-                           inputProps={{}}
-                           input={<OutlinedInput sx={{ border: '2px solid #bdbdbd' }} />}
-                           onChange={handleChange}
-                        >
-                           <MenuItem value="">
-                              <em>None</em>
-                           </MenuItem>
-                           <MenuItem value={10}>Select real English words</MenuItem>
-                           <MenuItem value={20}>Listen and select word</MenuItem>
-                           <MenuItem value={30}>Type what you hear</MenuItem>
-                           <MenuItem value={30}>Record saying statement</MenuItem>
-                           <MenuItem value={30}>Respond in at least N words</MenuItem>
-                        </Select>
-                        <FormHelperText>With label + helper text</FormHelperText>
-                     </FormControl>
-                  </Stack>
-               </Stack>
+                  )}
+               </>
             )
          }}
       />
