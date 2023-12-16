@@ -1,5 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { TestType } from '../../component/TestByType';
 
@@ -35,8 +34,8 @@ const slice = createSlice({
    name,
    initialState,
    reducers: {
-      createTest: (state) => {
-         state.test.push({ active: false, id: uuidv4(), questions: [], shortDescription: '', title: '' });
+      createTest: (state, actions: PayloadAction<InitialStateTest>) => {
+         state.test.push(actions.payload);
       }
    },
    extraReducers: () => {}

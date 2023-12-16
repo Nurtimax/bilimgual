@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-test';
+import generateId from '../../utils/helpers/generate';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '', rowKey: 'title' },
@@ -20,8 +21,10 @@ const MainAdmin = () => {
    const dispatch = useAppDispatch();
 
    const handleAddTest = () => {
-      dispatch(actionsAdminTest.createTest());
-      push('/admin/tests/add');
+      const id = generateId();
+
+      dispatch(actionsAdminTest.createTest({ active: false, id, questions: [], shortDescription: '', title: '' }));
+      push(`/admin/tests/${id}`);
    };
 
    const data: ITableRow[] = useMemo(
