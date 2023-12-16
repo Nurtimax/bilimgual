@@ -21,6 +21,7 @@ export interface ITableHeaders {
 
 export interface ITableRow {
    [key: string]: ReactNode;
+   loading: boolean;
 }
 
 interface ICustomTable {
@@ -48,19 +49,27 @@ const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowP
             ) : (
                <TableBody>
                   {tableRows.map((row, i) => (
-                     <TableRow key={i} onClick={() => {}} {...tableRowProps}>
-                        {tableHeaders.map((header, index) => (
-                           <TableCell
-                              key={index}
-                              sx={{
-                                 whiteSpace: 'nowrap',
-                                 overflow: 'hidden',
-                                 textOverflow: 'ellipsis'
-                              }}
-                           >
-                              {row[header.rowKey]}
+                     <TableRow onClick={() => {}} {...tableRowProps}>
+                        {row.loading ? (
+                           <TableCell key={i} colSpan={Object.keys(row).length}>
+                              Loading...
                            </TableCell>
-                        ))}
+                        ) : (
+                           <>
+                              {tableHeaders.map((header, index) => (
+                                 <TableCell
+                                    key={index}
+                                    sx={{
+                                       whiteSpace: 'nowrap',
+                                       overflow: 'hidden',
+                                       textOverflow: 'ellipsis'
+                                    }}
+                                 >
+                                    {row[header.rowKey]}
+                                 </TableCell>
+                              ))}
+                           </>
+                        )}
                      </TableRow>
                   ))}
                </TableBody>

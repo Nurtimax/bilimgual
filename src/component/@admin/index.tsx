@@ -9,6 +9,7 @@ import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-test';
 import generateId from '../../utils/helpers/generate';
+import { createTestThunk } from '../../store/thunks/admin-test';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '', rowKey: 'title' },
@@ -20,16 +21,32 @@ const MainAdmin = () => {
    const { test } = useAppSelector(selectorAdminTest);
    const dispatch = useAppDispatch();
 
-   const handleAddTest = () => {
+   const handleAddTest = async () => {
       const id = generateId();
 
-      dispatch(actionsAdminTest.createTest({ active: false, id, questions: [], shortDescription: '', title: '' }));
-      push(`/admin/tests/${id}`);
+      const newData = {
+         active: false,
+         id,
+         questions: [],
+         shortDescription: '',
+         title: '',
+         loading: false
+      };
+
+      dispatch(actionsAdminTest.createTest(newData));
+
+      dispatch(createTestThunk(newData))
+         .unwrap()
+         .then(() => {
+            push(`/admin/tests/${id}`);
+         })
+         .catch(() => {});
    };
 
    const data: ITableRow[] = useMemo(
       () =>
          test.map((item) => ({
+            loading: item.loading,
             title: (
                <Typography color="#4C4859" variant="body2">
                   {item.title}
