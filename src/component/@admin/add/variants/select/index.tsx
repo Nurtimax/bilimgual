@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import dayjs from 'dayjs';
 
 import Card from '../../../../UI/card';
-import { TestType } from '../../../../TestByType';
+import TestByType, { TestType } from '../../../../TestByType';
 
 import VariantsSelectFields from './VariantsSelectFields';
 
@@ -31,7 +31,7 @@ const MainAdminTestAddVariantsSelect = () => {
       initialValues: {
          fields: {
             type: '',
-            duration: dayjs(null),
+            duration: dayjs(),
             title: ''
          },
          selectedType: {
@@ -45,7 +45,14 @@ const MainAdminTestAddVariantsSelect = () => {
 
    const handleChangeType = (event: SelectChangeEvent) => {
       const value = event.target.value as TestType;
-      setValues((prev) => ({ ...prev, type: value }));
+
+      setValues((prev) => ({
+         ...prev,
+         fields: {
+            ...prev.fields,
+            type: value
+         }
+      }));
    };
 
    const handleChangeDuration = (value: dayjs.Dayjs | null) => {
@@ -80,7 +87,9 @@ const MainAdminTestAddVariantsSelect = () => {
          actionProps={{
             children: (
                <>
-                  {values.selectedType.type && (
+                  {values.selectedType.type && values.selectedType.type === values.fields.type ? (
+                     <TestByType type={values.selectedType.type} variants="ADMIN" />
+                  ) : (
                      <Stack direction="row" justifyContent="flex-end" width="100%">
                         <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>
                            ADD MORE QUESTIONS

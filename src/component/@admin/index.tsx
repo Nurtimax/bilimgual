@@ -6,6 +6,8 @@ import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-test';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '', rowKey: 'title' },
@@ -14,13 +16,20 @@ const tableHeaders: ITableHeaders[] = [
 
 const MainAdmin = () => {
    const { push } = useRouter();
+   const { test } = useAppSelector(selectorAdminTest);
+   const dispatch = useAppDispatch();
+
+   const handleAddTest = () => {
+      dispatch(actionsAdminTest.createTest());
+      push('/admin/tests/add');
+   };
 
    const data: ITableRow[] = useMemo(
-      () => [
-         {
+      () =>
+         test.map((item) => ({
             title: (
                <Typography color="#4C4859" variant="body2">
-                  {'Test  number 1'}
+                  {item.title}
                </Typography>
             ),
             actions: (
@@ -34,16 +43,15 @@ const MainAdmin = () => {
                   </IconButton>
                </Stack>
             )
-         }
-      ],
-      []
+         })),
+      [test]
    );
 
    return (
       <CustomTable
          head={
             <Stack direction="row" justifyContent="flex-end">
-               <Button variant="come" startIcon={<AddIcon />} onClick={() => push('/admin/tests/add')}>
+               <Button variant="come" startIcon={<AddIcon />} onClick={handleAddTest}>
                   ADD NEW TEST
                </Button>
             </Stack>
