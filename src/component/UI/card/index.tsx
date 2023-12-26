@@ -22,9 +22,9 @@ interface ICard {
 const Card: FC<ICard> = ({ actionProps, cardProps, contentProps, headerProps }) => {
    return (
       <MuiCard {...cardProps}>
-         <CardHeader {...headerProps} />
-         <CardContent {...contentProps} />
-         <CardActions {...actionProps} />
+         {headerProps && <CardHeader {...headerProps} />}
+         {contentProps && <CardContent {...contentProps} />}
+         {actionProps && <CardActions {...actionProps} />}
       </MuiCard>
    );
 };
