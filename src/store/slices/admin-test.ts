@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { InitialState, InitialStateTest } from '../../types/admin-test';
-import { createTestThunk } from '../thunks/admin-test';
+import { createTestThunk, getTestByIdThunk, getTestThunk } from '../thunks/admin-test';
+import { checkArray } from '../../utils/helpers/array';
 
 import { RootState } from '.';
 
@@ -35,7 +36,19 @@ const slice = createSlice({
          .addCase(createTestThunk.fulfilled, (state, actions: PayloadAction<InitialStateTest>) => {
             state.test.push(actions.payload);
          })
-         .addCase(createTestThunk.rejected, () => {});
+         .addCase(createTestThunk.rejected, () => {})
+         .addCase(getTestThunk.pending, () => {})
+         .addCase(getTestThunk.fulfilled, (state, actions) => {
+            const data = actions.payload;
+
+            if (checkArray(data)) {
+               state.test = data;
+            }
+         })
+         .addCase(getTestThunk.rejected, () => {})
+         .addCase(getTestByIdThunk.pending, () => {})
+         .addCase(getTestByIdThunk.fulfilled, () => {})
+         .addCase(getTestByIdThunk.rejected, () => {});
    }
 });
 
