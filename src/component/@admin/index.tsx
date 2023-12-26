@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Button, IconButton, Stack, Switch, Typography } from '@mui/material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -8,10 +8,10 @@ import { useRouter } from 'next/router';
 import CustomTable, { ITableHeaders, ITableRow } from '../UI/table/CustomTable';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-test';
-import generateId from '../../utils/helpers/generate';
-import { createTestThunk } from '../../store/thunks/admin-test';
+import { createTestThunk, getTestThunk } from '../../store/thunks/admin-test';
 
 const tableHeaders: ITableHeaders[] = [
+   { label: '', rowKey: 'id' },
    { label: '', rowKey: 'title' },
    { label: '', rowKey: 'actions' }
 ];
@@ -22,11 +22,9 @@ const MainAdmin = () => {
    const dispatch = useAppDispatch();
 
    const handleAddTest = async () => {
-      const id = generateId();
-
       const newData = {
          active: false,
-         id,
+         id: '',
          questions: [],
          shortDescription: '',
          title: '',
@@ -37,16 +35,21 @@ const MainAdmin = () => {
 
       dispatch(createTestThunk(newData))
          .unwrap()
-         .then(() => {
-            push(`/admin/tests/${id}`);
+         .then((payload) => {
+            push(`/admin/tests/${payload.id}`);
          })
          .catch(() => {});
    };
+
+   useEffect(() => {
+      dispatch(getTestThunk());
+   }, [dispatch]);
 
    const data: ITableRow[] = useMemo(
       () =>
          test.map((item) => ({
             loading: item?.loading,
+            id: item?.id,
             title: (
                <Typography color="#4C4859" variant="body2">
                   {item.title}

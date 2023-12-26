@@ -38,18 +38,20 @@ const CustomTable: FC<ICustomTable> = memo(({ tableHeaders, tableRows, tableRowP
          {head && head}
          <Table>
             <TableHead>
-               {tableHeaders.map((cell, index) => (
-                  <TableCell key={index} {...cell.tableProps}>
-                     {cell.label}
-                  </TableCell>
-               ))}
+               <TableRow sx={{ boxShadow: '0' }}>
+                  {tableHeaders.map((cell, index) => (
+                     <TableCell key={index} {...cell.tableProps}>
+                        {cell.label}
+                     </TableCell>
+                  ))}
+               </TableRow>
             </TableHead>
             {tableRows.length === 0 ? (
                <TableProductsNotFound colSpan={tableHeaders.length} />
             ) : (
                <TableBody>
                   {tableRows.map((row, i) => (
-                     <TableRow onClick={() => {}} {...tableRowProps}>
+                     <TableRow key={i} onClick={() => {}} {...tableRowProps}>
                         {row.loading ? (
                            <TableCell key={i} colSpan={Object.keys(row).length}>
                               Loading...

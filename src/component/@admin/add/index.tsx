@@ -1,31 +1,58 @@
-import React from 'react';
+import React, { FormEvent, useEffect } from 'react';
 import { Button, FormLabel, Stack, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Card from '../../UI/card';
-
-export interface IAdminTestAddValues {
-   title: string;
-   shortDescription: string;
-}
+import { useAppDispatch } from '../../../store/hooks';
+import { getTestByIdThunk, putTestByIdThunk } from '../../../store/thunks/admin-test';
+import { InitialStateTest } from '../../../types/admin-test';
 
 const MainAdminTestAdd = () => {
-   const { query } = useRouter();
-   console.log(query);
+   const { query, replace, back } = useRouter();
+   const dispatch = useAppDispatch();
 
-   const { values, errors, handleChange } = useFormik<IAdminTestAddValues>({
-      initialValues: { title: '', shortDescription: '' },
-      onSubmit: () => {}
+   const { values, errors, handleChange, handleSubmit, setValues } = useFormik<InitialStateTest>({
+      initialValues: {
+         title: '',
+         shortDescription: '',
+         id: '',
+         active: false,
+         questions: []
+      },
+      onSubmit: (values) => {
+         dispatch(putTestByIdThunk({ ...values, id: query.add as string }))
+            .unwrap()
+            .then(() => {
+               replace(`/admin/tests/${query?.add}/variants`);
+            });
+      }
    });
 
-   const handleSave = () => {};
+   useEffect(() => {
+      dispatch(getTestByIdThunk(query?.add as string))
+         .unwrap()
+         .then((payload) => {
+            setValues(payload);
+         });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [dispatch]);
+
+   const handleSave = () => {
+      dispatch(putTestByIdThunk({ ...values, id: query.add as string }));
+   };
 
    return (
       <Card
-         cardProps={{ sx: { width: '80%', margin: '0 auto', px: '80px', py: '50px', borderRadius: '20px' } }}
+         cardProps={{
+            sx: { width: '80%', margin: '0 auto', px: '80px', py: '50px', borderRadius: '20px' },
+            component: 'form',
+            onSubmit: (e) => {
+               const event = e as unknown as FormEvent<HTMLFormElement>;
+               handleSubmit(event);
+            }
+         }}
          contentProps={{
             sx: {
                display: 'grid',
@@ -67,16 +94,16 @@ const MainAdminTestAdd = () => {
          actionProps={{
             children: (
                <Stack direction="row" gap={2} justifyContent="flex-end" width="100%">
-                  <Button variant="login">GO BACK</Button>
-                  <Button variant="contained" color="success" onClick={handleSave}>
+                  <Button variant="login" type="button" onClick={back}>
+                     GO BACK
+                  </Button>
+                  <Button variant="contained" color="success" type="button" onClick={handleSave}>
                      SAVE
                   </Button>
                   {values.shortDescription && values.title && (
-                     <Link href="/admin/tests/add/variants">
-                        <Button variant="contained" startIcon={<AddIcon />}>
-                           ADD QUESTIONS
-                        </Button>
-                     </Link>
+                     <Button variant="contained" startIcon={<AddIcon />} type="submit">
+                        ADD QUESTIONS
+                     </Button>
                   )}
                </Stack>
             )
