@@ -47,10 +47,10 @@ const VariantsSelectFields: FC<IVariantsSelectFieldsProps> = ({
                label="Title"
                input={
                   <TextField
-                     name="fields.title"
-                     value={values.fields.title}
-                     error={!!errors.fields?.title}
-                     helperText={errors.fields?.title}
+                     name="fields.name"
+                     value={values.fields.name}
+                     error={!!errors.fields?.name}
+                     helperText={errors.fields?.name}
                      onChange={handleChange}
                   />
                }

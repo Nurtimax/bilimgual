@@ -1,45 +1,49 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useEffect } from 'react';
 import { Button, SelectChangeEvent, Stack } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useFormik } from 'formik';
 import dayjs from 'dayjs';
+import { useRouter } from 'next/router';
 
 import Card from '../../../../UI/card';
 import TestByType, { TestType } from '../../../../TestByType';
+import { useAppDispatch } from '../../../../../store/hooks';
+import { getTestByIdVariantsSelectByIdThunk } from '../../../../../store/thunks/admin-test';
+import { InitialStateTestQuestions } from '../../../../../types/admin-test';
 
 import VariantsSelectFields from './VariantsSelectFields';
 
 type TCustomTestType = TestType | '';
-
-export interface IFormikInitialValuesFields {
-   type: TCustomTestType;
-   duration: dayjs.Dayjs | null;
-   title: string;
-}
 
 export interface IFormikInitialValuesSelectedType {
    type: TCustomTestType;
 }
 
 export interface IFormikInitialValues {
-   fields: IFormikInitialValuesFields;
+   fields: InitialStateTestQuestions;
    selectedType: IFormikInitialValuesSelectedType;
 }
 
 const MainAdminTestAddVariantsSelect = () => {
+   const { query } = useRouter();
+   const dispatch = useAppDispatch();
+
    const { values, setValues, handleSubmit, handleChange, isValid, dirty, errors } = useFormik<IFormikInitialValues>({
       initialValues: {
          fields: {
-            type: '',
-            duration: dayjs(),
-            title: ''
+            duration: dayjs().add(0, 'second'),
+            active: false,
+            id: '',
+            name: '',
+            questionType: 'select',
+            loading: false
          },
          selectedType: {
             type: ''
          }
       },
       onSubmit: (values, { setFieldValue }) => {
-         setFieldValue('selectedType', { type: values.fields.type });
+         setFieldValue('selectedType', { type: values.fields.questionType });
       }
    });
 
@@ -50,7 +54,7 @@ const MainAdminTestAddVariantsSelect = () => {
          ...prev,
          fields: {
             ...prev.fields,
-            type: value
+            questionType: value
          }
       }));
    };
@@ -58,6 +62,15 @@ const MainAdminTestAddVariantsSelect = () => {
    const handleChangeDuration = (value: dayjs.Dayjs | null) => {
       setValues((prev) => ({ ...prev, duration: value }));
    };
+
+   useEffect(() => {
+      dispatch(getTestByIdVariantsSelectByIdThunk({ id: query?.add as string, selectId: query?.select as string }))
+         .unwrap()
+         .then((payload) => {
+            setValues((prev) => ({ ...prev, fields: payload }));
+         });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    const disabledButton = !dirty || !isValid;
 
@@ -75,7 +88,7 @@ const MainAdminTestAddVariantsSelect = () => {
             children: (
                <VariantsSelectFields
                   handleChangeType={handleChangeType}
-                  typeValue={values.fields.type}
+                  typeValue={values.fields.questionType}
                   duration={values.fields.duration}
                   handleChangeDuration={handleChangeDuration}
                   errors={errors}
@@ -87,7 +100,7 @@ const MainAdminTestAddVariantsSelect = () => {
          actionProps={{
             children: (
                <>
-                  {values.selectedType.type && values.selectedType.type === values.fields.type ? (
+                  {values.selectedType.type && values.selectedType.type === values.fields.questionType ? (
                      <TestByType type={values.selectedType.type} variants="ADMIN" />
                   ) : (
                      <Stack direction="row" justifyContent="flex-end" width="100%">

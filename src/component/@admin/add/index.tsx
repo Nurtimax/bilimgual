@@ -10,7 +10,7 @@ import { getTestByIdThunk, putTestByIdThunk } from '../../../store/thunks/admin-
 import { InitialStateTest } from '../../../types/admin-test';
 
 const MainAdminTestAdd = () => {
-   const { query, replace, back } = useRouter();
+   const { query, push, back } = useRouter();
    const dispatch = useAppDispatch();
 
    const { values, errors, handleChange, handleSubmit, setValues } = useFormik<InitialStateTest>({
@@ -25,7 +25,7 @@ const MainAdminTestAdd = () => {
          dispatch(putTestByIdThunk({ ...values, id: query.add as string }))
             .unwrap()
             .then(() => {
-               replace(`/admin/tests/${query?.add}/variants`);
+               push(`/admin/tests/${query?.add}/variants`);
             });
       }
    });

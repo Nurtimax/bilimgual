@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { ThemeInput } from 'react-activity-calendar';
 
 import { IUsersChartData } from '../../store/slices/admin-users-chart';
@@ -9,7 +9,7 @@ interface DayData {
    level: 0 | 1 | 2 | 3 | 4;
 }
 
-export const dateFormat = (date: Date): string => {
+export const dateFormat = (date: Date | Dayjs): string => {
    return dayjs(date).format('YYYY-MM-DD');
 };
 

@@ -5,11 +5,17 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
+import dayjs from 'dayjs';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../../../UI/table/CustomTable';
 import { useAppDispatch } from '../../../../store/hooks';
-import { createTestByIdVaraintsThunk, getTestByIdThunk } from '../../../../store/thunks/admin-test';
+import {
+   createTestByIdVaraintsThunk,
+   getTestByIdThunk,
+   transformObjectToArray
+} from '../../../../store/thunks/admin-test';
 import { ICreateTestByIdVaraintsThunk, InitialStateTest } from '../../../../types/admin-test';
+import { dateFormat } from '../../../../utils/helpers/graph';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '#', rowKey: 'index' },
@@ -20,7 +26,7 @@ const tableHeaders: ITableHeaders[] = [
 ];
 
 const MainAdminTestAddVariants = () => {
-   const { back, query, replace } = useRouter();
+   const { back, query, push } = useRouter();
    const dispatch = useAppDispatch();
 
    const { values, setValues } = useFormik<InitialStateTest>({
@@ -38,21 +44,31 @@ const MainAdminTestAddVariants = () => {
       dispatch(getTestByIdThunk(query?.add as string))
          .unwrap()
          .then((payload) => {
-            setValues(payload);
+            const newPayload = { ...payload, questions: transformObjectToArray(payload.questions) };
+            setValues(newPayload);
          });
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [dispatch]);
 
    const tableRows: ITableRow[] = useMemo(
-      () => [
-         {
-            index: 1,
-            name: 'Select the real Englisg word in the list...',
-            duration: '1 min',
-            type: 'Select real English word',
+      () =>
+         values.questions.map((question, i) => ({
+            index: i,
+            name: (
+               <Typography
+                  variant="body3"
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => push(`/admin/tests/${query?.add}/variants/${question?.id}`)}
+               >
+                  {question.name || 'Question ' + i}
+               </Typography>
+            ),
+            duration: dateFormat(question.duration),
+            type: question.questionType,
             actions: (
                <Stack direction="row" alignItems="center" justifyContent="flex-end" gap={3} py={2}>
-                  <Switch id="ios" />
+                  <Switch id="ios" checked={question.active} />
                   <IconButton>
                      <EditNoteIcon />
                   </IconButton>
@@ -61,9 +77,10 @@ const MainAdminTestAddVariants = () => {
                   </IconButton>
                </Stack>
             )
-         }
-      ],
-      []
+         })),
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [values.questions]
    );
 
    const handleCreateQuestion = () => {
@@ -72,7 +89,7 @@ const MainAdminTestAddVariants = () => {
          question: {
             id: '',
             name: '',
-            duration: 0,
+            duration: dayjs().add(0, 'second'),
             questionType: 'select',
             active: false
          }
@@ -80,8 +97,8 @@ const MainAdminTestAddVariants = () => {
 
       dispatch(createTestByIdVaraintsThunk(newData))
          .unwrap()
-         .then(() => {
-            replace(`/admin/tests/${query?.add}/variants/select`);
+         .then((payload) => {
+            push(`/admin/tests/${query?.add}/variants/${payload?.id}`);
          });
    };
 

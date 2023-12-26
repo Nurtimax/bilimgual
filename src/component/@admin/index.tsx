@@ -11,7 +11,6 @@ import { actionsAdminTest, selectorAdminTest } from '../../store/slices/admin-te
 import { createTestThunk, getTestThunk } from '../../store/thunks/admin-test';
 
 const tableHeaders: ITableHeaders[] = [
-   { label: '', rowKey: 'id' },
    { label: '', rowKey: 'title' },
    { label: '', rowKey: 'actions' }
 ];
@@ -47,12 +46,16 @@ const MainAdmin = () => {
 
    const data: ITableRow[] = useMemo(
       () =>
-         test.map((item) => ({
+         test.map((item, i) => ({
             loading: item?.loading,
-            id: item?.id,
             title: (
-               <Typography color="#4C4859" variant="body2">
-                  {item.title}
+               <Typography
+                  color="#4C4859"
+                  variant="body2"
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => push(`/admin/tests/${item?.id}/variants`)}
+               >
+                  {item.title || 'Test ' + i}
                </Typography>
             ),
             actions: (
@@ -67,6 +70,7 @@ const MainAdmin = () => {
                </Stack>
             )
          })),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       [test]
    );
 

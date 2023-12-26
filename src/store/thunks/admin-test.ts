@@ -7,6 +7,29 @@ import { RootState } from '../slices';
 import { actionsAdminTest, adminTestName } from '../slices/admin-test';
 import axiosInctanse from '../../utils/helpers/axiosInstance';
 
+interface YourObjectType {
+   [key: string]: { [key: string]: unknown };
+}
+
+interface TransformedObjectType {
+   id: string;
+   [key: string]: unknown;
+}
+
+export function transformObjectToArray(object: YourObjectType): TransformedObjectType[] {
+   const array = [];
+
+   for (const key in object) {
+      if (Object.prototype.hasOwnProperty.call(object, key)) {
+         const element = object[key];
+
+         array.push({ ...element, id: key });
+      }
+   }
+
+   return array;
+}
+
 export const urlPathSpecials = (url: string, ...urls: string[]): string => {
    const newUrls = urls.join('');
 
@@ -44,7 +67,7 @@ export const createTestByIdVaraintsThunk = createAsyncThunk(
       const email = state.auth.fields.email;
       try {
          const response = await axiosInctanse.post(
-            urlPathSpecials('test', `${email?.replace(/\./g, '')}/${id}/question.json`),
+            urlPathSpecials('test', `${email?.replace(/\./g, '')}/${id}/questions.json`),
             question
          );
 
@@ -66,19 +89,9 @@ export const getTestThunk = createAsyncThunk(
       const email = state.auth.fields.email;
 
       try {
-         const { data: object } = await axiosInctanse.get(urlPathSpecials('test', `${email?.replace(/\./g, '')}.json`));
+         const { data } = await axiosInctanse.get(urlPathSpecials('test', `${email?.replace(/\./g, '')}.json`));
 
-         const array = [];
-
-         for (const key in object) {
-            if (Object.prototype.hasOwnProperty.call(object, key)) {
-               const element = object[key];
-
-               array.push({ ...element, id: key });
-            }
-         }
-
-         return array;
+         return transformObjectToArray(data) as unknown as InitialStateTest[];
       } catch (error) {
          if (error instanceof AxiosError) {
             toast.error(error.message);
@@ -121,6 +134,29 @@ export const putTestByIdThunk = createAsyncThunk(
       const email = state.auth.fields.email;
       try {
          await axiosInctanse.put(urlPathSpecials('test', `${email?.replace(/\./g, '')}/${data?.id}.json`), data);
+      } catch (error) {
+         if (error instanceof AxiosError) {
+            toast.error(error.message);
+         } else if (error instanceof Error) {
+            toast.error(error.message);
+         }
+
+         return rejectWithValue(error);
+      }
+   }
+);
+
+export const getTestByIdVariantsSelectByIdThunk = createAsyncThunk(
+   `${adminTestName}/getTestByIdThunk`,
+   async ({ id, selectId }: { id: string; selectId: string }, { rejectWithValue, getState }) => {
+      const state = getState() as RootState;
+      const email = state.auth.fields.email;
+      try {
+         const { data: object } = await axiosInctanse.get(
+            urlPathSpecials('test', `${email?.replace(/\./g, '')}/${id}/questions/${selectId}.json`)
+         );
+
+         return object;
       } catch (error) {
          if (error instanceof AxiosError) {
             toast.error(error.message);

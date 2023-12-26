@@ -1,9 +1,11 @@
+import { Dayjs } from 'dayjs';
+
 import { TestType } from '../component/TestByType';
 
 export interface InitialStateTestQuestions {
    id: string;
    name: string;
-   duration: number;
+   duration: Dayjs;
    questionType: TestType;
    active: boolean;
    loading?: boolean;
