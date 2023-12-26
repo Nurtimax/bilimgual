@@ -20,12 +20,12 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
             clip-rule="evenodd"
             d="M205.135 46.8953C204.086 47.102 202.959 46.9082 202.001 46.2643C200.084 44.9778 199.575 42.3833 200.861 40.4669L204.155 35.5608C205.442 33.6444 208.036 33.1345 209.952 34.421C211.869 35.7086 212.379 38.3031 211.092 40.2195L207.798 45.1246C207.156 46.0833 206.184 46.6896 205.135 46.8953ZM165.62 29.6942C163.502 29.9021 162.642 32.5287 164.226 33.9491L170.463 39.5462C171.569 40.5403 171.738 42.2135 170.854 43.4078L169.805 44.8208C169.17 45.6756 168.12 46.1116 167.069 45.9563L162.768 45.321C162.013 45.2086 161.243 45.4025 160.629 45.8577L139.277 63.1106L136.994 71.9783C136.58 73.5884 135.28 74.7355 133.75 75.035C133.158 75.1533 132.531 75.1428 131.905 74.9831C129.671 74.4076 128.326 72.1281 128.901 69.8925L129.639 67.0237L127.869 66.7622C123.154 66.0639 118.735 69.3538 118.05 74.0713C117.777 75.9488 118.843 77.7626 120.615 78.4386L140.852 86.1589C140.852 86.1589 149.684 89.7346 151.582 92.0095L158.856 101.804C159.766 103.032 161.128 103.847 162.641 104.07L163.925 104.259C166.194 104.595 168.236 105.816 169.603 107.658L170.677 109.104C172.487 111.542 172.885 114.751 171.725 117.558L168.959 124.258C168.321 125.8 166.717 126.709 165.068 126.466L163.277 126.202C161.729 125.974 160.209 126.76 159.503 128.155L156.544 134.858C155.703 136.759 154.207 138.296 152.327 139.184L145.846 142.244L144.265 152.947C143.978 154.896 142.143 156.229 140.2 155.899L140.177 155.896C138.812 155.665 137.709 154.652 137.361 153.311L134.721 143.132C133.753 139.396 133.544 135.503 134.109 131.685L135.524 122.102C135.859 119.839 135.11 117.552 133.5 115.926L125.829 108.182C124.218 106.555 123.466 104.267 123.802 102.005L124.864 94.8153L127.328 89.9455L114.16 84.9212C108.777 82.8683 104.83 78.1857 103.719 72.5308L102.392 65.7834L101.412 65.6397C98.3174 65.1823 95.8638 62.7957 95.3185 59.7149L92.3722 43.831C99.2549 33.2581 108.399 24.5095 118.995 18.0587L122.453 22.6125C123.402 23.8893 125.206 24.156 126.485 23.207L128.589 21.6452C131.043 19.823 134.121 19.0496 137.145 19.4963L137.618 19.567C139.262 19.8091 140.388 21.3473 140.126 22.9863L139.737 25.418C139.408 27.4661 141.553 29.014 143.394 28.0596L153.483 22.8267C154.376 22.3629 155.394 22.1925 156.389 22.3403L175.557 25.1716L175.026 28.7665L165.62 29.6942ZM244.31 105.852C240.755 123.521 231.82 138.704 219.615 150.172C216.884 148.971 213.897 146.509 213.219 143.938L210.293 132.86C209.495 129.841 209.32 126.692 209.776 123.603L211.19 114.03C211.888 109.307 208.625 104.912 203.901 104.215L203.688 104.183C200.125 103.656 196.831 101.989 194.296 99.4296L193.917 99.046C190.23 95.3251 188.511 90.0847 189.277 84.9009C189.586 82.8066 190.293 80.7904 191.358 78.9602L194.609 73.3776C196.387 70.3228 199.846 68.6568 203.344 69.1745L209.919 70.1461C213.02 70.6047 215.938 71.8975 218.36 73.8847L223.56 78.1509C226.056 80.1992 229.51 80.6255 232.43 79.246L234.676 78.1857C236.219 77.4558 237.944 77.1996 239.633 77.4492L245.13 78.1502C246.348 87.1384 246.201 96.4583 244.31 105.852ZM242.681 66.3799L218.038 60.8323L215.432 63.4481C214.205 65.3389 211.987 66.3405 209.757 66.0107L204.864 65.2874C201.716 64.8225 199.541 61.8928 200.005 58.7434L200.151 58.2346C200.534 55.6444 201.473 53.8619 204.075 53.5727L210.074 52.9064C211.282 52.6932 212.424 52.2004 213.408 51.4688C215.091 50.2198 216.208 48.3526 216.514 46.2788L217.409 40.2233C217.55 39.2688 218.065 38.4119 218.837 37.8366L224.783 33.916C233.055 43.2387 239.215 54.3097 242.681 66.3799Z"
             stroke="#D5D5D5"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M146.265 7.3696C191.551 -1.53432 235.479 27.9604 244.383 73.2455C253.286 118.53 223.792 162.459 178.507 171.362C133.221 180.265 89.2931 150.772 80.3904 105.487C71.4863 60.2006 100.981 16.2735 146.265 7.3696Z"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M75.8763 101.904L75.896 102.56C76.2573 102.549 76.5424 102.248 76.5332 101.886C76.524 101.525 76.2244 101.239 75.8625 101.247L75.8763 101.904ZM73.2485 101.957L73.2347 101.301C72.8734 101.308 72.5863 101.607 72.5916 101.968C72.5975 102.329 72.8944 102.618 73.2558 102.614L73.2485 101.957ZM70.4349 102.614C70.7975 102.619 71.0951 102.328 71.099 101.965C71.1036 101.603 70.8126 101.305 70.45 101.301L70.4349 102.614ZM109.285 52.1909C109.624 52.0616 109.794 51.6819 109.665 51.343C109.536 51.004 109.157 50.8339 108.818 50.9632L109.285 52.1909ZM111.778 49.8472C111.438 49.9739 111.265 50.3522 111.392 50.6922C111.519 51.0322 111.897 51.2051 112.237 51.0785L111.778 49.8472ZM114.861 50.1112C115.202 49.9868 115.377 49.6097 115.252 49.2688C115.128 48.928 114.751 48.7525 114.41 48.8769L114.861 50.1112ZM75.8566 101.247C74.9684 101.273 74.0966 101.291 73.2413 101.301L73.2558 102.614C74.1196 102.605 74.9999 102.587 75.896 102.56L75.8566 101.247ZM75.8625 101.247L73.2347 101.301L73.2623 102.614L75.8901 102.56L75.8625 101.247ZM70.45 101.301C63.5622 101.22 57.9501 100.533 53.892 99.241C49.8042 97.9409 47.4725 96.0897 46.8059 93.8167L45.5451 94.1859C46.402 97.1086 49.287 99.155 53.4936 100.493C57.7298 101.841 63.4894 102.534 70.4349 102.614L70.45 101.301ZM46.8059 93.8167C46.1514 91.5838 47.0678 88.8266 49.6983 85.5971C52.3108 82.3893 56.504 78.8583 62.0604 75.1499C73.1658 67.7377 89.5832 59.7038 109.285 52.1909L108.818 50.9632C89.0655 58.4951 72.5482 66.5697 61.331 74.0568C55.7262 77.798 51.411 81.4138 48.6796 84.7674C45.9662 88.0981 44.7033 91.3151 45.5451 94.1859L46.8059 93.8167ZM112.237 51.0785C113.105 50.7549 113.98 50.4324 114.861 50.1112L114.41 48.8769C113.527 49.1992 112.649 49.5227 111.778 49.8472L112.237 51.0785Z"
@@ -48,23 +48,23 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M116.811 53.7576L119.658 45.7508L158.085 34.6681L119.141 55.7521C117.817 56.4686 116.308 55.1757 116.811 53.7576Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linejoin="round"
          />
          <path
             d="M158.083 38.9704C160.184 37.3044 159.154 33.926 156.481 33.7152L118.273 30.7024C116.43 30.557 115.019 32.3137 115.557 34.0827L123.911 61.4908C124.45 63.2599 126.602 63.9307 128.051 62.7818L158.083 38.9704Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
-         <path d="M119.648 46.0792L158.715 35.6716" stroke="#4C4C4C" stroke-width="2" />
+         <path d="M119.648 46.0792L158.715 35.6716" stroke="#4C4C4C" strokeWidth="2" />
          <g opacity="0.85">
             <path
                opacity="0.85"
                d="M224.081 171.827V160.325"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -73,7 +73,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M240.297 154.173H230.262"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -82,7 +82,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M230.99 161.117L227.982 158.035"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -91,7 +91,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M233.603 163.744L233.245 163.324"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -100,7 +100,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M236.55 166.706L236.395 166.503"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -109,7 +109,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M231.324 146.917L227.982 150.299"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -118,7 +118,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M234.987 143.212L233.746 144.471"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -127,7 +127,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M220.178 158.035L216.384 161.909"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -136,7 +136,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                d="M213.532 164.715L211.921 166.394"
                stroke="#3A10E5"
                stroke-opacity="0.4"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -146,7 +146,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M95.1084 16.4233V23.964"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -154,7 +154,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M84.4756 27.9977H91.0554"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -162,7 +162,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M90.5781 23.4451L92.5502 25.4659"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -170,7 +170,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M88.8643 21.7229L89.0988 21.9982"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -178,7 +178,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M86.9319 19.7808L87.0337 19.9143"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -186,7 +186,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M90.3594 32.7549L92.5502 30.5376"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -194,7 +194,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M87.957 35.1845L88.7703 34.3589"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -202,7 +202,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M97.6662 25.466L100.154 22.9262"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -210,7 +210,7 @@ const EarthWithPlaneExpand: FC<SVGProps<SVGSVGElement>> = (props) => {
                opacity="0.85"
                d="M102.024 21.0862L103.08 19.9854"
                stroke="#DDDDDD"
-               stroke-width="2.2"
+               strokeWidth="2.2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />

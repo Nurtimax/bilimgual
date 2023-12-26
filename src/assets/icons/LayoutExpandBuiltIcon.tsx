@@ -7,7 +7,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M222.414 102.327V86.7712H210.153V102.327C196.375 105.134 186.1 117.298 186.1 131.918C186.1 143.146 192.172 152.854 201.162 158.118C202.213 158.702 203.498 159.053 204.782 159.053H227.668C228.952 159.053 230.237 158.702 231.288 158.118C240.278 152.854 246.35 143.146 246.35 131.918C246.467 117.298 236.192 105.134 222.414 102.327Z"
             fill="#F7F7F7"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -15,7 +15,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M242.146 131.918C242.146 140.807 237.709 148.877 230.47 153.556C229.302 154.257 227.901 154.725 226.5 154.725H206.066C204.665 154.725 203.264 154.374 202.096 153.556C194.857 148.761 190.42 140.807 190.42 131.918C190.42 130.164 190.653 128.41 191.004 126.655H241.68C241.913 128.41 242.146 130.164 242.146 131.918Z"
             fill="#CACACA"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -23,7 +23,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M226.734 84.7836C226.734 85.836 225.917 86.7721 224.75 86.7721H207.701C206.651 86.7721 205.717 85.9529 205.717 84.7836C205.717 83.7312 206.534 82.795 207.701 82.795H224.75C225.917 82.795 226.734 83.7312 226.734 84.7836Z"
             fill="#F7F7F7"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -31,7 +31,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M214.127 76.9467C215.545 76.9447 216.694 75.7905 216.692 74.3696C216.689 72.9486 215.538 71.7983 214.119 71.8003C212.7 71.8029 211.552 72.9565 211.554 74.3781C211.557 75.7991 212.708 76.9493 214.127 76.9467Z"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -40,7 +40,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M220.549 115.777C221.968 115.775 223.117 114.621 223.114 113.2C223.112 111.779 221.96 110.629 220.541 110.631C219.122 110.634 217.974 111.788 217.977 113.209C217.979 114.63 219.131 115.78 220.549 115.777Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -49,7 +49,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M206.189 129.696C208.188 129.693 209.806 128.067 209.803 126.064C209.8 124.062 208.177 122.441 206.178 122.445C204.178 122.447 202.56 124.073 202.564 126.076C202.567 128.079 204.19 129.699 206.189 129.696Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -57,7 +57,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M224.632 69.2276V66.8883"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -65,7 +65,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M224.632 60.8064V58.4672"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -73,7 +73,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M229.302 66.5377L227.317 65.368"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -81,7 +81,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M222.063 62.327L219.961 61.1573"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -89,7 +89,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M229.302 61.1573L227.317 62.327"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -97,7 +97,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M222.063 65.368L219.961 66.5377"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -119,7 +119,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M237.532 100.105C237.532 101.158 238.35 102.094 239.517 102.094H256.564C257.615 102.094 258.55 101.274 258.55 100.105C258.55 99.0526 257.732 98.1165 256.564 98.1165L239.517 98.234C238.35 98.1165 237.532 99.0526 237.532 100.105V100.105Z"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -128,7 +128,7 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M255.28 102.21V126.187L279.567 154.842C280.151 155.544 280.385 156.597 280.034 157.532C279.684 158.468 278.984 159.053 278.049 159.053L217.565 158.936C216.748 158.936 215.93 158.351 215.697 157.415C215.346 156.48 215.58 155.427 216.164 154.725L240.918 125.719V102.21H255.28Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -136,19 +136,19 @@ const LayoutExpandBuiltIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M248.975 137.649L235.314 137.532L222.936 152.269C222.47 152.854 222.353 153.673 222.586 154.374C222.82 155.076 223.404 155.544 224.104 155.544H271.511C272.211 155.544 272.795 155.076 273.029 154.374C273.262 153.673 273.145 152.854 272.679 152.269L260.301 137.766H256.448C256.448 138.351 256.098 141.743 252.712 141.743C248.858 141.743 248.975 137.649 248.975 137.649Z"
             fill="url(#paint0_linear_948_14331)"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M242.994 145.569C242.996 144.147 241.848 142.994 240.429 142.992C239.01 142.989 237.858 144.139 237.856 145.56C237.854 146.981 239.002 148.136 240.421 148.137C241.839 148.139 242.992 146.99 242.994 145.569Z"
             fill="#8566FF"
             stroke="#4D4D4D"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M256.361 137.938C256.365 135.936 254.747 134.31 252.748 134.306C250.748 134.303 249.125 135.924 249.122 137.926C249.119 139.929 250.737 141.555 252.736 141.558C254.735 141.561 256.358 139.941 256.361 137.938Z"
             fill="#8566FF"
             stroke="#4D4D4D"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M64.9678 150.76V75.0022C64.9678 70.8169 68.3608 67.4238 72.5468 67.4238H191.294C195.48 67.4238 198.874 70.8169 198.874 75.0029V150.761C198.874 150.935 198.805 151.102 198.682 151.225C198.559 151.348 198.391 151.417 198.217 151.417H65.6247C65.4505 151.417 65.2834 151.348 65.1602 151.225C65.037 151.102 64.9678 150.934 64.9678 150.76Z"

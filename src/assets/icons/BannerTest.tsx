@@ -30,7 +30,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M51.9595 136.697V58.6002C51.9595 54.6589 55.1576 51.4634 59.1033 51.4634H181.656C185.602 51.4634 188.8 54.6589 188.8 58.6002V136.697H51.9595Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -44,7 +44,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M178.181 137.069H62.5767V65.8206C62.5767 63.7488 64.258 62.0693 66.3311 62.0693H174.428C176.501 62.0693 178.181 63.7488 178.181 65.8206V137.069Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -58,7 +58,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M122.817 56.7464C122.817 58.092 121.725 59.1818 120.379 59.1818C119.033 59.1818 117.942 58.092 117.942 56.7464C117.942 55.4018 119.033 54.312 120.379 54.312C121.725 54.312 122.817 55.4018 122.817 56.7464Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
             />
             <path
                fill-rule="evenodd"
@@ -71,7 +71,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M194.428 145.402H46.3313C42.798 145.402 39.9341 142.542 39.9341 139.011V135.885H200.826V139.011C200.826 142.542 197.962 145.402 194.428 145.402Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -91,13 +91,13 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M74.8745 135.8H165.885V1.5979H74.8745V135.8Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
                d="M106.708 49.6995H148.601M106.708 42.0879H152.935H106.708Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -110,7 +110,7 @@ const BannerTest = () => {
             <path
                d="M106.707 73.6696H148.601M90.686 45.9971L92.4897 47.7988L96.3038 43.989L90.686 45.9971ZM106.707 66.0581H152.935H106.707Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -123,7 +123,7 @@ const BannerTest = () => {
             <path
                d="M106.707 121.611H148.601M90.686 69.9681L92.4897 71.7688L96.3038 67.959L90.686 69.9681ZM106.707 113.998H152.935H106.707Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -136,7 +136,7 @@ const BannerTest = () => {
             <path
                d="M106.707 25.7295H148.601M90.686 117.908L92.4897 119.71L96.3038 115.899L90.686 117.908ZM106.707 18.1169H152.935H106.707Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -149,7 +149,7 @@ const BannerTest = () => {
             <path
                d="M106.708 97.6398H148.601M90.9644 24.4516L96.0268 19.3948L90.9644 24.4516ZM90.9644 19.395L96.0268 24.4518L90.9644 19.395ZM106.708 90.0282H152.935H106.708Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -164,7 +164,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M90.9644 96.3627L96.0268 91.3059L90.9644 96.3627ZM90.9644 91.3061L96.0268 96.3629L90.9644 91.3061Z"
                stroke="#A7A7A7"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
@@ -179,7 +179,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M51.6227 84.6499L60.0838 78.0123L54.8619 71.3716L46.4019 78.0092L51.6227 84.6499Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -199,7 +199,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M60.6151 32.7616C67.1234 27.634 75.2349 25.3382 83.4471 26.3068C91.6799 27.2724 99.0489 31.3955 104.185 37.9201C109.293 44.419 111.58 52.5101 110.613 60.6843C108.615 77.6388 93.171 89.8211 76.1974 87.8161C67.9574 86.8485 60.5905 82.7172 55.4519 76.1936C50.3401 69.6977 48.0613 61.6201 49.0238 53.4417C49.9905 45.2346 54.1027 37.8893 60.6151 32.7616V32.7616Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -213,7 +213,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M60.4853 72.2327C64.5708 77.426 70.4117 80.6935 76.9488 81.4649C90.4209 83.056 102.668 73.3985 104.251 59.9353C105.013 53.4436 103.202 47.0309 99.1442 41.8776C95.0669 36.6996 89.226 33.426 82.7013 32.6567C76.1775 31.8914 69.7484 33.7054 64.5811 37.7854C59.4199 41.854 56.1519 47.6863 55.3796 54.1903C54.6156 60.6811 56.4265 67.0855 60.4853 72.2327V72.2327Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -227,7 +227,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M5.42139 108.087L12.8264 117.453L52.6113 86.1224C53.4772 85.4393 53.6253 84.1841 52.9414 83.3192L48.0127 77.0853C47.3299 76.2204 46.0732 76.0725 45.2064 76.7556L5.42139 108.087Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -241,7 +241,7 @@ const BannerTest = () => {
                clip-rule="evenodd"
                d="M3.03916 112.505L7.9669 118.738C8.64868 119.601 9.90119 119.751 10.7681 119.074L12.9029 117.405L5.49789 108.037L3.37542 109.697C2.5034 110.378 2.35326 111.637 3.03916 112.505V112.505Z"
                stroke="#4C4C4C"
-               stroke-width="1.8"
+               strokeWidth="1.8"
                stroke-linejoin="round"
             />
             <path
@@ -253,7 +253,7 @@ const BannerTest = () => {
             <path
                d="M74.2563 56.9403L77.8595 60.7174L85.4786 52.7283"
                stroke="white"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-linecap="round"
                stroke-linejoin="round"
             />

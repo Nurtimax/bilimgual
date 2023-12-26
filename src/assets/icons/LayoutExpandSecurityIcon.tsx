@@ -7,19 +7,19 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M45.8252 116.545C47.5709 116.545 48.9866 115.13 48.9866 113.383C48.9866 111.637 47.5709 110.222 45.8252 110.222C44.0788 110.222 42.6631 111.637 42.6631 113.383C42.6631 115.13 44.0788 116.545 45.8252 116.545Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M28.8875 128.289C30.6332 128.289 32.0489 126.873 32.0489 125.127C32.0489 123.381 30.6332 121.966 28.8875 121.966C27.1411 121.966 25.7254 123.381 25.7254 125.127C25.7254 126.873 27.1411 128.289 28.8875 128.289Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M33.584 82.4517V83.0674M43.1147 110.492L33.584 100.962V86.6108"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -27,13 +27,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M47.1797 163.52C48.9254 163.52 50.3411 162.105 50.3411 160.359C50.3411 158.612 48.9254 157.197 47.1797 157.197C45.4332 157.197 44.0176 158.612 44.0176 160.359C44.0176 162.105 45.4332 163.52 47.1797 163.52Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M44.4703 157.468L35.6623 148.66V144.504C35.6623 143.737 36.249 143.149 37.0169 143.149H48.152M55.1745 143.149H51.6633"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -41,7 +41,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M45.3277 103.988L39.2746 97.9811V93.8258C39.2746 93.058 39.8621 92.4705 40.6299 92.4705H45.3277"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -49,13 +49,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M25.9506 177.206C27.697 177.206 29.1127 175.79 29.1127 174.044C29.1127 172.298 27.697 170.882 25.9506 170.882C24.2049 170.882 22.789 172.298 22.789 174.044C22.789 175.79 24.2049 177.206 25.9506 177.206Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M28.2092 92.8616V103.221L37.7392 112.751V137.91"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -63,7 +63,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M29.79 133.627V135.784M48.6705 163.565V171.65L39.3208 181V160.9L29.79 151.37V139.882"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -71,7 +71,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M57.4266 137.684H45.8247C44.5603 137.684 43.5663 136.69 43.5663 135.425V126.724M43.5663 121.468V123.489"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -79,7 +79,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M53.5446 132.264H49.3029V121.559"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -87,7 +87,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M4.92965 72.1079L20.1062 88.1471C20.9644 89.0058 21.416 90.135 21.416 91.3543V96.5425M8.81414 90.9394V85.1828L1 77.3687"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -95,7 +95,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M28.2088 102.499L12.0839 118.624"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -103,7 +103,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M28.2088 111.124L12.0839 127.249V135.605"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -111,7 +111,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M53.5437 148.615H43.4767L47.496 152.589"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -119,7 +119,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M18.7686 121.289V128.064"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -127,19 +127,19 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M28.8875 36.57C30.6332 36.57 32.0489 35.1545 32.0489 33.4082C32.0489 31.6621 30.6332 30.2465 28.8875 30.2465C27.1411 30.2465 25.7254 31.6621 25.7254 33.4082C25.7254 35.1545 27.1411 36.57 28.8875 36.57Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M47.1797 74.1951C48.9254 74.1951 50.3411 72.7794 50.3411 71.033C50.3411 69.2865 48.9254 67.8716 47.1797 67.8716C45.4332 67.8716 44.0176 69.2865 44.0176 71.033C44.0176 72.7794 45.4332 74.1951 47.1797 74.1951Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M44.4696 68.141L35.6623 59.3338V55.1777C35.6623 54.4099 36.249 53.8231 37.0169 53.8231H48.1512M55.1745 53.8231H51.6633"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -147,13 +147,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M25.9504 87.8788C27.6969 87.8788 29.1126 86.4639 29.1126 84.7174C29.1126 82.971 27.6969 81.5553 25.9504 81.5553C24.2047 81.5553 22.789 82.971 22.789 84.7174C22.789 86.4639 24.2047 87.8788 25.9504 87.8788Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M23.241 81.8727L13.7104 72.3419V63.4888C13.7104 62.9923 13.3039 62.5858 12.8071 62.5858H7.75088"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -161,7 +161,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M29.466 15.5907L37.4008 23.5255V48.6838"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -169,7 +169,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M28.9932 37.1204V45.6601M48.6712 74.239V82.3243L39.3215 91.674V71.5742L28.9932 61.2459V49.7585"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -177,7 +177,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M24.0528 42.6373V64.5275L33.5832 74.0582V77.95M33.5832 98.6136V86.7931M33.5832 82.048V83.126"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -185,7 +185,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M26.2677 75.8653L18.9052 68.5028V65.2237M18.9052 61.0501C18.9052 59.0629 17.2791 57.4372 15.2918 57.4372H7.77793C7.01005 57.4372 6.42285 56.8496 6.42285 56.0818V38.3596"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -193,7 +193,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M57.4266 48.3584H45.8247C44.5603 48.3584 43.5663 47.3649 43.5663 46.1002V37.3995M43.5663 32.1432V34.1641"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -201,7 +201,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M49.3029 32.2324V42.9373H55.5844C56.0062 42.9373 56.3484 42.5952 56.3484 42.1733V18.0789"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -209,7 +209,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M28.2088 21.7985L12.0839 37.9235V52.6626"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -217,7 +217,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M53.5445 59.2891H43.4767L47.496 63.2633"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -225,7 +225,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M17.9708 31.9622V53.0983"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -233,19 +233,19 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M227.882 128.325C226.136 128.325 224.721 129.741 224.721 131.487C224.721 133.233 226.136 134.649 227.882 134.649C229.629 134.649 231.044 133.233 231.044 131.487C231.044 129.741 229.629 128.325 227.882 128.325Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M244.821 116.582C243.075 116.582 241.659 117.997 241.659 119.744C241.659 121.489 243.075 122.905 244.821 122.905C246.567 122.905 247.983 121.489 247.983 119.744C247.983 117.997 246.567 116.582 244.821 116.582Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M230.594 134.377L240.124 143.908V150.754"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -253,13 +253,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M226.529 81.3506C224.783 81.3506 223.367 82.7663 223.367 84.512C223.367 86.2584 224.783 87.6741 226.529 87.6741C228.275 87.6741 229.691 86.2584 229.691 84.512C229.691 82.7663 228.275 81.3506 226.529 81.3506Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M229.238 87.4028L238.045 96.2108V100.366C238.045 101.134 237.459 101.721 236.691 101.721H225.557M218.533 101.721H222.044"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -267,7 +267,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M228.38 140.882L234.433 146.89V151.045C234.433 151.813 233.846 152.4 233.078 152.4H228.38"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -275,13 +275,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M247.758 67.665C246.012 67.665 244.596 69.0807 244.596 70.8264C244.596 72.5729 246.012 73.9886 247.758 73.9886C249.504 73.9886 250.919 72.5729 250.919 70.8264C250.919 69.0807 249.504 67.665 247.758 67.665Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M250.468 73.6724L259.998 83.2031V92.0562C259.998 92.5528 260.404 92.9592 260.902 92.9592H264.603"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -289,7 +289,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M245.837 151.909V141.55L236.307 132.02V106.861"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -297,7 +297,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M243.918 111.243V109.086M225.037 81.3051V73.2198L234.387 63.8701V83.9699L243.918 93.5006V104.988"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -305,7 +305,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M249.655 104.928V91.017L240.124 81.4862V77.5952M240.124 56.9309V68.7513M240.124 73.4965V72.4185"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -313,7 +313,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M247.44 79.6797L254.803 87.0422V90.3213M254.803 94.4949C254.803 96.4821 256.43 98.1086 258.417 98.1086"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -321,7 +321,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M216.281 107.187H227.883C229.147 107.187 230.141 108.181 230.141 109.445V118.146M230.141 123.402V121.381"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -329,7 +329,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M220.164 112.607H224.406V123.312"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -337,7 +337,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M245.499 142.371L261.625 126.247"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -345,7 +345,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M245.499 133.746L261.625 117.62V109.265"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -353,7 +353,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M220.164 96.2548H230.232L226.212 92.2805"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -361,7 +361,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M254.938 123.582V116.807"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -369,19 +369,19 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M175.627 35.9378C175.627 34.1916 174.211 32.776 172.465 32.776C170.719 32.776 169.304 34.1916 169.304 35.9378C169.304 37.6839 170.719 39.0995 172.465 39.0995C174.211 39.0995 175.627 37.6839 175.627 35.9378Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M187.371 52.8757C187.371 51.13 185.956 49.7144 184.21 49.7144C182.464 49.7144 181.048 51.13 181.048 52.8757C181.048 54.6222 182.464 56.0379 184.21 56.0379C185.956 56.0379 187.371 54.6222 187.371 52.8757Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M141.534 48.1794H142.149M169.575 38.6489L160.044 48.1794H145.693"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -389,13 +389,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M222.603 34.5834C222.603 32.8372 221.187 31.4216 219.441 31.4216C217.695 31.4216 216.279 32.8372 216.279 34.5834C216.279 36.3296 217.695 37.7452 219.441 37.7452C221.187 37.7452 222.603 36.3296 222.603 34.5834Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M216.549 37.2933L207.741 46.1011H203.586C202.818 46.1011 202.231 45.5139 202.231 44.746V33.6116M202.231 26.5884V30.1"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -403,7 +403,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M163.071 36.4351L157.063 42.4876H152.908C152.14 42.4876 151.553 41.9004 151.553 41.1325V36.4351"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -411,13 +411,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M236.287 55.8119C236.287 54.0654 234.872 52.6498 233.125 52.6498C231.379 52.6498 229.964 54.0654 229.964 55.8119C229.964 57.5576 231.379 58.9733 233.125 58.9733C234.872 58.9733 236.287 57.5576 236.287 55.8119Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M230.28 58.522L220.749 68.0527H211.896C211.4 68.0527 210.993 68.4592 210.993 68.9565V82.4164"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -425,7 +425,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M151.942 53.5526H162.302L171.833 44.0225H196.991"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -433,7 +433,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M192.711 51.9724H194.868M222.649 33.0923H238.712L248.062 42.4421H219.984L210.453 51.9724H198.966"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -441,7 +441,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M199.025 57.7096H212.936L222.467 48.1788H226.358M255.001 48.1788H235.202M230.457 48.1788H231.535"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -449,7 +449,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M224.273 55.4956L216.911 62.8582H213.631M209.458 62.8582C207.471 62.8582 205.845 64.4839 205.845 66.4718V79.5704C205.845 80.3382 205.257 80.9257 204.49 80.9257H178.789"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -457,7 +457,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M180.551 38.1961H182.572M185.807 38.1961H194.507C195.772 38.1961 196.766 37.2024 196.766 35.9377V21.9426H225.845"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -465,7 +465,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M191.345 28.2197V32.4607H180.64"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -473,7 +473,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M158.693 58.9282L174.733 74.1041C175.591 74.9628 176.72 75.4143 177.94 75.4143H190.768M186.874 54.9983L194.688 62.8124H200.445V75.4143H194.435"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -481,7 +481,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M161.58 53.5542L177.705 69.6789"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -489,7 +489,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M170.207 53.5542L186.333 69.6789H194.688"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -497,7 +497,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M207.697 28.2197V38.2874L211.672 34.2675"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -505,7 +505,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M180.37 62.9937H187.146"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -513,7 +513,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M102.316 51.9715H104.473M132.254 33.0908H146.472V42.4407H129.589L120.058 51.9715H108.571"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -521,19 +521,19 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M96.4935 24.6774C96.4935 22.9312 95.0778 21.5156 93.3313 21.5156C91.5856 21.5156 90.1699 22.9312 90.1699 24.6774C90.1699 26.4236 91.5856 27.8392 93.3313 27.8392C95.0778 27.8392 96.4935 26.4236 96.4935 24.6774Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M96.9778 52.8738C96.9778 51.1273 95.5622 49.7124 93.8164 49.7124C92.07 49.7124 90.6543 51.1273 90.6543 52.8738C90.6543 54.6203 92.07 56.0359 93.8164 56.0359C95.5622 56.0359 96.9778 54.6203 96.9778 52.8738Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M51.1407 48.1765H51.7565M90.9246 26.9031L69.6506 48.1765H55.2991"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -541,13 +541,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M132.209 34.5807C132.209 32.8345 130.793 31.4189 129.047 31.4189C127.3 31.4189 125.886 32.8345 125.886 34.5807C125.886 36.3269 127.3 37.7425 129.047 37.7425C130.793 37.7425 132.209 36.3269 132.209 34.5807Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M126.156 37.2907L117.349 46.0984H113.193C112.425 46.0984 111.838 45.5112 111.838 44.7434V33.609M111.838 26.5858V30.0974"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -555,7 +555,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M93.9264 13.7275L65.9186 42.4862H62.5135C61.7457 42.4862 61.1582 41.899 61.1582 41.1311V36.4336"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -563,13 +563,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M145.894 55.8095C145.894 54.0637 144.478 52.6481 142.731 52.6481C140.985 52.6481 139.57 54.0637 139.57 55.8095C139.57 57.5559 140.985 58.9716 142.731 58.9716C144.478 58.9716 145.894 57.5559 145.894 55.8095Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M139.887 58.5209L130.356 68.0516H121.503C121.006 68.0516 120.6 68.4581 120.6 68.9547V82.4146"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -577,7 +577,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M61.5487 53.5522H71.9084L81.4391 44.0216H106.597"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -585,7 +585,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M108.631 57.708H122.542L132.073 48.178H135.965M156.629 48.178H144.808"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -593,7 +593,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M133.88 55.4941L126.517 62.8567H123.238M119.064 62.8567C117.077 62.8567 115.451 64.4825 115.451 66.4696V79.5682C115.451 80.3367 114.864 80.9235 114.096 80.9235H88.3955"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -601,7 +601,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M106.372 24.3341V35.9356C106.372 37.2003 105.379 38.194 104.114 38.194H95.4134M90.1571 38.194H92.1779"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -609,7 +609,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M100.952 16.771V32.4574H90.248"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -617,7 +617,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M68.3008 58.9258L84.3399 74.1024C85.1979 74.9603 86.3271 75.4126 87.5464 75.4126H100.375M96.4805 54.9966L104.295 62.8106H110.051V75.4126H104.042"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -625,7 +625,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M71.1865 53.5522L87.3113 69.677"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -633,7 +633,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M79.8133 53.5525L95.9388 69.6772H104.295"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -641,7 +641,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M117.304 28.217V38.2847L121.279 34.2648"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -649,7 +649,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M89.9766 62.9917H96.7524"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -657,7 +657,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M147.355 6.73755H149.512M177.293 25.6178H191.511V16.2681H174.627L165.097 6.73755H153.61"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -665,13 +665,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M130.273 22.7709C130.273 24.5171 128.857 25.9327 127.111 25.9327C125.365 25.9327 123.949 24.5171 123.949 22.7709C123.949 21.0247 125.365 19.6091 127.111 19.6091C128.857 19.6091 130.273 21.0247 130.273 22.7709Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M96.929 10.5309H96.7937M124.219 20.0614L114.689 10.5309H100.337"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -679,13 +679,13 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M177.247 24.1271C177.247 25.8733 175.832 27.2889 174.086 27.2889C172.339 27.2889 170.924 25.8733 170.924 24.1271C170.924 22.3809 172.339 20.9653 174.086 20.9653C175.832 20.9653 177.247 22.3809 177.247 24.1271Z"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
             />
             <path
                d="M171.194 21.4164L162.386 12.6086H158.231C157.463 12.6086 156.876 13.1958 156.876 13.9637V25.0981M156.876 32.1213V28.6097"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -693,7 +693,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M117.715 22.2743L111.708 16.2218H107.552C106.785 16.2218 106.197 16.809 106.197 17.5768V22.2743"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -701,7 +701,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M106.588 5.15625H116.948L126.478 14.6867H151.636"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -709,7 +709,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M153.67 1H167.581L177.112 10.5304H181.003M201.667 10.5304H189.847"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -717,7 +717,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M237.57 37.6572H225.75"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -725,7 +725,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M151.411 34.3736V22.7721C151.411 21.5074 150.417 20.5137 149.153 20.5137H140.452M135.195 20.5137H137.217"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -733,7 +733,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M145.99 30.4901V26.249H135.285"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -741,7 +741,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M162.343 30.4907V20.423L166.317 24.443"
                stroke="#DDDDDD"
-               stroke-width="2"
+               strokeWidth="2"
                stroke-miterlimit="10"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -755,7 +755,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M55.6935 79.6973C55.6935 78.0097 57.061 76.6414 58.7494 76.6414H208.491C210.179 76.6414 211.547 78.0097 211.547 79.6973V156.86C211.547 158.548 210.179 159.916 208.491 159.916H58.7494C57.061 159.916 55.6935 158.548 55.6935 156.86V79.6973Z"
             fill="white"
             stroke="#777777"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M187.482 92.6851H62.9516C62.3187 92.6851 61.8057 93.1981 61.8057 93.831C61.8057 94.4639 62.3187 94.977 62.9516 94.977H187.482C188.115 94.977 188.628 94.4639 188.628 93.831C188.628 93.1981 188.115 92.6851 187.482 92.6851Z"
@@ -773,7 +773,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M40.4141 55.2499C40.4141 52.7189 42.4661 50.666 44.998 50.666H222.243C224.774 50.666 226.827 52.7189 226.827 55.2499V61.3618H40.4141V55.2499Z"
             fill="#DDDDDD"
             stroke="#777777"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M47.29 58.306C48.5558 58.306 49.582 57.2798 49.582 56.014C49.582 54.7482 48.5558 53.722 47.29 53.722C46.0242 53.722 44.998 54.7482 44.998 56.014C44.998 57.2798 46.0242 58.306 47.29 58.306Z"
@@ -790,7 +790,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M40.4141 55.2499C40.4141 52.7189 42.4661 50.666 44.998 50.666H222.243C224.774 50.666 226.827 52.7189 226.827 55.2499V170.612C226.827 173.144 224.774 175.196 222.243 175.196H44.9972C42.4661 175.196 40.4141 173.144 40.4141 170.612V55.2499Z"
             stroke="#777777"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             opacity="0.07"
@@ -817,7 +817,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M25.1339 124.009C25.1339 121.478 27.186 119.425 29.7178 119.425H237.522C240.054 119.425 242.106 121.478 242.106 124.009V170.612C242.106 173.144 240.054 175.196 237.522 175.196H29.7171C27.186 175.196 25.1339 173.144 25.1339 170.612V124.009Z"
             fill="#E1E1E1"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <g opacity="0.8">
             <path
@@ -956,7 +956,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M106.42 99.5616C106.42 96.1863 109.157 93.4497 112.532 93.4497H154.711C158.086 93.4497 160.823 96.1863 160.823 99.5616V128.132C160.823 143.155 148.644 155.333 133.622 155.333C118.599 155.333 106.42 143.155 106.42 128.132V99.5616Z"
             fill="url(#paint0_linear_948_14391)"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             fill-rule="evenodd"
@@ -974,7 +974,7 @@ const LayoutExpandSecurityIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M123.516 117.89C123.516 116.671 123.772 115.509 124.239 114.445C125.711 111.089 129.271 108.722 133.428 108.722C136.513 108.722 139.27 110.026 141.087 112.071"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
             stroke-linecap="round"
          />
          <path

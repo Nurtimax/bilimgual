@@ -6,14 +6,14 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M276.241 66.022C288.394 70.949 321.253 81.9901 313.029 96.5694C305.803 109.38 261.131 107.737 184.927 74.2337"
             stroke="#DDDDDC"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
             stroke-dasharray="3 4"
          />
          <path
             d="M140.247 100.36C64.0426 66.8566 19.3711 65.2144 12.1448 78.0245C9.10323 83.4166 11.681 88.3246 16.7524 92.6183"
             stroke="#DDDDDC"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
             stroke-dasharray="3 4"
          />
@@ -21,7 +21,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M272.539 95.8075C272.925 94.8543 274.339 94.5705 275.608 95.1157C276.878 95.6603 277.587 96.9617 277.158 97.8657L264.079 126.834L259.448 130.919L259.417 124.726L272.539 95.8075Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -29,7 +29,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M270.654 99.9126L259.662 124.215L264.271 126.299L275.263 101.997L270.654 99.9126Z"
             fill="#FFC700"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -37,14 +37,14 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M271.703 97.5405L270.513 100.174L275.121 102.259L276.313 99.625L271.703 97.5405Z"
             fill="#E8E8E8"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
          <path
             d="M261.99 125.259L273.011 100.91"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -52,7 +52,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M261.928 91.7694C262.116 90.7583 263.446 90.1993 264.798 90.4818C266.15 90.7636 267.104 91.8975 266.863 92.8691L259.8 123.858L256.072 128.782L254.812 122.719L261.928 91.7694Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -60,7 +60,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M260.896 96.1667L254.951 122.168L259.883 123.296L265.827 97.2947L260.896 96.1667Z"
             fill="#FFC700"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -68,14 +68,14 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M261.452 93.6333L260.809 96.4509L265.74 97.5788L266.384 94.7606L261.452 93.6333Z"
             fill="#E8E8E8"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
          <path
             d="M257.44 122.731L263.404 96.6772"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -85,7 +85,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M246.715 152.737H267.016C270.298 152.737 272.96 150.055 272.96 146.746V115.949C272.96 115.224 272.372 114.635 271.646 114.635H242.084C241.358 114.635 240.77 115.224 240.77 115.949V146.746C240.77 150.055 243.432 152.737 246.715 152.737Z"
             fill="#E8E8E8"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             opacity="0.1"
@@ -101,7 +101,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M36.4835 152.723H65.4543C70.1396 152.723 73.938 148.925 73.938 144.24V100.084C73.938 99.358 73.35 98.77 72.6241 98.77H29.3137C28.5881 98.77 27.9998 99.358 27.9998 100.084V144.24C27.9998 148.925 31.7976 152.723 36.4835 152.723Z"
             fill="white"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             fill-rule="evenodd"
@@ -143,7 +143,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M67.3358 35.146C67.3358 30.7923 70.8655 27.2628 75.219 27.2628H235.511C239.865 27.2628 243.394 30.7923 243.394 35.146V142.226H67.3358V35.146Z"
             fill="#E8E8E8"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M75.219 39.0876C75.219 36.9107 76.9835 35.146 79.1606 35.146H231.569C233.746 35.146 235.511 36.9107 235.511 39.0876V142.226H75.219V39.0876Z"
@@ -153,12 +153,12 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M75.219 39.0876C75.219 36.9107 76.9835 35.146 79.1606 35.146H231.569C233.746 35.146 235.511 36.9107 235.511 39.0876V48.2847H75.219V39.0876Z"
             fill="white"
             stroke="#777777"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M75.219 39.0876C75.219 36.9107 76.9835 35.146 79.1606 35.146H231.569C233.746 35.146 235.511 36.9107 235.511 39.0876V142.226H75.219V39.0876Z"
             stroke="#4C4C4C"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M171.788 41.0583H163.905C163.542 41.0583 163.248 41.3525 163.248 41.7153C163.248 42.0781 163.542 42.3722 163.905 42.3722H171.788C172.151 42.3722 172.445 42.0781 172.445 41.7153C172.445 41.3525 172.151 41.0583 171.788 41.0583Z"
@@ -187,7 +187,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
          <path
             d="M88.3574 61.9397C88.3574 59.4778 90.3578 57.4819 92.8246 57.4819H217.905C220.372 57.4819 222.372 59.4778 222.372 61.9397V146.309C222.372 148.771 220.372 150.767 217.905 150.767H92.8246C90.3578 150.767 88.3574 148.771 88.3574 146.309V61.9397Z"
             stroke="#777777"
-            stroke-width="2"
+            strokeWidth="2"
          />
          <path
             d="M97.293 104.288C97.293 102.565 98.6929 101.168 100.42 101.168H114.268C115.995 101.168 117.395 102.565 117.395 104.288C117.395 106.012 115.995 107.409 114.268 107.409H100.42C98.6929 107.409 97.293 106.012 97.293 104.288Z"
@@ -297,13 +297,13 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             <path
                d="M98.7324 89.088C98.7324 85.4341 101.7 82.4727 105.361 82.4727H108.881C112.542 82.4727 115.51 85.4341 115.51 89.088V92.9902H98.7324V89.088Z"
                stroke="#4C4C4C"
-               stroke-width="2"
+               strokeWidth="2"
             />
             <path
                d="M113.79 78.1796C113.79 81.8544 110.805 84.8336 107.122 84.8336C103.44 84.8336 100.454 81.8544 100.454 78.1796C100.454 74.5047 103.44 71.5261 107.122 71.5261C110.805 71.5261 113.79 74.5047 113.79 78.1796Z"
                fill="white"
                stroke="#4C4C4C"
-               stroke-width="2"
+               strokeWidth="2"
             />
             <path
                d="M110.131 68.7348C110.131 70.3949 108.782 71.7396 107.12 71.7396C105.456 71.7396 104.108 70.3949 104.108 68.7348C104.108 67.0754 105.456 65.73 107.12 65.73C108.782 65.73 110.131 67.0754 110.131 68.7348Z"
@@ -320,7 +320,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M206.092 68.2888L211.279 65.2412V67.8919L206.092 68.2888Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
+            strokeWidth="0.106904"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -328,7 +328,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M206.092 68.2886L212.385 65.9556V67.8457L206.092 68.2886Z"
             fill="white"
             stroke="#565656"
-            stroke-width="0.106904"
+            strokeWidth="0.106904"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -336,14 +336,14 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M206.091 68.2886L199.35 65V67.5768L206.091 68.2886Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
+            strokeWidth="0.106904"
             stroke-miterlimit="10"
          />
          <path
             d="M206.091 68.2883L197.929 65.5945V67.4122L206.091 68.2883Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.106904"
+            strokeWidth="0.106904"
             stroke-miterlimit="10"
          />
          <path
@@ -972,7 +972,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M84.9785 39.4388L87.2478 38.1055V39.2651L84.9785 39.4388Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.141757"
+            strokeWidth="0.141757"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -980,7 +980,7 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M84.9785 39.4392L87.7317 38.4185V39.2454L84.9785 39.4392Z"
             fill="white"
             stroke="#565656"
-            stroke-width="0.141757"
+            strokeWidth="0.141757"
             stroke-miterlimit="10"
             stroke-linejoin="round"
          />
@@ -988,14 +988,14 @@ const LayoutExpandDashboardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
             d="M84.9776 39.4387L82.0282 38V39.1273L84.9776 39.4387Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.141757"
+            strokeWidth="0.141757"
             stroke-miterlimit="10"
          />
          <path
             d="M84.9772 39.4388L81.4062 38.2603V39.0555L84.9772 39.4388Z"
             fill="white"
             stroke="#575858"
-            stroke-width="0.141757"
+            strokeWidth="0.141757"
             stroke-miterlimit="10"
          />
          <path
