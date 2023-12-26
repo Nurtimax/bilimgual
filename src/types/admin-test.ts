@@ -18,6 +18,11 @@ export interface InitialStateTest {
    loading?: boolean;
 }
 
+export interface ICreateTestByIdVaraintsThunk {
+   question: InitialStateTestQuestions;
+   id: string;
+}
+
 export interface InitialState {
    test: InitialStateTest[];
 }
