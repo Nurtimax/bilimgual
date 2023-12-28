@@ -1,7 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { InitialState, InitialStateTest } from '../../types/admin-test';
-import { createTestThunk, getTestByIdThunk, getTestThunk } from '../thunks/admin-test';
+import { IChangeQuestionPayload, InitialState, InitialStateTest } from '../../types/admin-test';
+import {
+   createTestThunk,
+   getTestByIdThunk,
+   getTestByIdVariantsSelectByIdThunk,
+   getTestThunk
+} from '../thunks/admin-test';
 import { checkArray } from '../../utils/helpers/array';
 
 import { RootState } from '.';
@@ -9,7 +14,14 @@ import { RootState } from '.';
 export const adminTestName = 'admin-test';
 
 const initialState: InitialState = {
-   test: []
+   test: [],
+   question: {
+      id: '',
+      name: '',
+      duration: 0,
+      questionType: 'select',
+      active: false
+   }
 };
 
 const slice = createSlice({
@@ -28,6 +40,13 @@ const slice = createSlice({
          });
 
          state.test = newTest;
+      },
+      changeQuestion: (state, actions: PayloadAction<IChangeQuestionPayload>) => {
+         const { key, value } = actions.payload;
+
+         const newQuestion = { ...state.question, [key]: value };
+
+         state.question = newQuestion;
       }
    },
    extraReducers: (builder) => {
@@ -48,7 +67,12 @@ const slice = createSlice({
          .addCase(getTestThunk.rejected, () => {})
          .addCase(getTestByIdThunk.pending, () => {})
          .addCase(getTestByIdThunk.fulfilled, () => {})
-         .addCase(getTestByIdThunk.rejected, () => {});
+         .addCase(getTestByIdThunk.rejected, () => {})
+         .addCase(getTestByIdVariantsSelectByIdThunk.rejected, () => {})
+         .addCase(getTestByIdVariantsSelectByIdThunk.fulfilled, (state, actions) => {
+            state.question = actions.payload;
+         })
+         .addCase(getTestByIdVariantsSelectByIdThunk.pending, () => {});
    }
 });
 

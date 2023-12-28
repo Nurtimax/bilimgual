@@ -1,5 +1,5 @@
 import { Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { TokenAnnotator } from 'react-text-annotate';
 
 export const TEXT =
@@ -15,7 +15,16 @@ interface IHighlightState extends TokenSpan {
    tag: string;
 }
 
-const HighlightsAnswer = () => {
+export interface IHighlightsAnswerProps {
+   passage?: string;
+   text?: string;
+   highlight?: string;
+   title?: string;
+   bridgeTitle?: string;
+   type?: 'highlight';
+}
+
+const HighlightsAnswer = memo(() => {
    const [state, setState] = useState<IHighlightState | undefined>();
 
    const handleChange = (value: IHighlightState[]) => {
@@ -49,6 +58,6 @@ const HighlightsAnswer = () => {
          </Grid>
       </Grid>
    );
-};
+});
 
 export default HighlightsAnswer;

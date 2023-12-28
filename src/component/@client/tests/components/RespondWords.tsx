@@ -1,7 +1,11 @@
 import { Stack, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { FC, memo, useState } from 'react';
 
-const RespondWords = () => {
+interface IRespondWordsProps {
+   title?: string;
+}
+
+const RespondWords: FC<IRespondWordsProps> = memo(() => {
    const [value, setValue] = useState('');
 
    return (
@@ -21,6 +25,6 @@ const RespondWords = () => {
          </Stack>
       </Stack>
    );
-};
+});
 
 export default RespondWords;

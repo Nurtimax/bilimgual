@@ -1,6 +1,5 @@
 import { FormControl, SelectChangeEvent, Stack, TextField } from '@mui/material';
 import React, { FC } from 'react';
-import dayjs from 'dayjs';
 import { FormikErrors } from 'formik';
 
 import { TestType } from '../../../../TestByType';
@@ -14,8 +13,8 @@ import { IFormikInitialValues } from '.';
 interface IVariantsSelectFieldsProps {
    handleChangeType: (event: SelectChangeEvent) => void;
    typeValue: TestType | '';
-   duration: dayjs.Dayjs | null;
-   handleChangeDuration: (value: dayjs.Dayjs | null) => void;
+   duration: number;
+   handleChangeDuration?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
    values: IFormikInitialValues;
    errors: FormikErrors<IFormikInitialValues>;
    handleChange: (e: React.ChangeEvent<unknown>) => void;

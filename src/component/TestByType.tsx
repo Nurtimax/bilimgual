@@ -25,7 +25,7 @@ interface ITestByTypeProps {
    variants: 'ADMIN' | 'USER';
 }
 
-const componentMap: Record<TestType, Record<'ADMIN' | 'USER', React.ComponentType<unknown>>> = {
+const componentMap: Record<TestType, Record<'ADMIN' | 'USER', FC>> = {
    descriptionImage: {
       ADMIN: AdminDescriptionImage,
       USER: TestDescriptionImage

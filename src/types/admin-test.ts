@@ -1,14 +1,19 @@
-import { Dayjs } from 'dayjs';
-
+import { ITestDescriptionImageProps } from '../component/@client/tests/components/DescriptionImage';
+import { IHighlightsAnswerProps } from '../component/@client/tests/components/HighlightsAnswer';
 import { TestType } from '../component/TestByType';
+
+type ValuesByQuestionType<T extends string> = T extends 'highlights'
+   ? ITestDescriptionImageProps & IHighlightsAnswerProps
+   : unknown;
 
 export interface InitialStateTestQuestions {
    id: string;
    name: string;
-   duration: Dayjs;
+   duration: number;
    questionType: TestType;
    active: boolean;
    loading?: boolean;
+   values?: ValuesByQuestionType<''>;
 }
 
 export interface InitialStateTest {
@@ -27,4 +32,10 @@ export interface ICreateTestByIdVaraintsThunk {
 
 export interface InitialState {
    test: InitialStateTest[];
+   question: InitialStateTestQuestions;
+}
+
+export interface IChangeQuestionPayload {
+   key: keyof InitialStateTestQuestions;
+   value: number | string;
 }

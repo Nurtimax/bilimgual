@@ -1,8 +1,12 @@
 import { Grid, IconButton, Paper, Stack, Typography, styled } from '@mui/material';
-import React from 'react';
+import React, { FC, memo } from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import CheckIcon from '@mui/icons-material/Check';
 import { useSpeechSynthesis } from 'react-speech-kit';
+
+interface IListenAndSelectProps {
+   texts?: string[];
+}
 
 const Item = styled(Paper)(({ theme }) => ({
    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,7 +22,7 @@ const Item = styled(Paper)(({ theme }) => ({
    justifyContent: 'space-between'
 }));
 
-const ListenAndSelect = () => {
+const ListenAndSelect: FC<IListenAndSelectProps> = memo(() => {
    const { speak } = useSpeechSynthesis();
 
    const handleClickAndSpeak = (text: string) => {
@@ -44,6 +48,6 @@ const ListenAndSelect = () => {
          ))}
       </Grid>
    );
-};
+});
 
 export default ListenAndSelect;

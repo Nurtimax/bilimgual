@@ -2,7 +2,6 @@ import React, { FormEvent, useEffect } from 'react';
 import { Button, SelectChangeEvent, Stack } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useFormik } from 'formik';
-import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
 
 import Card from '../../../../UI/card';
@@ -31,7 +30,7 @@ const MainAdminTestAddVariantsSelect = () => {
    const { values, setValues, handleSubmit, handleChange, isValid, dirty, errors } = useFormik<IFormikInitialValues>({
       initialValues: {
          fields: {
-            duration: dayjs().add(0, 'second'),
+            duration: 0,
             active: false,
             id: '',
             name: '',
@@ -59,7 +58,8 @@ const MainAdminTestAddVariantsSelect = () => {
       }));
    };
 
-   const handleChangeDuration = (value: dayjs.Dayjs | null) => {
+   const handleChangeDuration: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => {
+      const value = e.target.value;
       setValues((prev) => ({ ...prev, duration: value }));
    };
 

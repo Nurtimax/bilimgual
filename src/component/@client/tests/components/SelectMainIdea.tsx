@@ -1,7 +1,16 @@
 import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { FC, memo } from 'react';
 
 import { TEXT } from './HighlightsAnswer';
+
+interface ISelectMainIdeaObject {
+   id?: number;
+   title?: string;
+}
+
+interface ISelectMainIdeaProps {
+   selects?: ISelectMainIdeaObject[];
+}
 
 const dummy = [
    { id: 1, title: 'There are many variations of passages of lorem ipsum available, but the majority have.' },
@@ -13,7 +22,7 @@ const dummy = [
    { id: 4, title: 'There are many variations of passages of lorem ipsum available, but the majority have.' }
 ];
 
-const SelectMainIdea = () => {
+const SelectMainIdea: FC<ISelectMainIdeaProps> = memo(() => {
    const [value, setValue] = React.useState('female');
 
    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +75,6 @@ const SelectMainIdea = () => {
          </FormControl>
       </Stack>
    );
-};
+});
 
 export default SelectMainIdea;

@@ -60,7 +60,7 @@ export const createTestThunk = createAsyncThunk(
 );
 
 export const createTestByIdVaraintsThunk = createAsyncThunk(
-   `${adminTestName}/createTestThunk`,
+   `${adminTestName}/createTestByIdVaraintsThunk`,
    async ({ question, id }: ICreateTestByIdVaraintsThunk, { rejectWithValue, getState }) => {
       const state = getState() as RootState;
 
@@ -128,7 +128,7 @@ export const getTestByIdThunk = createAsyncThunk(
 );
 
 export const putTestByIdThunk = createAsyncThunk(
-   `${adminTestName}/getTestByIdThunk`,
+   `${adminTestName}/putTestByIdThunk`,
    async (data: InitialStateTest, { rejectWithValue, getState }) => {
       const state = getState() as RootState;
       const email = state.auth.fields.email;
@@ -147,7 +147,7 @@ export const putTestByIdThunk = createAsyncThunk(
 );
 
 export const getTestByIdVariantsSelectByIdThunk = createAsyncThunk(
-   `${adminTestName}/getTestByIdThunk`,
+   `${adminTestName}/getTestByIdVariantsSelectByIdThunk`,
    async ({ id, selectId }: { id: string; selectId: string }, { rejectWithValue, getState }) => {
       const state = getState() as RootState;
       const email = state.auth.fields.email;

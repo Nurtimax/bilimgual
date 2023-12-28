@@ -1,4 +1,4 @@
-import { Stack, TextField, alpha, styled } from '@mui/material';
+import { LinearProgress, Stack, TextField, alpha, styled } from '@mui/material';
 import React, { FC, memo, useCallback, useState } from 'react';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { toast } from 'react-toastify';
@@ -6,14 +6,15 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useDropzone } from 'react-dropzone';
 
 import Image from '../../UI/Image';
-import { useAppSelector } from '../../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { emailRegex } from '../../@root/team/validate';
 import { storage } from '../../../firebase';
 import { authSelector } from '../../../store/helpers/auth';
 import LoginAlert from '../../UI/login/Alert';
+import { actionsAdminTest, selectorAdminTest } from '../../../store/slices/admin-test';
 
 interface IAdminDescriptionImageProps {
-   img: string;
+   img?: string;
 }
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -46,8 +47,12 @@ const DropZoneStyle = styled('div')({
 
 const AdminDescriptionImage: FC<IAdminDescriptionImageProps> = memo(({ img }) => {
    const [progress, setProgress] = useState<number>(0);
+   const dispatch = useAppDispatch();
 
    const { fields } = useAppSelector(authSelector);
+   const { question } = useAppSelector(selectorAdminTest);
+
+   console.log(question);
 
    const emailMathes = emailRegex.test(fields.email || '');
 
@@ -69,7 +74,9 @@ const AdminDescriptionImage: FC<IAdminDescriptionImageProps> = memo(({ img }) =>
                toast.error(error.message);
             },
             () => {
-               getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {});
+               getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                  dispatch(actionsAdminTest.changeQuestion({ key: 'id', value: downloadURL }));
+               });
             }
          );
       },
@@ -82,27 +89,37 @@ const AdminDescriptionImage: FC<IAdminDescriptionImageProps> = memo(({ img }) =>
    });
    return (
       <Stack direction="row" display="grid" gridTemplateColumns="1fr 2fr" gap={1}>
-         <Image alt="" src={img} style={{ width: '100%', aspectRatio: '1.5/1', height: 'inherit', borderRadius: 5 }} />
-         <RootStyle
-            sx={{
-               ...(isDragReject && {
-                  borderColor: 'error.light'
-               }),
-               position: 'relative'
-            }}
-            {...getRootProps()}
-         >
-            <DropZoneStyle
+         {img ? (
+            <Image
+               alt=""
+               src={img}
+               style={{ width: '100%', aspectRatio: '1.5/1', height: 'inherit', borderRadius: 5 }}
+            />
+         ) : (
+            <RootStyle
                sx={{
-                  ...(isDragActive && { opacity: 0.72 })
+                  ...(isDragReject && {
+                     borderColor: 'error.light'
+                  }),
+                  position: 'relative'
                }}
+               {...getRootProps()}
             >
-               <input disabled={!emailMathes} {...getInputProps()} />
-               <AddPhotoAlternateIcon sx={{ color: '#919EAB', width: '3vw', height: '3vw' }} />
-            </DropZoneStyle>
+               <DropZoneStyle
+                  sx={{
+                     ...(isDragActive && { opacity: 0.72 })
+                  }}
+               >
+                  <input disabled={!emailMathes} {...getInputProps()} />
+                  <AddPhotoAlternateIcon sx={{ color: '#919EAB', width: '3vw', height: '3vw' }} />
+               </DropZoneStyle>
 
-            {fileRejections.length > 0 && <LoginAlert />}
-         </RootStyle>
+               {fileRejections.length > 0 && <LoginAlert />}
+               {progress !== 0 && progress !== 100 && (
+                  <LinearProgress variant="buffer" value={progress} valueBuffer={progress + 10} />
+               )}
+            </RootStyle>
+         )}
          <TextField id="outlined-multiline-static" label="Multiline" multiline rows={13} defaultValue="Default Value" />
       </Stack>
    );

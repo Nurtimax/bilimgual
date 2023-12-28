@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Grid, IconButton, Typography } from '@mui/material';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import VoiceOverOffIcon from '@mui/icons-material/VoiceOverOff';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const RecordSaying = () => {
+const RecordSaying = memo(() => {
    const { transcript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
    const startListening = () => SpeechRecognition.startListening({ continuous: true, language: 'en-US' });
@@ -31,6 +31,6 @@ const RecordSaying = () => {
          </Grid>
       </Grid>
    );
-};
+});
 
 export default RecordSaying;
