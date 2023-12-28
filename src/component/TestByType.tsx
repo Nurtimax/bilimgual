@@ -9,6 +9,7 @@ import ListenAndSelect from './@client/tests/components/ListenAndSelect';
 import RecordSaying from './@client/tests/components/RecordSaying';
 import RespondWords from './@client/tests/components/RespondWords';
 import AdminDescriptionImage from './@admin/tests/DescriptionImage';
+import AdminTestSelect from './@admin/tests/TestSelect';
 
 export type TestType =
    | 'descriptionImage'
@@ -31,7 +32,7 @@ const componentMap: Record<TestType, Record<'ADMIN' | 'USER', FC>> = {
       USER: TestDescriptionImage
    },
    select: {
-      ADMIN: TestSelect,
+      ADMIN: AdminTestSelect,
       USER: TestSelect
    },
    practice: {

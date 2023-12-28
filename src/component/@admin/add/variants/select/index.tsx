@@ -101,20 +101,7 @@ const MainAdminTestAddVariantsSelect = () => {
             children: (
                <>
                   {values.selectedType.type && values.selectedType.type === values.fields.questionType ? (
-                     <Stack width="100%">
-                        <Stack direction="row" justifyContent="flex-end" pb={3}>
-                           <Button variant="contained" startIcon={<AddIcon />} disabled={disabledButton}>
-                              add options
-                           </Button>
-                        </Stack>
-                        <TestByType type={values.selectedType.type} variants="ADMIN" />
-                        <Stack direction="row" justifyContent="flex-end" pt={3} gap={3}>
-                           <Button variant="login">go back</Button>
-                           <Button variant="contained" color="success" disabled={disabledButton}>
-                              save
-                           </Button>
-                        </Stack>
-                     </Stack>
+                     <TestByType type={values.selectedType.type} variants="ADMIN" />
                   ) : (
                      <Stack direction="row" justifyContent="flex-end" width="100%">
                         <Button variant="contained" type="submit" startIcon={<AddIcon />} disabled={disabledButton}>

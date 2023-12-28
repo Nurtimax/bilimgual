@@ -5,7 +5,6 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
-import dayjs from 'dayjs';
 
 import CustomTable, { ITableHeaders, ITableRow } from '../../../UI/table/CustomTable';
 import { useAppDispatch } from '../../../../store/hooks';
@@ -15,7 +14,6 @@ import {
    transformObjectToArray
 } from '../../../../store/thunks/admin-test';
 import { ICreateTestByIdVaraintsThunk, InitialStateTest } from '../../../../types/admin-test';
-import { dateFormat } from '../../../../utils/helpers/graph';
 
 const tableHeaders: ITableHeaders[] = [
    { label: '#', rowKey: 'index' },
@@ -64,7 +62,7 @@ const MainAdminTestAddVariants = () => {
                   {question.name || 'Question ' + i}
                </Typography>
             ),
-            duration: dateFormat(question.duration),
+            duration: question.duration,
             type: question.questionType,
             actions: (
                <Stack direction="row" alignItems="center" justifyContent="flex-end" gap={3} py={2}>
@@ -89,7 +87,7 @@ const MainAdminTestAddVariants = () => {
          question: {
             id: '',
             name: '',
-            duration: dayjs().add(0, 'second'),
+            duration: 0,
             questionType: 'select',
             active: false
          }
