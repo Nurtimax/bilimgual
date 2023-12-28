@@ -101,7 +101,7 @@ const MainAdminTestAddVariantsSelect = () => {
             children: (
                <>
                   {values.selectedType.type && values.selectedType.type === values.fields.questionType ? (
-                     <Stack>
+                     <Stack width="100%">
                         <Stack direction="row" justifyContent="flex-end" pb={3}>
                            <Button variant="contained" startIcon={<AddIcon />} disabled={disabledButton}>
                               add options

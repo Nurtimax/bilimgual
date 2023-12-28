@@ -8,6 +8,7 @@ import SelectMainIdea from './@client/tests/components/SelectMainIdea';
 import ListenAndSelect from './@client/tests/components/ListenAndSelect';
 import RecordSaying from './@client/tests/components/RecordSaying';
 import RespondWords from './@client/tests/components/RespondWords';
+import AdminDescriptionImage from './@admin/tests/DescriptionImage';
 
 export type TestType =
    | 'descriptionImage'
@@ -26,7 +27,7 @@ interface ITestByTypeProps {
 
 const componentMap: Record<TestType, Record<'ADMIN' | 'USER', React.ComponentType<unknown>>> = {
    descriptionImage: {
-      ADMIN: TestDescriptionImage,
+      ADMIN: AdminDescriptionImage,
       USER: TestDescriptionImage
    },
    select: {
