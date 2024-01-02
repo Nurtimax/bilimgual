@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { Html, Head, Main, NextScript } from 'next/document';
+import HTMLHead from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 
@@ -17,8 +18,30 @@ export default function Document() {
                gtag('config', 'G-V4WF9Z7HM5');`
                }}
             />
+            <title>Bilimgual</title>
             <link rel="icon" href="static/icons/logoB.jpg" />
+            <meta
+               name="description"
+               content="Bilimgual is a web service designed for creating and taking tests in two languages."
+            />
+            <link rel="canonical" href="https://bilingual-nextjs.vercel.app" />
+            <meta name="yandex-verification" content="aa6390321201b1cf" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
          </Head>
+         <HTMLHead>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
+            <Script
+               dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               
+               gtag('config', 'G-V4WF9Z7HM5');`
+               }}
+            />
+            <title>Bilimgual 2</title>
+            <link rel="icon" href="static/icons/logoB.jpg" />
+         </HTMLHead>
          <body>
             <Main />
             <NextScript />
