@@ -7,8 +7,7 @@ import React from 'react';
 export default function Document() {
    return (
       <Html lang="en">
-         <Head />
-         <HTMLHead>
+         <Head>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
             <Script
                dangerouslySetInnerHTML={{
@@ -20,6 +19,20 @@ export default function Document() {
                }}
             />
             <title>Bilimgual</title>
+            <link rel="icon" href="static/icons/logoB.jpg" />
+         </Head>
+         <HTMLHead>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
+            <Script
+               dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               
+               gtag('config', 'G-V4WF9Z7HM5');`
+               }}
+            />
+            <title>Bilimgual 2</title>
             <link rel="icon" href="static/icons/logoB.jpg" />
          </HTMLHead>
          <body>
