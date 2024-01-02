@@ -4,8 +4,6 @@ import React from 'react';
 import CardChart from '../layout/card-chart';
 import UserExperience from '../layout/user-experience';
 import OurTeam from '../layout/out-team';
-import { useAppSelector } from '../store/hooks';
-import { authSelector } from '../store/helpers/auth';
 import Page from '../component/page';
 import Footer from '../component/@layout/footer';
 import LayoutSlider from '../component/@layout/slider';
@@ -19,9 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-   const { fields } = useAppSelector(authSelector);
-   console.log(fields, 'home');
-
    return (
       <Page
          title="Bilimgual"

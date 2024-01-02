@@ -13,7 +13,7 @@ const VideoCard: FC<IVideoCardProps> = ({ duration, title, video, isSaved }) => 
    return (
       <Card
          cardProps={{ sx: { height: '100%', width: '100%' } }}
-         headerProps={{ children: <Player playsInline poster="/assets/images/placeholder.png" src={video} /> }}
+         cardMediaProps={{ children: <Player playsInline poster="/assets/images/placeholder.png" src={video} /> }}
          contentProps={{
             children: (
                <>

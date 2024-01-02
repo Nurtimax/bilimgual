@@ -1,12 +1,14 @@
 /* eslint-disable no-undef */
 import { Html, Head, Main, NextScript } from 'next/document';
+import HTMLHead from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 
 export default function Document() {
    return (
       <Html lang="en">
-         <Head>
+         <Head />
+         <HTMLHead>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
             <Script
                dangerouslySetInnerHTML={{
@@ -17,9 +19,9 @@ export default function Document() {
                gtag('config', 'G-V4WF9Z7HM5');`
                }}
             />
-            <link rel="icon" href="static/icons/logoB.jpg" />
             <title>Bilimgual</title>
-         </Head>
+            <link rel="icon" href="static/icons/logoB.jpg" />
+         </HTMLHead>
          <body>
             <Main />
             <NextScript />
