@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { Html, Head, Main, NextScript } from 'next/document';
+import HTMLHead from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 
@@ -28,7 +29,21 @@ export default function Document() {
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
          </Head>
-
+         <HTMLHead>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
+            <Script
+               dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               
+               gtag('config', 'G-V4WF9Z7HM5');`
+               }}
+            />
+            <title>Bilimgual 2</title>
+            <link rel="icon" href="static/icons/logoB.jpg" />
+            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
+         </HTMLHead>
          <body>
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
