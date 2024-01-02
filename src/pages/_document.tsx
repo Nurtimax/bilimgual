@@ -3,6 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import HTMLHead from 'next/head';
 import Script from 'next/script';
 import React from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function Document() {
    return (
@@ -46,6 +47,7 @@ export default function Document() {
          <body>
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
+            <SpeedInsights />
             <NextScript />
             {process.env.NODE_ENV === 'production' && (
                <>
