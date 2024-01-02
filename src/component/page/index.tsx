@@ -36,6 +36,7 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
             )}
             <meta name="yandex-verification" content="aa6390321201b1cf" />
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
          </Helmet>
          {children}
       </>
