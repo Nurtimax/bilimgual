@@ -18,6 +18,7 @@ export default function Document() {
                }}
             />
             <link rel="icon" href="static/icons/logoB.jpg" />
+            <title>Bilimgual</title>
          </Head>
          <body>
             <Main />

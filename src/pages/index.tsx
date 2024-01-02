@@ -24,9 +24,9 @@ export default function Home() {
 
    return (
       <Page
-         title="Bilingual"
+         title="Bilimgual"
          canonical="/"
-         description="Bilingual is a web service designed for creating and taking tests in two languages."
+         description="Bilimgual is a web service designed for creating and taking tests in two languages."
       >
          <Banner />
          <CardChart />
