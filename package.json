@@ -27,7 +27,6 @@
       "@storybook/addon-actions": "^7.0.4",
       "@types/next-auth": "^3.15.0",
       "@types/three": "0.143.2",
-      "@vercel/speed-insights": "^1.0.2",
       "apexcharts": "^3.44.0",
       "axios": "^1.6.2",
       "bcryptjs": "^2.4.3",
