@@ -42,7 +42,6 @@ export default function Document() {
             />
             <title>Bilimgual 2</title>
             <link rel="icon" href="static/icons/logoB.jpg" />
-            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
          </HTMLHead>
          <body>
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>

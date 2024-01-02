@@ -1,4 +1,0 @@
-https://bilingual-nextjs.vercel.app/
-https://bilingual-nextjs.vercel.app/results
-https://bilingual-nextjs.vercel.app/tests
-https://bilingual-nextjs.vercel.app/tests[id]
