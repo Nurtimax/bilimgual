@@ -1,3 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+User-agent: Googlebot
+User-agent: Yandexbot
+Disallow: /root
+Disallow: /development
+Disallow: /icons
+Allow: /
+Allow: /tests
+Allow: /tests/*
+Sitemap: https://bilingual-nextjs.vercel.app/sitemap.xml
