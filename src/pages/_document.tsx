@@ -43,6 +43,7 @@ export default function Document() {
             <link rel="icon" href="static/icons/logoB.jpg" />
          </HTMLHead>
          <body>
+            <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
             <NextScript />
             {process.env.NODE_ENV === 'production' && (
