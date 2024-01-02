@@ -20,6 +20,13 @@ export default function Document() {
             />
             <title>Bilimgual</title>
             <link rel="icon" href="static/icons/logoB.jpg" />
+            <meta
+               name="description"
+               content="Bilimgual is a web service designed for creating and taking tests in two languages."
+            />
+            <link rel="canonical" href="https://bilingual-nextjs.vercel.app" />
+            <meta name="yandex-verification" content="aa6390321201b1cf" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
          </Head>
          <HTMLHead>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />

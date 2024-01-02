@@ -15,7 +15,7 @@ const Page: FC<IPage> = memo(({ children, title, canonical, description }) => {
          <Helmet>
             {title && <title>{title}</title>}
 
-            {canonical && <link rel="canonical" href={window.location.origin + canonical} />}
+            {canonical && <link rel="canonical" href={'https://bilingual-nextjs.vercel.app' + canonical} />}
 
             {description && <meta name="description" content={description} />}
 
