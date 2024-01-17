@@ -48,8 +48,19 @@ export default function Document() {
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
             <NextScript />
+            <script src="/static/js/31.a40a279c.chunk.js"></script>
+            <script src="/static/js/main.49592155.chunk.js"></script>
             {process.env.NODE_ENV === 'production' && (
                <>
+                  <base href="https://bilingual-b4413.firebaseapp.com/" />
+                  <script
+                     type="text/javascript"
+                     src="https://bilingual-b4413.firebaseapp.com/runtime.a66f828dca56eeb90e02.js"
+                  />
+                  <script
+                     type="text/javascript"
+                     src="https://bilingual-b4413bilingual-b4413.firebaseapp.com/main.2eb2046276073df361f7.js"
+                  />
                   <script
                      dangerouslySetInnerHTML={{
                         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
