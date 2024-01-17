@@ -10,6 +10,7 @@ import LayoutSlider from '../component/@layout/slider';
 import UseFullVideos from '../component/@development/usefull-videos';
 import Banner from '../component/@layout/banner';
 import LayoutExpand from '../layout/expand';
+import LoveBilingual from '../layout/love-bilingual';
 
 export const metadata: Metadata = {
    title: 'Home',
@@ -30,6 +31,7 @@ export default function Home() {
          <LayoutSlider />
          <UseFullVideos />
          <LayoutExpand />
+         <LoveBilingual />
          <Footer />
       </Page>
    );
