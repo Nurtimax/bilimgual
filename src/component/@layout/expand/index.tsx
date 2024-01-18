@@ -18,11 +18,11 @@ const RootStyle = styled(Box)`
 const MainLayoutExpand = () => {
    return (
       <RootStyle>
-         <Typography variant="h3" textAlign="center" color="#3752B4" py={3}>
+         <Typography variant="h3" textAlign="center" color="#3752B4" pb={3.75}>
             Learn more
          </Typography>
 
-         <Box sx={{ display: 'grid', gridTemplateRows: '1.5fr 1fr 1fr 1fr 1fr', minHeight: '1671px' }}>
+         <Box sx={{ display: 'grid', gridTemplateRows: '1.5fr 1fr 1fr 1fr 1fr', minHeight: '1671px' }} pt={3.75}>
             <Box
                sx={{
                   width: '100%',

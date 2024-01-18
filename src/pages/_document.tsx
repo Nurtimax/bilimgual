@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import { Html, Head, Main, NextScript } from 'next/document';
-import HTMLHead from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 
@@ -29,38 +28,13 @@ export default function Document() {
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
          </Head>
-         <HTMLHead>
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WF9Z7HM5" />
-            <Script
-               dangerouslySetInnerHTML={{
-                  __html: `window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               
-               gtag('config', 'G-V4WF9Z7HM5');`
-               }}
-            />
-            <title>Bilimgual 2</title>
-            <link rel="icon" href="static/icons/logoB.jpg" />
-            <meta name="google-site-verification" content="dnno2GJ0DeIdWvtvWdh5qzlZC0Qp4YKQkzF75KddQHk" />
-         </HTMLHead>
+
          <body>
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
             <NextScript />
-            <script src="/static/js/31.a40a279c.chunk.js"></script>
-            <script src="/static/js/main.49592155.chunk.js"></script>
             {process.env.NODE_ENV === 'production' && (
                <>
-                  <base href="https://bilingual-b4413.firebaseapp.com/" />
-                  <script
-                     type="text/javascript"
-                     src="https://bilingual-b4413.firebaseapp.com/runtime.a66f828dca56eeb90e02.js"
-                  />
-                  <script
-                     type="text/javascript"
-                     src="https://bilingual-b4413bilingual-b4413.firebaseapp.com/main.2eb2046276073df361f7.js"
-                  />
                   <script
                      dangerouslySetInnerHTML={{
                         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

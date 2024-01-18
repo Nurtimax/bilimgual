@@ -1,10 +1,10 @@
-import { Box, IconButton, styled } from '@mui/material';
-import React, { FC, ReactNode, memo, useRef } from 'react';
-import Slider, { Settings } from 'react-slick';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import { Box, styled } from '@mui/material';
+import React, { FC, memo, useRef } from 'react';
+import Slider from 'react-slick';
 
 import SliderCard from '../../UI/slide-card';
 import { ISlidersInitialStateData } from '../../../store/slices/sliders';
+import { sliderSettings } from '../../UI/slider';
 
 interface ISliderListProps {
    sliders?: ISlidersInitialStateData[];
@@ -34,7 +34,7 @@ const RootStyle = styled(Box)`
       margin-bottom: 0.5rem;
 
       &.slick-active {
-         background-color: red;
+         background-color: ${({ theme }) => theme.palette.primary.main};
          height: 20px;
       }
    }
@@ -43,57 +43,7 @@ const RootStyle = styled(Box)`
 const SliderList: FC<ISliderListProps> = memo(({ sliders }) => {
    const sliderRef = useRef<Slider | null>();
 
-   const settings: Settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1.2,
-      slidesToScroll: 1,
-      appendDots: (dots: ReactNode) => (
-         <div
-            style={{
-               borderRadius: '10px',
-               padding: '10px',
-               paddingTop: '1rem'
-            }}
-         >
-            <ul style={{ margin: '0px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
-               <IconButton
-                  onClick={() => {
-                     if (sliderRef.current) {
-                        sliderRef.current?.slickPrev();
-                     }
-                  }}
-                  sx={{ mr: 3 }}
-               >
-                  <KeyboardBackspaceIcon />
-               </IconButton>
-
-               {dots}
-
-               <IconButton
-                  onClick={() => {
-                     if (sliderRef.current) {
-                        sliderRef.current?.slickNext();
-                     }
-                  }}
-                  sx={{ rotate: '180deg', ml: 3 }}
-               >
-                  <KeyboardBackspaceIcon />
-               </IconButton>
-            </ul>
-         </div>
-      ),
-      customPaging: () => (
-         <div
-            style={{
-               width: '5px',
-
-               color: 'blue'
-            }}
-         ></div>
-      )
-   };
+   const settings = sliderSettings({ sliderRef: sliderRef });
 
    return (
       <RootStyle>
