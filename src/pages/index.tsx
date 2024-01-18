@@ -10,6 +10,7 @@ import LayoutSlider from '../component/@layout/slider';
 import UseFullVideos from '../component/@development/usefull-videos';
 import Banner from '../component/@layout/banner';
 import LayoutExpand from '../layout/expand';
+import MainPartners from '../layout/partners';
 import LoveBilingual from '../layout/love-bilingual';
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function Home() {
          <UseFullVideos />
          <LayoutExpand />
          <LoveBilingual />
+         <MainPartners />
          <Footer />
       </Page>
    );
