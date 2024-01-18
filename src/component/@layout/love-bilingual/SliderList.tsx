@@ -77,7 +77,7 @@ const SliderList: FC<ISliderListProps> = ({ sliders }) => {
                      maxVisibleSlide={5}
                      disableSwipe
                      customScales={[1, 0.85, 0.7, 0.55]}
-                     transitionTime={450}
+                     transitionTime={500}
                      currentVisibleSlide={3}
                   />
                );

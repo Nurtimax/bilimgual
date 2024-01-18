@@ -33,8 +33,6 @@ export default function Document() {
             <h1 style={{ position: 'absolute', left: '-99999px' }}>Bilimgual</h1>
             <Main />
             <NextScript />
-            <script src="/static/js/31.a40a279c.chunk.js"></script>
-            <script src="/static/js/main.49592155.chunk.js"></script>
             {process.env.NODE_ENV === 'production' && (
                <>
                   <base href="https://bilingual-b4413.firebaseapp.com/" />
