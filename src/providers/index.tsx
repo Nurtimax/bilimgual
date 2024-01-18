@@ -3,6 +3,7 @@ import React, { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { HelmetProvider } from 'react-helmet-async';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import Theme from '../component/UI/theme';
 import { persistor, store } from '../store';
