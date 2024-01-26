@@ -2,15 +2,16 @@ import { Container } from '@mui/material';
 import React from 'react';
 
 import MainClientTestItem from '../../../component/@client/tests';
-import ToolbarComponent from '../../../component/page/ToolbarComponent';
+import MainClientQuitTest from '../../../component/@client/tests/quit';
 
 const ClientTestById = () => {
    return (
-      <ToolbarComponent>
+      <>
+         <MainClientQuitTest />
          <Container>
             <MainClientTestItem />
          </Container>
-      </ToolbarComponent>
+      </>
    );
 };
 
