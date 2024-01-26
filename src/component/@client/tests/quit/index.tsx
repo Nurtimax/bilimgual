@@ -14,6 +14,11 @@ const MainClientQuitTest = () => {
       setOpen(false);
    };
 
+   const handleQuitTest = () => {
+      back();
+      handleClose();
+   };
+
    return (
       <Stack direction="row" justifyContent="flex-end" p={2} pb={5}>
          <Button variant="login" onClick={handleClickOpen}>
@@ -25,7 +30,7 @@ const MainClientQuitTest = () => {
                Are you sure you want to leave your practice test?
             </DialogTitle>
             <DialogActions sx={{ justifyContent: 'center', gap: 3 }}>
-               <Button variant="outlined" onClick={back}>
+               <Button variant="outlined" onClick={handleQuitTest}>
                   QUIT TEST
                </Button>
                <Button variant="contained" onClick={handleClose}>
