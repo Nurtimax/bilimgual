@@ -10,6 +10,8 @@ import RecordSaying from './@client/tests/components/RecordSaying';
 import RespondWords from './@client/tests/components/RespondWords';
 import AdminDescriptionImage from './@admin/tests/DescriptionImage';
 import AdminTestSelect from './@admin/tests/TestSelect';
+import AdminTypeWhatHear from './@admin/tests/TypeWhatHear';
+import ClientTypeWhatHear from './@client/tests/components/TypeWhatHear';
 
 export type TestType =
    | 'descriptionImage'
@@ -19,7 +21,8 @@ export type TestType =
    | 'mainIdea'
    | 'listenAndSelect'
    | 'recordSaying'
-   | 'respondWords';
+   | 'respondWords'
+   | 'typeWhatHear';
 
 interface ITestByTypeProps {
    type: TestType;
@@ -58,6 +61,10 @@ const componentMap: Record<TestType, Record<'ADMIN' | 'USER', FC>> = {
    respondWords: {
       ADMIN: RespondWords,
       USER: RespondWords
+   },
+   typeWhatHear: {
+      ADMIN: AdminTypeWhatHear,
+      USER: ClientTypeWhatHear
    }
 };
 
