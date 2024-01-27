@@ -1,30 +1,14 @@
-import { Button, LinearProgress, Typography } from '@mui/material';
 import React from 'react';
 import { useFormik } from 'formik';
 
-import { CustomTabPanel } from '../../UI/tab-panel';
 import { checkArray } from '../../../utils/helpers/array';
-import Card from '../../UI/card';
-import TestByType, { TestType } from '../../TestByType';
 
-interface ITest {
-   type: TestType;
-   id: number;
-}
+import MainTest, { ITest } from './components/MainTest';
 
 interface IUseFormikInitialValues {
    selected: ITest;
    list: ITest[];
 }
-
-const normalise = (array: ITest[], value: number) => {
-   const MIN = Math.min(...array.map((el) => el.id));
-   const MAX = Math.max(...array.map((el) => el.id));
-
-   const result = ((value - MIN) * 100) / (MAX - MIN);
-
-   return result;
-};
 
 const MainClientTestItem = () => {
    const { values, setValues } = useFormik<IUseFormikInitialValues>({
@@ -78,53 +62,17 @@ const MainClientTestItem = () => {
    const valuesList = checkArray(values.list);
    const firstListItem = valuesList?.[0];
    const lastListItem = valuesList?.[valuesList.length - 1];
+   const disabledFirstItem = values.selected.id === firstListItem.id;
+   const disabledLastItem = values.selected.id === lastListItem?.id;
 
    return (
-      <Card
-         contentProps={{
-            children: (
-               <>
-                  {valuesList.map((el) => (
-                     <CustomTabPanel style={{ minHeight: 600 }} key={el.id} index={el.id} value={values.selected.id}>
-                        <TestByType variants="USER" type={el.type} />
-                     </CustomTabPanel>
-                  ))}
-               </>
-            )
-         }}
-         headerProps={{
-            title: (
-               <>
-                  <Typography variant="h3">0:21</Typography>
-                  <LinearProgress
-                     variant="determinate"
-                     value={normalise(valuesList, values.selected.id)}
-                     sx={{ height: 10, borderRadius: 5 }}
-                  />
-               </>
-            )
-         }}
-         actionProps={{
-            children: (
-               <>
-                  {' '}
-                  <Button
-                     variant="come"
-                     onClick={handlePrevTestIndex}
-                     disabled={values.selected.id === firstListItem.id}
-                  >
-                     Prev
-                  </Button>
-                  <Button
-                     variant="come"
-                     onClick={handleNextTestIndex}
-                     disabled={values.selected.id === lastListItem.id}
-                  >
-                     Next
-                  </Button>
-               </>
-            )
-         }}
+      <MainTest
+         handleNextTestIndex={handleNextTestIndex}
+         handlePrevTestIndex={handlePrevTestIndex}
+         disabledFirstItem={disabledFirstItem}
+         disabledLastItem={disabledLastItem}
+         selected={values.selected}
+         valuesList={valuesList}
       />
    );
 };

@@ -9,6 +9,7 @@ import {
    CardMedia,
    CardMediaProps,
    CardProps,
+   Divider,
    Card as MuiCard,
    PaperTypeMap
 } from '@mui/material';
@@ -20,14 +21,16 @@ interface ICard {
    actionProps?: CardActionsProps;
    headerProps?: CardHeaderProps;
    cardMediaProps?: CardMediaProps;
+   divider?: boolean;
 }
 
-const Card: FC<ICard> = ({ actionProps, cardProps, contentProps, headerProps, cardMediaProps }) => {
+const Card: FC<ICard> = ({ actionProps, cardProps, contentProps, headerProps, cardMediaProps, divider }) => {
    return (
       <MuiCard {...cardProps}>
          {cardMediaProps && <CardMedia {...cardMediaProps} />}
          {headerProps && <CardHeader {...headerProps} />}
          {contentProps && <CardContent {...contentProps} />}
+         {divider && <Divider />}
          {actionProps && <CardActions {...actionProps} />}
       </MuiCard>
    );
