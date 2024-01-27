@@ -2,7 +2,7 @@ import React, { FC, SVGProps } from 'react';
 
 export const BilingualFullIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
    return (
-      <svg {...props} width="174" height="43" viewBox="0 0 174 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="174" height="43" viewBox="0 0 174 43" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
          <path
             d="M24.269 9.37989L38.1158 1.61417V8.36836L24.269 9.37989Z"
             fill="white"

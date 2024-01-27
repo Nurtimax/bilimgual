@@ -23,8 +23,8 @@ const MainClientTest = () => {
    }
 
    return (
-      <Box>
-         <List array={[1]} />
+      <Box maxHeight="80vh" overflow="auto" py={2}>
+         <List array={[1, 2, 3, 4, 5, 6]} />
       </Box>
    );
 };

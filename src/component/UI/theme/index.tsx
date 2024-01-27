@@ -97,21 +97,6 @@ const Theme: FC<ThemeProps> = ({ children }) => {
          }
       },
       components: {
-         MuiContainer: {
-            styleOverrides: {
-               maxWidthLg: {
-                  '&.MuiContainer-maxWidthLg': {
-                     maxWidth: '95%'
-                  }
-               },
-               maxWidthMd: {
-                  '&.MuiContainer-maxWidthMd': {
-                     maxWidth: '90%'
-                  }
-               }
-            }
-         },
-
          MuiTypography: themeTypography,
          MuiButton: Button,
          ...TextField,
