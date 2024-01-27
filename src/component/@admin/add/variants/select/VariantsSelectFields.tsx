@@ -28,8 +28,6 @@ const selectItems: ISelectItem[] = [
    { id: 2, title: 'Respond in at least N words', type: 'respondWords' }
 ];
 
-// Reusable component for controlled time picker
-
 const VariantsSelectFields: FC<IVariantsSelectFieldsProps> = ({
    handleChangeType,
    typeValue,
