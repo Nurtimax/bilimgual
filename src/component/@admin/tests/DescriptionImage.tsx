@@ -11,7 +11,7 @@ import { emailRegex } from '../../@root/team/validate';
 import { storage } from '../../../firebase';
 import { authSelector } from '../../../store/helpers/auth';
 import LoginAlert from '../../UI/login/Alert';
-import { actionsAdminTest, selectorAdminTest } from '../../../store/slices/admin-test';
+import { actionsAdminTest } from '../../../store/slices/admin-test';
 
 interface IAdminDescriptionImageProps {
    img?: string;
@@ -50,9 +50,6 @@ const AdminDescriptionImage: FC<IAdminDescriptionImageProps> = memo(({ img }) =>
    const dispatch = useAppDispatch();
 
    const { fields } = useAppSelector(authSelector);
-   const { question } = useAppSelector(selectorAdminTest);
-
-   console.log(question);
 
    const emailMathes = emailRegex.test(fields.email || '');
 
