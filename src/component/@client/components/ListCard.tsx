@@ -11,7 +11,7 @@ const ListCard = () => {
          contentProps={{
             sx: {
                px: 6,
-               py: 8
+               py: '73px !important'
             },
             children: (
                <Stack direction="row" alignItems="center" justifyContent="space-between">

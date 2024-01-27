@@ -8,7 +8,9 @@ import Card from '../../UI/card';
 
 const UserGraphChart = () => {
    const dispatch = useAppDispatch();
-   const { data, year } = useAppSelector((state) => selectorGithubGraph(state));
+   const { data, year } = useAppSelector(selectorGithubGraph);
+
+   console.log(data);
 
    const arrayCalendarGrid = fillMissingDates(data, year);
 

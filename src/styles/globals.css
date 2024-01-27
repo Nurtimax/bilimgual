@@ -56,3 +56,7 @@ li {
 .mix_blend {
    mix-blend-mode: overlay;
 }
+
+::-webkit-scrollbar {
+   display: none;
+}

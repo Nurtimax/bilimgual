@@ -35,7 +35,10 @@ export const chartBackground = (value: number): number => {
    return 0;
 };
 
-export function fillMissingDates(dataArray: IUsersChartData, year: number): DayData[] {
+export function fillMissingDates(dataArray: IUsersChartData | null, year: number): DayData[] {
+   if (dataArray === null) {
+      return [];
+   }
    const endDate = new Date();
    const startDate = new Date();
    startDate.setFullYear(endDate.getFullYear() - 1);
@@ -46,7 +49,7 @@ export function fillMissingDates(dataArray: IUsersChartData, year: number): DayD
 
    const array = Object.keys(dataArray)
       .map((month) => {
-         return Object.keys(dataArray[month])
+         return (Object?.keys(dataArray[month] || {}) || [])
             .map(
                (day) =>
                   ({
